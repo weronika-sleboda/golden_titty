@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@drawable/dark_shape_gradient_button_background"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:padding="2dp"
+        android:src="@drawable/persuasion32"
+        android:background="@color/extreme_dark_mystery"/>
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/raleway_bold"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:text="5"
+        android:paddingBottom="5dp"
+        android:background="@drawable/super_dark_rectangle_background"
+        android:textColor="@color/light_mystery"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/light_mystery"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:text="Change deal"
+        android:textAllCaps="true"/>
+
+</LinearLayout>

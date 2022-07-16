@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <color name="super_light_mystery">#d8ccff</color>
+    <color name="light_mystery">#b1a7cf</color>
+    <color name="mystery">#7e72a1</color>
+    <color name="contrast_mystery">#554b70</color>
+    <color name="dark_mystery">#3f3657</color>
+    <color name="super_dark_mystery">#2d2640</color>
+    <color name="extreme_dark_mystery">#1a1524</color>
+
+    <!-- World Map -->
+    <color name="morning_grass">#60ad58</color>
+    <color name="sunset_grass">#386633</color>
+    <color name="night_grass">#33665d</color>
+    <color name="morning_jungle">#34784e</color>
+    <color name="sunset_jungle">#244a33</color>
+    <color name="night_jungle">#244042</color>
+    <color name="morning_beach">#d1b15a</color>
+    <color name="sunset_beach">#8a723b</color>
+    <color name="night_beach">#858bab</color>
+    <color name="morning_water">#5895a6</color>
+    <color name="sunset_water">#486487</color>
+    <color name="night_water">#6d5f96</color>
+    <color name="morning_volcano">#464647</color>
+    <color name="sunset_volcano">#2b2b2b</color>
+    <color name="night_volcano">#2a2c36</color>
+    <color name="morning_snow">#d8dbeb</color>
+    <color name="sunset_snow">#979dc2</color>
+    <color name="night_snow">#4e4e82</color>
+
+    <!--Progressbar -->
+    <color name="light_green">#50d964</color>
+    <color name="green">#2b8037</color>
+
+    <!-- Day Cycle -->
+    <color name="morning">#b8d4fc</color>
+    <color name="sunset">#fc9160</color>
+    <color name="night">#3d2f4f</color>
+
+</resources>

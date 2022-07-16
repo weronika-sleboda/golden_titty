@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/main_background"
+    tools:context=".views.activities.WorldActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/merchant"
+            layout="@layout/merchant_status_layout"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/world_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="115dp"/>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@color/mystery">
+
+        <ImageView
+            android:id="@+id/world_button"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:padding="5dp"
+            android:background="@drawable/dark_oval_gradient_button_background"
+            android:src="@drawable/world64"/>
+
+        <ImageView
+            android:id="@+id/backpack_button"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:padding="5dp"
+            android:background="@drawable/dark_oval_gradient_button_background"
+            android:src="@drawable/backpack64"/>
+
+        <ImageView
+            android:id="@+id/prayer_button"
+            android:paddingTop="12dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/dark_oval_gradient_button_background"
+            android:src="@drawable/prayer64"/>
+
+
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
