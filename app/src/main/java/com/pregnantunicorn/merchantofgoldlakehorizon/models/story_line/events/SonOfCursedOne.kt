@@ -4,12 +4,12 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.Act
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.LongEvent
 
-object SonOfTheCursedOne {
+object SonOfCursedOne {
 
     val event = LongEvent(
 
         Act(
-            "The Son Of The Cursed One",
+            "The Son Of Cursed One",
             IconFactory().boatBar256(),
             "As you're sitting behind the bar on the ship deck, you see a guy equipped with swords approaching other guests on Ship Orion.",
             "[Watch from hiding]"

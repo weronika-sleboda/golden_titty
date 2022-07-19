@@ -41,7 +41,7 @@
             android:layout_height="128dp"
             android:layout_gravity="center"
             android:padding="10dp"
-            android:src="@drawable/jin128"
+            android:src="@drawable/mei128"
             android:background="@drawable/left_extreme_dark_shape_background"/>
 
         <LinearLayout
