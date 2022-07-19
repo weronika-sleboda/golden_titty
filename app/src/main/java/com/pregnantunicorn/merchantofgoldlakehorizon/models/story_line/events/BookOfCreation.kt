@@ -6,7 +6,6 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.LongEvent
 
 object BookOfCreation {
 
-
     val event = LongEvent(
 
         Act(
@@ -33,27 +32,27 @@ object BookOfCreation {
         Act(
             "Daniel",
             IconFactory().daniel256(),
-            "Afterwards that moron Meteor destroyed the whole city. Luckily, it's only a fable for people with low intelligence.",
-            "You think so?"
+            "[Suddenly Daniel appears out of nowhere] Afterwards that moron Meteor destroyed the whole city. Luckily, it's only a fable for people with low intelligence.",
+            "Why is he a moron?"
         ),
 
         Act(
             "Daniel",
             IconFactory().daniel256(),
-            "Of course I do. How can someone blindly follow someone's order and not be a moron? [He laughs]",
+            "You mean Meteor? Well, how can someone blindly follow the orders of others and not be a moron? [He laughs]",
             "[Keep listening]"
         ),
         Act(
             "Daniel",
             IconFactory().daniel256(),
-            "This Meteor is just another pawn in Creator's sick game.",
-            "I don't agree"
+            "Meteor is just another pawn in Creator's sick game. Even if Creator existed I would despise such a god. That's why I'm an atheist.",
+            "I feel bad for you"
         ),
 
         Act(
             "Daniel",
             IconFactory().daniel256(),
-            "[He laughs] Because you're just like him. You don't question the questionable. And I'm like Horizon. I'm a free thinker.",
+            "[He laughs] Because you're just like Meteor. You don't question the questionable. And I'm like Horizon. I'm a free thinker.",
             "[Leave]"
         )
     )

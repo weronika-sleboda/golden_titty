@@ -18,7 +18,7 @@ object SonOfTheCursedOne {
         Act(
             "Khan",
             IconFactory().khan256(),
-            "Hey, yo' punk! I heard you wanna be entertained! Sadly, Sophia can't do dance for ya. But luckily my swords can dance for ya instead. Wanna see?",
+            "Hey, yo' punk! I heard ya wanna be entertained! Sadly, Sophia can't do dance for ya. But luckily my swords can dance for ya instead. Wanna see?",
             "[Watch from hiding]"
         ),
 
@@ -33,27 +33,27 @@ object SonOfTheCursedOne {
             "Malik",
             IconFactory().malik256(),
             "[Ignores Khan and laughs] Yeah, he's hilarious, more entertaining than that beggar girl.",
-            "[Stop watching]"
+            "[Watch from hiding]"
         ),
 
         Act(
             "Khan",
             IconFactory().khan256(),
-            "[He puts out his swords] Yo' spoiled son of the cursed one! If ya ever call Sophia a beggar girl again, Imma gonna kill ya!",
-            "[Stop watching]"
+            "[He puts out his swords] Yo' spoiled son of da cursed one! If ya ever call Sophia a beggar girl again, Imma gonna kill ya!",
+            "[Watch from hiding]"
         ),
 
         Act(
             "Malik",
             IconFactory().malik256(),
             "[Stands up and looks Khan deeply in the eyes and responds calmly] Get out.",
-            "[Stop watching]"
+            "[Watch from hiding]"
         ),
 
         Act(
             "Khan",
             IconFactory().khan256(),
-            "[Khan's eyes widens] What the...? [He leaves the boat bar with a terrified look on his face]",
+            "[Khan's eyes widens] What da...? [He leaves the boat bar with a terrified look on his face]",
             "[Stop watching]"
         )
     )

@@ -306,6 +306,11 @@ class IconFactory {
         }
     }
 
+    fun column256(): Int  {
+
+        return R.drawable.column256
+    }
+
     fun boat64(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
@@ -368,10 +373,20 @@ class IconFactory {
     fun sophia256(): Int = R.drawable.sophia256
     fun sophia128(): Int = R.drawable.sophia128
 
+    fun mysteriousPerson256(): Int = R.drawable.mysterious_person256
+    fun mysteriousPerson128(): Int = R.drawable.mysterious_person128
+
     fun shadowAltar256(): Int = R.drawable.shadow_altar256
     fun boatBar256(): Int = R.drawable.boat_bar256
     fun beach256(): Int = R.drawable.beach256
     fun grayRobe256(): Int = R.drawable.gray_robe256
     fun desk256(): Int = R.drawable.desk256
     fun book256(): Int = R.drawable.book256
+    fun theatreScene256(): Int = R.drawable.theatre256
+    fun greenHouse256(): Int = R.drawable.green_house256
+    fun forestAtNight256(): Int = R.drawable.forest256_night
+    fun creator256(): Int = R.drawable.eye256
+
+    fun divineAltar256(): Int = R.drawable.divine_altar256
+    fun divineAltar128(): Int = R.drawable.divine_altar128
 }
