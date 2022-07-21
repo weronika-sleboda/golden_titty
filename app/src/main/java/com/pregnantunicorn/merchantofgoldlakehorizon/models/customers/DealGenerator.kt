@@ -6,50 +6,45 @@ import kotlin.random.Random
 
 class DealGenerator {
 
-    fun generateDeal(
-        demandProbability: Int,
-        demand: Int,
-        rewardProbability: Int,
-        reward: Int,
-    ): Deal {
+    fun generateDeal(): Deal {
 
         return when(Random.nextInt(6)) {
 
             0 -> Deal(
                 R.drawable.spices64,
                 "Spices",
-                demandProbability + Random.nextInt(demand),
-                rewardProbability + Random.nextInt(reward),
+                1,
+                10,
                 ItemBackpack.SPICES
             )
 
             1 -> Deal(
                 R.drawable.feather64,
                 "Feather",
-                demandProbability + Random.nextInt(demand),
-                rewardProbability + Random.nextInt(reward),
+                1,
+                1,
                 ItemBackpack.FEATHER
             )
 
             2 -> Deal(
                 R.drawable.iron64,
                 "Iron",
-                demandProbability + Random.nextInt(demand),
-                rewardProbability + Random.nextInt(reward),
+                1,
+                7,
                 ItemBackpack.IRON
             )
 
             3 -> Deal(R.drawable.wood64,
                 "Wood",
-                demandProbability + Random.nextInt(demand),
-                rewardProbability + Random.nextInt(reward),
+                1,
+                5,
                 ItemBackpack.WOOD
             )
 
             4 -> Deal(R.drawable.gems64,
                 "Gems",
-                demandProbability + Random.nextInt(demand),
-                rewardProbability + Random.nextInt(reward),
+                1,
+                15,
                 ItemBackpack.GEMS
             )
 
@@ -58,8 +53,8 @@ class DealGenerator {
                 Deal(
                     R.drawable.stones64,
                     "Stone",
-                    demandProbability + Random.nextInt(demand),
-                    rewardProbability + Random.nextInt(reward),
+                    1,
+                    3,
                     ItemBackpack.STONES
                 )
             }

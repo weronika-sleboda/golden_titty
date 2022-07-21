@@ -4,8 +4,7 @@
     <string name="bed_icon_cd">bed_icon_cd</string>
     <string name="sleep">Sleep</string>
     <string name="leave">Leave</string>
-    <string name="bed_info">When you sleep, you restore your charisma, intelligence and work ethic at the expense of 1 health point.</string>
-    <string name="full_restoration">Full restoration</string>
+    <string name="bed_info">When you sleep, your status gets restored and the day cycle changes.</string>
     <string name="ok">ok</string>
     <string name="no">no</string>
     <string name="yes">yes</string>
@@ -45,4 +44,13 @@
     <string name="creator">Creator</string>
     <string name="tell_me_about_my_mission">Tell me about my mission</string>
     <string name="i_give_up">End the game. I\'m stuck.</string>
+    <string name="full_restoration">Full restoration</string>
+    <string name="wear_icon_cd">wear_icon_cd</string>
+    <string name="upgrade">Upgrade</string>
+    <string name="golden_coin_icon_cd">golden_coin_icon_cd</string>
+    <string name="seal_wax_icon_cd">seal_wax_icon_cd</string>
+    <string name="library">Library</string>
+    <string name="wax_seal_icon_cd">wax_seal_icon_cd</string>
+    <string name="book_instruction">In order to read a book, click on its wax seal-icon.</string>
+    <string name="five">5</string>
 </resources>

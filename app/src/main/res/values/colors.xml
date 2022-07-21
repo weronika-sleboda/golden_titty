@@ -38,4 +38,9 @@
     <color name="sunset">#fc9160</color>
     <color name="night">#3d2f4f</color>
 
+    <!-- Book -->
+    <color name="light_paper">#faf3de</color>
+    <color name="paper">#e3ce94</color>
+    <color name="dark_paper">#756a49</color>
+    <color name="ink">#292a30</color>
 </resources>

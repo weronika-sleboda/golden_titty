@@ -75,4 +75,9 @@ class Food(
         return false
     }
 
+    fun reset() {
+
+        amount = 0
+    }
+
 }

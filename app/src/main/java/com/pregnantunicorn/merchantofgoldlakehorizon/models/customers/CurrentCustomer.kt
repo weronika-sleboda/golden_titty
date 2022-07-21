@@ -3,31 +3,52 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.suppliers
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.customers.Customer
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.npcs.CurrentNpc
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.dialogues.JinDialogs
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.dialogues.KhanDialogs
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.dialogues.SophiaDialogs
 
 object CurrentCustomer {
 
     const val JIN = 0
+    const val KHAN = 1
+    const val SOPHIA = 2
 
     private val customers = arrayOf(
 
         Customer(
             "Jin (Customer)",
             R.drawable.jin128,
-            "Any gems to sell? You can see my current demand and the reward for it above my head.",
-            "This is exactly what I needed.",
-            "Thank you. Come back if you have some more.",
-            "Sorry, you don't meet my demand.",
-            "You need to meet my demand exactly.",
-            "You're not persuasive enough",
-            "You don't have enough persuasion to change my mind.",
-            "So what do you say about this one?",
-            "This is my new deal.",
-            10,
-            5,
-            15,
-            10,
+            JinDialogs().welcomeLine(),
+            { JinDialogs().thankYouLine() },
+            { JinDialogs().demandNotMetLine() },
+            { JinDialogs().noPersuasionLine() },
+            { JinDialogs().dealChangedLine() },
             5,
             CurrentNpc.JIN
+        ),
+
+        Customer(
+            "Khan (Customer)",
+            R.drawable.khan128,
+            KhanDialogs().welcomeLine(),
+            { KhanDialogs().thankYouLine() },
+            { KhanDialogs().demandNotMetLine() },
+            { KhanDialogs().noPersuasionLine() },
+            { KhanDialogs().dealChangedLine() },
+            7,
+            CurrentNpc.KHAN
+        ),
+
+        Customer(
+            "Sophia (Customer)",
+            R.drawable.sophia128,
+            SophiaDialogs().welcomeLine(),
+            { SophiaDialogs().thankYouLine() },
+            { SophiaDialogs().demandNotMetLine() },
+            { SophiaDialogs().noPersuasionLine() },
+            { SophiaDialogs().dealChangedLine() },
+            3,
+            CurrentNpc.SOPHIA
         )
     )
 

@@ -1,27 +1,40 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.npcs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Friends
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.dialogues.JinDialogs
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.dialogues.KhanDialogs
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.dialogues.SophiaDialogs
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.suppliers.CurrentCustomer
 
 object CurrentNpc {
 
     const val JIN = 0
+    const val KHAN = 1
+    const val SOPHIA = 2
 
     val npcs = arrayOf(
 
-        Npc(
-            "Jin",
+        Npc("Jin",
             R.drawable.jin128,
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "0"
+            CurrentCustomer.JIN,
+            { Merchant.friends()[Friends.JIN].friendshipToString() },
+            { JinDialogs().getLine(Merchant.friends()[Friends.JIN].friendship()) },
+        ),
+
+        Npc("Khan",
+            R.drawable.khan128,
+            CurrentCustomer.KHAN,
+            { Merchant.friends()[Friends.KHAN].friendshipToString() },
+            { KhanDialogs().getLine(Merchant.friends()[Friends.KHAN].friendship()) },
+        ),
+
+        Npc("Sophia",
+            R.drawable.sophia128,
+            CurrentCustomer.SOPHIA,
+            { Merchant.friends()[Friends.SOPHIA].friendshipToString() },
+            { SophiaDialogs().getLine(Merchant.friends()[Friends.SOPHIA].friendship()) }
         )
     )
 

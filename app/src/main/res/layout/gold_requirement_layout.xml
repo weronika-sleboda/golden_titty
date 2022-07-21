@@ -36,7 +36,7 @@
         android:id="@+id/required_gold"
         android:layout_column="2"
         android:layout_row="0"
-        android:layout_width="32dp"
+        android:layout_width="100dp"
         android:layout_height="32dp"
         android:layout_gravity="start|center"
         android:gravity="center"

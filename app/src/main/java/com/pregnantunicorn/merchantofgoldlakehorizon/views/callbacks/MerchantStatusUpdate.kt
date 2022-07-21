@@ -8,4 +8,5 @@ interface MerchantStatusUpdate {
     fun updateIntelligence()
 
     fun updateGoldenCoins()
+    fun updateAppearance()
 }

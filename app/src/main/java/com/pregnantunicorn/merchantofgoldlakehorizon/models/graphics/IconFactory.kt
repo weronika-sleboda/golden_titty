@@ -6,6 +6,26 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 
 class IconFactory {
 
+    fun dayCycleIcon64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.morning64}
+            DayCycle.SUNSET -> { R.drawable.sunset64}
+            DayCycle.NIGHT -> { R.drawable.night64 }
+        }
+    }
+
+    fun dayCycleIcon32(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.morning32}
+            DayCycle.SUNSET -> { R.drawable.sunset32}
+            DayCycle.NIGHT -> { R.drawable.night32 }
+        }
+    }
+
     fun forest64(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
@@ -331,6 +351,16 @@ class IconFactory {
         }
     }
 
+    fun bed128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.double_bed128_morning }
+            DayCycle.SUNSET -> { R.drawable.double_bed128_sunset }
+            DayCycle.NIGHT -> { R.drawable.double_bed128_night }
+        }
+    }
+
     fun aaliyah256(): Int = R.drawable.aaliyah256
     fun aaliyah128(): Int = R.drawable.aalliyah128
 
@@ -379,7 +409,7 @@ class IconFactory {
     fun shadowAltar256(): Int = R.drawable.shadow_altar256
     fun boatBar256(): Int = R.drawable.boat_bar256
     fun beach256(): Int = R.drawable.beach256
-    fun grayRobe256(): Int = R.drawable.gray_robe256
+    fun goldenRobe256(): Int = R.drawable.golden_robe256
     fun desk256(): Int = R.drawable.desk256
     fun book256(): Int = R.drawable.book256
     fun theatreScene256(): Int = R.drawable.theatre256

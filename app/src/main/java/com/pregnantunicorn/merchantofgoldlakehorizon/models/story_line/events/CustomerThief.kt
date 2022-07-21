@@ -10,7 +10,7 @@ object CustomerThief {
 
         Act(
             "The Customer Thief",
-            IconFactory().grayRobe256(),
+            IconFactory().goldenRobe256(),
             "As you're looking around Red Velvet, you stumble upon this beautiful robe.",
             "[Try it]"
         ),

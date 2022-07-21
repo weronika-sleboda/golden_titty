@@ -7,11 +7,13 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 class LockedDoor(
     val buildingName: String,
     val buildingInfo: String,
-    val doorIcon: Int,
+    val doorIcon: () -> Int,
     val doorAlgorithm: () -> Unit,
-    private var requiredCharisma: Int
+    private var requiredCharisma: () -> Int
 )
 {
+
+    fun charismaToString() = "${requiredCharisma.invoke()}"
 
     fun dialogMessage(): DialogMessage {
 
@@ -27,12 +29,13 @@ class LockedDoor(
 
     fun open() {
 
-        allowedToEnter = if(Merchant.charisma().hasAmount(requiredCharisma)) {
+        if(Merchant.charisma().hasAmount(requiredCharisma.invoke())) {
 
-            Merchant.charisma().loseAmount(requiredCharisma)
-            true
+            allowedToEnter = true
+            doorAlgorithm.invoke()
+            Merchant.charisma().loseAmount(requiredCharisma.invoke())
         }
 
-        else { false }
+        else { allowedToEnter = false }
     }
 }

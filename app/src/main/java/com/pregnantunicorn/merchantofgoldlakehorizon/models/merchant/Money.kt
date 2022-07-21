@@ -1,6 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant
 
-class Money(private var amount: Int)
+class Money()
 {
 
     companion object {
@@ -8,6 +8,8 @@ class Money(private var amount: Int)
         private const val MIN_VALUE = 0
         private const val MAX_VALUE = 99999
     }
+
+    private var amount = 0
 
     fun amountToString() = "$amount"
 
@@ -31,5 +33,10 @@ class Money(private var amount: Int)
 
             this.amount = MIN_VALUE
         }
+    }
+
+    fun reset() {
+
+        amount = 0
     }
 }

@@ -7,7 +7,9 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.exploration.CurrentLocation
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.skill_upgrade.CurrentSkillManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.ExplorationFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.SkillManagerFragment
 
 class ForestTile(
 ) : Tile(true)
@@ -21,6 +23,11 @@ class ForestTile(
 
     override fun onClick(activity: FragmentActivity) {
 
+        CurrentLocation.changeLocation(CurrentLocation.FOREST)
 
+        activity.supportFragmentManager.commit {
+
+            replace<ExplorationFragment>(R.id.world_container)
+        }
     }
 }

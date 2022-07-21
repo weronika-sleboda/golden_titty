@@ -7,7 +7,6 @@
     android:columnCount="2">
 
     <TextView
-        android:id="@+id/name"
         android:layout_width="280dp"
         android:layout_height="35dp"
         android:layout_gravity="start|center_horizontal"
@@ -19,13 +18,12 @@
         android:background="@drawable/dark_one_corner_rectangle_background"/>
 
     <include
-        android:id="@+id/requirement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
-        layout="@layout/gold_requirement_layout"/>
+        layout="@layout/bed_info_layout"/>
 
     <GridLayout
         android:padding="10dp"
@@ -59,15 +57,15 @@
             android:layout_height="128dp">
 
             <TextView
-                android:id="@+id/info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="@color/extreme_dark_mystery"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
+                android:text="@string/bed_info"
                 android:fontFamily="@font/raleway_medium"/>
 
         </LinearLayout>

@@ -10,11 +10,13 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.DoorFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.LockedDoorFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.doors.CurrentDoor
 import kotlinx.coroutines.*
 
 class DoorFragment : Fragment() {
 
     private lateinit var binding: DoorFragmentBinding
+    private val door = CurrentDoor.door()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,22 +31,28 @@ class DoorFragment : Fragment() {
         setupInfo()
         setupEnterButton()
         setupLeaveButton()
+        setupOpeningInfo()
         return binding.root
     }
 
     private fun setupBuildingName() {
 
-        binding.buildingName.text = ""
+        binding.buildingName.text = door.buildingName
     }
 
     private fun setupBuildingIcon() {
 
-
+        binding.buildingIcon.setImageResource(door.icon())
     }
 
     private fun setupInfo() {
 
-        binding.buildingInfo.text = ""
+        binding.buildingInfo.text = door.buildingInfo
+    }
+
+    private fun setupOpeningInfo() {
+
+        binding.closingInfo.closingTime.text = door.closingInfo
     }
 
     private fun setupEnterButton() {
@@ -53,11 +61,7 @@ class DoorFragment : Fragment() {
 
             CoroutineScope(Dispatchers.IO).launch {
 
-
-                withContext(Dispatchers.Main) {
-
-
-                }
+                door.open(requireActivity())
             }
         }
     }

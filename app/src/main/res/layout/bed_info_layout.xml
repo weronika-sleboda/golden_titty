@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@drawable/extreme_dark_rectangle_background"
+    android:layout_column="5">
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="0"
+        android:layout_width="135dp"
+        android:layout_height="32dp"
+        android:layout_gravity="start|center"
+        android:gravity="center"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/super_light_mystery"
+        android:textSize="18sp"
+        android:layout_marginStart="3dp"
+        android:text="@string/full_restoration"
+        android:background="@drawable/extreme_dark_rectangle_background"/>
+
+    <ImageView
+        android:contentDescription="@string/energy_icon_cd"
+        android:layout_column="1"
+        android:layout_row="0"
+        android:layout_marginStart="3dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="start|center"
+        android:background="@drawable/extreme_dark_rectangle_background"
+        android:src="@drawable/energy32"
+        android:padding="3dp"/>
+
+    <ImageView
+        android:contentDescription="@string/persuasion_icon_cd"
+        android:layout_column="2"
+        android:layout_row="0"
+        android:layout_marginStart="3dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="start|center"
+        android:background="@drawable/extreme_dark_rectangle_background"
+        android:src="@drawable/persuasion32"
+        android:padding="3dp"/>
+
+    <ImageView
+        android:contentDescription="@string/charisma_icon_cd"
+        android:layout_column="3"
+        android:layout_row="0"
+        android:layout_marginStart="3dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="start|center"
+        android:background="@drawable/extreme_dark_rectangle_background"
+        android:src="@drawable/charisma32"
+        android:padding="3dp"/>
+
+    <ImageView
+        android:contentDescription="@string/intelligence_icon_cd"
+        android:layout_column="4"
+        android:layout_row="0"
+        android:layout_marginStart="3dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="start|center"
+        android:background="@drawable/extreme_dark_rectangle_background"
+        android:src="@drawable/intelligence32"
+        android:padding="3dp"/>
+
+</GridLayout>

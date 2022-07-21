@@ -21,6 +21,11 @@ class CaveTile(
 
     override fun onClick(activity: FragmentActivity) {
 
+        CurrentLocation.changeLocation(CurrentLocation.CAVE)
 
+        activity.supportFragmentManager.commit {
+
+            replace<ExplorationFragment>(R.id.world_container)
+        }
     }
 }

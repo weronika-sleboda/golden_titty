@@ -9,6 +9,7 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.WorldActivityBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.skill_upgrade.SkillManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
 
@@ -97,6 +98,11 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
     override fun updateGoldenCoins() {
 
         binding.merchant.goldenCoins.text = Merchant.goldenCoins().amountToString()
+    }
+
+    override fun updateAppearance() {
+
+        binding.merchant.icon.setImageResource(Merchant.appearance().icon())
     }
 
 }

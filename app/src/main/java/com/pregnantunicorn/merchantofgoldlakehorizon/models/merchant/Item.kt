@@ -12,7 +12,7 @@ class Item(
         private const val MAX_VALUE = 999
     }
 
-    private var amount = 50
+    private var amount = 0
 
     fun amountToString() = "Amount: $amount"
 
@@ -36,6 +36,11 @@ class Item(
 
             this.amount = MIN_VALUE
         }
+    }
+
+    fun reset() {
+
+        amount = 0
     }
 
 }
