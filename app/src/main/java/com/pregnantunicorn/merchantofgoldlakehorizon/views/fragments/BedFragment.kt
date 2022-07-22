@@ -10,6 +10,7 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BedFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.bed.Bed
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.rent.RentTime
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -49,6 +50,7 @@ class BedFragment : Fragment() {
         statusUpdate.updateCharisma()
         statusUpdate.updatePersuasion()
         statusUpdate.updateIntelligence()
+        statusUpdate.updateHourglass()
     }
 
     private fun setupSleepButton() {
@@ -69,9 +71,25 @@ class BedFragment : Fragment() {
                         bed.dialogMessage().message
                     )
 
-                    goToWorldMap()
+                    if(RentTime.timeToPay()) {
+
+                        goToRentCollector()
+                    }
+
+                    else {
+
+                        goToWorldMap()
+                    }
                 }
             }
+        }
+    }
+
+    private fun goToRentCollector() {
+
+        activity?.supportFragmentManager?.commit {
+
+            replace<RentCollectorFragment>(R.id.world_container)
         }
     }
 

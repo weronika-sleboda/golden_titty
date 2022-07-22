@@ -4,7 +4,7 @@ class SophiaDialogs {
 
     private val lines = arrayOf(
 
-        "Okay, so your name is Sonny. Let me tell you something Sonny. I don't care about you and your story or your business in this town.",
+        "Let me tell you something. I don't care about you and your story or your business in this town.",
         "Stop bothering me.",
         "What is it? Are you stalking me or something?",
         "",
@@ -27,7 +27,7 @@ class SophiaDialogs {
 
     fun welcomeLine(): String {
 
-        return "I have a an deal offer for you. Could you bring that to me?"
+        return "I have a deal offer for you. Could you bring that to me?"
     }
 
     fun thankYouLine(): String {

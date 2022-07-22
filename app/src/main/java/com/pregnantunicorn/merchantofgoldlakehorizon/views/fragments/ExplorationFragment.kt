@@ -9,7 +9,8 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ExplorationFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.exploration.CurrentLocation
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.exploration.Cave
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.GemUpdateType
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -20,7 +21,7 @@ import kotlinx.coroutines.withContext
 class ExplorationFragment : Fragment() {
 
     private lateinit var binding: ExplorationFragmentBinding
-    private val location = CurrentLocation.location()
+    private val location = Cave()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,6 +64,15 @@ class ExplorationFragment : Fragment() {
 
         val statusUpdate = requireActivity() as MerchantStatusUpdate
         statusUpdate.updateEnergy()
+
+        when(location.treasure().gemUpdateType) {
+
+            GemUpdateType.EMERALD -> statusUpdate.updateEmerald()
+            GemUpdateType.SAPPHIRE -> statusUpdate.updateSapphire()
+            GemUpdateType.RUBY -> statusUpdate.updateRuby()
+
+            GemUpdateType.NONE -> {}
+        }
     }
 
     private fun setupExploreButton() {

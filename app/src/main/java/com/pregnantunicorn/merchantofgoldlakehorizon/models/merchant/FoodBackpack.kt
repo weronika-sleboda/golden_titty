@@ -23,8 +23,8 @@ class FoodBackpack {
         Food(
             "Sushi",
             R.drawable.sushi64,
-            "Energy: 1",
-            { Merchant.energy().addAmount(1)},
+            "Energy: 5",
+            { Merchant.energy().addAmount(5)},
             { Merchant.energy().amountIsMaxed() },
             DialogMessage(
                 "Max energy", R.drawable.energy64,
@@ -36,8 +36,8 @@ class FoodBackpack {
         Food(
             "Ramen",
             R.drawable.ramen64,
-            "Energy: 2",
-            { Merchant.energy().addAmount(2)},
+            "Energy: 10",
+            { Merchant.energy().addAmount(10)},
             { Merchant.energy().amountIsMaxed() },
             DialogMessage(
                 "Max energy", R.drawable.energy64,
@@ -49,8 +49,8 @@ class FoodBackpack {
         Food(
             "Burger",
             R.drawable.burger64,
-            "Energy: 3",
-            { Merchant.energy().addAmount(3)},
+            "Energy: 15",
+            { Merchant.energy().addAmount(15)},
             { Merchant.energy().amountIsMaxed() },
             DialogMessage(
                 "Max energy", R.drawable.energy64,
@@ -62,8 +62,8 @@ class FoodBackpack {
         Food(
             "Filter Coffee",
             R.drawable.filter_coffee64,
-            "Intelligence: 1",
-            { Merchant.intelligence().addAmount(1)},
+            "Intelligence: 5",
+            { Merchant.intelligence().addAmount(5)},
             { Merchant.intelligence().amountIsMaxed() },
             DialogMessage(
                 "Max intelligence", R.drawable.intelligence64,
@@ -75,8 +75,8 @@ class FoodBackpack {
         Food(
             "Cappuccino",
             R.drawable.cappuccino64,
-            "Intelligence: 2",
-            { Merchant.intelligence().addAmount(2)},
+            "Intelligence: 10",
+            { Merchant.intelligence().addAmount(10)},
             { Merchant.intelligence().amountIsMaxed() },
             DialogMessage(
                 "Max intelligence", R.drawable.intelligence64,
@@ -88,8 +88,8 @@ class FoodBackpack {
         Food(
             "Latte",
             R.drawable.latte64,
-            "Intelligence: 3",
-            { Merchant.intelligence().addAmount(3)},
+            "Intelligence: 15",
+            { Merchant.intelligence().addAmount(15)},
             { Merchant.intelligence().amountIsMaxed() },
             DialogMessage(
                 "Max intelligence", R.drawable.intelligence64,
@@ -101,8 +101,8 @@ class FoodBackpack {
         Food(
             "Coconut Water",
             R.drawable.coconut_water64,
-            "Persuasion: 1",
-            { Merchant.persuasion().addAmount(1)},
+            "Persuasion: 5",
+            { Merchant.persuasion().addAmount(5)},
             { Merchant.persuasion().amountIsMaxed() },
             DialogMessage(
                 "Max persuasion", R.drawable.persuasion64,
@@ -114,8 +114,8 @@ class FoodBackpack {
         Food(
             "Smoothie",
             R.drawable.smoothie64,
-            "Persuasion: 2",
-            { Merchant.persuasion().addAmount(2)},
+            "Persuasion: 10",
+            { Merchant.persuasion().addAmount(10)},
             { Merchant.persuasion().amountIsMaxed() },
             DialogMessage(
                 "Max persuasion", R.drawable.persuasion64,
@@ -127,8 +127,8 @@ class FoodBackpack {
         Food(
             "Hot Chocolate",
             R.drawable.hot_chocolate64,
-            "Persuasion: 3",
-            { Merchant.persuasion().addAmount(3)},
+            "Persuasion: 15",
+            { Merchant.persuasion().addAmount(15)},
             { Merchant.persuasion().amountIsMaxed() },
             DialogMessage(
                 "Max persuasion", R.drawable.persuasion64,

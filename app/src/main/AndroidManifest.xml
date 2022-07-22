@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MerchantOfGoldlakeHorizon">
+
         <activity
             android:name=".views.activities.WorldActivity"
             android:screenOrientation="portrait"
@@ -19,11 +20,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".views.activities.EventActivity"
             android:screenOrientation="portrait"
             android:exported="true">
         </activity>
+
+        <activity
+            android:name=".views.activities.MainMenuActivity"
+            android:screenOrientation="portrait"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".views.activities.GameOverActivity"
+            android:screenOrientation="portrait"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

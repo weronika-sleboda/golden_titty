@@ -15,7 +15,7 @@ object CurrentLockedDoor {
         LockedDoor(
             "Arena",
             "Arena is closed right now, but you still can use your charisma " +
-                    "to enter the building and meet Jin - the manager.",
+                    "to enter the building and meet the manager.",
             { IconFactory().arenaDoor128() },
             { CurrentNpc.changeNpc(CurrentNpc.JIN) },
             {
@@ -26,8 +26,8 @@ object CurrentLockedDoor {
 
         LockedDoor(
             "Camp",
-            "You can't sleep in camp right now, but you still can use your charisma " +
-                    "to get in and meet Sophia or Khan - the residents.",
+            "You can't sleep in the camp right now, but you still can use your charisma " +
+                    "to get in and meet the residents.",
             { IconFactory().tent128() },
             {
                 when(CurrentDayCycle.dayCycle()) {

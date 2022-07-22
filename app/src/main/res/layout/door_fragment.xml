@@ -65,7 +65,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="@color/extreme_dark_mystery"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
                 android:fontFamily="@font/raleway_medium"/>

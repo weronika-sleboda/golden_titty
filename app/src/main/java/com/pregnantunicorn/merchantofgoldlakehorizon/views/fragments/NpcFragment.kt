@@ -58,12 +58,6 @@ class NpcFragment : Fragment() {
 
         binding.tradeButton.setOnClickListener {
 
-            npc.trade()
-
-            activity?.supportFragmentManager?.commit {
-
-                replace<CustomerFragment>(R.id.world_container)
-            }
         }
     }
 

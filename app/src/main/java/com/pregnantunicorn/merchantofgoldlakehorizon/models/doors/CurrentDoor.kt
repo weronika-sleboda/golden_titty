@@ -10,8 +10,9 @@ object CurrentDoor {
     const val ARENA_DOOR = 4
     const val THEATRE_DOOR = 5
     const val DIVINE_TEMPLE_DOOR = 6
-    const val GOLDEN_PALACE = 7
+    const val SONNY_HOUSE = 7
     const val CAMP = 8
+    const val TRADING_HOUSE = 9
 
     private val doors = arrayOf(
         GreenHouseDoor(),
@@ -20,7 +21,10 @@ object CurrentDoor {
         UniversityDoor(),
         ArenaDoor(),
         TheatreDoor(),
-        DivineTempleDoor()
+        DivineTempleDoor(),
+        SonnyHouse(),
+        CampEntrance(),
+        TradingHouseDoor()
     )
 
     private var door: Door = doors[GREEN_HOUSE_DOOR]

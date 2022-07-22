@@ -146,6 +146,16 @@ class IconFactory {
         }
     }
 
+    fun woodenDoor128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.wooden_door128_morning }
+            DayCycle.SUNSET -> { R.drawable.wooden_door128_sunset }
+            DayCycle.NIGHT -> { R.drawable.wooden_door128_night }
+        }
+    }
+
     fun university64(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {

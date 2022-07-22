@@ -16,7 +16,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.NpcFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.SkillManagerFragment
 
 class DivineTempleDoor : Door(
-    "Arena",
+    "Divine Temple",
     "This is the place where you can upgrade your max charisma for golden coins.",
     "Closed At Night"
 )

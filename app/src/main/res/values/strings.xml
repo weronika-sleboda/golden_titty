@@ -9,7 +9,6 @@
     <string name="no">no</string>
     <string name="yes">yes</string>
     <string name="requires">Requires</string>
-    <string name="one">1</string>
     <string name="carriage">Carriage</string>
     <string name="carriage_info">You can sell your goods here. If you want to sell an item click on the coin to the right.</string>
     <string name="health_icon_cd">health_icon_cd</string>
@@ -53,4 +52,28 @@
     <string name="wax_seal_icon_cd">wax_seal_icon_cd</string>
     <string name="book_instruction">In order to read a book, click on its wax seal-icon.</string>
     <string name="five">5</string>
+    <string name="ruby_icon_cd">ruby_icon_cd</string>
+    <string name="sapphire_icon_cd">sapphire_icon_cd</string>
+    <string name="emerald_icon_cd">emerald_icon_cd</string>
+    <string name="trading_house">Trading House</string>
+    <string name="change_deal">Change deal</string>
+    <string name="one">1</string>
+    <string name="rent_collector_line">Hi Sonny! It\'s time to pay the rent for your house. Do you have money for me?</string>
+    <string name="price">Price</string>
+    <string name="time_to_pay_the_rent">Time To Pay The Rent</string>
+    <string name="exit">Exit ot main menu</string>
+    <string name="dialogue_icon_cd">dialogue_icon_cd</string>
+    <string name="game_over">Game Over</string>
+    <string name="game_over_info">I see... You didn\'t pay the rent for your house. Don\'t be hard on yourself. I\'m still proud of you, even if you didn\'t complete the mission.</string>
+    <string name="credits">Credits</string>
+    <string name="continue_game">Continue</string>
+    <string name="play">Play</string>
+    <string name="sonny256_icon_cd">sonny256_icon_cd</string>
+    <string name="exit_game">Exit Game</string>
+    <string name="save_file">Save File</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="speaker_cd_icon">speaker_cd_icon</string>
+    <string name="settings">Settings</string>
+    <string name="befriend">Befriend</string>
 </resources>

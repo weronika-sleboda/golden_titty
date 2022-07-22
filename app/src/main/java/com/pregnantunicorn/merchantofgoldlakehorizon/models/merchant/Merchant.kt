@@ -6,10 +6,14 @@ object Merchant {
     private var persuasion = Status()
     private var charisma = Status()
     private var intelligence = Status()
-    private var itemBackpack = ItemBackpack()
+    private var emerald = Gem()
+    private var sapphire = Gem()
+    private var ruby = Gem()
+
     private var foodBackpack = FoodBackpack()
     private var appearance = Appearance()
     private var friends = Friends()
+    private var hourglass = Hourglass()
 
     private var goldenCoins = Money()
 
@@ -17,10 +21,15 @@ object Merchant {
     fun energy() = energy
     fun charisma() = charisma
     fun intelligence() = intelligence
-    fun items() = itemBackpack.items
+
+    fun emerald() = emerald
+    fun sapphire() = sapphire
+    fun ruby() = ruby
+
     fun food() = foodBackpack.foods
     fun appearance() = appearance
     fun friends() = friends.friends
+    fun hourglass() = hourglass
 
     fun goldenCoins() = goldenCoins
 

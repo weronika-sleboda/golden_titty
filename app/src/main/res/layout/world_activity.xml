@@ -15,6 +15,10 @@
             android:id="@+id/merchant"
             layout="@layout/merchant_status_layout"/>
 
+        <include
+            android:id="@+id/resources"
+            layout="@layout/gem_status_layout"/>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
@@ -22,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="115dp"/>
+        android:layout_marginTop="160dp"/>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
@@ -54,7 +58,13 @@
             android:background="@drawable/dark_oval_gradient_button_background"
             android:src="@drawable/prayer64"/>
 
-
+        <ImageView
+            android:id="@+id/settings_button"
+            android:padding="5dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/dark_oval_gradient_button_background"
+            android:src="@drawable/settings64"/>
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 

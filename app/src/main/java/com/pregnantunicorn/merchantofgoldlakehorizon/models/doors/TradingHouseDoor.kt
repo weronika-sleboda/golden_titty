@@ -1,0 +1,35 @@
+package com.pregnantunicorn.merchantofgoldlakehorizon.models.doors
+
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
+import com.pregnantunicorn.merchantofgoldlakehorizon.R
+import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ClothingShopFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.clothing.CurrentRobeManager
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.CurrentDayCycle
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.ClothingShopFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.NpcFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.TradingHouseFragment
+
+class TradingHouseDoor : Door(
+    "Trading House",
+    "This is the place where you can accept deals and earn golden coins.",
+    "Open All Day"
+)
+{
+
+    override fun open(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<TradingHouseFragment>(R.id.world_container)
+        }
+    }
+
+    override fun icon(): Int {
+
+        return IconFactory().goldenDoor128()
+    }
+}

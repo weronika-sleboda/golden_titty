@@ -7,6 +7,11 @@ interface MerchantStatusUpdate {
     fun updateCharisma()
     fun updateIntelligence()
 
+    fun updateEmerald()
+    fun updateSapphire()
+    fun updateRuby()
+
+    fun updateHourglass()
     fun updateGoldenCoins()
     fun updateAppearance()
 }

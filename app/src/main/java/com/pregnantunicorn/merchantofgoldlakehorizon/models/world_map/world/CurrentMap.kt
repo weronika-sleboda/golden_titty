@@ -8,7 +8,7 @@ object CurrentMap {
 
         EmptyGrassTile() as Tile }.also {
 
-            it[0] = GoldenPalaceTile()
+            it[0] = TradingHouseTile()
             it[1] = LibraryTile()
             it[2] = UniversityTile()
             it[3] = ClothingShop1Tile()
@@ -24,7 +24,7 @@ object CurrentMap {
             it[17] = CampFireTile()
             it[18] = TentTile()
             it[19] = EmptyBeachTile()
-            it[24] = ForestTile()
+            it[24] = SonnyHouseTile()
             it[25] = DivineTempleTile()
             it[26] = CaveTile()
             it[31] = EmptyVolcanoTile()

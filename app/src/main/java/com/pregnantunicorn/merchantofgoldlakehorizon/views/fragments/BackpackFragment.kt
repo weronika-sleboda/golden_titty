@@ -12,7 +12,6 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.clothing.RobeFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.StatusUpdateType
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.FoodAdapter
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.ItemAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.RobeAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -24,7 +23,6 @@ import kotlinx.coroutines.withContext
 class BackpackFragment : Fragment(), FoodAdapter.FoodListener, RobeAdapter.RobeListener {
 
     private lateinit var binding: BackpackFragmentBinding
-    private lateinit var itemAdapter: ItemAdapter
     private lateinit var foodAdapter: FoodAdapter
     private lateinit var robeAdapter: RobeAdapter
     private lateinit var layoutManager: LinearLayoutManager
@@ -39,37 +37,12 @@ class BackpackFragment : Fragment(), FoodAdapter.FoodListener, RobeAdapter.RobeL
 
         binding = BackpackFragmentBinding.inflate(inflater, container, false)
 
-        selectItemsTab()
-        updateItems()
-        setupItemsTab()
+        selectFoodTab()
+        updateFood()
         setupFoodTab()
         setupRobeTab()
 
         return binding.root
-    }
-
-    private fun setupItemsTab() {
-
-        binding.itemsTab.setOnClickListener {
-
-            selectItemsTab()
-            updateItems()
-        }
-    }
-
-    private fun selectItemsTab() {
-
-        binding.itemsTab.setBackgroundResource(R.drawable.selected_tab_background)
-        binding.foodTab.setBackgroundResource(R.drawable.tab_background)
-        binding.clothesTab.setBackgroundResource(R.drawable.tab_background)
-    }
-
-    private fun updateItems() {
-
-        itemAdapter = ItemAdapter(Merchant.items())
-        layoutManager = LinearLayoutManager(context)
-        binding.backpackRecycler.adapter = itemAdapter
-        binding.backpackRecycler.layoutManager = layoutManager
     }
 
     private fun updateRobes() {
@@ -91,7 +64,6 @@ class BackpackFragment : Fragment(), FoodAdapter.FoodListener, RobeAdapter.RobeL
 
     private fun selectRobeTab() {
 
-        binding.itemsTab.setBackgroundResource(R.drawable.tab_background)
         binding.foodTab.setBackgroundResource(R.drawable.tab_background)
         binding.clothesTab.setBackgroundResource(R.drawable.selected_tab_background)
     }
@@ -107,7 +79,6 @@ class BackpackFragment : Fragment(), FoodAdapter.FoodListener, RobeAdapter.RobeL
 
     private fun selectFoodTab() {
 
-        binding.itemsTab.setBackgroundResource(R.drawable.tab_background)
         binding.foodTab.setBackgroundResource(R.drawable.selected_tab_background)
         binding.clothesTab.setBackgroundResource(R.drawable.tab_background)
     }

@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.LibraryFragmentBinding
@@ -76,5 +78,16 @@ class LibraryFragment : Fragment(), BookAdapter.BookListener {
             message,
             "OK"
         ).show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+    }
+
+    private fun setupLeaveButton() {
+
+        binding.leaveButton.setOnClickListener {
+
+            activity?.supportFragmentManager?.commit {
+
+                replace<WorldMapFragment>(R.id.world_container)
+            }
+        }
     }
 }

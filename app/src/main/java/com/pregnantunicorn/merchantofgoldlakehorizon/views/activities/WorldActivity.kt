@@ -29,23 +29,18 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         updateCharisma()
         updateIntelligence()
         updateGoldenCoins()
+        updateHourglass()
 
+        updateEmerald()
+        updateSapphire()
+        updateRuby()
+
+        selectWorldButton()
         goToWorldMap()
         setupWorldButton()
         setupBackpackButton()
         setupPrayerButton()
-    }
-
-
-    private fun setupPrayerButton() {
-
-        binding.prayerButton.setOnClickListener {
-
-            supportFragmentManager.commit {
-
-                replace<PrayerFragment>(R.id.world_container)
-            }
-        }
+        setupSettingsButton()
     }
 
     private fun goToWorldMap() {
@@ -60,6 +55,7 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
 
         binding.worldButton.setOnClickListener {
 
+            selectWorldButton()
             goToWorldMap()
         }
     }
@@ -68,11 +64,71 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
 
         binding.backpackButton.setOnClickListener {
 
+            selectBackpackButton()
+
             supportFragmentManager.commit {
 
                 replace<BackpackFragment>(R.id.world_container)
             }
         }
+    }
+
+    private fun setupPrayerButton() {
+
+        binding.prayerButton.setOnClickListener {
+
+            selectPrayerButton()
+
+            supportFragmentManager.commit {
+
+                replace<PrayerFragment>(R.id.world_container)
+            }
+        }
+    }
+
+    private fun setupSettingsButton() {
+
+        binding.settingsButton.setOnClickListener {
+
+            selectSettingsButton()
+
+            supportFragmentManager.commit {
+
+                replace<SettingsFragment>(R.id.world_container)
+            }
+        }
+    }
+
+    private fun selectWorldButton() {
+
+        binding.worldButton.setBackgroundResource(R.drawable.light_oval_gradient_button_background)
+        binding.backpackButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+        binding.prayerButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+        binding.settingsButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+    }
+
+    private fun selectBackpackButton() {
+
+        binding.worldButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+        binding.backpackButton.setBackgroundResource(R.drawable.light_oval_gradient_button_background)
+        binding.prayerButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+        binding.settingsButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+    }
+
+    private fun selectPrayerButton() {
+
+        binding.worldButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+        binding.backpackButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+        binding.prayerButton.setBackgroundResource(R.drawable.light_oval_gradient_button_background)
+        binding.settingsButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+    }
+
+    private fun selectSettingsButton() {
+
+        binding.worldButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+        binding.backpackButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+        binding.prayerButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+        binding.settingsButton.setBackgroundResource(R.drawable.light_oval_gradient_button_background)
     }
 
     override fun updatePersuasion() {
@@ -93,6 +149,26 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
     override fun updateIntelligence() {
 
         binding.merchant.intelligence.text = Merchant.intelligence().amountToString()
+    }
+
+    override fun updateEmerald() {
+
+        binding.resources.emerald.text = Merchant.emerald().amountToString()
+    }
+
+    override fun updateSapphire() {
+
+        binding.resources.sapphire.text = Merchant.sapphire().amountToString()
+    }
+
+    override fun updateRuby() {
+
+        binding.resources.ruby.text = Merchant.ruby().amountToString()
+    }
+
+    override fun updateHourglass() {
+
+        binding.merchant.hourglass.text = Merchant.hourglass().dayCycleNumberToString()
     }
 
     override fun updateGoldenCoins() {
