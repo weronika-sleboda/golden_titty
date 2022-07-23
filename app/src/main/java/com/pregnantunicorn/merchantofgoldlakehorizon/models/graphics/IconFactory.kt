@@ -6,6 +6,147 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 
 class IconFactory {
 
+    fun divineGate64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.divine_gate64_morning}
+            DayCycle.SUNSET -> { R.drawable.divine_gate64_sunset}
+            DayCycle.NIGHT -> { R.drawable.divine_gate64_night}
+        }
+    }
+
+    fun divineGate128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.divine_gate128_morning}
+            DayCycle.SUNSET -> { R.drawable.divine_gate128_sunset}
+            DayCycle.NIGHT -> { R.drawable.divine_gate128_night}
+        }
+    }
+
+    fun bush64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.bush64_morning}
+            DayCycle.SUNSET -> { R.drawable.bush64_sunset}
+            DayCycle.NIGHT -> { R.drawable.bush64_night}
+        }
+    }
+
+    fun bush128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.bush128_morning}
+            DayCycle.SUNSET -> { R.drawable.bush128_sunset}
+            DayCycle.NIGHT -> { R.drawable.bush128_night}
+        }
+    }
+
+    fun footprints64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.footprints64_morning}
+            DayCycle.SUNSET -> { R.drawable.footprints64_sunset}
+            DayCycle.NIGHT -> { R.drawable.footprints64_night}
+        }
+    }
+
+    fun footprints128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.footprints128_morning}
+            DayCycle.SUNSET -> { R.drawable.footprints128_sunset}
+            DayCycle.NIGHT -> { R.drawable.footprints128_night}
+        }
+    }
+
+
+    fun soil128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.soil128_morning}
+            DayCycle.SUNSET -> { R.drawable.soil128_sunset}
+            DayCycle.NIGHT -> { R.drawable.soil128_night}
+        }
+    }
+
+    fun soil64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.soil64_morning }
+            DayCycle.SUNSET -> { R.drawable.soil64_sunset }
+            DayCycle.NIGHT -> { R.drawable.soil64_night }
+        }
+    }
+
+    fun occultCircle128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.occult_circle128_morning}
+            DayCycle.SUNSET -> { R.drawable.occult_circle128_sunset}
+            DayCycle.NIGHT -> { R.drawable.occult_circle128_night }
+        }
+    }
+
+    fun occultCircle64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.occult_circle64_morning}
+            DayCycle.SUNSET -> { R.drawable.occult_circle64_sunset}
+            DayCycle.NIGHT -> { R.drawable.occult_circle64_night}
+        }
+    }
+
+    fun fountain64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.fountain64_morning}
+            DayCycle.SUNSET -> { R.drawable.fountain64_sunset}
+            DayCycle.NIGHT -> { R.drawable.fountain64_night }
+        }
+    }
+
+    fun fountain128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.fountain128_morning}
+            DayCycle.SUNSET -> { R.drawable.fountain128_sunset}
+            DayCycle.NIGHT -> { R.drawable.fountain128_night }
+        }
+    }
+
+    fun cherryTree64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.cherry_tree64_morning}
+            DayCycle.SUNSET -> { R.drawable.cherry_tree64_sunset}
+            DayCycle.NIGHT -> { R.drawable.cherry_tree64_night }
+        }
+    }
+
+    fun cherryTree128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.cherry_tree128_morning}
+            DayCycle.SUNSET -> { R.drawable.cherry_tree128_sunset}
+            DayCycle.NIGHT -> { R.drawable.cherry_tree128_night }
+        }
+    }
+
     fun dayCycleIcon64(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
@@ -123,6 +264,16 @@ class IconFactory {
             DayCycle.MORNING -> { R.drawable.arena_gate128_morning }
             DayCycle.SUNSET -> { R.drawable.arena_gate128_sunset }
             DayCycle.NIGHT -> { R.drawable.arena_gate128_night }
+        }
+    }
+
+    fun boatLadder128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.ladder128_morning }
+            DayCycle.SUNSET -> { R.drawable.ladder128_sunset }
+            DayCycle.NIGHT -> { R.drawable.ladder128_night }
         }
     }
 

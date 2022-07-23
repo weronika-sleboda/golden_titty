@@ -4,6 +4,7 @@ class Friend(val name: String)
 {
     private var friendship = 0
     private var counter = 0
+    private var friendAdded = false
 
     fun friendship() = friendship
 
@@ -13,16 +14,21 @@ class Friend(val name: String)
 
         val maxValue = 8
 
-        if(friendship < maxValue) {
+        friendship++
 
-            counter++
+        if(friendship == maxValue) {
 
-            if(counter == 50) {
+            Merchant.friendCounter().addFriend()
+            friendAdded = true
 
-                friendship++
-
-                counter = 0
-            }
         }
+
+        if(friendship > maxValue) {
+
+            friendship = maxValue
+        }
+
     }
+
+    fun friendHasBeenAdded() = friendAdded
 }

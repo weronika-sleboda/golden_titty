@@ -13,7 +13,7 @@ object Merchant {
     private var foodBackpack = FoodBackpack()
     private var appearance = Appearance()
     private var friends = Friends()
-    private var hourglass = Hourglass()
+    private var friendCounter = FriendCounter()
 
     private var goldenCoins = Money()
 
@@ -29,7 +29,7 @@ object Merchant {
     fun food() = foodBackpack.foods
     fun appearance() = appearance
     fun friends() = friends.friends
-    fun hourglass() = hourglass
+    fun friendCounter() = friendCounter
 
     fun goldenCoins() = goldenCoins
 

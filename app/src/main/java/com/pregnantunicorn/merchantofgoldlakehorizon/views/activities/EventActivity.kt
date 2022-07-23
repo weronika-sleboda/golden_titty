@@ -1,5 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.views.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.EventActivityBinding
@@ -56,6 +57,17 @@ class EventActivity : AppCompatActivity() {
             updateLine()
             updateIcon()
             updateButtonText()
+
+            if(event.hasAlreadyHappened()) {
+
+                goToWorldMap()
+            }
         }
+    }
+
+    private fun goToWorldMap() {
+
+        val intent = Intent(baseContext, WorldActivity::class.java)
+        startActivity(intent)
     }
 }

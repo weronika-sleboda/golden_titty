@@ -15,7 +15,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.NpcFragment
 class RedVelvetDoor : Door(
     "Red Velvet",
     "This is the place where you can buy new robes. Different robes affect " +
-            "how easily you can enter the buildings. Open at morning and sunset.",
+            "how easily you can enter the buildings.",
     "Closed At Night"
 )
 {

@@ -9,7 +9,7 @@ object SonOfCursedOne {
     val event = LongEvent(
 
         Act(
-            "The Son Of Cursed One",
+            "The Son Of The Cursed One",
             IconFactory().boatBar256(),
             "As you're sitting behind the bar on the ship deck, you see a guy equipped with swords approaching other guests on Ship Orion.",
             "[Watch from hiding]"

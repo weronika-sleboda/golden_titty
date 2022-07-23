@@ -4,15 +4,15 @@ class EricaDialogs {
 
     private val lines = arrayOf(
 
-        "Wandering merchant, you say? [She smiles in a flirty way]. I'm Erica - the manager of Golden Palace. I can rent you a bed at sunset and morning.",
-        "Did you sleep well?",
-        "Your robe... It's very unique... I even would say otherworldly [She gives you a flirty smile].",
-        "Sonny, can I give you and advice? Please, buy a new robe. This one is screaming: I'm from... [She stops herself] I'm from far away.",
-        "How is your life going? Did you make any friends?",
-        "Can I recommend you some good sightseeing places? Volcano Area is a very interesting place to to see [She winks]",
-        "Did you ever travel on Ship Orion through the lake at sunset? I did. There is so much to see... I promise [She winks]",
-        "Are you okay now? I heard you almost got killed. Can I see your wound? [She touches your back]. It's made by a sword, did you know that?",
-        "Me? Why do you suddenly want to know so much about me? I told you already [She winks]. I'm Erica - the manager of Golden Palace."
+        "Wandering merchant, you say? [She smiles in a flirty way]. ",
+        "I'm Erica - Let us say, I'm a wandering merchant as well [She winks]. ",
+        "What am I doing in the town of Goldlake? Exactly the same thing as you're doing [She winks].",
+        "Can I give you an advice? Get rid of that white robe you're used to wear. It's like a big sign: I'm a foreigner.",
+        "Which town am I'm from? [She laughs] That's funny... because I'm from the same town as yours [She winks].",
+        "You said you were from Seven Stars. I'm also from that town. What a coincidence isn't it?",
+        "Be careful. Goldlake is not as peaceful town as it seems to be.",
+        "Didn't you know? There already was a murder attempt in the town.",
+        "Don't be to sneaky when it comes to townspeople. Remember I warned you."
     )
 
     fun getLine(index: Int): String {

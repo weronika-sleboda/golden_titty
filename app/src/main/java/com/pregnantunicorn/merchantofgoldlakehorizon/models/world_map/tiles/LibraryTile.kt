@@ -7,9 +7,11 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.CurrentDayCycle
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.doors.CurrentDoor
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.doors.CurrentLockedDoor
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.DoorFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.LockedDoorFragment
 
 class LibraryTile(
 ) : Tile(true)
@@ -25,7 +27,15 @@ class LibraryTile(
 
         when(CurrentDayCycle.dayCycle()) {
 
-            DayCycle.NIGHT -> {}
+            DayCycle.NIGHT -> {
+
+                CurrentLockedDoor.changeLockedDoor(CurrentLockedDoor.LIBRARY_DOOR)
+
+                activity.supportFragmentManager.commit {
+
+                    replace<LockedDoorFragment>(R.id.world_container)
+                }
+            }
 
             else -> {
 

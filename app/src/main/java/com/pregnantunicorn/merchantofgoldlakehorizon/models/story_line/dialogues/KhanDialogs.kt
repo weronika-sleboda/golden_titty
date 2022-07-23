@@ -4,15 +4,15 @@ class KhanDialogs {
 
     private val lines = arrayOf(
 
-        "Who am I? And what da crap do ya care? That ain't yo' business, pal! And I don't give a crap about who ya is either.",
-        "What is it? Any problem, pal?",
-        "Yo' listen, I don't like people like ya - the cocky rich punks.",
-        "Ya think ya are betta than us, commoners? Oh, ya don't? Oh, please, spare me that fake humility.",
-        "Malik? He's a son of da cursed. [He spits on the ground]. Da son of Shadow Lord.",
-        "Ya don't know who da Shadow Lord is? What? Ain't ya one of them?",
-        "Yo' a liar! Ya one of those heretics. They always lie and they always hidin'",
-        "Ya wanna know what happened at da bar on Ship Orion? Ya wanna know how much I can tell people, don't ya?",
-        "Will ya try to kill me now, like you tried to kill Aaliyah? Now, that I know yo' bro is possessed?"
+        "Who am I? And what da crap do ya care?",
+        "Imma bandit. A man's got to do what he's got to do. ",
+        "I was born poor. I ain't had the same opportunities as those rich punks.",
+        "Da world is run by Shadow Lord. He makes people rich.",
+        "Malik? He's a son of da cursed one. [He spits on the ground]. Da son of Shadow Lord.",
+        "Ya don't know who da Shadow Lord is? What? Ain't ya one of them heretics?",
+        "Me? Imma believer in Creator. One day, he gon' save me from that hell on earth Imma livin' in.",
+        "You really ain't one of them heretics? I hope I can trust ya. Those punks always lie.",
+        "They are around us, pal. Da heretics. Only da recruiters live in da open, but da worst of them are hidin'."
     )
 
     fun getLine(index: Int): String {

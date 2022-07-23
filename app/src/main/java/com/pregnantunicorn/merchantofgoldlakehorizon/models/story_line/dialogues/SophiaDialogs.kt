@@ -7,12 +7,12 @@ class SophiaDialogs {
         "Let me tell you something. I don't care about you and your story or your business in this town.",
         "Stop bothering me.",
         "What is it? Are you stalking me or something?",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "You are one of those heretics aren't you? You're not? Thanks Creator. ",
+        "I have a dear friend who started to hang out with the heretics. He was such a sweet guy, but now...",
+        "Pasha became very violent, very... I don't know... He's just not himself anymore.",
+        "I love Pasha so much. I don't even know what he is doing in the Shadow Temple. He doesn't let me in.",
+        "I once saw heretics in the volcano area at some strange ceremony. There were at least four of them.",
+        "Who were on that heretic ceremony, you ask? I don't know. All of them were wearing hoods."
     )
 
     fun getLine(index: Int): String {

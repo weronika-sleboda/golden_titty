@@ -11,8 +11,9 @@ class LongEvent(
     private val sixthLine: Act,
     private val seventhLine: Act,
 
-): Event
+): Event()
 {
+
     private var counter = 1
 
     override fun proceed() {
@@ -22,6 +23,12 @@ class LongEvent(
 
     override fun eventLine(): Act {
 
+        if(counter == 8) {
+
+            completeEvent()
+            counter = 8
+        }
+
         return when(counter) {
 
             1 -> firstLine
@@ -30,12 +37,7 @@ class LongEvent(
             4 -> fourthLine
             5 -> fifthLine
             6 -> sixthLine
-
-            else ->  {
-
-                counter = 9
-                seventhLine
-            }
+            else -> { seventhLine }
         }
     }
 

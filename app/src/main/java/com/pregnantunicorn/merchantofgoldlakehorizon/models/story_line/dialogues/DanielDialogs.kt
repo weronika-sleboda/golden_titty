@@ -4,15 +4,15 @@ class DanielDialogs {
 
     private val lines = arrayOf(
 
-        "Let me introduce myself. My name is Daniel - the manager of the library. I'm happy that you chose to stay in our town.",
-        "I'm glad to see you again. Did you find any interesting book?",
-        "If you like reading books, I recommend to read those on adventuring. You will never get lost while gathering resources.",
-        "Lately, I read this great book called Goldlake Forest - Demystified. Now, I know Goldlake Forest like my own hand.",
-        "Why am I so interested in Goldlake forest, you ask? Well, it's a funny story. Maybe I tell you next time.",
-        "There is a certain flower in Goldlake Forest that I'm allergic to. I would love to visit the forest at least once, but I can't, because of that flower.",
-        "This flower I'm allergic to, is called Night Kiss, because it's especially active at night. If you're allergic, it will literally kiss you good night.",
-        "I love to read books. There are many that I already know by heart. Yes, Book Of Creation is one of them.",
-        "How come I know Book Of Creation by heart? [He thinks for a second] It's a long story... "
+        "I'm happy that you chose to stay in our town. I'm Daniel - the manager of the library. ",
+        "I love to read books. My favorite one is called \"Jamere\".",
+        "What's so special about the novel \"Jamere\"? I somehow identify with Jamere.",
+        "Jamere is a fictional character that turns into a stone after he kills his own best friend.",
+        "No, I didn't kill anyone... The novel \"Jamere\" is just a metaphor to me.",
+        "Sometimes when you do something wrong, the feeling of remorse can make you dead inside... It turns you into a stone.",
+        "Do you think Creator can forgive any sin?",
+        "Book Of Creation mentions that particular divine messenger... His name is Meteor. He frightens me.",
+        "Meteor is the destroyer. Sometimes I'm afraid he will find me and destroy me just like the old town of Goldlake."
     )
 
     fun getLine(index: Int): String {

@@ -10,6 +10,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.WorldActivityBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.skill_upgrade.SkillManager
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world.CurrentMap
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
 
@@ -29,7 +30,7 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         updateCharisma()
         updateIntelligence()
         updateGoldenCoins()
-        updateHourglass()
+        updateFriendCounter()
 
         updateEmerald()
         updateSapphire()
@@ -166,9 +167,9 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         binding.resources.ruby.text = Merchant.ruby().amountToString()
     }
 
-    override fun updateHourglass() {
+    override fun updateFriendCounter() {
 
-        binding.merchant.hourglass.text = Merchant.hourglass().dayCycleNumberToString()
+        binding.merchant.friendCounter.text = Merchant.friendCounter().friendsToString()
     }
 
     override fun updateGoldenCoins() {

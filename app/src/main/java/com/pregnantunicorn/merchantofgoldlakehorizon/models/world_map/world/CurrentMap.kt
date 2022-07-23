@@ -1,5 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world
 
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.tiles.*
 
 object CurrentMap {
@@ -12,6 +13,7 @@ object CurrentMap {
             it[1] = LibraryTile()
             it[2] = UniversityTile()
             it[3] = ClothingShop1Tile()
+            it[4] = QuestionMarkTile()
             it[8] = ClothingShop2Tile()
             it[9] = ColumnTile()
             it[10] = TheatreTile()
@@ -20,21 +22,29 @@ object CurrentMap {
             it[13] = EmptyWaterTile()
             it[14] = BoatTile()
             it[15] = EmptyBeachTile()
-            it[16] = EmptyBeachTile()
+            it[16] = FootprintsTile()
             it[17] = CampFireTile()
             it[18] = TentTile()
             it[19] = EmptyBeachTile()
+            it[22] = BushTile()
             it[24] = SonnyHouseTile()
             it[25] = DivineTempleTile()
             it[26] = CaveTile()
+            it[27] = CherryTreeTile()
+            it[29] = FountainTile()
             it[31] = EmptyVolcanoTile()
-            it[32] = EmptyVolcanoTile()
-            it[33] = EmptyVolcanoTile()
+            it[32] = SoilTile()
+            it[33] = MysteriousDrawingTile()
             it[34] = VolcanoTile()
             it[35] = HereticTempleTile()
 
         }
     )
+
+    fun revealDivineGate() {
+
+        city.map[21] = DivineGateTile()
+    }
 
     private var worldMap = city
 

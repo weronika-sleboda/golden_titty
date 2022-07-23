@@ -4,15 +4,15 @@ class AaliyahDialogs {
 
     private val lines = arrayOf(
 
-        "Hello, there! Are you new in town? That's so cool. I'm Aaliyah - the owner of the clothing shop Green House.",
-        "Hello, Sonny! Check out my new robes if you have some spare time. I have very good prices.",
-        "That white robe that you're wearing, is it the only one you own? I found a similar one in the forest.",
-        "I never sell things I find in the forest. It's a fake rumor. I only did it once, because Maxim begged me.",
-        "When Maxim saw that white robe in my hand he said: \"Where did you get it from?\" and offered me 5000 golden coins for it.",
-        "I sold that white robe to Maxim, because I really needed that money. I need money for my next travel.",
-        "Oh, didn't you know? I'm moving out from Goldlake. I will stay here for 2 months and then continue to travel around the world.",
-        "Why does everyone asking me about my home country? What does it matter?",
-        "My home country? Why do you keep asking? I'm tired of those questions [She seems very angry]. It's none of anyone's concern!",
+        "Hello, there! Are you new in town? I'm Aaliyah - the owner of the clothing shop Green House.",
+        "Your white robe is so beautiful. It looks almost otherworldly. I found a similar one in the bushes.",
+        "You want to see that robe I found? I'm sorry but I already sold it.",
+        "You wonder who bought that robe that I found in the bushes? It was Maxim.",
+        "Maxim offered me 1000 golden coins for that otherworldly robe I found. I wonder why, if he never wears it.",
+        "Which town are you from? Maybe I'll visit it. I'm moving out from Goldlake next month.",
+        "Why am I moving out from Goldlake? Well, It's complicated.",
+        "Would you judge me if I told you I was a foreigner as well?",
+        "I'm from... Let us say... I'm not from here. Please, don't ask me questions about my home town.",
     )
 
     fun getLine(index: Int): String {

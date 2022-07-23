@@ -24,27 +24,11 @@ class TentTile(
 
     override fun onClick(activity: FragmentActivity) {
 
-        when(CurrentDayCycle.dayCycle()) {
+        CurrentLockedDoor.changeLockedDoor(CurrentLockedDoor.CAMP_DOOR)
 
-            DayCycle.NIGHT -> {
+        activity.supportFragmentManager.commit {
 
-                CurrentDoor.changeDoor(CurrentDoor.CAMP)
-
-                activity.supportFragmentManager.commit {
-
-                    replace<DoorFragment>(R.id.world_container)
-                }
-            }
-
-            else -> {
-
-                CurrentLockedDoor.changeLockedDoor(CurrentLockedDoor.CAMP_DOOR)
-
-                activity.supportFragmentManager.commit {
-
-                    replace<LockedDoorFragment>(R.id.world_container)
-                }
-            }
+            replace<LockedDoorFragment>(R.id.world_container)
         }
     }
 }

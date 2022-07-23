@@ -2,8 +2,16 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.events
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.Act
 
-interface Event {
+abstract class Event {
 
-    fun proceed()
-    fun eventLine(): Act
+    private var hasAlreadyHappened = false
+    fun hasAlreadyHappened() = hasAlreadyHappened
+
+    protected fun completeEvent() {
+
+        hasAlreadyHappened = true
+    }
+
+    abstract fun proceed()
+    abstract fun eventLine(): Act
 }

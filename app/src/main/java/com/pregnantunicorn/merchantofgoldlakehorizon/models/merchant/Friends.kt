@@ -6,18 +6,18 @@ class Friends {
 
         const val JIN = 0
         const val KHAN = 1
-        const val SOPHIA = 3
-        const val MALIK = 4
-        const val NIKITA = 5
-        const val BRIANNA = 6
-        const val LEE = 7
-        const val SERENITY = 8
-        const val MAXIM = 9
-        const val DANIEL = 10
-        const val AALIYAH = 11
-        const val MEI = 12
-        const val ERICA = 13
-        const val PASHA = 14
+        const val SOPHIA = 2
+        const val MALIK = 3
+        const val NIKITA = 4
+        const val BRIANNA = 5
+        const val LEE = 6
+        const val SERENITY = 7
+        const val MAXIM = 8
+        const val DANIEL = 9
+        const val AALIYAH = 10
+        const val MEI = 11
+        const val ERICA = 12
+        const val PASHA = 13
     }
 
     val friends = arrayOf(

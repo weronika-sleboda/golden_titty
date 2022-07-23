@@ -8,7 +8,7 @@ class Status {
         private const val MIN_VALUE = 0
     }
 
-    private var maxAmount = 10
+    private var maxAmount = 99
     private var amount = maxAmount
 
     fun amountToString() = "$amount/$maxAmount"

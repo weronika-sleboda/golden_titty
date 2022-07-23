@@ -12,7 +12,7 @@ class SerenityDialogs {
         "I.. Sorry... Please, stop visiting me. You know what I mean... Why me? Why are you here?",
         "Don't tell me, you don't know what I mean. I know who you are. I can see that.",
         "What don't you understand? Let me repeat. I can see you. I see your true nature.",
-        "I was born that way. I'm a a psychic. I can see divine beings. Please, leave me alone. I don't want to get involved."
+        "I was born this way. I'm a a psychic. I can see divine beings. Please, leave me alone. I don't want to get involved."
     )
 
     fun getLine(index: Int): String {

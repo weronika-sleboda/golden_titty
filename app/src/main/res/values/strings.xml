@@ -76,4 +76,7 @@
     <string name="speaker_cd_icon">speaker_cd_icon</string>
     <string name="settings">Settings</string>
     <string name="befriend">Befriend</string>
+    <string name="investigate">Investigate</string>
+    <string name="investigation_icon_cd">investigation_icon_cd</string>
+    <string name="friends_icon_cd">friends_icon_cd</string>
 </resources>

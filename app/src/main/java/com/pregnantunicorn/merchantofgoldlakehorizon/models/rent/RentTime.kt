@@ -9,6 +9,11 @@ object RentTime {
 
     fun raiseCounter() {
 
+        if(counter == 1) {
+
+            timeToPay = false
+        }
+
         counter++
 
         if(counter == 7) {

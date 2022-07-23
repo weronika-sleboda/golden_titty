@@ -31,6 +31,7 @@ class LibraryFragment : Fragment(), BookAdapter.BookListener {
         binding = LibraryFragmentBinding.inflate(inflater, container, false)
 
         updateBooks()
+        setupLeaveButton()
 
         return binding.root
     }

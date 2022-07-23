@@ -8,7 +8,7 @@ class ShortEvent(
     private val thirdLine: Act,
     private val fourthLine: Act
 
-): Event
+): Event()
 {
     private var counter = 1
 
@@ -19,17 +19,18 @@ class ShortEvent(
 
     override fun eventLine(): Act {
 
+        if(counter == 5) {
+
+            completeEvent()
+            counter = 5
+        }
+
         return when(counter) {
 
             1 -> firstLine
             2 -> secondLine
             3 -> thirdLine
-
-            else ->  {
-
-                counter = 5
-                fourthLine
-            }
+            else ->  { fourthLine }
         }
     }
 

@@ -50,7 +50,7 @@ class BedFragment : Fragment() {
         statusUpdate.updateCharisma()
         statusUpdate.updatePersuasion()
         statusUpdate.updateIntelligence()
-        statusUpdate.updateHourglass()
+        statusUpdate.updateFriendCounter()
     }
 
     private fun setupSleepButton() {

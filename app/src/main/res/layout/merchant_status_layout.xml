@@ -101,7 +101,7 @@
         android:textColor="@color/super_light_mystery"/>
 
     <ImageView
-        android:contentDescription="hourglass_coin_icon_cd"
+        android:contentDescription="@string/friends_icon_cd"
         android:layout_width="30dp"
         android:layout_height="32dp"
         android:layout_row="1"
@@ -111,10 +111,10 @@
         android:background="@color/extreme_dark_mystery"
         android:paddingTop="5dp"
         android:paddingBottom="2dp"
-        android:src="@drawable/hourglass32" />
+        android:src="@drawable/people32" />
 
     <TextView
-        android:id="@+id/hourglass"
+        android:id="@+id/friendCounter"
         android:layout_column="6"
         android:layout_row="1"
         android:layout_width="60dp"

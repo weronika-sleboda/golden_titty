@@ -4,15 +4,15 @@ class JinDialogs {
 
     private val lines = arrayOf(
 
-        "Welcome! I'm Jin - The Great Ruler of Goldlake. I run and guard the city. You can always find me at Arena at night.",
-        "Did you already try out the arena? We have nice and affordable trainings that can boost your max energy.",
-        "[He has an absent look on his face] I'm sorry, I didn't notice you coming. How is it going?",
-        "[He is busy with his sword training and seems like he's thinking very intensively] Me? Worried? Not at all, I'm just overworked. That's all.",
-        "Investigation of the attempted murder, you wonder? Unfortunately, I don't have any leads yet.",
-        "[He seems worried and tired like he didn't sleep last night. He didn't even notice you entered the building]",
-        "My sword? Why do you want to see it? Wait... Are you assuming I tried to kill you? Why would I want to do it?",
-        "I'm not the only one in Goldlake owning a sword. Your accusations make me very sad. I'm the protector of townspeople, not a killer of them.",
-        "Do you want to see the evidence that I gathered in the case of your attempted murder? Sorry, but I can't do that. It's confidential."
+        "Welcome! I'm Jin - the great ruler of Goldlake. I run and guard this town.",
+        "I was born in Goldlake, after the destruction of the old town.",
+        "I was growing up watching my father rebuilding the town, he was a great ruler as well.",
+        "This town is my whole life. I have the duty to protect its inhabitants.",
+        "If someone ever tries to hurt the townspeople, I will wage war against him, even if he's Creator himself.",
+        "According to Book Of Creation, Creator ordered to destroy Goldlake. Isn't that cruel?",
+        "Brianna is a beautiful woman, don't you think?",
+        "Me and Brianna? I didn't make any vows to Creator. She did. If Creator is against our love. I'm against him.",
+        "I will rather be cursed or destroyed for eternity than live without Brianna."
     )
 
     fun getLine(index: Int): String {
