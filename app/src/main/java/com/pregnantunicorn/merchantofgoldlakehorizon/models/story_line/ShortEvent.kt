@@ -1,7 +1,5 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.events.Event
-
 class ShortEvent(
     private val firstLine: Act,
     private val secondLine: Act,

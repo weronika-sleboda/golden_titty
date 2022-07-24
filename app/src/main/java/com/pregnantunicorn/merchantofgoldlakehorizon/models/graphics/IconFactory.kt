@@ -6,6 +6,97 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 
 class IconFactory {
 
+    fun beach256(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.beach256_morning}
+            DayCycle.SUNSET -> { R.drawable.beach256_sunset}
+            DayCycle.NIGHT -> { R.drawable.beach256_night}
+        }
+    }
+
+    fun volcano256(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.volcano256_morning}
+            DayCycle.SUNSET -> { R.drawable.volcano256_sunset}
+            DayCycle.NIGHT -> { R.drawable.volcano256_night}
+        }
+    }
+
+    fun column256(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.column256_morning}
+            DayCycle.SUNSET -> { R.drawable.column256_sunset}
+            DayCycle.NIGHT -> { R.drawable.column256_night}
+        }
+    }
+
+    fun volcanoArea256(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.volcano_area256_morning}
+            DayCycle.SUNSET -> { R.drawable.volcano_area256_sunset}
+            DayCycle.NIGHT -> { R.drawable.volcano_area256_night}
+        }
+    }
+
+    fun fountain256(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.fountain256_morning}
+            DayCycle.SUNSET -> { R.drawable.fountain256_sunset}
+            DayCycle.NIGHT -> { R.drawable.fountain256_night}
+        }
+    }
+
+    fun campFire256(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.camp_fire256_morning}
+            DayCycle.SUNSET -> { R.drawable.camp_fire256_sunset}
+            DayCycle.NIGHT -> { R.drawable.camp_fire256_night}
+        }
+    }
+
+    fun carriage64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.carriage64_morning}
+            DayCycle.SUNSET -> { R.drawable.carriage64_sunset}
+            DayCycle.NIGHT -> { R.drawable.carriage64_night}
+        }
+    }
+
+    fun carriage128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.carriage128_morning}
+            DayCycle.SUNSET -> { R.drawable.carriage128_sunset}
+            DayCycle.NIGHT -> { R.drawable.carriage128_night}
+        }
+    }
+
+
+    fun carriage256(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.carriage256_morning}
+            DayCycle.SUNSET -> { R.drawable.carriage256_sunset}
+            DayCycle.NIGHT -> { R.drawable.carriage256_night}
+        }
+    }
+
     fun divineGate64(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
@@ -487,11 +578,6 @@ class IconFactory {
         }
     }
 
-    fun column256(): Int  {
-
-        return R.drawable.column256
-    }
-
     fun boat64(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
@@ -569,10 +655,8 @@ class IconFactory {
 
     fun shadowAltar256(): Int = R.drawable.shadow_altar256
     fun boatBar256(): Int = R.drawable.boat_bar256
-    fun beach256(): Int = R.drawable.beach256
     fun goldenRobe256(): Int = R.drawable.golden_robe256
     fun desk256(): Int = R.drawable.desk256
-    fun book256(): Int = R.drawable.book256
     fun theatreScene256(): Int = R.drawable.theatre256
     fun greenHouse256(): Int = R.drawable.green_house256
     fun forestAtNight256(): Int = R.drawable.forest256_night

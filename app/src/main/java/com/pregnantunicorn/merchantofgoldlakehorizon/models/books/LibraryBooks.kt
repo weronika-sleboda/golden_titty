@@ -5,13 +5,13 @@ object LibraryBooks {
     val books = arrayOf(
 
         Book(
-            "Goldlake Forest - Demystified",
-            "Night Kiss - Extremely allergenic flower found in Goldlake Forest. It is especially active at night and can cause death."
+            "The Strange Customs of Pearl Coast",
+            "Lying to the outsiders is a common practice among the townspeople of Pearl Coast. They are murderers, deceivers, and betrayers."
         ),
 
         Book(
-            "Blood Diary - Chapter 1",
-            "Error arose above Creator. He was born by himself and was traveling through the universe like a shadow, unseen but present."
-        )
+            "Goldlake After The Great Fall",
+            "After the meteor hit Goldlake, the treacherous people of Pearl Coast was plundering what was left of it in rejoice."
+        ),
     )
 }

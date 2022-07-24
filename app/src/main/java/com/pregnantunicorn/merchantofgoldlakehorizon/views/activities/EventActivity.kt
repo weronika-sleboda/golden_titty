@@ -5,9 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.EventActivityBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.EventFactory
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 
 class EventActivity : AppCompatActivity() {
 

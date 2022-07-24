@@ -1,6 +1,5 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.tiles.*
 
 object CurrentMap {
@@ -13,7 +12,7 @@ object CurrentMap {
             it[1] = LibraryTile()
             it[2] = UniversityTile()
             it[3] = ClothingShop1Tile()
-            it[4] = QuestionMarkTile()
+            it[4] = CarriageTile()
             it[8] = ClothingShop2Tile()
             it[9] = ColumnTile()
             it[10] = TheatreTile()
@@ -22,7 +21,7 @@ object CurrentMap {
             it[13] = EmptyWaterTile()
             it[14] = BoatTile()
             it[15] = EmptyBeachTile()
-            it[16] = FootprintsTile()
+            it[16] = EmptyBeachTile()
             it[17] = CampFireTile()
             it[18] = TentTile()
             it[19] = EmptyBeachTile()

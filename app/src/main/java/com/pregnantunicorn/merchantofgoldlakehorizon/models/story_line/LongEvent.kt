@@ -1,7 +1,5 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.events.Event
-
 class LongEvent(
     private val firstLine: Act,
     private val secondLine: Act,
@@ -11,7 +9,7 @@ class LongEvent(
     private val sixthLine: Act,
     private val seventhLine: Act,
 
-): Event()
+    ): Event()
 {
 
     private var counter = 1
@@ -40,5 +38,4 @@ class LongEvent(
             else -> { seventhLine }
         }
     }
-
 }

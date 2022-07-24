@@ -1,13 +1,11 @@
-package com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.events
-
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.Act
+package com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line
 
 abstract class Event {
 
     private var hasAlreadyHappened = false
     fun hasAlreadyHappened() = hasAlreadyHappened
 
-    protected fun completeEvent() {
+    fun completeEvent() {
 
         hasAlreadyHappened = true
     }

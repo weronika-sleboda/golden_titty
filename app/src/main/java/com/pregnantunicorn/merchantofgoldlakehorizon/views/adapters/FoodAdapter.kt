@@ -2,6 +2,7 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.FoodLayoutBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Food
@@ -21,6 +22,7 @@ class FoodAdapter(
 
     class ViewHolder(binding: FoodLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        val foodLayout = binding.foodLayout
         val icon = binding.icon
         val name = binding.name
         val info = binding.info
@@ -48,6 +50,7 @@ class FoodAdapter(
 
             foodListener.onClickFood(position)
         }
+
     }
 
     override fun getItemCount() = foodManagers.size

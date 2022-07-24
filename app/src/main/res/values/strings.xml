@@ -50,7 +50,7 @@
     <string name="seal_wax_icon_cd">seal_wax_icon_cd</string>
     <string name="library">Library</string>
     <string name="wax_seal_icon_cd">wax_seal_icon_cd</string>
-    <string name="book_instruction">In order to read a book, click on its wax seal-icon.</string>
+    <string name="book_instruction">In order to read a book, click on its wax seal-icon. Scroll down to see more books.</string>
     <string name="five">5</string>
     <string name="ruby_icon_cd">ruby_icon_cd</string>
     <string name="sapphire_icon_cd">sapphire_icon_cd</string>
@@ -64,7 +64,7 @@
     <string name="exit">Exit ot main menu</string>
     <string name="dialogue_icon_cd">dialogue_icon_cd</string>
     <string name="game_over">Game Over</string>
-    <string name="game_over_info">I see... You didn\'t pay the rent for your house. Don\'t be hard on yourself. I\'m still proud of you, even if you didn\'t complete the mission.</string>
+    <string name="game_over_info">I see… You didn\'t pay the rent for your house. Don\'t be hard on yourself. I\'m still proud of you, even if you didn\'t complete the mission.</string>
     <string name="credits">Credits</string>
     <string name="continue_game">Continue</string>
     <string name="play">Play</string>

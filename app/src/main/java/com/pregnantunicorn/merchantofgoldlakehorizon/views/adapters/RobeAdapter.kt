@@ -24,6 +24,7 @@ class RobeAdapter(
 
     class ViewHolder(binding:RobeLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        val robeLayout = binding.robeLayout
         val icon = binding.icon
         val name = binding.name
         val doorInfo = binding.doorInfo
@@ -56,8 +57,8 @@ class RobeAdapter(
 
         else {
 
-            holder.icon.isVisible = false
-            holder.buttonIcon.isVisible = false
+            holder.robeLayout.isVisible = false
+            holder.robeLayout.removeAllViews()
         }
     }
 

@@ -21,11 +21,6 @@ class CampFireTile(
 
     override fun onClick(activity: FragmentActivity) {
 
-        CurrentInvestigation.changeInvestigation(CurrentInvestigation.CAMP_FIRE)
 
-        activity.supportFragmentManager.commit {
-
-            replace<InvestigationFragment>(R.id.world_container)
-        }
     }
 }

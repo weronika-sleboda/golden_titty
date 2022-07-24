@@ -5,6 +5,7 @@
     android:padding="5dp"
     android:orientation="vertical"
     android:layout_column="3"
+    android:id="@+id/food_layout"
     android:background="@drawable/extreme_dark_rectangle_background">
 
     <ImageView
