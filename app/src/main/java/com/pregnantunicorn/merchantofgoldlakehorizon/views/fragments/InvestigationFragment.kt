@@ -13,6 +13,10 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.InvestigationFr
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.investigation.CurrentInvestigation
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class InvestigationFragment : Fragment() {
 
@@ -27,10 +31,12 @@ class InvestigationFragment : Fragment() {
 
         binding = InvestigationFragmentBinding.inflate(inflater, container, false)
 
+        hideRequirement()
         hideInvestigateButton()
-        setupIcon()
-        setupInfo()
-        setupName()
+        updateIcon()
+        updateInfo()
+        updateButtonText()
+        updateName()
         setupInvestigateButton()
         setupLeaveButton()
         setupRequirementInfo()
@@ -40,48 +46,81 @@ class InvestigationFragment : Fragment() {
 
     private fun hideInvestigateButton() {
         
-        if(investigation.isInvestigated()) {
+        if(investigation.isEmpty()) {
 
             binding.investigateButton.isVisible = false
         }
     }
-    private fun setupName() {
+    private fun updateName() {
 
-        binding.name.text = investigation.name
+        binding.name.text = investigation.name()
     }
 
-    private fun setupIcon() {
+    private fun updateIcon() {
 
-        binding.icon.setImageResource(investigation.icon.invoke())
+        binding.icon.setImageResource(investigation.icon())
     }
 
-    private fun setupInfo() {
+    private fun updateInfo() {
 
         binding.info.text = investigation.info()
     }
 
+    private fun updateButtonText() {
+
+        binding.investigateButton.text = investigation.buttonText()
+    }
     private fun setupRequirementInfo() {
 
         binding.requirement.requiredIntelligence.text = investigation.requiredIntelligenceToString()
     }
 
-    private fun updateMerchantIntelligence() {
+    private fun hideRequirement() {
+
+        if(investigation.isInvestigated()) {
+
+            binding.requirement.root.isVisible = false
+        }
+    }
+
+    private fun updateMerchantStatus() {
 
         val statusUpdate = requireActivity() as MerchantStatusUpdate
         statusUpdate.updateIntelligence()
+        statusUpdate.updateGoldenCoins()
     }
 
     private fun setupInvestigateButton() {
 
         binding.investigateButton.setOnClickListener {
 
-            if(!investigation.investigate(requireContext(), requireActivity())) {
+            CoroutineScope(Dispatchers.IO).launch {
 
-                showInfoDialogFragment(
-                    investigation.dialogMessage().title,
-                    investigation.dialogMessage().icon,
-                    investigation.dialogMessage().message
-                )
+                if(investigation.investigate()) {
+
+                    withContext(Dispatchers.Main) {
+
+                        updateMerchantStatus()
+                        updateInfo()
+                        updateName()
+                        updateIcon()
+                        updateButtonText()
+                        hideInvestigateButton()
+                        hideRequirement()
+                    }
+                }
+
+                else {
+
+                    withContext(Dispatchers.Main) {
+
+                        showInfoDialogFragment(
+                            investigation.dialogMessage().title,
+                            investigation.dialogMessage().icon,
+                            investigation.dialogMessage().message
+                        )
+                    }
+                }
             }
         }
     }

@@ -11,46 +11,46 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class InvestigationObject(
-    val name: String,
-    val icon: () -> Int,
-    private val whatHappenedInfo: String,
-    private val investigation: Investigation,
     private val requiredIntelligence: Int,
-
+    private val objectDescription: ObjectDescription,
+    private val algorithm: () -> Unit,
 )
 {
     private var isInvestigated = false
     fun isInvestigated() = isInvestigated
-    private var info = "???"
 
-    fun info() = info
+    private var isEmpty = false
+    fun isEmpty() = isEmpty
+
+    fun name() = objectDescription.name()
+    fun icon() = objectDescription.icon().invoke()
+    fun info() = objectDescription.info()
+    fun buttonText() = objectDescription.buttonText()
 
     fun requiredIntelligenceToString() = "$requiredIntelligence"
 
-    fun investigate(context: Context, activity: FragmentActivity): Boolean {
+    private var counter = 0
 
-        if(Merchant.intelligence().hasAmount(requiredIntelligence)) {
+    fun investigate(): Boolean {
 
-            CoroutineScope(Dispatchers.IO).launch {
+        if(counter == 1) {
 
-                Merchant.intelligence().loseAmount(requiredIntelligence)
-                info = whatHappenedInfo
-                isInvestigated = true
-
-                withContext(Dispatchers.Main) {
-
-                    investigation.execute(context, activity)
-                    return@withContext
-                }
-            }
-
+            objectDescription.changeInfo()
+            algorithm.invoke()
+            isEmpty = true
             return true
         }
 
-        else {
+        if(Merchant.intelligence().hasAmount(requiredIntelligence) && counter == 0) {
 
-            return false
+            Merchant.intelligence().loseAmount(requiredIntelligence)
+            objectDescription.changeDescription()
+            isInvestigated = true
+            counter++
+            return true
         }
+
+        return false
     }
 
     fun dialogMessage(): DialogMessage {

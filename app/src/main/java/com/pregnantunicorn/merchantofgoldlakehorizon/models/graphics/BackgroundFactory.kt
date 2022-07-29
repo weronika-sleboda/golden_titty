@@ -6,6 +6,56 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 
 class BackgroundFactory {
 
+    fun blueCarpet(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.blue_carpet_morning }
+            DayCycle.SUNSET -> { R.drawable.blue_carpet_sunset}
+            DayCycle.NIGHT -> { R.drawable.blue_carpet_night}
+        }
+    }
+
+    fun whiteFloor(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.white_floor_morning }
+            DayCycle.SUNSET -> { R.drawable.white_floor_sunset}
+            DayCycle.NIGHT -> { R.drawable.white_floor_night }
+        }
+    }
+
+    fun divineFloor(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.divine_temple_morning}
+            DayCycle.SUNSET -> { R.drawable.divine_temple_sunset}
+            DayCycle.NIGHT -> { R.drawable.divine_temple_night }
+        }
+    }
+
+    fun hereticFloor(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.heretic_temple_morning }
+            DayCycle.SUNSET -> { R.drawable.heretic_temple_sunset}
+            DayCycle.NIGHT -> { R.drawable.heretic_temple_night }
+        }
+    }
+
+    fun redCarpet(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.red_carpet_morning_background }
+            DayCycle.SUNSET -> { R.drawable.red_carpet_sunset_background}
+            DayCycle.NIGHT -> { R.drawable.red_carpet_night_background }
+        }
+    }
+
     fun woodenFloor(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {

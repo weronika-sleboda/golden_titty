@@ -7,6 +7,7 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.WorldActivityBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.CurrentItem
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
@@ -39,6 +40,7 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         setupWorldButton()
         setupBackpackButton()
         setupPrayerButton()
+        setupFabButton()
     }
 
     private fun setupOpeningFragment() {
@@ -52,6 +54,15 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
     override fun updateFab() {
 
         binding.itemHolder.setImageResource(CurrentItem.fabIcon())
+    }
+
+    private fun setupFabButton() {
+
+        binding.itemHolder.setOnClickListener {
+
+            CurrentItem.changeItem(ItemType.NONE)
+            updateFab()
+        }
     }
 
     private fun goToWorldMap() {
@@ -89,11 +100,6 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         binding.prayerButton.setOnClickListener {
 
             selectPrayerButton()
-
-            supportFragmentManager.commit {
-
-                replace<PrayerFragment>(R.id.world_container)
-            }
         }
     }
 

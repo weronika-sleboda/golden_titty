@@ -60,8 +60,7 @@ class DoorFragment : Fragment() {
 
             CoroutineScope(Dispatchers.IO).launch {
 
-                door.open()
-                goToWorldMap()
+                door.open(requireActivity())
             }
         }
     }

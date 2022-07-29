@@ -8,6 +8,7 @@ data class Door(
     val buildingInfo: String,
     val closingInfo: String,
     val icon: () -> Int,
-    val open: () -> Unit
+    val open: (FragmentActivity) -> Unit,
+    val buttonText: String = "Enter"
 )
 

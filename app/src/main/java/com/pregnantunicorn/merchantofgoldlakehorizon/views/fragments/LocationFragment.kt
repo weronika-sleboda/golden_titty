@@ -46,7 +46,7 @@ class LocationFragment: Fragment(), TileAdapter.TileListener {
     override fun onClickTile(position: Int) {
 
         location.map[position].onClick(requireActivity())
-        //location = CurrentLocation.location()
+        location = CurrentLocation.location()
         updateName()
         updateLocation()
     }
