@@ -28,6 +28,12 @@
     <color name="morning_snow">#d8dbeb</color>
     <color name="sunset_snow">#979dc2</color>
     <color name="night_snow">#4e4e82</color>
+    <color name="wooden_floor_morning">#9e6846</color>
+    <color name="wooden_floor_sunset">#733d1c</color>
+    <color name="wooden_floor_night">#3e434f</color>
+    <color name="pink_carpet_morning">#db6b9e</color>
+    <color name="pink_carpet_sunset">#8c4365</color>
+    <color name="pink_carpet_night">#49325c</color>
 
     <!--Progressbar -->
     <color name="light_green">#50d964</color>

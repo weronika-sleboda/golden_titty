@@ -10,7 +10,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ClothingShopFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.clothing.CurrentRobeManager
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.robes.CurrentRobe
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -21,7 +21,7 @@ import kotlinx.coroutines.withContext
 class ClothingShopFragment : Fragment() {
 
     private lateinit var binding: ClothingShopFragmentBinding
-    private val robeManager = CurrentRobeManager.robeManager()
+    private val robeManager = CurrentRobe.robe()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,28 +36,25 @@ class ClothingShopFragment : Fragment() {
         setupIcon()
         setupInfo()
         setupBuyButton()
-        setupLeaveButton()
         hideBuyButton()
+        setupLeaveButton()
 
         return binding.root
     }
 
     private fun hideBuyButton() {
 
-        if(robeManager.alreadyBought()) {
 
-            binding.buyButton.isVisible = false
-        }
     }
 
     private fun setupPriceInfo() {
 
-        binding.requirement.requiredGold.text = robeManager.priceToString()
+
     }
 
     private fun setupIcon() {
 
-        binding.icon.setImageResource(robeManager.icon)
+
     }
 
     private fun setupName() {
@@ -67,7 +64,7 @@ class ClothingShopFragment : Fragment() {
 
     private fun setupInfo() {
 
-        binding.info.text = robeManager.info
+
     }
 
     private fun updateMerchantGold() {
@@ -82,30 +79,6 @@ class ClothingShopFragment : Fragment() {
 
             CoroutineScope(Dispatchers.IO).launch {
 
-                if(robeManager.buy()) {
-
-                    withContext(Dispatchers.Main) {
-
-                        showInfoDialogFragment(
-                            robeManager.dialogMessage().title,
-                            robeManager.dialogMessage().icon,
-                            robeManager.dialogMessage().message
-                        )
-
-                        updateMerchantGold()
-                        hideBuyButton()
-                    }
-                }
-
-                else {
-
-                    showInfoDialogFragment(
-                        "Too expensive",
-                        R.drawable.golden_coin_64,
-                        "You don't have enough golden coins to buy this robe."
-                    )
-                }
-
             }
         }
     }
@@ -116,7 +89,7 @@ class ClothingShopFragment : Fragment() {
 
             activity?.supportFragmentManager?.commit {
 
-                replace<WorldMapFragment>(R.id.world_container)
+                replace<LocationFragment>(R.id.world_container)
             }
         }
     }

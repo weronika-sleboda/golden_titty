@@ -9,7 +9,6 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.DoorFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.LockedDoorFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.doors.CurrentDoor
 import kotlinx.coroutines.*
 
@@ -61,8 +60,17 @@ class DoorFragment : Fragment() {
 
             CoroutineScope(Dispatchers.IO).launch {
 
-                door.open(requireActivity())
+                door.open()
+                goToWorldMap()
             }
+        }
+    }
+
+    private fun goToWorldMap() {
+
+        activity?.supportFragmentManager?.commit {
+
+            replace<LocationFragment>(R.id.world_container)
         }
     }
 
@@ -70,10 +78,7 @@ class DoorFragment : Fragment() {
 
         binding.leaveButton.setOnClickListener {
 
-            activity?.supportFragmentManager?.commit {
-
-                replace<WorldMapFragment>(R.id.world_container)
-            }
+            goToWorldMap()
         }
     }
 }

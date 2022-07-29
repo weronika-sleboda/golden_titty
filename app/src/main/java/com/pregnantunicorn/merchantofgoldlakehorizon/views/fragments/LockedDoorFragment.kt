@@ -17,7 +17,7 @@ import kotlinx.coroutines.*
 class LockedDoorFragment : Fragment() {
 
     private lateinit var binding: LockedDoorFragmentBinding
-    private val lockedDoor = CurrentLockedDoor.lockedDoor()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,22 +38,22 @@ class LockedDoorFragment : Fragment() {
 
     private fun setupBuildingName() {
 
-        binding.buildingName.text = lockedDoor.buildingName
+        binding.buildingName.text =""
     }
 
     private fun setupBuildingIcon() {
 
-        binding.buildingIcon.setImageResource(lockedDoor.doorIcon.invoke())
+
     }
 
     private fun setupRequiredCharisma() {
 
-        binding.requirement.requiredCharisma.text = lockedDoor.charismaToString()
+        binding.requirement.requiredCharisma.text = ""
     }
 
     private fun setupInfo() {
 
-        binding.buildingInfo.text = lockedDoor.buildingInfo
+        binding.buildingInfo.text = ""
     }
 
     private fun updateMerchantCharisma() {
@@ -68,29 +68,7 @@ class LockedDoorFragment : Fragment() {
 
             CoroutineScope(Dispatchers.IO).launch {
 
-                lockedDoor.open()
 
-                withContext(Dispatchers.Main) {
-
-                    if(lockedDoor.allowedToEnter()) {
-
-                        updateMerchantCharisma()
-
-                        activity?.supportFragmentManager?.commit {
-
-                            replace<NpcFragment>(R.id.world_container)
-                        }
-                    }
-
-                    else {
-
-                        showInfoDialogFragment(
-                            "No Charisma",
-                            R.drawable.charisma64,
-                            "You don't have enough charisma to get invited to the building."
-                        )
-                    }
-                }
             }
         }
     }
@@ -111,7 +89,7 @@ class LockedDoorFragment : Fragment() {
 
             activity?.supportFragmentManager?.commit {
 
-                replace<WorldMapFragment>(R.id.world_container)
+                replace<LocationFragment>(R.id.world_container)
             }
         }
     }

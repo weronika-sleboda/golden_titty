@@ -1,5 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.doors
 
+import androidx.fragment.app.FragmentActivity
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.DialogMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant

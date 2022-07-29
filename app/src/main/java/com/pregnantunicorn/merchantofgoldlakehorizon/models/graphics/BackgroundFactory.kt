@@ -6,6 +6,28 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 
 class BackgroundFactory {
 
+    fun woodenFloor(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.wooden_floor_morning }
+            DayCycle.SUNSET -> { R.drawable.wooden_floor_sunset}
+            DayCycle.NIGHT -> { R.drawable.wooden_floor_night }
+        }
+    }
+
+    fun pinkCarpet(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.pink_carpet_morning }
+            DayCycle.SUNSET -> { R.drawable.pink_carpet_sunset }
+            DayCycle.NIGHT -> { R.drawable.pink_carpet_night }
+        }
+    }
+
+
+
     fun grass(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {

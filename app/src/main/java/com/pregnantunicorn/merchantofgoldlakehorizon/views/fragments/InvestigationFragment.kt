@@ -13,7 +13,6 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.InvestigationFr
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.investigation.CurrentInvestigation
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
-import kotlinx.coroutines.*
 
 class InvestigationFragment : Fragment() {
 
@@ -103,7 +102,7 @@ class InvestigationFragment : Fragment() {
 
             activity?.supportFragmentManager?.commit {
 
-                replace<WorldMapFragment>(R.id.world_container)
+                replace<LocationFragment>(R.id.world_container)
             }
         }
     }

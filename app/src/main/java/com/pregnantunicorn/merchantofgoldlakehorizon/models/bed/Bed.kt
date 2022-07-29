@@ -6,7 +6,6 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.Dial
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.rent.RentTime
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world.CurrentMap
 
 class Bed {
 

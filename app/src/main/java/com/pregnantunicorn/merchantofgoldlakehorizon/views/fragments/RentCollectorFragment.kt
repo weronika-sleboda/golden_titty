@@ -88,7 +88,7 @@ class RentCollectorFragment : Fragment() {
 
         activity?.supportFragmentManager?.commit {
 
-            replace<WorldMapFragment>(R.id.world_container)
+            replace<LocationFragment>(R.id.world_container)
         }
     }
 

@@ -85,7 +85,7 @@
         android:textSize="18sp"
         android:gravity="center"
         android:text="@string/upgrade"
-        android:background="@drawable/dark_shape_gradient_button_background"/>
+        android:background="@drawable/dark_rectangle_gradient_button_background"/>
 
     <Button
         android:id="@+id/leave_button"
@@ -100,6 +100,6 @@
         android:textSize="18sp"
         android:text="@string/leave"
         android:gravity="center"
-        android:background="@drawable/dark_shape_gradient_button_background"/>
+        android:background="@drawable/dark_rectangle_gradient_button_background"/>
 
 </LinearLayout>

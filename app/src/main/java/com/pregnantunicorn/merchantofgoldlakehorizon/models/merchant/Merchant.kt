@@ -1,5 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant
 
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemBackpack
+
 object Merchant {
 
     private var energy = Status()
@@ -9,6 +11,7 @@ object Merchant {
     private var emerald = Gem()
     private var sapphire = Gem()
     private var ruby = Gem()
+    private var items = ItemBackpack()
 
     private var foodBackpack = FoodBackpack()
     private var appearance = Appearance()
@@ -30,6 +33,8 @@ object Merchant {
     fun appearance() = appearance
     fun friends() = friends.friends
     fun friendCounter() = friendCounter
+
+    fun items() = items.items
 
     fun goldenCoins() = goldenCoins
 

@@ -24,6 +24,7 @@ class EventActivity : AppCompatActivity() {
         updateName()
         updateButtonText()
         setupActionButton()
+        setupSkipButton()
     }
 
     private fun updateName() {
@@ -67,5 +68,14 @@ class EventActivity : AppCompatActivity() {
 
         val intent = Intent(baseContext, WorldActivity::class.java)
         startActivity(intent)
+    }
+
+    private fun setupSkipButton() {
+
+        binding.skipButton.setOnClickListener {
+
+            val intent = Intent(baseContext, WorldActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -2,6 +2,9 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.npcs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.DialogMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.CurrentItem
+
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 
 class Npc(
@@ -18,9 +21,11 @@ class Npc(
     fun friendshipToString() = friendshipToString
     fun priceToString() = "$friendshipPrice"
 
+    private var greeting = "Hello!"
+
     fun greeting(): String {
 
-        return npcLine.invoke()
+        return greeting
     }
 
     fun befriended() = Merchant.friends()[friendIndex].friendHasBeenAdded()
@@ -31,6 +36,14 @@ class Npc(
 
             Merchant.goldenCoins().loseAmount(friendshipPrice)
             Merchant.friends()[friendIndex].raiseFriendship()
+
+            greeting = when(CurrentItem.item()) {
+
+                ItemType.GEMS -> "Beautiful gems"
+                ItemType.LOVE_LETTER -> "For me? Thanks"
+                ItemType.NONE -> "Hello"
+            }
+
             return true
         }
 

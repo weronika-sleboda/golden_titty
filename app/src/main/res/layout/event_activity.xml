@@ -70,7 +70,7 @@
             android:textSize="18sp"
             android:gravity="center"
             android:text=""
-            android:background="@drawable/dark_shape_gradient_button_background"/>
+            android:background="@drawable/dark_rectangle_gradient_button_background"/>
 
     </LinearLayout>
 
@@ -78,6 +78,16 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_gravity="bottom"
-        app:backgroundTint="@color/super_dark_mystery"/>
+        app:backgroundTint="@color/super_dark_mystery">
+
+        <ImageView
+            android:id="@+id/skip_button"
+            android:padding="5dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/dark_oval_gradient_button_background"
+            android:src="@drawable/skip_button64"/>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

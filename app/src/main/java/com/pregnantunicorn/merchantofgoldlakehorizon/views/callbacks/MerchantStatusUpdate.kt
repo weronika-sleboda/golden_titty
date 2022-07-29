@@ -14,4 +14,5 @@ interface MerchantStatusUpdate {
     fun updateFriendCounter()
     fun updateGoldenCoins()
     fun updateAppearance()
+    fun updateFab()
 }

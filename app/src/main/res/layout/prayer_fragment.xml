@@ -63,7 +63,7 @@
         android:textSize="18sp"
         android:gravity="center"
         android:text=""
-        android:background="@drawable/dark_shape_gradient_button_background"/>
+        android:background="@drawable/dark_rectangle_gradient_button_background"/>
 
     <Button
         android:id="@+id/give_up_button"
@@ -78,6 +78,6 @@
         android:textSize="18sp"
         android:text="@string/i_give_up"
         android:gravity="center"
-        android:background="@drawable/dark_shape_gradient_button_background"/>
+        android:background="@drawable/dark_rectangle_gradient_button_background"/>
 
 </LinearLayout>

@@ -120,17 +120,50 @@
         <entry key="..\:/Users/weron/AndroidStudioProjects/MerchantOfGoldlakeHorizon/app/src/main/res/layout/world_fragment.xml" value="0.1640625" />
         <entry key="..\:/Users/weron/AndroidStudioProjects/MerchantOfGoldlakeHorizon/app/src/main/res/layout/world_requirement_layout.xml" value="0.1640625" />
         <entry key="..\:/Users/weron/AndroidStudioProjects/MerchantOfGoldlakeHorizon/app/src/main/res/layout/yes_or_no_dialog_fragment.xml" value="0.1640625" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/drawable/dark_oval_gradient_button_background.xml" value="0.1035" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/drawable/dark_shape_gradient_button_background.xml" value="0.1035" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/drawable/morning_beach_background.xml" value="0.1795" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/drawable/pink_carpet_morning.xml" value="0.1795" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/drawable/pink_carpet_night.xml" value="0.1795" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/drawable/pink_carpet_sunset.xml" value="0.1795" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/drawable/wooden_floor_morning.xml" value="0.1795" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/drawable/wooden_floor_night.xml" value="0.1795" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/drawable/wooden_floor_sunset.xml" value="0.1795" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/backpack_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/bed_fragment.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/bookcase_requirement_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/clothing_shop_fragment.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/deal_layout.xml" value="0.12182971014492754" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/event_activity.xml" value="0.11278195488721804" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/exploration_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/food_layout.xml" value="0.1" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/gold_requirement_layout.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/information_fragment.xml" value="0.11811023622047244" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/investiagtion_fragment.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/investigation_fragment.xml" value="0.1" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/investigation_requirement_layout.xml" value="0.14130434782608695" />
-        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/merchant_status_layout.xml" value="0.13903985507246377" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/item_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/library_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/location_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/merchant_status_layout.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/meteors_altar_fragment.xml" value="0.12182971014492754" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/meteors_closet.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/meteors_closet_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/meteors_desk_fragment.xml" value="0.14316239316239315" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/meteors_harp_fragment.xml" value="0.14316239316239315" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/meteors_table_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/npc_fragment.xml" value="0.1" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/npc_info_layout.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/opening_fragment.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/pink_carpet_morning.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/pink_carpet_night.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/pink_carpet_sunset.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/prayer_fragment.xml" value="0.11811023622047244" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/robe_layout.xml" value="0.1" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/settings_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/soul_fragment.xml" value="0.12182971014492754" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/soul_layout.xml" value="0.12182971014492754" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/world_activity.xml" value="0.1" />
       </map>
     </option>
   </component>

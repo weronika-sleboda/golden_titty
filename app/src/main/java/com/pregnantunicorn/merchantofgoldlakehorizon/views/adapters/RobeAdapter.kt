@@ -2,15 +2,12 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.FoodLayoutBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.RobeLayoutBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.clothing.Robe
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Food
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.robes.Robe
 
 class RobeAdapter(
-    private val robes: Array<Robe>,
+    private val robes: List<Robe>,
     private val robeListener: RobeListener
 
 ) : RecyclerView.Adapter<RobeAdapter.ViewHolder>() {
@@ -24,7 +21,6 @@ class RobeAdapter(
 
     class ViewHolder(binding:RobeLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        val robeLayout = binding.robeLayout
         val icon = binding.icon
         val name = binding.name
         val doorInfo = binding.doorInfo
@@ -42,23 +38,13 @@ class RobeAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        if(robes[position].owns()) {
+        holder.icon.setImageResource(robes[position].icon)
+        holder.name.text = robes[position].name
+        holder.doorInfo.text = robes[position].info
 
-            holder.icon.setImageResource(robes[position].icon)
-            holder.name.text = robes[position].name
-            holder.doorInfo.text = robes[position].doorInfo
-            holder.charismaInfo.text = robes[position].charismaInfo
+        holder.buttonIcon.setOnClickListener {
 
-            holder.buttonIcon.setOnClickListener {
-
-                robeListener.onClickRobe(position)
-            }
-        }
-
-        else {
-
-            holder.robeLayout.isVisible = false
-            holder.robeLayout.removeAllViews()
+            robeListener.onClickRobe(position)
         }
     }
 

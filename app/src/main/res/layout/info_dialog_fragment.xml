@@ -69,7 +69,7 @@
         android:gravity="center"
         android:textAllCaps="true"
         android:fontFamily="@font/raleway_medium"
-        android:background="@drawable/dark_shape_gradient_button_background"
+        android:background="@drawable/dark_rectangle_gradient_button_background"
         android:textColor="@color/light_mystery"
         android:text="@string/ok" />
 

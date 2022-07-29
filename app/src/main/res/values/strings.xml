@@ -79,4 +79,24 @@
     <string name="investigate">Investigate</string>
     <string name="investigation_icon_cd">investigation_icon_cd</string>
     <string name="friends_icon_cd">friends_icon_cd</string>
+    <string name="grab_icon_cd">grab_icon_cd</string>
+    <string name="jin">Jin</string>
+    <string name="closet">Closet</string>
+    <string name="meteor">Meteor</string>
+    <string name="list_of_souls_to_save">List Of Souls To Save</string>
+    <string name="check_icon_cd">check_icon_cd</string>
+    <string name="harp_info">Here you can either turn off or turn on the music.</string>
+    <string name="play_music">Play Music</string>
+    <string name="stop_music">Stop Music</string>
+    <string name="harp_icon_cd">harp_icon_cd</string>
+    <string name="harp">Harp</string>
+    <string name="load_file">Load File</string>
+    <string name="quill_info">Here you can save your progress or load the previously saved file.</string>
+    <string name="quill">Quill</string>
+    <string name="divine_altar">Divine Altar</string>
+    <string name="meteors_altar_info">Here you can exit to main menu or quit the game entirely.</string>
+    <string name="meteors_altar_icon_cd">meteors_altar_icon_cd</string>
+    <string name="fab_icon_cd">fab_icon_cd</string>
+    <string name="world_icon_cd">world_icon_cd</string>
+    <string name="backpack_icon_cd">backpack_icon_cd</string>
 </resources>

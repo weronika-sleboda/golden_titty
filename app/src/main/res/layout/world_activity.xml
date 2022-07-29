@@ -29,12 +29,17 @@
         android:layout_marginTop="160dp"/>
 
     <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_gravity="bottom"
+        app:layout_anchorGravity="bottom"
+        app:fabCradleMargin="5dp"
+        app:fabAlignmentMode="end"
         app:backgroundTint="@color/mystery">
 
         <ImageView
+            android:contentDescription="@string/world_icon_cd"
             android:id="@+id/world_button"
             android:layout_width="65dp"
             android:layout_height="65dp"
@@ -43,6 +48,7 @@
             android:src="@drawable/world64"/>
 
         <ImageView
+            android:contentDescription="@string/backpack_icon_cd"
             android:id="@+id/backpack_button"
             android:layout_width="65dp"
             android:layout_height="65dp"
@@ -58,15 +64,19 @@
             android:background="@drawable/dark_oval_gradient_button_background"
             android:src="@drawable/prayer64"/>
 
-        <ImageView
-            android:id="@+id/settings_button"
-            android:padding="5dp"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:background="@drawable/dark_oval_gradient_button_background"
-            android:src="@drawable/settings64"/>
-
     </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:contentDescription="@string/fab_icon_cd"
+        android:id="@+id/item_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/grab64"
+        app:maxImageSize="55dp"
+        app:tint="@null"
+        app:layout_anchor="@id/bottom_app_bar"
+        app:backgroundTint="@color/extreme_dark_mystery"
+        app:fabCustomSize="70dp"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

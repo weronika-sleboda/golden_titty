@@ -10,7 +10,6 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.TradingHouseFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.trading_house.DealFactory
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.GemUpdateType
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -133,7 +132,7 @@ class TradingHouseFragment : Fragment() {
 
             activity?.supportFragmentManager?.commit {
 
-                replace<WorldMapFragment>(R.id.world_container)
+                replace<LocationFragment>(R.id.world_container)
             }
         }
     }

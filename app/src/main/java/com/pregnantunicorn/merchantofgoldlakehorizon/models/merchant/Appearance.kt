@@ -4,7 +4,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 
 class Appearance {
 
-    private var icon = R.drawable.sonny64_white
+    private var icon = R.drawable.meteor64_white_robe
     fun icon() = icon
 
     fun changeAppearance(icon: Int) {
