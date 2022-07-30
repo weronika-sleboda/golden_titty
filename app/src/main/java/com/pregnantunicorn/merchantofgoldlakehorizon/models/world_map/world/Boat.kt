@@ -9,28 +9,12 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.investigation.CurrentInvestigation
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.tiles.*
 
-class Cave: Location(
-    "Dragon Cave", Array(8) { EmptyCaveTile() as Tile }.also {
+class Boat: Location(
+    "Ship Orion", Array(12) { EmptyWoodenTile() as Tile }.also {
 
-        it[0] = GemStoneTile ( GemSupplierType.EMERALD) { IconFactory().emeraldStone64() }
-
-        it[1] = when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.NIGHT -> BuildingTile(
-                doorIndex = CurrentDoor.TENT,
-                icon = {IconFactory().tent64()},
-                background = {BackgroundFactory().volcano()}
-            )
-
-            else -> { EmptyCaveTile() }
-        }
-
-        it[4] = GemStoneTile ( GemSupplierType.SAPPHIRE) { IconFactory().sapphireStone64() }
-        it[3] = GemStoneTile ( GemSupplierType.RUBY) { IconFactory().rubyStone64() }
-
-        it[6] = RainbowForestExitTile (
+        it[10] = PearlCoastBeachExitTile (
             { IconFactory().stairsUp64() },
-            { BackgroundFactory().volcano() }
+            { BackgroundFactory().woodenFloor() }
         )
     }
 )

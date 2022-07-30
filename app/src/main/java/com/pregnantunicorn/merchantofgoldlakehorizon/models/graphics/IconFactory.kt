@@ -13,6 +13,46 @@ class IconFactory {
     fun rubyStone128() = R.drawable.ruby_stone128
     fun rubyStone64() = R.drawable.ruby_stone64
 
+    fun steeringWheel128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.steering_wheel128_morning }
+            DayCycle.SUNSET -> { R.drawable.steering_wheel128_sunset }
+            DayCycle.NIGHT -> { R.drawable.steering_wheel128_night }
+        }
+    }
+
+    fun steeringWheel64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.steering_wheel64_morning }
+            DayCycle.SUNSET -> { R.drawable.steering_wheel64_sunset }
+            DayCycle.NIGHT -> { R.drawable.steering_wheel64_night }
+        }
+    }
+
+    fun curtains64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.curtains64_morning }
+            DayCycle.SUNSET -> { R.drawable.curtains64_sunset }
+            DayCycle.NIGHT -> { R.drawable.curtains64_night }
+        }
+    }
+
+    fun curtains128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.curtains128_morning }
+            DayCycle.SUNSET -> { R.drawable.curtains128_sunset }
+            DayCycle.NIGHT -> { R.drawable.curtains128_night }
+        }
+    }
+
     fun stairsUp128(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
@@ -20,6 +60,26 @@ class IconFactory {
             DayCycle.MORNING -> { R.drawable.stairs_up128_morning }
             DayCycle.SUNSET -> { R.drawable.stairs_up128_sunset }
             DayCycle.NIGHT -> { R.drawable.stairs_up128_night }
+        }
+    }
+
+    fun sleepingBag128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.sleeping_bag128_morning }
+            DayCycle.SUNSET -> { R.drawable.sleeping_bag128_sunset }
+            DayCycle.NIGHT -> { R.drawable.sleeping_bag128_night }
+        }
+    }
+
+    fun sleepingBag64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.sleeping_bag64_morning }
+            DayCycle.SUNSET -> { R.drawable.sleeping_bag64_sunset }
+            DayCycle.NIGHT -> { R.drawable.sleeping_bag64_night }
         }
     }
 

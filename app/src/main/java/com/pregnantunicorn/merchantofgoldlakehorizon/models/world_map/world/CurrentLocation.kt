@@ -28,6 +28,8 @@ object CurrentLocation {
             LocationName.HERETIC_TEMPLE -> HereticTemple()
             LocationName.UNIVERSITY -> University()
             LocationName.MERCHANT_HALL -> MerchantHall()
+            LocationName.TENT -> Tent()
+            LocationName.BOAT -> Boat()
 
         }
     }

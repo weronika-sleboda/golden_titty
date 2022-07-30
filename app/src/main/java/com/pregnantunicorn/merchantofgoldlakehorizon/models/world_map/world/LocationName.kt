@@ -22,4 +22,6 @@ enum class LocationName {
     HERETIC_TEMPLE,
     DIVINE_TEMPLE,
     MERCHANT_HALL,
+    TENT,
+    BOAT
 }

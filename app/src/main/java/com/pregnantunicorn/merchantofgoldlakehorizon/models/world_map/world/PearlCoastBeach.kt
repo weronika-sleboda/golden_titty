@@ -27,6 +27,7 @@ class PearlCoastBeach : Location(
         it[7] = when(CurrentDayCycle.dayCycle()) {
 
             DayCycle.NIGHT -> BuildingTile(
+                doorIndex = CurrentDoor.BOAT,
                 icon = {IconFactory().boat64()},
                 background = { BackgroundFactory().water()}
             )

@@ -36,6 +36,8 @@ object CurrentDoor {
     const val HERETIC_TEMPLE = 13
     const val DIVINE_TEMPLE = 14
     const val MERCHANT_HALL = 15
+    const val TENT = 16
+    const val BOAT = 17
 
     private val doors = arrayOf(
 
@@ -265,6 +267,36 @@ object CurrentDoor {
             {IconFactory().houseDoor128()},
             {
                 CurrentLocation.changeLocation(LocationName.MERCHANT_HALL)
+                it.supportFragmentManager.commit {
+
+                    replace<LocationFragment>(R.id.world_container)
+                }
+            },
+        ),
+
+
+        Door(
+            "Tent",
+            "???",
+            "Appears At Night",
+            {IconFactory().curtains128()},
+            {
+                CurrentLocation.changeLocation(LocationName.TENT)
+                it.supportFragmentManager.commit {
+
+                    replace<LocationFragment>(R.id.world_container)
+                }
+            },
+            "Look Inside"
+        ),
+
+        Door(
+            "Ship Orion",
+            "???",
+            "Appears At Night",
+            {IconFactory().stairsUp128()},
+            {
+                CurrentLocation.changeLocation(LocationName.BOAT)
                 it.supportFragmentManager.commit {
 
                     replace<LocationFragment>(R.id.world_container)
