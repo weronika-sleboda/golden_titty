@@ -99,4 +99,11 @@
     <string name="fab_icon_cd">fab_icon_cd</string>
     <string name="world_icon_cd">world_icon_cd</string>
     <string name="backpack_icon_cd">backpack_icon_cd</string>
+    <string name="buy_icon_cd">buy_icon_cd</string>
+    <string name="product_icon_cd">product_icon_cd</string>
+    <string name="dig">Dig</string>
+    <string name="robes_for_sale">Robes For Sale</string>
+    <string name="menu">Menu</string>
+    <string name="items_for_sale">Items For Sale</string>
+    <string name="hourglass_icon_cd">hourglass_icon_cd</string>
 </resources>

@@ -11,7 +11,7 @@ interface MerchantStatusUpdate {
     fun updateSapphire()
     fun updateRuby()
 
-    fun updateFriendCounter()
+    fun updateDayCycleCounter()
     fun updateGoldenCoins()
     fun updateAppearance()
     fun updateFab()

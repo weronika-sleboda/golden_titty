@@ -11,6 +11,7 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.InvestigationFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.investigation.CurrentInvestigation
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -114,25 +115,17 @@ class InvestigationFragment : Fragment() {
 
                     withContext(Dispatchers.Main) {
 
-                        showInfoDialogFragment(
-                            investigation.dialogMessage().title,
-                            investigation.dialogMessage().icon,
-                            investigation.dialogMessage().message
-                        )
+                        showMessage()
                     }
                 }
             }
         }
     }
 
-    private fun showInfoDialogFragment(title: String, icon: Int, message: String) {
+    private fun showMessage() {
 
-        InfoDialogFragment(
-            title,
-            icon,
-            message,
-            "OK"
-        ).show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 
     private fun setupLeaveButton() {

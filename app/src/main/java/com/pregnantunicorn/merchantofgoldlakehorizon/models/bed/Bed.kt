@@ -1,11 +1,13 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.bed
 
+import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.CurrentDayCycle
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.DialogMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.rent.RentTime
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.trading.DealFactory
 
 class Bed {
 
@@ -14,20 +16,22 @@ class Bed {
         return IconFactory().bed128()
     }
 
-    fun dialogMessage(): DialogMessage {
+    private fun changeMessage() {
 
-        val dayCycle = when(CurrentDayCycle.dayCycle()) {
+        when(CurrentDayCycle.dayCycle()) {
 
-            DayCycle.MORNING -> "morning"
-            DayCycle.SUNSET -> "sunset"
-            DayCycle.NIGHT -> "night"
+            DayCycle.MORNING -> CurrentMessage.changeMessage(
+               "Wake up!", R.drawable.morning64, "It's already morning."
+            )
+
+            DayCycle.SUNSET -> CurrentMessage.changeMessage(
+                "Wake up!", R.drawable.sunset64, "It's already sunset."
+            )
+
+            DayCycle.NIGHT -> CurrentMessage.changeMessage(
+                "Wake up!", R.drawable.night64, "It's already night."
+            )
         }
-
-        return DialogMessage(
-            "Wake Up",
-            IconFactory().dayCycleIcon64(),
-            "Time to wake up. It's already $dayCycle."
-        )
     }
 
     fun sleep() {
@@ -37,7 +41,8 @@ class Bed {
         Merchant.charisma().restore()
         Merchant.persuasion().restore()
         Merchant.intelligence().restore()
+        DealFactory.generateNewDeal()
         RentTime.raiseCounter()
-
+        changeMessage()
     }
 }

@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.prayer
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.DialogMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.Message
 
 class Creator {
 
@@ -70,9 +70,9 @@ class Creator {
         }
     }
 
-    fun areYouSureMessage(): DialogMessage {
+    fun areYouSureMessage(): Message {
 
-        return DialogMessage(
+        return Message(
             "Are you sure?",
             R.drawable.eye64,
             "If you give up on your mission the game will end and you will be " +

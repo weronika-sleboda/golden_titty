@@ -4,7 +4,7 @@ class Status {
 
     companion object {
 
-        private const val MAX_VALUE = 99
+        private const val MAX_VALUE = 80
         private const val MIN_VALUE = 0
     }
 
@@ -15,6 +15,7 @@ class Status {
 
     fun hasAmount(amount: Int) = this.amount >= amount
     fun amountIsMaxed() = amount == maxAmount
+    fun maxValueReached() = maxAmount == MAX_VALUE
 
     fun addMaxAmount(amount: Int) {
 

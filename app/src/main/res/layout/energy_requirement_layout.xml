@@ -33,7 +33,6 @@
         android:padding="3dp"/>
 
     <TextView
-        android:id="@+id/required_energy"
         android:layout_column="2"
         android:layout_row="0"
         android:layout_width="32dp"
@@ -43,6 +42,7 @@
         android:fontFamily="@font/raleway_medium"
         android:textColor="@color/super_light_mystery"
         android:textSize="18sp"
+        android:text="@string/one"
         android:layout_marginStart="3dp"
         android:background="@drawable/middle_dark_rectangle_background"/>
 

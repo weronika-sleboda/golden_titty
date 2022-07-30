@@ -10,6 +10,7 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BedFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.bed.Bed
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.rent.RentTime
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -50,7 +51,7 @@ class BedFragment : Fragment() {
         statusUpdate.updateCharisma()
         statusUpdate.updatePersuasion()
         statusUpdate.updateIntelligence()
-        statusUpdate.updateFriendCounter()
+        statusUpdate.updateDayCycleCounter()
     }
 
     private fun setupSleepButton() {
@@ -64,12 +65,7 @@ class BedFragment : Fragment() {
                 withContext(Dispatchers.Main) {
 
                     updateMerchantStatus()
-
-                    showInfoDialogFragment(
-                        bed.dialogMessage().title,
-                        bed.dialogMessage().icon,
-                        bed.dialogMessage().message
-                    )
+                    showMessage()
 
                     if(RentTime.timeToPay()) {
 
@@ -109,13 +105,9 @@ class BedFragment : Fragment() {
         }
     }
 
-    private fun showInfoDialogFragment(title: String, icon: Int, message: String) {
+    private fun showMessage() {
 
-        InfoDialogFragment(
-            title,
-            icon,
-            message,
-            "OK"
-        ).show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 }

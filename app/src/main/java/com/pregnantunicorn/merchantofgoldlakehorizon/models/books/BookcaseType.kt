@@ -2,5 +2,9 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.books
 
 enum class BookcaseType {
 
-    METEOR
+    METEOR,
+    HISTORY,
+    FOREIGN,
+    RELIGION,
+    TECHNOLOGY
 }

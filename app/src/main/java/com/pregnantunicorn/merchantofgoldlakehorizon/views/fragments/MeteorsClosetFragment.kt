@@ -10,6 +10,7 @@ import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.MeteorsClosetFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.robes.CurrentRobe
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.robes.RobeManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.RobeAdapter
@@ -45,14 +46,16 @@ class MeteorsClosetFragment: Fragment(), RobeAdapter.RobeListener {
         binding.robeRecycler.layoutManager = layoutManager
     }
 
-    private fun showInfoDialogFragment(title: String, icon: Int, message: String) {
+    private fun showMessage() {
 
-        InfoDialogFragment(
-            title,
-            icon,
-            message,
-            "OK"
-        ).show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+        CurrentMessage.changeMessage(
+            "Already on",
+            R.drawable.warning64,
+            "You already wear that one."
+        )
+
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 
     private fun setupLeaveButton() {
@@ -76,11 +79,7 @@ class MeteorsClosetFragment: Fragment(), RobeAdapter.RobeListener {
 
         if(CurrentRobe.robe() == robes[position].robeType) {
 
-            showInfoDialogFragment(
-                "Already On",
-                R.drawable.warning64,
-                "You already wear that one."
-            )
+            showMessage()
         }
 
         else {

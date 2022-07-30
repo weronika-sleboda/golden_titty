@@ -10,18 +10,20 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundF
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.BookcaseFragment
 
-class MeteorsBookCaseTile: Tile(true)
+class BookcaseTile(
+    private val bookcaseType: BookcaseType
+) : Tile(true)
 {
     override fun icon(): Int {
 
         return IconFactory().bookcase64()
     }
 
-    override fun background() = BackgroundFactory().woodenFloor()
+    override fun background() = BackgroundFactory().volcano()
 
     override fun onClick(activity: FragmentActivity) {
 
-        CurrentBookcase.changeBookCase(BookcaseType.METEOR)
+        CurrentBookcase.changeBookCase(bookcaseType)
 
         activity.supportFragmentManager.commit {
 

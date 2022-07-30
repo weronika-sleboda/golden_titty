@@ -9,7 +9,7 @@ class MeteorsHouse: Location(
 
         it[0] = MeteorsBedTile()
         it[1] = MeteorClosetTile()
-        it[2] = MeteorsBookCaseTile()
+        it[2] = MeteorsBookcaseTile()
         it[3] = MeteorsDeskTile()
         it[8] = MeteorTableTile()
         it[9] = MeteorsAltarTile()

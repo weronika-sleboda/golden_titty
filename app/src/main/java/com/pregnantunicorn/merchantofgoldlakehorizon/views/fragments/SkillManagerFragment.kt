@@ -10,6 +10,7 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.SkillManagerFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.StatusUpdateType
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.skill_upgrade.CurrentSkillManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -86,24 +87,12 @@ class SkillManagerFragment: Fragment() {
 
                     withContext(Dispatchers.Main) {
 
-                        showInfoDialogFragment(
-                            skillManager.dialogMessage().title,
-                            skillManager.dialogMessage().icon,
-                            skillManager.dialogMessage().message
-                        )
-
                         updateMerchantStatus()
+                        showMessage()
                     }
                 }
 
-                else {
-
-                    showInfoDialogFragment(
-                        "Too expensive",
-                        R.drawable.golden_coin_64,
-                        "You don't have enough golden coins to upgrade this skill."
-                    )
-                }
+                else {  showMessage() }
 
             }
         }
@@ -120,13 +109,9 @@ class SkillManagerFragment: Fragment() {
         }
     }
 
-    private fun showInfoDialogFragment(title: String, icon: Int, message: String) {
+    private fun showMessage() {
 
-        InfoDialogFragment(
-            title,
-            icon,
-            message,
-            "OK"
-        ).show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 }

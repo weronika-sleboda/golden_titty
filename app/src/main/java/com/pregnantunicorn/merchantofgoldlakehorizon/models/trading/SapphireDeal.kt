@@ -1,9 +1,8 @@
-package com.pregnantunicorn.merchantofgoldlakehorizon.models.trading_house
+package com.pregnantunicorn.merchantofgoldlakehorizon.models.trading
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.DialogMessage
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.GemUpdateType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class SapphireDeal : Deal(
     R.drawable.sapphire128,
@@ -20,15 +19,13 @@ class SapphireDeal : Deal(
             return true
         }
 
+        CurrentMessage.changeMessage(
+            "Demand Not Met",
+            R.drawable.sapphire64,
+            "You don't have enough sapphire gems."
+        )
+
         return false
     }
 
-    override fun dialogMessage(): DialogMessage {
-
-        return DialogMessage(
-            "Demand Not Met",
-            R.drawable.sapphire64,
-            "You don't have the demanded amount of sapphire."
-        )
-    }
 }

@@ -80,7 +80,6 @@ class NpcFragment : Fragment() {
 
         val statusUpdate = requireActivity() as MerchantStatusUpdate
         statusUpdate.updateGoldenCoins()
-        statusUpdate.updateFriendCounter()
     }
 
     private fun setupBefriendButton() {
@@ -100,35 +99,16 @@ class NpcFragment : Fragment() {
 
                         if(npc.befriended()) {
 
-                            showInfoDialogFragment(
-                                "Friend Added",
-                                R.drawable.people64,
-                                "${npc.name} is now your friend."
-                            )
                         }
                     }
                 }
 
                 else {
 
-                    showInfoDialogFragment(
-                        npc.dialogMessage().title,
-                        npc.dialogMessage().icon,
-                        npc.dialogMessage().message
-                    )
+
                 }
             }
         }
-    }
-
-    private fun showInfoDialogFragment(title: String, icon: Int, message: String) {
-
-        InfoDialogFragment(
-            title,
-            icon,
-            message,
-            "OK"
-        ).show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 
     private fun setupLeaveButton() {

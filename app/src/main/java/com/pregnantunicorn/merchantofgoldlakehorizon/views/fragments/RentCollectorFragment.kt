@@ -10,6 +10,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.RentCollectorFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.*
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.rent.Rent
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.activities.GameOverActivity
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
@@ -64,21 +65,13 @@ class RentCollectorFragment : Fragment() {
                         updateMerchantGold()
                         goToWorldMap()
 
-                        showInfoDialogFragment(
-                            "Rent Has Been Paid",
-                            R.drawable.jin64,
-                            "Great! See you next time!"
-                        )
+                        showMessage()
                     }
                 }
 
                 else {
 
-                    showInfoDialogFragment(
-                        rent.dialogMessage().title,
-                        rent.dialogMessage().icon,
-                        rent.dialogMessage().message
-                    )
+                    showMessage()
                 }
             }
         }
@@ -101,13 +94,9 @@ class RentCollectorFragment : Fragment() {
         }
     }
 
-    private fun showInfoDialogFragment(title: String, icon: Int, message: String) {
+    private fun showMessage() {
 
-        InfoDialogFragment(
-            title,
-            icon,
-            message,
-            "OK"
-        ).show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 }

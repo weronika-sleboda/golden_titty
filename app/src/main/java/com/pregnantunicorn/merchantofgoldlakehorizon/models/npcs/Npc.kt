@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.npcs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.DialogMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.Message
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.CurrentItem
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemType
@@ -50,9 +50,9 @@ class Npc(
         return false
     }
 
-    fun dialogMessage(): DialogMessage {
+    fun dialogMessage(): Message {
 
-        return DialogMessage(
+        return Message(
             "You're Broke",
             R.drawable.broke64,
             "You don't have enough golden coins to befriend $name."

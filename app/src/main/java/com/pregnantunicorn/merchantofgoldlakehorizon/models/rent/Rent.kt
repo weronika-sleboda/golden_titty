@@ -1,8 +1,9 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.rent
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.DialogMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.Message
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class Rent {
 
@@ -18,15 +19,12 @@ class Rent {
             return true
         }
 
-        return false
-    }
-
-    fun dialogMessage(): DialogMessage {
-
-        return DialogMessage(
+        CurrentMessage.changeMessage(
             "You're broke",
             R.drawable.broke64,
             "You don't have enough golden coins to pay the rent."
         )
+
+        return false
     }
 }

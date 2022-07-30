@@ -21,6 +21,14 @@ object CurrentLocation {
             LocationName.PEARL_COAST_BEACH -> PearlCoastBeach()
             LocationName.RAINBOW_JUNGLE -> RainbowForest()
             LocationName.CAVE -> Cave()
+            LocationName.GREEN_HOUSE -> ClothingShop()
+            LocationName.WHITE_PALACE -> FoodShop()
+            LocationName.LIBRARY -> Library()
+            LocationName.DIVINE_TEMPLE -> DivineTemple()
+            LocationName.HERETIC_TEMPLE -> HereticTemple()
+            LocationName.UNIVERSITY -> University()
+            LocationName.MERCHANT_HALL -> MerchantHall()
+
         }
     }
 

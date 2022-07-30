@@ -5,5 +5,4 @@ enum class GemUpdateType {
     EMERALD,
     SAPPHIRE,
     RUBY,
-    NONE
 }

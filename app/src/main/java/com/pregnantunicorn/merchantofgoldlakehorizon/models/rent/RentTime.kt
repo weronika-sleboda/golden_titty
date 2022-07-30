@@ -7,6 +7,8 @@ object RentTime {
 
     fun timeToPay() = timeToPay
 
+    fun counterToString() = "$counter"
+
     fun raiseCounter() {
 
         if(counter == 1) {

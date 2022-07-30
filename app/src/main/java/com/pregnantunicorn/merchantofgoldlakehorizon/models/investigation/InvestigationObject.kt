@@ -1,14 +1,8 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.investigation
 
-import android.content.Context
-import androidx.fragment.app.FragmentActivity
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.DialogMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class InvestigationObject(
     private val requiredIntelligence: Int,
@@ -50,15 +44,11 @@ class InvestigationObject(
             return true
         }
 
-        return false
-    }
-
-    fun dialogMessage(): DialogMessage {
-
-        return DialogMessage(
-            "No Intelligence",
-            R.drawable.intelligence64,
-            "You don't have enough intelligence to do investigation."
+        CurrentMessage.changeMessage(
+            "No Intelligence", R.drawable.intelligence64,
+            "You don't have enough intelligence to perform this action."
         )
+
+        return false
     }
 }

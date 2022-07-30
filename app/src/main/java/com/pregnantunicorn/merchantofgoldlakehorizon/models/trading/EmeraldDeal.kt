@@ -1,9 +1,8 @@
-package com.pregnantunicorn.merchantofgoldlakehorizon.models.trading_house
+package com.pregnantunicorn.merchantofgoldlakehorizon.models.trading
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.DialogMessage
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.GemUpdateType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class EmeraldDeal : Deal(
     R.drawable.emerald128,
@@ -20,15 +19,12 @@ class EmeraldDeal : Deal(
             return true
         }
 
-        return false
-    }
-
-    override fun dialogMessage(): DialogMessage {
-
-        return DialogMessage(
+        CurrentMessage.changeMessage(
             "Demand Not Met",
             R.drawable.emerald64,
-            "You don't have the demanded amount of emerald."
+            "You don't have enough emerald gems."
         )
+
+        return false
     }
 }

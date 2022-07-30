@@ -7,7 +7,7 @@ class Book(
     val content: String,
 )
 {
-    private val requiredIntelligence = 1
+    private val requiredIntelligence = 5
     private var hasBeenRead: Boolean = false
 
     fun hasBeenRead() = hasBeenRead

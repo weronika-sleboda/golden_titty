@@ -14,5 +14,12 @@ enum class LocationName {
     ERICAS_HOUSE,
     JINS_HOUSE,
     SONNYS_HOUSE,
-    CAVE
+    CAVE,
+    GREEN_HOUSE,
+    WHITE_PALACE,
+    LIBRARY,
+    UNIVERSITY,
+    HERETIC_TEMPLE,
+    DIVINE_TEMPLE,
+    MERCHANT_HALL,
 }

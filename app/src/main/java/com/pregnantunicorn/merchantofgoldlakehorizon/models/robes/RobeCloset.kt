@@ -7,14 +7,14 @@ object RobeCloset {
 
     const val WHITE_ROBE = 0
     const val BLACK_ROBE = 1
-    const val GOLDEN_ROBE = 3
-    const val SILVER_ROBE = 4
-    const val RED_ROBE = 5
-    const val GREEN_ROBE = 6
-    const val BLUE_ROBE = 7
-    const val BROWN_ROBE = 8
-    const val PURPLE_ROBE = 9
-    const val PINK_ROBE = 10
+    const val GOLDEN_ROBE = 2
+    const val SILVER_ROBE = 3
+    const val RED_ROBE = 4
+    const val GREEN_ROBE = 5
+    const val BLUE_ROBE = 6
+    const val BROWN_ROBE = 7
+    const val PURPLE_ROBE = 8
+    const val PINK_ROBE = 9
 
     val robes = arrayOf(
 
@@ -37,7 +37,6 @@ object RobeCloset {
             {
                 Merchant.appearance().changeAppearance(R.drawable.meteor64_black_robe)
             },
-            true
         ),
 
         Robe(
@@ -48,7 +47,6 @@ object RobeCloset {
             {
                 Merchant.appearance().changeAppearance(R.drawable.meteor64_golden_robe)
             },
-            true
         ),
 
         Robe(

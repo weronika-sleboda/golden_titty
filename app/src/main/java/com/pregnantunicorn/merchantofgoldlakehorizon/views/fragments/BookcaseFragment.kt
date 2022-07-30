@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BookcaseFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.books.CurrentBookcase
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BookAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -62,11 +63,7 @@ class BookcaseFragment : Fragment(), BookAdapter.BookListener {
 
             if(!books[position].read()) {
 
-                showInfoDialogFragment(
-                    "No Intelligence",
-                    R.drawable.intelligence64,
-                    "You don't have enough intelligence points to read this book."
-                )
+                showMessage()
             }
 
             else {
@@ -77,14 +74,10 @@ class BookcaseFragment : Fragment(), BookAdapter.BookListener {
         }
     }
 
-    private fun showInfoDialogFragment(title: String, icon: Int, message: String) {
+    private fun showMessage() {
 
-        InfoDialogFragment(
-            title,
-            icon,
-            message,
-            "OK"
-        ).show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 
     private fun setupLeaveButton() {

@@ -1,16 +1,13 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.DialogMessage
-
 class Food(
     val name: String,
     val icon: Int,
     val info: String,
     private val restorationAlgorithm: () -> Unit,
     private val restorationIsMax: () -> Boolean,
-    private val maxStatusMessage: DialogMessage,
-    val statusUpdateType: StatusUpdateType
+    val statusUpdateType: StatusUpdateType,
+    val changeMessage: () -> Unit
 )
 {
 
@@ -25,6 +22,8 @@ class Food(
     fun amountToString() = "Amount: $amount"
 
     fun hasAmount(amount: Int) = this.amount >= amount
+
+    fun isEmpty() = amount == 0
 
     fun addAmount(amount: Int) {
 
@@ -46,23 +45,6 @@ class Food(
         }
     }
 
-    fun dialogMessage(): DialogMessage {
-
-        return if(amount == 0) {
-
-            DialogMessage(
-                "Empty backpack",
-                icon,
-                "You don't have any of these in your backpack."
-            )
-        }
-
-        else {
-
-            maxStatusMessage
-        }
-    }
-
     fun consume(): Boolean {
 
         if(amount > 0 && !restorationIsMax()) {
@@ -72,6 +54,7 @@ class Food(
             return true
         }
 
+        changeMessage.invoke()
         return false
     }
 

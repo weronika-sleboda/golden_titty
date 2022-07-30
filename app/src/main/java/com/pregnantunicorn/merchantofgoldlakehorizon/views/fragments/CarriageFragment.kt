@@ -9,7 +9,8 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.CarriageFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.trading_house.DealFactory
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.trading.DealFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -70,14 +71,7 @@ class CarriageFragment : Fragment() {
                     }
                 }
 
-                else {
-
-                    showInfoDialogFragment(
-                        DealFactory.dialogMessage().title,
-                        DealFactory.dialogMessage().icon,
-                        DealFactory.dialogMessage().message
-                    )
-                }
+                else {  showMessage() }
             }
         }
     }
@@ -115,11 +109,7 @@ class CarriageFragment : Fragment() {
 
                     withContext(Dispatchers.Main) {
 
-                        showInfoDialogFragment(
-                            deal.dialogMessage().title,
-                            deal.dialogMessage().icon,
-                            deal.dialogMessage().message
-                        )
+                        showMessage()
                     }
                 }
             }
@@ -137,13 +127,9 @@ class CarriageFragment : Fragment() {
         }
     }
 
-    private fun showInfoDialogFragment(title: String, icon: Int, message: String) {
+    private fun showMessage() {
 
-        InfoDialogFragment(
-            title,
-            icon,
-            message,
-            "OK"
-        ).show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 }

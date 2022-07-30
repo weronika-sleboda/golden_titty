@@ -1,8 +1,8 @@
-package com.pregnantunicorn.merchantofgoldlakehorizon.models.trading_house
+package com.pregnantunicorn.merchantofgoldlakehorizon.models.trading
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.dialog_messages.DialogMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
 object DealFactory {
@@ -23,27 +23,24 @@ object DealFactory {
 
     fun changeDeal(): Boolean {
 
-        if(Merchant.persuasion().hasAmount(1)) {
+        val persuasion = 5
 
-            Merchant.persuasion().loseAmount(1)
+        if(Merchant.persuasion().hasAmount(persuasion)) {
+            Merchant.persuasion().loseAmount(persuasion)
             deal = randomDeal()
             return true
         }
 
+        CurrentMessage.changeMessage(
+            "No Persuasion",
+            R.drawable.persuasion64,
+            "You don't have enough persuasion to change the deal."
+        )
         return false
     }
 
     fun generateNewDeal() {
 
         deal = randomDeal()
-    }
-
-    fun dialogMessage(): DialogMessage {
-
-        return DialogMessage(
-            "No Persuasion",
-            R.drawable.persuasion64,
-            "You don't have enough persuasion to change the deal."
-        )
     }
 }

@@ -4,13 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ClothingShopFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.robes.CurrentRobe
+import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.RobeShopFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.RobeShop
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.RobeProductAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -18,10 +20,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ClothingShopFragment : Fragment() {
+class ClothingShopFragment : Fragment(), RobeProductAdapter.ProductListener {
 
-    private lateinit var binding: ClothingShopFragmentBinding
-    private val robeManager = CurrentRobe.robe()
+    private lateinit var binding: RobeShopFragmentBinding
+    private lateinit var adapter: RobeProductAdapter
+    private lateinit var layoutManager: LinearLayoutManager
+    private var products = RobeShop().products()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,58 +33,58 @@ class ClothingShopFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = ClothingShopFragmentBinding.inflate(inflater, container, false)
+        binding = RobeShopFragmentBinding.inflate(inflater, container, false)
 
-        setupPriceInfo()
-        setupName()
-        setupIcon()
-        setupInfo()
-        setupBuyButton()
-        hideBuyButton()
         setupLeaveButton()
+        updateProducts()
 
         return binding.root
     }
 
-    private fun hideBuyButton() {
+    private fun updateMerchantStatus() {
 
-
+        val status = requireActivity() as MerchantStatusUpdate
+        status.updateGoldenCoins()
     }
 
-    private fun setupPriceInfo() {
+    override fun onClickProduct(position: Int) {
 
+        CoroutineScope(Dispatchers.IO).launch {
 
-    }
+            if(products[position].buy()) {
 
-    private fun setupIcon() {
+                products = RobeShop().products()
 
+                withContext(Dispatchers.Main) {
 
-    }
+                    showMessage()
+                    updateMerchantStatus()
+                    updateProducts()
+                }
+            }
 
-    private fun setupName() {
+            else {
 
-        binding.name.text = robeManager.name
-    }
+                withContext(Dispatchers.Main) {
 
-    private fun setupInfo() {
-
-
-    }
-
-    private fun updateMerchantGold() {
-
-        val statusUpdate = requireActivity() as MerchantStatusUpdate
-        statusUpdate.updateGoldenCoins()
-    }
-
-    private fun setupBuyButton() {
-
-        binding.buyButton.setOnClickListener {
-
-            CoroutineScope(Dispatchers.IO).launch {
-
+                    showMessage()
+                }
             }
         }
+    }
+
+    private fun updateProducts() {
+
+        adapter = RobeProductAdapter(products, this)
+        layoutManager = LinearLayoutManager(context)
+        binding.productRecycler.adapter = adapter
+        binding.productRecycler.layoutManager = layoutManager
+    }
+
+    private fun showMessage() {
+
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 
     private fun setupLeaveButton() {
@@ -92,15 +96,5 @@ class ClothingShopFragment : Fragment() {
                 replace<LocationFragment>(R.id.world_container)
             }
         }
-    }
-
-    private fun showInfoDialogFragment(title: String, icon: Int, message: String) {
-
-        InfoDialogFragment(
-            title,
-            icon,
-            message,
-            "OK"
-        ).show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 }

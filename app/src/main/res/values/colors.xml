@@ -37,12 +37,12 @@
     <color name="red_carpet_morning">#993232</color>
     <color name="red_carpet_sunset">#571d1d</color>
     <color name="red_carpet_night">#1c2630</color>
-    <color name="blue_carpet_morning">#7fdbd7</color>
-    <color name="blue_carpet_sunset">#579491</color>
-    <color name="blue_carpet_night">#2e4746</color>
+    <color name="blue_carpet_morning">#758e96</color>
+    <color name="blue_carpet_sunset">#4b5a5e</color>
+    <color name="blue_carpet_night">#252c2e</color>
     <color name="white_floor_morning">#f0f2f2</color>
     <color name="white_floor_sunset">#c9c9c9</color>
-    <color name="white_floor_night">#a4a0b0</color>
+    <color name="white_floor_night">#787482</color>
     <color name="divine_temple_morning">#4e4a66</color>
     <color name="divine_temple_sunset">#39364a</color>
     <color name="divine_temple_night">#32323b</color>

@@ -12,6 +12,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.CurrentItem
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.StatusUpdateType
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.FoodAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.ItemAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
@@ -137,30 +138,15 @@ class BackpackFragment : Fragment(),
 
             else {
 
-                showInfoDialogFragment(
-                    food[position].dialogMessage().title,
-                    food[position].dialogMessage().icon,
-                    food[position].dialogMessage().message
-                )
+                showMessage()
             }
-
         }
     }
 
-    private fun showInfoDialogFragment(title: String, icon: Int, message: String) {
+    private fun showMessage() {
 
-        InfoDialogFragment(
-            title,
-            icon,
-            message,
-            "OK"
-        ).show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
-    }
-
-    private fun updateMerchantAppearance() {
-
-        val appearanceUpdate = requireActivity() as MerchantStatusUpdate
-        appearanceUpdate.updateAppearance()
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 
 }

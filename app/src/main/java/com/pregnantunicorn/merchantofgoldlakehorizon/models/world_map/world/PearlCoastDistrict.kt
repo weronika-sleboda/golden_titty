@@ -10,36 +10,43 @@ class PearlCoastDistrict : Location(
 
         it[0] = BuildingTile(
 
+            doorIndex = CurrentDoor.LIBRARY,
             icon = {IconFactory().library64()}
         )
 
         it[1] = BuildingTile(
 
+            doorIndex = CurrentDoor.UNIVERSITY,
             icon = {IconFactory().university64()}
         )
 
         it[2] = BuildingTile(
 
+            doorIndex = CurrentDoor.MERCHANT_HALL,
             icon = {IconFactory().merchantHall64()}
         )
 
         it[3] = BuildingTile(
 
+            doorIndex = CurrentDoor.HERETIC_TEMPLE,
             icon = {IconFactory().hereticTemple64()},
         )
 
         it[8] = BuildingTile(
 
+            doorIndex = CurrentDoor.GREEN_HOUSE,
             icon = {IconFactory().clothingShop64()}
         )
 
         it[9] = BuildingTile(
 
+            doorIndex = CurrentDoor.WHITE_PALACE,
             icon = {IconFactory().tavern64()},
         )
 
         it[10] = BuildingTile(
 
+            doorIndex = CurrentDoor.DIVINE_TEMPLE,
             icon = {IconFactory().divineTemple64()},
         )
 

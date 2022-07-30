@@ -9,6 +9,10 @@ object CurrentBookcase {
         return when(books) {
 
             BookcaseType.METEOR -> MeteorsBooks.books
+            BookcaseType.HISTORY -> HistoryBooks.books
+            BookcaseType.FOREIGN -> ForeignBooks.books
+            BookcaseType.RELIGION -> ReligionBooks.books
+            BookcaseType.TECHNOLOGY -> TechnologyBooks.books
         }
     }
 
@@ -17,6 +21,10 @@ object CurrentBookcase {
         return when(books) {
 
             BookcaseType.METEOR -> MeteorsBooks.name
+            BookcaseType.HISTORY -> HistoryBooks.name
+            BookcaseType.FOREIGN -> ForeignBooks.name
+            BookcaseType.RELIGION -> ReligionBooks.name
+            BookcaseType.TECHNOLOGY -> TechnologyBooks.name
         }
     }
 

@@ -9,7 +9,7 @@ class Money()
         private const val MAX_VALUE = 99999
     }
 
-    private var amount = 100
+    private var amount = 0
 
     fun amountToString() = "$amount"
 
