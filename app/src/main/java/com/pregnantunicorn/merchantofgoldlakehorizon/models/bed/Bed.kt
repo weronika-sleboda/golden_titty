@@ -9,14 +9,20 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessa
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.rent.RentTime
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.trading.DealFactory
 
-class Bed {
+class Bed(
+    private val icon: () -> Int,
+    private val healthCost: Int,
+)
+{
+
+    fun healthCostToString() = "$healthCost"
 
     fun icon(): Int {
 
-        return IconFactory().bed128()
+        return icon.invoke()
     }
 
-    private fun changeMessage() {
+    private fun changeAndShowMessage() {
 
         when(CurrentDayCycle.dayCycle()) {
 
@@ -37,12 +43,10 @@ class Bed {
     fun sleep() {
 
         CurrentDayCycle.changeDayCycle()
+        Merchant.health().loseAmount(1)
         Merchant.energy().restore()
         Merchant.charisma().restore()
-        Merchant.persuasion().restore()
         Merchant.intelligence().restore()
-        DealFactory.generateNewDeal()
-        RentTime.raiseCounter()
-        changeMessage()
+        changeAndShowMessage()
     }
 }

@@ -148,11 +148,13 @@
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/drawable/wooden_floor_sunset.xml" value="0.1795" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/backpack_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/bed_fragment.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/bed_info_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/bookcase_requirement_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/carriage_fragment.xml" value="0.13179347826086957" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/clothing_shop_fragment.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/clothing_shop_layout.xml" value="0.130859375" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/deal_layout.xml" value="0.12182971014492754" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/door_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/door_info_layout.xml" value="0.1" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/energy_requirement_layout.xml" value="0.12409420289855072" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/event_activity.xml" value="0.11278195488721804" />
@@ -160,6 +162,7 @@
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/food_layout.xml" value="0.1" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/food_shop_fragment.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/food_shop_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/game_over_activity.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/gem_supplier_fragment.xml" value="0.125" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/gold_requirement_layout.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/info_dialog_fragment.xml" value="0.17552083333333332" />

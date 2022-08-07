@@ -25,7 +25,7 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         setContentView(binding.root)
 
         updateEnergy()
-        updatePersuasion()
+        updateHealth()
         updateCharisma()
         updateIntelligence()
         updateGoldenCoins()
@@ -34,22 +34,13 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         updateEmerald()
         updateSapphire()
         updateRuby()
-
-        setupOpeningFragment()
         updateFab()
         selectWorldButton()
         setupWorldButton()
         setupBackpackButton()
-        setupPrayerButton()
+        setupSettingsButton()
         setupFabButton()
-    }
-
-    private fun setupOpeningFragment() {
-
-        supportFragmentManager.commit {
-
-            replace<InformationFragment>(R.id.world_container)
-        }
+        goToWorldMap()
     }
 
     override fun updateFab() {
@@ -96,11 +87,16 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         }
     }
 
-    private fun setupPrayerButton() {
+    private fun setupSettingsButton() {
 
-        binding.prayerButton.setOnClickListener {
+        binding.settingsButton.setOnClickListener {
 
             selectPrayerButton()
+
+            supportFragmentManager.commit {
+
+                replace<SettingsFragment>(R.id.world_container)
+            }
         }
     }
 
@@ -108,26 +104,26 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
 
         binding.worldButton.setBackgroundResource(R.drawable.light_oval_gradient_button_background)
         binding.backpackButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
-        binding.prayerButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+        binding.settingsButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
     }
 
     private fun selectBackpackButton() {
 
         binding.worldButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
         binding.backpackButton.setBackgroundResource(R.drawable.light_oval_gradient_button_background)
-        binding.prayerButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
+        binding.settingsButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
     }
 
     private fun selectPrayerButton() {
 
         binding.worldButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
         binding.backpackButton.setBackgroundResource(R.drawable.dark_oval_gradient_button_background)
-        binding.prayerButton.setBackgroundResource(R.drawable.light_oval_gradient_button_background)
+        binding.settingsButton.setBackgroundResource(R.drawable.light_oval_gradient_button_background)
     }
 
-    override fun updatePersuasion() {
+    override fun updateHealth() {
 
-        binding.merchant.persuasion.text = Merchant.persuasion().amountToString()
+        binding.merchant.health.text = Merchant.health().amountToString()
     }
 
     override fun updateEnergy() {

@@ -43,7 +43,7 @@
         android:src="@drawable/sonny64_white" />
 
     <ImageView
-        android:contentDescription="@string/energy_icon_cd"
+        android:contentDescription="@string/health_icon_cd"
         android:layout_width="30dp"
         android:layout_height="32dp"
         android:layout_row="1"
@@ -53,10 +53,10 @@
         android:background="@color/extreme_dark_mystery"
         android:paddingTop="5dp"
         android:paddingBottom="2dp"
-        android:src="@drawable/energy32" />
+        android:src="@drawable/health32" />
 
     <TextView
-        android:id="@+id/energy"
+        android:id="@+id/health"
         android:layout_column="2"
         android:layout_row="1"
         android:layout_width="60dp"
@@ -72,7 +72,7 @@
         android:textColor="@color/super_light_mystery"/>
 
     <ImageView
-        android:contentDescription="@string/persuasion_icon_cd"
+        android:contentDescription="@string/energy_icon_cd"
         android:layout_width="30dp"
         android:layout_height="32dp"
         android:layout_row="1"
@@ -82,10 +82,10 @@
         android:background="@color/extreme_dark_mystery"
         android:paddingTop="5dp"
         android:paddingBottom="2dp"
-        android:src="@drawable/persuasion32" />
+        android:src="@drawable/energy32" />
 
     <TextView
-        android:id="@+id/persuasion"
+        android:id="@+id/energy"
         android:layout_column="4"
         android:layout_row="1"
         android:layout_width="60dp"

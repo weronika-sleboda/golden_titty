@@ -30,7 +30,6 @@ class DoorFragment : Fragment() {
         setupInfo()
         setupEnterButton()
         setupLeaveButton()
-        setupOpeningInfo()
         return binding.root
     }
 
@@ -47,11 +46,6 @@ class DoorFragment : Fragment() {
     private fun setupInfo() {
 
         binding.buildingInfo.text = door.buildingInfo
-    }
-
-    private fun setupOpeningInfo() {
-
-        binding.closingInfo.closingTime.text = door.closingInfo
     }
 
     private fun setupEnterButton() {

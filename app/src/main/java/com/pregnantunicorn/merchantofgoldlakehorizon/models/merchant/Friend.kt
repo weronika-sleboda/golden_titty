@@ -18,7 +18,7 @@ class Friend(val name: String)
 
         if(friendship == maxValue) {
 
-            Merchant.friendCounter().addFriend()
+
             friendAdded = true
 
         }

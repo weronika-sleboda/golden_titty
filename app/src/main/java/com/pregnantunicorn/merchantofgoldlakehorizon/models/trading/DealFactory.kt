@@ -25,12 +25,6 @@ object DealFactory {
 
         val persuasion = 5
 
-        if(Merchant.persuasion().hasAmount(persuasion)) {
-            Merchant.persuasion().loseAmount(persuasion)
-            deal = randomDeal()
-            return true
-        }
-
         CurrentMessage.changeMessage(
             "No Persuasion",
             R.drawable.persuasion64,

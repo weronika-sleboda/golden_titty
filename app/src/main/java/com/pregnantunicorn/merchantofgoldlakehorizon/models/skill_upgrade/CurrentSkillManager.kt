@@ -8,9 +8,8 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessa
 object CurrentSkillManager {
 
     const val ENERGY = 0
-    const val PERSUASION = 1
-    const val CHARISMA = 2
-    const val INTELLIGENCE = 3
+    const val CHARISMA = 1
+    const val INTELLIGENCE = 2
 
     private val skillManagers = arrayOf(
 
@@ -26,22 +25,6 @@ object CurrentSkillManager {
                     "Max Value Reached",
                     R.drawable.energy64,
                     "Your energy has reached its max value."
-                )
-            }
-        ),
-
-        SkillManager(
-            "Max Persuasion",
-            "Persuasion allows you to change unfavourable deals.",
-            R.drawable.persuasion128,
-            StatusUpdateType.PERSUASION,
-            { Merchant.persuasion().maxValueReached()},
-            { Merchant.persuasion().addMaxAmount(1)},
-            {
-                CurrentMessage.changeMessage(
-                    "Max Value Reached",
-                    R.drawable.persuasion64,
-                    "Your persuasion has reached its max value."
                 )
             }
         ),

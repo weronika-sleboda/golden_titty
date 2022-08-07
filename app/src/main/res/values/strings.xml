@@ -64,7 +64,7 @@
     <string name="exit">Exit ot main menu</string>
     <string name="dialogue_icon_cd">dialogue_icon_cd</string>
     <string name="game_over">Game Over</string>
-    <string name="game_over_info">I see… You didn\'t pay the rent for your house. Don\'t be hard on yourself. I\'m still proud of you, even if you didn\'t complete the mission.</string>
+    <string name="game_over_info">You died from hunger…</string>
     <string name="credits">Credits</string>
     <string name="continue_game">Continue</string>
     <string name="play">Play</string>
@@ -106,4 +106,8 @@
     <string name="menu">Menu</string>
     <string name="items_for_sale">Items For Sale</string>
     <string name="hourglass_icon_cd">hourglass_icon_cd</string>
+    <string name="costs">Costs</string>
+    <string name="restores">Restores</string>
+    <string name="music_on">Music On</string>
+    <string name="music_off">Music Off</string>
 </resources>

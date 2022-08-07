@@ -69,7 +69,7 @@ class SkillManagerFragment: Fragment() {
         when(skillManager.statusUpdateType) {
 
             StatusUpdateType.ENERGY -> statusUpdate.updateEnergy()
-            StatusUpdateType.PERSUASION -> statusUpdate.updatePersuasion()
+            StatusUpdateType.HEALTH -> statusUpdate.updateHealth()
             StatusUpdateType.CHARISMA -> statusUpdate.updateCharisma()
             StatusUpdateType.INTELLIGENCE -> statusUpdate.updateIntelligence()
         }

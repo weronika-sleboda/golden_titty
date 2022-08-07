@@ -3,7 +3,7 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks
 interface MerchantStatusUpdate {
 
     fun updateEnergy()
-    fun updatePersuasion()
+    fun updateHealth()
     fun updateCharisma()
     fun updateIntelligence()
 

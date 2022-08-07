@@ -17,6 +17,8 @@ class Status {
     fun amountIsMaxed() = amount == maxAmount
     fun maxValueReached() = maxAmount == MAX_VALUE
 
+    fun amountIsZero() = amount == 0
+
     fun addMaxAmount(amount: Int) {
 
         maxAmount += amount

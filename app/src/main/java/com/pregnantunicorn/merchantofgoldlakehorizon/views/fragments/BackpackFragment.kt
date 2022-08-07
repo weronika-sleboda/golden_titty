@@ -117,7 +117,7 @@ class BackpackFragment : Fragment(),
         when(food[position].statusUpdateType) {
 
             StatusUpdateType.CHARISMA -> statusUpdate.updateCharisma()
-            StatusUpdateType.PERSUASION -> statusUpdate.updatePersuasion()
+            StatusUpdateType.HEALTH -> statusUpdate.updateHealth()
             StatusUpdateType.ENERGY -> statusUpdate.updateEnergy()
             StatusUpdateType.INTELLIGENCE -> statusUpdate.updateIntelligence()
         }

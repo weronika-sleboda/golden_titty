@@ -17,7 +17,7 @@ class FoodBackpack {
         const val COCONUT_WATER = 6
         const val SMOOTHIE = 7
         const val HOT_CHOCOLATE = 8
-        const val DIVINE_POTION = 9
+        const val HANDSOMENESS_POTION = 9
     }
 
     val foods = arrayOf(
@@ -25,20 +25,62 @@ class FoodBackpack {
         Food(
             "Sushi",
             R.drawable.sushi64,
-            "Energy: 5",
-            { Merchant.energy().addAmount(5)},
-            { Merchant.energy().amountIsMaxed() },
-            statusUpdateType = StatusUpdateType.ENERGY,
+            "Health: 5",
+            { Merchant.health().addAmount(5)},
+            { Merchant.health().amountIsMaxed() },
+            statusUpdateType = StatusUpdateType.HEALTH,
         )
         {
             CurrentMessage.changeMessage(
-            "Full Energy", R.drawable.energy64,
-            "Your energy is already full.")
+                "Full Health", R.drawable.health64,
+                "Your health is already full.")
         },
 
         Food(
             "Ramen",
             R.drawable.ramen64,
+            "Health: 10",
+            { Merchant.health().addAmount(10)},
+            { Merchant.health().amountIsMaxed() },
+            statusUpdateType = StatusUpdateType.HEALTH
+        )
+        {
+            CurrentMessage.changeMessage(
+                "Full Health", R.drawable.health64,
+                "Your health is already full.")
+        },
+
+        Food(
+            "Burger",
+            R.drawable.burger64,
+            "Health: 15",
+            { Merchant.health().addAmount(15)},
+            { Merchant.health().amountIsMaxed() },
+            statusUpdateType = StatusUpdateType.HEALTH
+        )
+        {
+            CurrentMessage.changeMessage(
+                "Full Health", R.drawable.health64,
+                "Your health is already full.")
+        },
+
+        Food(
+            "Filter Coffee",
+            R.drawable.filter_coffee64,
+            "Energy: 5",
+            { Merchant.energy().addAmount(5)},
+            { Merchant.energy().amountIsMaxed() },
+            statusUpdateType = StatusUpdateType.ENERGY
+        )
+        {
+            CurrentMessage.changeMessage(
+                "Full Energy", R.drawable.energy64,
+                "Your energy is already full.")
+        },
+
+        Food(
+            "Cappuccino",
+            R.drawable.cappuccino64,
             "Energy: 10",
             { Merchant.energy().addAmount(10)},
             { Merchant.energy().amountIsMaxed() },
@@ -51,8 +93,8 @@ class FoodBackpack {
         },
 
         Food(
-            "Burger",
-            R.drawable.burger64,
+            "Latte",
+            R.drawable.latte64,
             "Energy: 15",
             { Merchant.energy().addAmount(15)},
             { Merchant.energy().amountIsMaxed() },
@@ -65,8 +107,8 @@ class FoodBackpack {
         },
 
         Food(
-            "Filter Coffee",
-            R.drawable.filter_coffee64,
+            "Coconut Water",
+            R.drawable.coconut_water64,
             "Intelligence: 5",
             { Merchant.intelligence().addAmount(5)},
             { Merchant.intelligence().amountIsMaxed() },
@@ -79,8 +121,8 @@ class FoodBackpack {
         },
 
         Food(
-            "Cappuccino",
-            R.drawable.cappuccino64,
+            "Smoothie",
+            R.drawable.smoothie64,
             "Intelligence: 10",
             { Merchant.intelligence().addAmount(10)},
             { Merchant.intelligence().amountIsMaxed() },
@@ -93,8 +135,8 @@ class FoodBackpack {
         },
 
         Food(
-            "Latte",
-            R.drawable.latte64,
+            "Hot Chocolate",
+            R.drawable.hot_chocolate64,
             "Intelligence: 15",
             { Merchant.intelligence().addAmount(15)},
             { Merchant.intelligence().amountIsMaxed() },
@@ -107,49 +149,7 @@ class FoodBackpack {
         },
 
         Food(
-            "Coconut Water",
-            R.drawable.coconut_water64,
-            "Persuasion: 5",
-            { Merchant.persuasion().addAmount(5)},
-            { Merchant.persuasion().amountIsMaxed() },
-            statusUpdateType = StatusUpdateType.PERSUASION
-        )
-        {
-            CurrentMessage.changeMessage(
-                "Full Persuasion", R.drawable.persuasion64,
-                "Your persuasion is already full.")
-        },
-
-        Food(
-            "Smoothie",
-            R.drawable.smoothie64,
-            "Persuasion: 10",
-            { Merchant.persuasion().addAmount(10)},
-            { Merchant.persuasion().amountIsMaxed() },
-            statusUpdateType = StatusUpdateType.PERSUASION
-        )
-        {
-            CurrentMessage.changeMessage(
-                "Full Persuasion", R.drawable.persuasion64,
-                "Your persuasion is already full.")
-        },
-
-        Food(
-            "Hot Chocolate",
-            R.drawable.hot_chocolate64,
-            "Persuasion: 15",
-            { Merchant.persuasion().addAmount(15)},
-            { Merchant.persuasion().amountIsMaxed() },
-            statusUpdateType = StatusUpdateType.PERSUASION
-        )
-        {
-            CurrentMessage.changeMessage(
-                "Full Persuasion", R.drawable.persuasion64,
-                "Your persuasion is already full.")
-        },
-
-        Food(
-            "Divine Potion",
+            "Handsomeness Potion",
             R.drawable.divine_potion64,
             "Charisma: 10",
             { Merchant.charisma().addAmount(10)},

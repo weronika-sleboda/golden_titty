@@ -22,7 +22,7 @@ object CurrentInformation {
         )
         {
 
-            CurrentLocation.changeLocation(LocationName.METEORS_HOUSE)
+            CurrentLocation.changeLocation(LocationName.DRAGON_INN_BEDROOM)
 
             it.supportFragmentManager.commit {
 

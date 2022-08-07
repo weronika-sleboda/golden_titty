@@ -51,7 +51,7 @@ class CarriageFragment : Fragment() {
     private fun updateMerchantPersuasion() {
 
         val statusUpdate = requireActivity() as MerchantStatusUpdate
-        statusUpdate.updatePersuasion()
+
     }
 
     private fun setupChangeDealButton() {

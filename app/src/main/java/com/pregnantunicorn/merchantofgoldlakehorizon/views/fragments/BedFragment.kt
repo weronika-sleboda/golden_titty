@@ -1,5 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +11,11 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BedFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.bed.Bed
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.bed.CurrentBed
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.rent.RentTime
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.activities.GameOverActivity
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -22,7 +26,7 @@ import kotlinx.coroutines.withContext
 class BedFragment : Fragment() {
 
     private lateinit var binding: BedFragmentBinding
-    private val bed = Bed()
+    private val bed = CurrentBed.bed()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,6 +39,7 @@ class BedFragment : Fragment() {
         setupIcon()
         setupSleepButton()
         setupLeaveButton()
+        setupHealthCostToString()
 
         return binding.root
     }
@@ -44,12 +49,17 @@ class BedFragment : Fragment() {
         binding.icon.setImageResource(bed.icon())
     }
 
+    private fun setupHealthCostToString() {
+
+        binding.requirement.healthCost.text = bed.healthCostToString()
+    }
+
     private fun updateMerchantStatus() {
 
         val statusUpdate = requireActivity() as MerchantStatusUpdate
         statusUpdate.updateEnergy()
         statusUpdate.updateCharisma()
-        statusUpdate.updatePersuasion()
+        statusUpdate.updateHealth()
         statusUpdate.updateIntelligence()
         statusUpdate.updateDayCycleCounter()
     }
@@ -64,16 +74,15 @@ class BedFragment : Fragment() {
 
                 withContext(Dispatchers.Main) {
 
-                    updateMerchantStatus()
-                    showMessage()
+                    if(Merchant.isDead()) {
 
-                    if(RentTime.timeToPay()) {
-
-                        goToRentCollector()
+                        endTheGame()
                     }
 
                     else {
 
+                        updateMerchantStatus()
+                        showMessage()
                         goToWorldMap()
                     }
                 }
@@ -81,12 +90,10 @@ class BedFragment : Fragment() {
         }
     }
 
-    private fun goToRentCollector() {
+    private fun endTheGame() {
 
-        activity?.supportFragmentManager?.commit {
-
-            replace<RentCollectorFragment>(R.id.world_container)
-        }
+        val intent = Intent(context, GameOverActivity::class.java)
+        startActivity(intent)
     }
 
     private fun goToWorldMap() {

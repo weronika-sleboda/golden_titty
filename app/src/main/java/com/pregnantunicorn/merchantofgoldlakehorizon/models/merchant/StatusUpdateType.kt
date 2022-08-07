@@ -2,7 +2,7 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant
 
 enum class StatusUpdateType {
 
-    PERSUASION,
+    HEALTH,
     ENERGY,
     CHARISMA,
     INTELLIGENCE

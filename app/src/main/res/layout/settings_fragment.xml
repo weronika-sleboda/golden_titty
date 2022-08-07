@@ -14,17 +14,8 @@
         android:textColor="@color/super_light_mystery"
         android:textSize="20sp"
         android:fontFamily="@font/raleway_medium"
-        android:text="@string/bed"
+        android:text="Settings"
         android:background="@drawable/dark_one_corner_rectangle_background"/>
-
-    <include
-        android:id="@+id/requirement"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        layout="@layout/bed_info_layout"/>
 
     <GridLayout
         android:padding="10dp"
@@ -34,16 +25,17 @@
 
         <ImageView
             android:id="@+id/icon"
-            android:contentDescription="@string/bed_icon_cd"
+            android:contentDescription="@string/meteors_altar_icon_cd"
             android:layout_column="0"
             android:layout_row="0"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
+            android:layout_width="118dp"
+            android:layout_height="118dp"
             android:layout_gravity="center"
             android:padding="10dp"
+            android:src="@drawable/harp64_morning"
             android:background="@drawable/left_extreme_dark_shape_background"/>
 
-        <LinearLayout
+        <RadioGroup
             android:layout_column="1"
             android:layout_row="0"
             android:layout_width="200dp"
@@ -55,9 +47,10 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:background="@drawable/right_middle_dark_shape_background"
-            android:layout_height="128dp">
+            android:layout_height="118dp">
 
-            <TextView
+            <RadioButton
+                android:id="@+id/on_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -66,15 +59,45 @@
                 android:textSize="17sp"
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
-                android:text="@string/bed_info"
+                android:text="@string/music_on"
+                android:buttonTint="@color/dark_mystery"
                 android:fontFamily="@font/raleway_medium"/>
 
-        </LinearLayout>
+            <RadioButton
+                android:id="@+id/off_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/extreme_dark_mystery"
+                android:textSize="17sp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/music_off"
+                android:buttonTint="@color/dark_mystery"
+                android:fontFamily="@font/raleway_medium"/>
+
+        </RadioGroup>
 
     </GridLayout>
 
     <Button
-        android:id="@+id/sleep_button"
+        android:id="@+id/save_button"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:backgroundTint="@null"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/light_mystery"
+        android:textSize="18sp"
+        android:text="@string/save_file"
+        android:gravity="center"
+        android:background="@drawable/dark_rectangle_gradient_button_background"/>
+
+    <Button
+        android:id="@+id/main_menu_button"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_width="match_parent"
@@ -83,12 +106,12 @@
         android:fontFamily="@font/raleway_medium"
         android:textColor="@color/light_mystery"
         android:textSize="18sp"
+        android:text="@string/exit"
         android:gravity="center"
-        android:text="@string/sleep"
         android:background="@drawable/dark_rectangle_gradient_button_background"/>
 
     <Button
-        android:id="@+id/leave_button"
+        android:id="@+id/exit_button"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="15dp"
@@ -98,7 +121,7 @@
         android:fontFamily="@font/raleway_medium"
         android:textColor="@color/light_mystery"
         android:textSize="18sp"
-        android:text="@string/leave"
+        android:text="@string/exit_game"
         android:gravity="center"
         android:background="@drawable/dark_rectangle_gradient_button_background"/>
 

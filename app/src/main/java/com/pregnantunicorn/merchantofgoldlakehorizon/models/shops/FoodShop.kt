@@ -57,7 +57,7 @@ class FoodShop {
 
         Product("Divine Potion", R.drawable.divine_potion64, 24){
 
-            Merchant.food()[FoodBackpack.DIVINE_POTION].addAmount(1)
+            Merchant.food()[FoodBackpack.HANDSOMENESS_POTION].addAmount(1)
         }
     )
 }
