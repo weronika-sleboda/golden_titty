@@ -6,24 +6,15 @@ class ItemBackpack {
 
     companion object {
 
-        const val LOVE_LETTER = 0
-        const val GEMS = 1
+        const val DI_BEDROOM_KEY = 0
     }
 
     val items = arrayOf(
 
         Item(
-            "Love Letter",
-            "???",
-            R.drawable.scroll64,
-            ItemType.LOVE_LETTER,
-        ),
-
-        Item(
-            "GEMS",
-            "???",
-            R.drawable.gems64,
-            ItemType.GEMS,
+            "Dragon Tavern Bedroom Key",
+            R.drawable.di_bedroom_key64,
+            ItemType.DI_BEDROOM_KEY,
         )
     )
 }

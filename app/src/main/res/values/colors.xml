@@ -54,6 +54,9 @@
     <color name="light_green">#50d964</color>
     <color name="green">#2b8037</color>
 
+    <color name="light_red">#ff7878</color>
+    <color name="red">#ad3434</color>
+
     <!-- Day Cycle -->
     <color name="morning">#b8d4fc</color>
     <color name="sunset">#fc9160</color>

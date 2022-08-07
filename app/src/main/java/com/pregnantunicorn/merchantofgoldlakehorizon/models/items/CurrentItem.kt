@@ -28,8 +28,7 @@ object CurrentItem {
         return when(item) {
 
             ItemType.NONE -> R.drawable.grab64
-            ItemType.LOVE_LETTER -> R.drawable.scroll64
-            ItemType.GEMS -> R.drawable.gems64
+            ItemType.DI_BEDROOM_KEY -> R.drawable.di_bedroom_key64
         }
     }
 }

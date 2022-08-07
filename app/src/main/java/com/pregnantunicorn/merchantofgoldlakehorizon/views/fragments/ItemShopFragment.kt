@@ -10,12 +10,10 @@ import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ItemShopFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.RobeShopFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.ItemShop
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.RobeShop
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.ItemShopAdapter
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.RobeProductAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope

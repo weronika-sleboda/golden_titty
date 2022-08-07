@@ -37,12 +37,6 @@ class Npc(
             Merchant.goldenCoins().loseAmount(friendshipPrice)
             Merchant.friends()[friendIndex].raiseFriendship()
 
-            greeting = when(CurrentItem.item()) {
-
-                ItemType.GEMS -> "Beautiful gems"
-                ItemType.LOVE_LETTER -> "For me? Thanks"
-                ItemType.NONE -> "Hello"
-            }
 
             return true
         }

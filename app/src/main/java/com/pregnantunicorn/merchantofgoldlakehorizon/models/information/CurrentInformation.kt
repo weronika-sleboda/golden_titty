@@ -5,7 +5,6 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world.CurrentLocation
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world.LocationName
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.BedFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.LocationFragment
 
 object CurrentInformation {

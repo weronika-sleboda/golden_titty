@@ -23,7 +23,6 @@ class ItemAdapter(
 
         val icon = binding.icon
         val name = binding.name
-        val info = binding.info
         val buttonIcon = binding.buttonIcon
     }
 
@@ -39,7 +38,6 @@ class ItemAdapter(
 
         holder.icon.setImageResource(items[position].icon)
         holder.name.text = items[position].name
-        holder.info.text = items[position].info
 
         holder.buttonIcon.setOnClickListener {
 

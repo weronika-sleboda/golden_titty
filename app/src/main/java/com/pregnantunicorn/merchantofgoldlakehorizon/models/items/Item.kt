@@ -2,7 +2,6 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.items
 
 class Item(
     val name: String,
-    val info: String,
     val icon: Int,
     val itemType: ItemType,
 )

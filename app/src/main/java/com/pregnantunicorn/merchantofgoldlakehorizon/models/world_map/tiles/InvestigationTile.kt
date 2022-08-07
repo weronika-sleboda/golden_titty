@@ -4,11 +4,9 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.investigation.CurrentInvestigation
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.InvestigationFragment
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.MeteorsTableFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.HardChestFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.SneakFragment
 
 class InvestigationTile(
     private val investigationIndex: Int,
@@ -26,7 +24,7 @@ class InvestigationTile(
 
         activity.supportFragmentManager.commit {
 
-            replace<InvestigationFragment>(R.id.world_container)
+            replace<SneakFragment>(R.id.world_container)
         }
     }
 }

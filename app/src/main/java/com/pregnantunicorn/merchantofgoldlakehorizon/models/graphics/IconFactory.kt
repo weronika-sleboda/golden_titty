@@ -13,6 +13,27 @@ class IconFactory {
     fun rubyStone128() = R.drawable.ruby_stone128
     fun rubyStone64() = R.drawable.ruby_stone64
 
+
+    fun ironChest64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.iron_chest64_morning }
+            DayCycle.SUNSET -> { R.drawable.iron_chest64_sunset }
+            DayCycle.NIGHT -> { R.drawable.iron_chest64_night }
+        }
+    }
+
+    fun ironChest128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.iron_chest128_morning }
+            DayCycle.SUNSET -> { R.drawable.iron_chest128_sunset }
+            DayCycle.NIGHT -> { R.drawable.iron_chest128_night }
+        }
+    }
+
     fun tavernBed64(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
