@@ -110,4 +110,10 @@
     <string name="restores">Restores</string>
     <string name="music_on">Music On</string>
     <string name="music_off">Music Off</string>
+    <string name="tile_icon_cd">tile_icon_cd</string>
+    <string name="equip_icon_cd">equip_icon_cd</string>
+    <string name="boomerangs">Boomerangs</string>
+    <string name="dates_icon_cd">dates_icon_cd</string>
+    <string name="coconut_icon_cd">coconut_icon_cd</string>
+    <string name="bird_icon_cd">bird_icon_cd</string>
 </resources>

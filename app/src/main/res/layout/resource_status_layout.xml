@@ -7,18 +7,18 @@
     android:background="@drawable/super_dark_corner_rectangle_background">
 
     <ImageView
-        android:contentDescription="@string/emerald_icon_cd"
+        android:contentDescription="@string/dates_icon_cd"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:padding="3dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="5dp"
-        android:src="@drawable/emerald32"
+        android:src="@drawable/dates32"
         android:background="@drawable/extreme_dark_oval_background"/>
 
 
     <TextView
-        android:id="@+id/emerald"
+        android:id="@+id/dates"
         android:layout_width="40dp"
         android:layout_height="35dp"
         android:layout_gravity="center"
@@ -27,23 +27,22 @@
         android:textSize="17sp"
         android:layout_marginStart="5dp"
         android:paddingBottom="5dp"
-        android:text="999"
         android:background="@drawable/extreme_dark_rectangle_background"
         android:fontFamily="@font/raleway_medium"/>
 
     <ImageView
-        android:contentDescription="@string/sapphire_icon_cd"
+        android:contentDescription="@string/coconut_icon_cd"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:padding="3dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="10dp"
-        android:src="@drawable/sapphire32"
+        android:src="@drawable/coconut32"
         android:background="@drawable/extreme_dark_oval_background"/>
 
 
     <TextView
-        android:id="@+id/sapphire"
+        android:id="@+id/coconuts"
         android:layout_width="40dp"
         android:layout_height="35dp"
         android:layout_gravity="center"
@@ -52,22 +51,21 @@
         android:textSize="17sp"
         android:layout_marginStart="5dp"
         android:paddingBottom="5dp"
-        android:text="999"
         android:background="@drawable/extreme_dark_rectangle_background"
         android:fontFamily="@font/raleway_medium"/>
 
     <ImageView
-        android:contentDescription="@string/ruby_icon_cd"
+        android:contentDescription="@string/bird_icon_cd"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:padding="3dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="10dp"
-        android:src="@drawable/ruby32"
+        android:src="@drawable/chicken_leg32"
         android:background="@drawable/extreme_dark_oval_background"/>
 
     <TextView
-        android:id="@+id/ruby"
+        android:id="@+id/poultry"
         android:layout_width="40dp"
         android:layout_height="35dp"
         android:layout_gravity="center"
@@ -76,7 +74,6 @@
         android:textSize="17sp"
         android:layout_marginStart="5dp"
         android:paddingBottom="5dp"
-        android:text="999"
         android:background="@drawable/extreme_dark_rectangle_background"
         android:fontFamily="@font/raleway_medium"/>
 

@@ -12,9 +12,9 @@ class SapphireDeal : Deal(
 
     override fun sell(): Boolean {
 
-        if(Merchant.sapphire().hasAmount(demand)) {
+        if(Merchant.dates().hasAmount(demand)) {
 
-            Merchant.sapphire().loseAmount(demand)
+            Merchant.dates().loseAmount(demand)
             Merchant.goldenCoins().addAmount(reward)
             return true
         }

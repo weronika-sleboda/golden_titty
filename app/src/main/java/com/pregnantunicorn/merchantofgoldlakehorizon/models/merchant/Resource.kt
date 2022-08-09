@@ -1,6 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant
 
-class Gem {
+class Resource {
 
     companion object {
 

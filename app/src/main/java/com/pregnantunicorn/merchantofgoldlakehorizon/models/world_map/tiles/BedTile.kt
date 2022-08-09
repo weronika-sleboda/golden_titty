@@ -7,6 +7,8 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.bed.BedType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.bed.CurrentBed
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.BedFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.CaveFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.SneakFragment
 
 class BedTile(
     private val bedType: BedType,
@@ -24,7 +26,7 @@ class BedTile(
 
         activity.supportFragmentManager.commit {
 
-            replace<BedFragment>(R.id.world_container)
+            replace<SneakFragment>(R.id.world_container)
         }
     }
 }

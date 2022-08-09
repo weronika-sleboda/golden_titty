@@ -12,9 +12,9 @@ class EmeraldDeal : Deal(
 
     override fun sell(): Boolean {
 
-        if(Merchant.emerald().hasAmount(demand)) {
+        if(Merchant.dates().hasAmount(demand)) {
 
-            Merchant.emerald().loseAmount(demand)
+            Merchant.dates().loseAmount(demand)
             Merchant.goldenCoins().addAmount(reward)
             return true
         }

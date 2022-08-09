@@ -6,7 +6,7 @@ class Robe(
     val icon: Int,
     val robeType: RobeType,
     val algorithm: () -> Unit,
-    private var owns: Boolean = false
+    private var owns: Boolean = true
 )
 {
 

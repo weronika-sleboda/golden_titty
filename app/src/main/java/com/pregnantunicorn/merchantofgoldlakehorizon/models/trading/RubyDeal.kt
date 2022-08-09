@@ -12,9 +12,9 @@ class RubyDeal : Deal(
 
     override fun sell(): Boolean {
 
-        if(Merchant.ruby().hasAmount(demand)) {
+        if(Merchant.dates().hasAmount(demand)) {
 
-            Merchant.ruby().loseAmount(demand)
+            Merchant.dates().loseAmount(demand)
             Merchant.goldenCoins().addAmount(reward)
             return true
         }

@@ -10,7 +10,7 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.GemSupplierFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.cave.CurrentGemSupplier
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.GemUpdateType
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.ResourceUpdateType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -61,11 +61,9 @@ class GemSupplierFragment: Fragment() {
         val status = requireActivity() as MerchantStatusUpdate
         status.updateEnergy()
 
-        when(gemSupplier.gemUpdateType) {
+        when(gemSupplier.resourceUpdateType) {
 
-            GemUpdateType.RUBY -> status.updateRuby()
-            GemUpdateType.EMERALD -> status.updateEmerald()
-            GemUpdateType.SAPPHIRE -> status.updateSapphire()
+
         }
     }
 

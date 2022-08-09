@@ -1,9 +1,5 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.robes
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemType
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
-
 object CurrentRobe {
 
     private var robe = RobeType.WHITE

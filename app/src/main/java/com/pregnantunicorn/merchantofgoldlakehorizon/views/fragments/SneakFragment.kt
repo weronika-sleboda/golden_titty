@@ -50,19 +50,23 @@ class SneakFragment : Fragment() {
 
                         if(counter < 100) {
 
-                            delay(4)
                             counter += 10
                         }
 
                         if(counter == 100) {
 
                             counter = 0
+
                         }
+
+                        delay(4)
 
                         withContext(Dispatchers.Main) {
 
                             binding.noiseProgressBar.progress = counter
                         }
+
+
                     }
                 }
             }
@@ -111,5 +115,12 @@ class SneakFragment : Fragment() {
 
 
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        job?.cancel()
+        job = null
     }
 }

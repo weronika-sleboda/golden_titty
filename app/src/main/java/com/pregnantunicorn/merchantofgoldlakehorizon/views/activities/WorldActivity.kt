@@ -6,8 +6,8 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.WorldActivityBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.CurrentItem
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemType
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentHandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.HandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.rent.RentTime
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
@@ -31,30 +31,32 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         updateGoldenCoins()
         updateDayCycleCounter()
 
-        updateEmerald()
-        updateSapphire()
-        updateRuby()
+        updateDates()
+        updateCoconuts()
+        updatePoultry()
+
+        setupFab()
         updateFab()
+
         selectWorldButton()
         setupWorldButton()
         setupBackpackButton()
         setupSettingsButton()
-        setupFabButton()
         goToWorldMap()
+    }
+
+    private fun setupFab() {
+
+        binding.itemHolder.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            updateFab()
+        }
     }
 
     override fun updateFab() {
 
-        binding.itemHolder.setImageResource(CurrentItem.fabIcon())
-    }
-
-    private fun setupFabButton() {
-
-        binding.itemHolder.setOnClickListener {
-
-            CurrentItem.changeItem(ItemType.NONE)
-            updateFab()
-        }
+        binding.itemHolder.setImageResource(CurrentHandState.fabIcon())
     }
 
     private fun goToWorldMap() {
@@ -141,19 +143,19 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         binding.merchant.intelligence.text = Merchant.intelligence().amountToString()
     }
 
-    override fun updateEmerald() {
+    override fun updateDates() {
 
-        binding.resources.emerald.text = Merchant.emerald().amountToString()
+        binding.resources.dates.text = Merchant.dates().amountToString()
     }
 
-    override fun updateSapphire() {
+    override fun updateCoconuts() {
 
-        binding.resources.sapphire.text = Merchant.sapphire().amountToString()
+        binding.resources.coconuts.text = Merchant.coconuts().amountToString()
     }
 
-    override fun updateRuby() {
+    override fun updatePoultry() {
 
-        binding.resources.ruby.text = Merchant.ruby().amountToString()
+        binding.resources.poultry.text = Merchant.poultry().amountToString()
     }
 
     override fun updateDayCycleCounter() {

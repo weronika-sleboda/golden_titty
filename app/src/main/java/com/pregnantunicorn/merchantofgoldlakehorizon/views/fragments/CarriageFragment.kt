@@ -81,9 +81,6 @@ class CarriageFragment : Fragment() {
         val statusUpdate = requireActivity() as MerchantStatusUpdate
         statusUpdate.updateGoldenCoins()
 
-        statusUpdate.updateEmerald()
-        statusUpdate.updateSapphire()
-        statusUpdate.updateRuby()
 
     }
 

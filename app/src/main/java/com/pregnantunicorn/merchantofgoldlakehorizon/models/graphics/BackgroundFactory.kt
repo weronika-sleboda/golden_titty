@@ -6,6 +6,16 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 
 class BackgroundFactory {
 
+    fun boomerangTile(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.boomerang_tile_morning_background }
+            DayCycle.SUNSET -> { R.drawable.boomerang_tile_sunset_background}
+            DayCycle.NIGHT -> { R.drawable.boomerang_tile_night_background}
+        }
+    }
+
     fun blueCarpet(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {

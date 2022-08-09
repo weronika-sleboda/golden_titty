@@ -47,7 +47,7 @@ object CurrentInvestigation {
                 { R.drawable.di_bedroom_key128 },
                 "There is a key lying in the chest."
             ),
-        ) { Merchant.items()[ItemBackpack.DI_BEDROOM_KEY].add() },
+        ) {  },
     )
 
     private var investigationObject: InvestigationObject = investigations[DRAGON_INN_CHEST_MORNING]

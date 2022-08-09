@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_column="3"
     android:id="@+id/food_layout"
-    android:background="@drawable/extreme_dark_rectangle_background">
+    android:background="@drawable/extreme_dark_shape_background">
 
     <ImageView
         android:id="@+id/icon"

@@ -8,9 +8,9 @@ object Merchant {
     private var health = Status()
     private var charisma = Status()
     private var intelligence = Status()
-    private var emerald = Gem()
-    private var sapphire = Gem()
-    private var ruby = Gem()
+    private var dates = Resource()
+    private var coconuts = Resource()
+    private var poultry = Resource()
     private var items = ItemBackpack()
 
     private var foodBackpack = FoodBackpack()
@@ -25,9 +25,9 @@ object Merchant {
     fun charisma() = charisma
     fun intelligence() = intelligence
 
-    fun emerald() = emerald
-    fun sapphire() = sapphire
-    fun ruby() = ruby
+    fun dates() = dates
+    fun coconuts() = coconuts
+    fun poultry() = poultry
 
     fun food() = foodBackpack.foods
     fun appearance() = appearance

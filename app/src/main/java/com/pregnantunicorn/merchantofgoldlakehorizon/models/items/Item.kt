@@ -3,10 +3,9 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.items
 class Item(
     val name: String,
     val icon: Int,
-    val itemType: ItemType,
 )
 {
-    private var owns = false
+    private var owns = true
 
     fun owns() = owns
 

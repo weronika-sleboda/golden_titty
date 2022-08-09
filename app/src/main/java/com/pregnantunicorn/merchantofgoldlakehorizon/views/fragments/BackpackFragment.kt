@@ -8,11 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BackpackFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.CurrentItem
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.BoomerangManager
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentBoomerang
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentHandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.HandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.StatusUpdateType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.FoodAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.ItemAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
@@ -24,15 +28,18 @@ import kotlinx.coroutines.withContext
 
 class BackpackFragment : Fragment(),
     FoodAdapter.FoodListener,
+    BoomerangAdapter.BoomerangListener,
     ItemAdapter.ItemListener
 {
 
     private lateinit var binding: BackpackFragmentBinding
     private lateinit var foodAdapter: FoodAdapter
+    private lateinit var boomerangAdapter: BoomerangAdapter
     private lateinit var itemsAdapter: ItemAdapter
     private lateinit var layoutManager: LinearLayoutManager
     private val food = Merchant.food()
     private val items = ItemManager().items()
+    private var boomerangs = BoomerangManager().boomerangs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,9 +52,16 @@ class BackpackFragment : Fragment(),
         selectFoodTab()
         updateFood()
         setupFoodTab()
+        setupBoomerangTab()
         setupItemsTab()
 
         return binding.root
+    }
+
+    private fun updateFab() {
+
+        val statusUpdate = requireActivity() as MerchantStatusUpdate
+        statusUpdate.updateFab()
     }
 
     private fun setupFoodTab() {
@@ -64,6 +78,7 @@ class BackpackFragment : Fragment(),
         binding.foodTab.setBackgroundResource(R.drawable.selected_tab_background)
         binding.clothesTab.setBackgroundResource(R.drawable.tab_background)
         binding.itemsTab.setBackgroundResource(R.drawable.tab_background)
+        binding.boomerangTab.setBackgroundResource(R.drawable.tab_background)
     }
 
     private fun updateFood() {
@@ -74,11 +89,31 @@ class BackpackFragment : Fragment(),
         binding.backpackRecycler.layoutManager = layoutManager
     }
 
-    private fun updateFab() {
+    private fun setupBoomerangTab() {
 
-        val statusUpdate = requireActivity() as MerchantStatusUpdate
-        statusUpdate.updateFab()
+        binding.boomerangTab.setOnClickListener {
+
+            selectBoomerangTab()
+            updateBoomerangs()
+        }
     }
+
+    private fun selectBoomerangTab() {
+
+        binding.foodTab.setBackgroundResource(R.drawable.tab_background)
+        binding.clothesTab.setBackgroundResource(R.drawable.tab_background)
+        binding.itemsTab.setBackgroundResource(R.drawable.tab_background)
+        binding.boomerangTab.setBackgroundResource(R.drawable.selected_tab_background)
+    }
+
+    private fun updateBoomerangs() {
+
+        boomerangAdapter = BoomerangAdapter(boomerangs, this)
+        layoutManager = LinearLayoutManager(context)
+        binding.backpackRecycler.adapter = boomerangAdapter
+        binding.backpackRecycler.layoutManager = layoutManager
+    }
+
 
     private fun setupItemsTab() {
 
@@ -94,6 +129,7 @@ class BackpackFragment : Fragment(),
         binding.foodTab.setBackgroundResource(R.drawable.tab_background)
         binding.clothesTab.setBackgroundResource(R.drawable.tab_background)
         binding.itemsTab.setBackgroundResource(R.drawable.selected_tab_background)
+        binding.boomerangTab.setBackgroundResource(R.drawable.tab_background)
     }
 
     private fun updateItems() {
@@ -106,8 +142,6 @@ class BackpackFragment : Fragment(),
 
     override fun onClickItem(position: Int) {
 
-        CurrentItem.changeItem(items[position].itemType)
-        updateFab()
     }
 
     private fun updateMerchantStatus(position: Int) {
@@ -147,6 +181,14 @@ class BackpackFragment : Fragment(),
 
         InfoDialogFragment(CurrentMessage.message())
             .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+    }
+
+    override fun onClickBoomerang(position: Int) {
+
+        CurrentBoomerang.changeBoomerang(position)
+        CurrentHandState.changeHandState(HandState.BOOMERANG)
+
+        updateFab()
     }
 
 }

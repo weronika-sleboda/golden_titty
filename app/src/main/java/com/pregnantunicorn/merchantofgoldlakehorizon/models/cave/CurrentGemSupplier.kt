@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.cave
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.GemUpdateType
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.ResourceUpdateType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 
 object CurrentGemSupplier {
@@ -12,28 +12,28 @@ object CurrentGemSupplier {
             R.drawable.emerald_stone128,
             "Emerald",
             "Here you can acquire emerald.",
-            GemUpdateType.EMERALD
-        ) { Merchant.emerald().addAmount(1) }
+            ResourceUpdateType.DATES
+        ) { Merchant.dates().addAmount(1) }
     }
 
     private fun sapphireSupplier(): GemSupplier {
 
         return GemSupplier(
-            R.drawable.sapphire_stone128,
-            "Sapphire",
-            "Here you can acquire sapphire.",
-            GemUpdateType.SAPPHIRE
-        ) { Merchant.sapphire().addAmount(1) }
+            R.drawable.emerald_stone128,
+            "Emerald",
+            "Here you can acquire emerald.",
+            ResourceUpdateType.DATES
+        ) { Merchant.dates().addAmount(1) }
     }
 
     private fun rubySupplier(): GemSupplier {
 
         return GemSupplier(
-            R.drawable.ruby_stone128,
-            "Ruby",
-            "Here you can acquire ruby.",
-            GemUpdateType.RUBY
-        ) { Merchant.ruby().addAmount(1) }
+            R.drawable.emerald_stone128,
+            "Emerald",
+            "Here you can acquire emerald.",
+            ResourceUpdateType.DATES
+        ) { Merchant.dates().addAmount(1) }
     }
 
     private var gemSupplier = emeraldSupplier()

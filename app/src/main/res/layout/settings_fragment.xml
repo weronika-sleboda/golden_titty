@@ -32,7 +32,7 @@
             android:layout_height="118dp"
             android:layout_gravity="center"
             android:padding="10dp"
-            android:src="@drawable/harp64_morning"
+            android:src="@drawable/harp128_morning"
             android:background="@drawable/left_extreme_dark_shape_background"/>
 
         <RadioGroup

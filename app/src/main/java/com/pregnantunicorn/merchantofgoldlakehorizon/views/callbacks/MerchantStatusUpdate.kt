@@ -7,9 +7,9 @@ interface MerchantStatusUpdate {
     fun updateCharisma()
     fun updateIntelligence()
 
-    fun updateEmerald()
-    fun updateSapphire()
-    fun updateRuby()
+    fun updateDates()
+    fun updateCoconuts()
+    fun updatePoultry()
 
     fun updateDayCycleCounter()
     fun updateGoldenCoins()

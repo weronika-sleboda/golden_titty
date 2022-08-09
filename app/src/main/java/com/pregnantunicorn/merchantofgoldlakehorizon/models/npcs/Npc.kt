@@ -2,9 +2,7 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.npcs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.Message
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.CurrentItem
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 
 class Npc(

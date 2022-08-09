@@ -1,8 +1,8 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant
 
-enum class GemUpdateType {
+enum class ResourceUpdateType {
 
-    EMERALD,
-    SAPPHIRE,
-    RUBY,
+    DATES,
+    COCONUTS,
+    POULTRY,
 }

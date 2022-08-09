@@ -3,7 +3,7 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.tiles
 import androidx.fragment.app.FragmentActivity
 
 abstract class Tile(
-    private val iconIsVisible: Boolean = false,
+    protected var iconIsVisible: Boolean = false,
 )
 {
     fun iconIsVisible() = iconIsVisible
