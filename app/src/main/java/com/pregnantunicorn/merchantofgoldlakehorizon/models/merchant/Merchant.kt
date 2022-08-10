@@ -10,7 +10,7 @@ object Merchant {
     private var intelligence = Status()
     private var dates = Resource()
     private var coconuts = Resource()
-    private var poultry = Resource()
+    private var peaches = Resource()
     private var items = ItemBackpack()
 
     private var foodBackpack = FoodBackpack()
@@ -27,7 +27,7 @@ object Merchant {
 
     fun dates() = dates
     fun coconuts() = coconuts
-    fun poultry() = poultry
+    fun peaches() = peaches
 
     fun food() = foodBackpack.foods
     fun appearance() = appearance

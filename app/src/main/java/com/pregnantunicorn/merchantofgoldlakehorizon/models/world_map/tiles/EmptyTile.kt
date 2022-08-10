@@ -20,5 +20,6 @@ class EmptyTile(
     override fun onClick(activity: FragmentActivity) {
 
         //*** Do nothing
+        CurrentDayCycle.changeDayCycle()
     }
 }

@@ -18,7 +18,7 @@ object CurrentBoomerang {
             300,
             1,
             2,
-            BoomerangStyleName.SINGLE_UNPREDICTABLE,
+            BoomerangStyleName.UNPREDICTABLE,
             true
         ),
 
@@ -32,7 +32,7 @@ object CurrentBoomerang {
             300,
             1,
             5,
-            BoomerangStyleName.SINGLE_CIRCULAR,
+            BoomerangStyleName.ZIGZAG,
             true
         )
     )

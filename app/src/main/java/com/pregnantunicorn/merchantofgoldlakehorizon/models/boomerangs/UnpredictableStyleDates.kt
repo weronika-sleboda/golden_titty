@@ -1,36 +1,45 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
-class SingleCircularStyleBird : BoomerangStyle() {
+class UnpredictableStyleDates : BoomerangStyle() {
 
-    companion object {
+    private var hitPosition = when(Random.nextInt(4)) {
 
-        private var boomerangPosition = 0
-        //*** Position has to be stored in companion object so that the boomerang can move.
+        0 -> 0
+        1 -> 3
+        2 -> 4
+        else -> 7
     }
 
-    private var hitPosition = Random.nextInt(rangeSize)
+    private var boomerangPosition = Random.nextInt(rangeSize)
+
+    override fun name() = "Date Palm"
 
     override fun range(): Array<BoomerangTile> {
 
-        return Array(rangeSize){ BoomerangTile(background = { BackgroundFactory().water() }) }
+        return Array(rangeSize) { BoomerangTile() }.also {
+
+            it[hitPosition] = BoomerangTile(
+                targetIsVisible = true,
+                targetIcon = targetIcon,
+            )
+        }
     }
 
     override fun checkHitCondition(hitAmount: Int): Boolean {
 
         if(boomerangPosition == hitPosition) {
 
-            Merchant.poultry().addAmount(hitAmount)
+            Merchant.dates().addAmount(hitAmount)
 
             CurrentMessage.changeMessage(
                 "Target Hit!",
-                R.drawable.chicken_leg64,
-                "Bird has been acquired."
+                R.drawable.dates64,
+                "Dates have been acquired."
             )
 
             return true
@@ -39,21 +48,21 @@ class SingleCircularStyleBird : BoomerangStyle() {
         return false
     }
 
-    private val targetIcon = R.drawable.flying_monster64
+    private val targetIcon = R.drawable.dates64
 
     override fun newRange(boomerangIcon: Int): Array<BoomerangTile> {
 
-        return Array(rangeSize) { BoomerangTile(background = { BackgroundFactory().water() }) }.also {
+        return Array(rangeSize) { BoomerangTile() }.also {
 
-            boomerangPosition++
+            hitPosition = when(Random.nextInt(4)) {
 
-            if(boomerangPosition >= rangeSize) {
-
-                boomerangPosition = 0
+                0 -> 0
+                1 -> 3
+                2 -> 4
+                else -> 7
             }
 
             it[hitPosition] = BoomerangTile(
-                background = { BackgroundFactory().water() },
                 targetIsVisible = true,
                 targetIcon = targetIcon,
             )
@@ -61,7 +70,6 @@ class SingleCircularStyleBird : BoomerangStyle() {
             if(boomerangPosition == hitPosition) {
 
                 it[boomerangPosition] = BoomerangTile(
-                    background = { BackgroundFactory().water() },
                     boomerangIcon = boomerangIcon,
                     boomerangIsVisible = true,
                     targetIsVisible = true,
@@ -72,7 +80,6 @@ class SingleCircularStyleBird : BoomerangStyle() {
             else {
 
                 it[boomerangPosition] = BoomerangTile(
-                    background = { BackgroundFactory().water() },
                     boomerangIcon = boomerangIcon,
                     boomerangIsVisible = true,
                 )

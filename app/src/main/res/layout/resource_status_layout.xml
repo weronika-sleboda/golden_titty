@@ -55,17 +55,17 @@
         android:fontFamily="@font/raleway_medium"/>
 
     <ImageView
-        android:contentDescription="@string/bird_icon_cd"
+        android:contentDescription="@string/peaches_icon_cd"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:padding="3dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="10dp"
-        android:src="@drawable/chicken_leg32"
+        android:src="@drawable/peach32"
         android:background="@drawable/extreme_dark_oval_background"/>
 
     <TextView
-        android:id="@+id/poultry"
+        android:id="@+id/peaches"
         android:layout_width="40dp"
         android:layout_height="35dp"
         android:layout_gravity="center"

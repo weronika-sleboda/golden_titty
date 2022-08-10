@@ -5,33 +5,42 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
-class SingleUnpredictableStyleDates : BoomerangStyle() {
+class ZigZagStyleDates : BoomerangStyle() {
 
-    private var hitPosition1 = 5
-    private var hitPosition2 = 3
-    private var boomerangPosition = Random.nextInt(rangeSize)
+    companion object {
+
+        private var boomerangPosition = 0
+        //*** Position has to be stored in companion object so that the boomerang can move.
+
+    }
+
+    private var hitPosition = when(Random.nextInt(4)) {
+
+        0 -> 0
+        1 -> 3
+        2 -> 4
+        else -> 7
+    }
+
+    override fun name() = "Date Palm"
 
     override fun range(): Array<BoomerangTile> {
 
         return Array(rangeSize) { BoomerangTile() }.also {
 
-            it[hitPosition1] = BoomerangTile(
+            it[hitPosition] = BoomerangTile(
                 targetIsVisible = true,
                 targetIcon = targetIcon,
             )
 
-            it[hitPosition2] = BoomerangTile(
-                targetIsVisible = true,
-                targetIcon = targetIcon,
-            )
         }
     }
 
     override fun checkHitCondition(hitAmount: Int): Boolean {
 
-        if(boomerangPosition == hitPosition1 || boomerangPosition == hitPosition2) {
+        if(boomerangPosition == hitPosition) {
 
-            Merchant.dates().addAmount(hitAmount)
+            Merchant.coconuts().addAmount(hitAmount)
 
             CurrentMessage.changeMessage(
                 "Target Hit!",
@@ -45,23 +54,33 @@ class SingleUnpredictableStyleDates : BoomerangStyle() {
         return false
     }
 
-    private val targetIcon = R.drawable.dates64
+    private var targetIcon = R.drawable.dates64
 
     override fun newRange(boomerangIcon: Int): Array<BoomerangTile> {
 
         return Array(rangeSize) { BoomerangTile() }.also {
 
-            it[hitPosition1] = BoomerangTile(
+            hitPosition = when(Random.nextInt(4)) {
+
+                0 -> 0
+                1 -> 3
+                2 -> 4
+                else -> 7
+            }
+
+            boomerangPosition++
+
+            if(boomerangPosition >= rangeSize) {
+
+                boomerangPosition = 0
+            }
+
+            it[hitPosition] = BoomerangTile(
                 targetIsVisible = true,
                 targetIcon = targetIcon,
             )
 
-            it[hitPosition2] = BoomerangTile(
-                targetIsVisible = true,
-                targetIcon = targetIcon,
-            )
-
-            if(boomerangPosition == hitPosition1) {
+            if(boomerangPosition == hitPosition) {
 
                 it[boomerangPosition] = BoomerangTile(
                     boomerangIcon = boomerangIcon,
@@ -73,23 +92,10 @@ class SingleUnpredictableStyleDates : BoomerangStyle() {
 
             else {
 
-                if(boomerangPosition == hitPosition2) {
-
-                    it[boomerangPosition] = BoomerangTile(
-                        boomerangIcon = boomerangIcon,
-                        boomerangIsVisible = true,
-                        targetIsVisible = true,
-                        targetIcon = targetIcon,
-                    )
-                }
-
-                else {
-
-                    it[boomerangPosition] = BoomerangTile(
-                        boomerangIcon = boomerangIcon,
-                        boomerangIsVisible = true,
-                    )
-                }
+                it[boomerangPosition] = BoomerangTile(
+                    boomerangIcon = boomerangIcon,
+                    boomerangIsVisible = true,
+                )
             }
         }
     }

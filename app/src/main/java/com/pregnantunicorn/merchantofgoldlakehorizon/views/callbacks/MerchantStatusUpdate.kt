@@ -9,7 +9,7 @@ interface MerchantStatusUpdate {
 
     fun updateDates()
     fun updateCoconuts()
-    fun updatePoultry()
+    fun updatePeaches()
 
     fun updateDayCycleCounter()
     fun updateGoldenCoins()

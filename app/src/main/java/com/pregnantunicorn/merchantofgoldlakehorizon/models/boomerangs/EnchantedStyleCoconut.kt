@@ -5,16 +5,14 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
-class SingleCircularStyleCoconut : BoomerangStyle() {
+class EnchantedStyleCoconut : BoomerangStyle() {
 
-    companion object {
-
-        private var boomerangPosition = 0
-        //*** Position has to be stored in companion object so that the boomerang can move.
-
-    }
+    private var boomerangPosition1 = Random.nextInt(rangeSize)
+    private var boomerangPosition2 = Random.nextInt(rangeSize)
 
     private var hitPosition = Random.nextInt(4)
+
+    override fun name() = "Coconut Palm"
 
     override fun range(): Array<BoomerangTile> {
 
@@ -30,7 +28,7 @@ class SingleCircularStyleCoconut : BoomerangStyle() {
 
     override fun checkHitCondition(hitAmount: Int): Boolean {
 
-        if(boomerangPosition == hitPosition) {
+        if(boomerangPosition1 == hitPosition || boomerangPosition2 == hitPosition) {
 
             Merchant.coconuts().addAmount(hitAmount)
 
@@ -46,39 +44,23 @@ class SingleCircularStyleCoconut : BoomerangStyle() {
         return false
     }
 
-    private var targetIcon = R.drawable.coconut64
+    private val targetIcon = R.drawable.coconut64
 
     override fun newRange(boomerangIcon: Int): Array<BoomerangTile> {
 
-        return Array(rangeSize) { BoomerangTile() }.also {
-
-            hitPosition--
-
-            if(hitPosition < 0) {
-
-                hitPosition = Random.nextInt(rangeSize)
-            }
+        return Array(rangeSize) {  BoomerangTile() }.also {
 
             it[hitPosition] = BoomerangTile(
                 targetIcon = targetIcon,
                 targetIsVisible = true,
             )
 
-            boomerangPosition++
+            boomerangPosition1 = Random.nextInt(rangeSize)
+            boomerangPosition2 = Random.nextInt(rangeSize)
 
-            if(boomerangPosition >= rangeSize) {
+            if(boomerangPosition1 == hitPosition) {
 
-                boomerangPosition = 0
-            }
-
-            it[hitPosition] = BoomerangTile(
-                targetIsVisible = true,
-                targetIcon = targetIcon,
-            )
-
-            if(boomerangPosition == hitPosition) {
-
-                it[boomerangPosition] = BoomerangTile(
+                it[boomerangPosition1] = BoomerangTile(
                     boomerangIcon = boomerangIcon,
                     boomerangIsVisible = true,
                     targetIsVisible = true,
@@ -88,7 +70,25 @@ class SingleCircularStyleCoconut : BoomerangStyle() {
 
             else {
 
-                it[boomerangPosition] = BoomerangTile(
+                it[boomerangPosition1] = BoomerangTile(
+                    boomerangIcon = boomerangIcon,
+                    boomerangIsVisible = true,
+                )
+            }
+
+            if(boomerangPosition2 == hitPosition) {
+
+                it[boomerangPosition2] = BoomerangTile(
+                    boomerangIcon = boomerangIcon,
+                    boomerangIsVisible = true,
+                    targetIsVisible = true,
+                    targetIcon = targetIcon,
+                )
+            }
+
+            else {
+
+                it[boomerangPosition2] = BoomerangTile(
                     boomerangIcon = boomerangIcon,
                     boomerangIsVisible = true,
                 )

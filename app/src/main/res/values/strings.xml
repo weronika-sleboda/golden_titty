@@ -61,7 +61,7 @@
     <string name="rent_collector_line">Hi Sonny! It\'s time to pay the rent for your house. Do you have money for me?</string>
     <string name="price">Price</string>
     <string name="time_to_pay_the_rent">Time To Pay The Rent</string>
-    <string name="exit">Exit ot main menu</string>
+    <string name="exit">Exit to main menu</string>
     <string name="dialogue_icon_cd">dialogue_icon_cd</string>
     <string name="game_over">Game Over</string>
     <string name="game_over_info">You died from hunger…</string>
@@ -116,4 +116,6 @@
     <string name="dates_icon_cd">dates_icon_cd</string>
     <string name="coconut_icon_cd">coconut_icon_cd</string>
     <string name="bird_icon_cd">bird_icon_cd</string>
+    <string name="peaches_icon_cd">peaches_icon_cd</string>
+    <string name="switch_on">Switch On</string>
 </resources>

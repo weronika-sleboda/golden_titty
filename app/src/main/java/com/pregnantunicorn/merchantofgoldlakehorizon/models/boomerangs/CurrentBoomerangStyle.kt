@@ -6,8 +6,8 @@ object CurrentBoomerangStyle {
 
         return when(boomerangStyleName) {
 
-            BoomerangStyleName.SINGLE_CIRCULAR -> SingleCircularStyleCoconut()
-            BoomerangStyleName.SINGLE_UNPREDICTABLE -> SingleUnpredictableStyleCoconut()
+            BoomerangStyleName.ZIGZAG -> EnchantedStyleSecretGate()
+            BoomerangStyleName.UNPREDICTABLE -> EnchantedStylePeach()
         }
     }
 }

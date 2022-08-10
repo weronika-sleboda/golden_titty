@@ -1,35 +1,37 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
-class SingleUnpredictableStyleCoconut : BoomerangStyle() {
+class UnpredictableStyleSecretGate : BoomerangStyle() {
 
     companion object {
 
-        private var hitPosition = Random.nextInt(4)
+        private var hitPosition = 1
     }
 
     private var boomerangPosition = Random.nextInt(rangeSize)
 
+    override fun name() = "Secret Gate"
+
     override fun range(): Array<BoomerangTile> {
 
-        return Array(rangeSize) { BoomerangTile() }
+        return Array(rangeSize) { BoomerangTile(background = {BackgroundFactory().divineFloor()}) }.also {
+
+            it[hitPosition] = BoomerangTile(
+                background = {BackgroundFactory().divineFloor()},
+                targetIsVisible = true,
+                targetIcon = targetIcon,
+            )
+        }
     }
 
     override fun checkHitCondition(hitAmount: Int): Boolean {
 
         if(boomerangPosition == hitPosition) {
-
-            Merchant.coconuts().addAmount(hitAmount)
-
-            CurrentMessage.changeMessage(
-                "Target Hit!",
-                R.drawable.coconut64,
-                "Coconut has been acquired."
-            )
 
             return true
         }
@@ -37,27 +39,26 @@ class SingleUnpredictableStyleCoconut : BoomerangStyle() {
         return false
     }
 
-    private val targetIcon = R.drawable.khan64
+    private val targetIcon = R.drawable.emblem64
 
     override fun newRange(boomerangIcon: Int): Array<BoomerangTile> {
 
-        return Array(rangeSize) {  BoomerangTile() }.also {
+        return Array(rangeSize) { BoomerangTile(background = {BackgroundFactory().divineFloor()}) }.also {
 
-            hitPosition--
+            hitPosition++
 
-            if(hitPosition < 0) {
-
-                hitPosition = 3
-            }
+            if(hitPosition == 3) { hitPosition = 1 }
 
             it[hitPosition] = BoomerangTile(
-                targetIcon = targetIcon,
+                background = {BackgroundFactory().divineFloor()},
                 targetIsVisible = true,
+                targetIcon = targetIcon,
             )
 
             if(boomerangPosition == hitPosition) {
 
                 it[boomerangPosition] = BoomerangTile(
+                    background = {BackgroundFactory().divineFloor()},
                     boomerangIcon = boomerangIcon,
                     boomerangIsVisible = true,
                     targetIsVisible = true,
@@ -68,6 +69,7 @@ class SingleUnpredictableStyleCoconut : BoomerangStyle() {
             else {
 
                 it[boomerangPosition] = BoomerangTile(
+                    background = {BackgroundFactory().divineFloor()},
                     boomerangIcon = boomerangIcon,
                     boomerangIsVisible = true,
                 )

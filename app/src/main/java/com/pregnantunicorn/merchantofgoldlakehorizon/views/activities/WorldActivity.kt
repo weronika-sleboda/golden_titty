@@ -33,9 +33,8 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
 
         updateDates()
         updateCoconuts()
-        updatePoultry()
+        updatePeaches()
 
-        setupFab()
         updateFab()
 
         selectWorldButton()
@@ -43,15 +42,6 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         setupBackpackButton()
         setupSettingsButton()
         goToWorldMap()
-    }
-
-    private fun setupFab() {
-
-        binding.itemHolder.setOnClickListener {
-
-            CurrentHandState.changeHandState(HandState.EMPTY)
-            updateFab()
-        }
     }
 
     override fun updateFab() {
@@ -153,9 +143,9 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         binding.resources.coconuts.text = Merchant.coconuts().amountToString()
     }
 
-    override fun updatePoultry() {
+    override fun updatePeaches() {
 
-        binding.resources.poultry.text = Merchant.poultry().amountToString()
+        binding.resources.peaches.text = Merchant.peaches().amountToString()
     }
 
     override fun updateDayCycleCounter() {

@@ -7,52 +7,55 @@
     android:padding="10dp"
     android:background="@drawable/main_background">
 
-    <TextView
-        android:layout_width="384dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
-        android:background="@drawable/game_title_background"
-        android:fontFamily="@font/dense_regular"
-        android:gravity="center"
-        android:text="Merchant Of Goldlake"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:textColor="@color/mystery"
-        android:textSize="50sp" />
-
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:fontFamily="@font/dense_regular"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:text="Horizon"
-        android:background="@drawable/super_dark_rectangle_background"
-        android:textAllCaps="true"
-        android:textColor="@color/mystery"/>
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="start"
+            android:src="@drawable/double_madman_boomerang128"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/cross_boomerang128"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="end"
+            android:src="@drawable/double_crash_boomerang128"/>
+
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
+            android:background="@drawable/extreme_dark_oval_background"
+            android:fontFamily="@font/dense_regular"
+            android:gravity="center"
+            android:text="G o l d e n   T i t t y"
+            android:textAllCaps="true"
+            android:textColor="@color/super_light_mystery"
+            android:textSize="45sp" />
+
+    </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/extreme_dark_shape_background">
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:layout_width="206dp"
             android:layout_height="206dp"
             android:layout_gravity="center"
             android:contentDescription="@string/sonny256_icon_cd"
-            android:src="@drawable/sonny256_white"
-            android:padding="10dp"/>
+            android:src="@drawable/sonny256_white" />
 
     </FrameLayout>
 
@@ -63,7 +66,6 @@
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
         app:backgroundTint="@null"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:textSize="18sp"
         android:gravity="center"

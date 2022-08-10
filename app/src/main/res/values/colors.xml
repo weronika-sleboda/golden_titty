@@ -50,6 +50,11 @@
     <color name="heretic_temple_sunset">#2c2d38</color>
     <color name="heretic_temple_night">#282830</color>
 
+    <!--Leaf-->
+    <color name="leaf_morning">#41783e</color>
+    <color name="leaf_sunset">#263d25</color>
+    <color name="leaf_night">#283c40</color>
+
     <!--Progressbar -->
     <color name="light_green">#50d964</color>
     <color name="green">#2b8037</color>

@@ -12,28 +12,28 @@
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="25dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:textColor="@color/super_light_mystery"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:fontFamily="@font/raleway_bold"
         android:background="@color/super_dark_mystery"/>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_gravity="center_horizontal"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
         android:background="@drawable/middle_dark_shape_background">
 
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="74dp"
-            android:layout_height="74dp"
-            android:layout_marginTop="14dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
             android:contentDescription="dialog_icon_cd"
             android:background="@drawable/dark_oval_background"
             android:padding="10dp"/>
@@ -46,14 +46,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:padding="10dp"
         android:textColor="@color/extreme_dark_mystery"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:fontFamily="@font/raleway_medium"
         android:background="@drawable/light_shape_background"/>
 
@@ -62,9 +59,9 @@
         android:layout_width="match_parent"
         android:layout_columnWeight="1"
         android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         app:backgroundTint="@null"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         android:textSize="18sp"
         android:gravity="center"
         android:textAllCaps="true"

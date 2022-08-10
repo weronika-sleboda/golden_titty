@@ -6,13 +6,15 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 
 class IconFactory {
 
-    fun emeraldStone128() = R.drawable.emerald_stone128
-    fun emeraldStone64() = R.drawable.emerald_stone64
-    fun sapphireStone128() = R.drawable.sapphire_stone128
-    fun sapphireStone64() = R.drawable.sapphire_stone64
-    fun rubyStone128() = R.drawable.ruby_stone128
-    fun rubyStone64() = R.drawable.ruby_stone64
+    fun palmLeaf64(): Int {
 
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.palme_leaf64_morning }
+            DayCycle.SUNSET -> { R.drawable.palm_leaf64_sunset }
+            DayCycle.NIGHT -> { R.drawable.palm_leaf64_night }
+        }
+    }
 
     fun ironChest64(): Int {
 
