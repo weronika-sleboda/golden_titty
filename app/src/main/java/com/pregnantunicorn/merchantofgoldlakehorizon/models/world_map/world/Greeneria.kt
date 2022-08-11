@@ -1,13 +1,9 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world
 
-import android.graphics.drawable.Icon
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.bed.BedType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.BoomerangPlaceName
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.CurrentDayCycle
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.investigation.CurrentInvestigation
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.inn.CurrentInnDoor
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.tiles.*
 
 class Greeneria : Location(
@@ -20,7 +16,16 @@ class Greeneria : Location(
             it[1] = PalmTile(BoomerangPlaceName.COCONUT_PALM)
             it[2] = PalmTile(BoomerangPlaceName.PEACH_PALM)
             it[3] = PearlTittyAltarTile(BoomerangPlaceName.PEARL_TITTY_ALTAR)
+
+            it[4] = InnTile({IconFactory().tent64()},CurrentInnDoor.TENT)
+            it[5] = ActionTile()
+            it[6] = ChestTile()
+
             it[8] = CarriageTile()
-            it[9] = BedTile()
+
+            it[9] = InnTile({IconFactory().npcHouse64()},CurrentInnDoor.FORGOTTEN_DEN)
+
+            it[10] = UniversityTile()
+            it[11] = InvestigationBuildingTile()
         }
 )

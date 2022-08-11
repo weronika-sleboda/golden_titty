@@ -2,13 +2,9 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.CarriageLayoutBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.FoodLayoutBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.carriage.Carriage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.carriage.CarriageItem
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Food
 
 class CarriageAdapter(
     private val carriageItems: Array<CarriageItem>,

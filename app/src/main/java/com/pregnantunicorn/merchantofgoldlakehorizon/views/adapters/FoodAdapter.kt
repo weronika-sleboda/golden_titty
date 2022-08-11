@@ -2,10 +2,9 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.FoodLayoutBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Food
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.food.Food
 
 class FoodAdapter(
     private val foodManagers: Array<Food>,
@@ -22,11 +21,9 @@ class FoodAdapter(
 
     class ViewHolder(binding: FoodLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        val foodLayout = binding.foodLayout
         val icon = binding.icon
         val name = binding.name
         val info = binding.info
-        val amount = binding.amount
         val buttonIcon = binding.buttonIcon
     }
 
@@ -42,7 +39,6 @@ class FoodAdapter(
 
         holder.icon.setImageResource(foodManagers[position].icon)
         holder.name.text = foodManagers[position].name
-        holder.amount.text = foodManagers[position].amountToString()
         holder.info.text = foodManagers[position].info
         holder.buttonIcon.setImageResource(foodManagers[position].icon)
 

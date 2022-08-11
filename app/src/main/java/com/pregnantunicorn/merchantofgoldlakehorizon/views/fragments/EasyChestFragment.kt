@@ -9,6 +9,11 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.EasyChestFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
+import kotlin.random.Random
 
 class EasyChestFragment : Fragment() {
 
@@ -27,17 +32,51 @@ class EasyChestFragment : Fragment() {
         return binding.root
     }
 
+    private fun openingCondition(): Boolean {
+
+        return when(Random.nextInt(4)) {
+
+            0 -> binding.firstSwitch.isChecked && binding.secondSwitch.isChecked
+            1 -> !binding.firstSwitch.isChecked && binding.secondSwitch.isChecked
+            2 -> !binding.firstSwitch.isChecked && !binding.secondSwitch.isChecked
+            else -> binding.firstSwitch.isChecked && !binding.secondSwitch.isChecked
+        }
+    }
     private fun setupOpenButton() {
 
         binding.openButton.setOnClickListener {
 
-            if(binding.firstSwitch.isChecked && !binding.secondSwitch.isChecked) {
+            if(Merchant.intelligence().hasAmount(2)) {
 
-                activity?.supportFragmentManager?.commit {
+                Merchant.intelligence().loseAmount(2)
+                val status = requireActivity() as MerchantStatusUpdate
+                status.updateIntelligence()
 
-                    replace<LocationFragment>(R.id.world_container)
+                if(openingCondition()) {
+
+                    activity?.supportFragmentManager?.commit {
+
+                        replace<LocationFragment>(R.id.world_container)
+                    }
+                }
+
+                else {
+
+                    CurrentMessage.changeMessage(
+                        "You Failed",
+                        R.drawable.chest64_morning,
+                        "You failed to open the chest."
+                    )
+
+                    showMessage()
                 }
             }
         }
+    }
+
+    private fun showMessage() {
+
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 }

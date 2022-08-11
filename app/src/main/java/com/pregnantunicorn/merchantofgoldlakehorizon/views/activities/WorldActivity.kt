@@ -9,7 +9,6 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.WorldActivityBi
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentHandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.HandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.rent.RentTime
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
 
@@ -28,14 +27,15 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         updateHealth()
         updateCharisma()
         updateIntelligence()
-        updateGoldenCoins()
-        updateDayCycleCounter()
+        updateTittyCounter()
+        updateGoldCoins()
 
         updateDates()
         updateCoconuts()
         updatePeaches()
 
         updateFab()
+        setupFab()
 
         selectWorldButton()
         setupWorldButton()
@@ -47,6 +47,18 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
     override fun updateFab() {
 
         binding.itemHolder.setImageResource(CurrentHandState.fabIcon())
+    }
+
+    private fun setupFab() {
+
+        binding.itemHolder.setOnClickListener {
+
+            if(CurrentHandState.handState() != HandState.EMPTY) {
+
+                CurrentHandState.changeHandState(HandState.EMPTY)
+                updateFab()
+            }
+        }
     }
 
     private fun goToWorldMap() {
@@ -148,14 +160,14 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         binding.resources.peaches.text = Merchant.peaches().amountToString()
     }
 
-    override fun updateDayCycleCounter() {
+    override fun updateTittyCounter() {
 
-        binding.merchant.dayCycleCounter.text = RentTime.counterToString()
+        binding.merchant.tittyCounter.text = Merchant.tittyCounter().tittyCounterToString()
     }
 
-    override fun updateGoldenCoins() {
+    override fun updateGoldCoins() {
 
-        binding.merchant.goldenCoins.text = Merchant.goldenCoins().amountToString()
+        binding.merchant.goldenCoins.text = Merchant.goldCoins().amountToString()
     }
 
     override fun updateAppearance() {

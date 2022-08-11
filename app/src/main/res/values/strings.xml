@@ -119,4 +119,14 @@
     <string name="peaches_icon_cd">peaches_icon_cd</string>
     <string name="switch_on">Switch On</string>
     <string name="destruction">Destruction</string>
+    <string name="in_demand">In Demand</string>
+    <string name="courses">Courses</string>
+    <string name="education">Education</string>
+    <string name="pearl_titty_icon_cd">pearl_titty_icon_cd</string>
+    <string name="run_icon_cd">run_icon_cd</string>
+    <string name="jump_icon_cd">jump_icon_cd</string>
+    <string name="climb_icon_cd">climb_icon_cd</string>
+    <string name="action_icon_cd">action_icon_cd</string>
+    <string name="success">Success</string>
+    <string name="start">Start</string>
 </resources>

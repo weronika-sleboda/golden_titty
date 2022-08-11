@@ -4,19 +4,20 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemBackpack
 
 object Merchant {
 
+    private var appearance = Appearance()
+
     private var energy = Status()
     private var health = Status()
     private var charisma = Status()
     private var intelligence = Status()
+
     private var dates = Resource()
     private var coconuts = Resource()
     private var peaches = Resource()
     private var items = ItemBackpack()
 
-    private var foodBackpack = FoodBackpack()
-    private var appearance = Appearance()
-    private var friends = Friends()
-    private var goldenCoins = Money()
+    private var tittyCounter = TittyCounter()
+    private var goldCoins = Money()
 
     fun isDead() = health.amountIsZero()
 
@@ -28,13 +29,11 @@ object Merchant {
     fun dates() = dates
     fun coconuts() = coconuts
     fun peaches() = peaches
-
-    fun food() = foodBackpack.foods
     fun appearance() = appearance
-    fun friends() = friends.friends
 
     fun items() = items.items
 
-    fun goldenCoins() = goldenCoins
+    fun goldCoins() = goldCoins
+    fun tittyCounter() = tittyCounter
 
 }

@@ -10,6 +10,10 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.HardChestFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.SneakFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 import java.util.concurrent.TimeUnit
 import kotlin.time.Duration
@@ -32,8 +36,16 @@ class SneakFragment : Fragment() {
         binding.successProgressBar.max = 100
         setupOpenButton()
         setupStopButton()
+        setupLeaveButton()
 
         return binding.root
+    }
+
+    private fun updateMerchantStatus() {
+
+        val status = requireActivity() as MerchantStatusUpdate
+        status.updateIntelligence()
+        status.updateTittyCounter()
     }
 
     private fun setupStopButton() {
@@ -43,31 +55,41 @@ class SneakFragment : Fragment() {
 
             if(job == null) {
 
-                binding.sneakButton.text = "Go"
-                job = CoroutineScope(Dispatchers.IO).launch {
+                val intelligence = 1
 
-                    while(counter < 100) {
+                if(Merchant.intelligence().hasAmount(intelligence)) {
 
-                        if(counter < 100) {
+                    Merchant.intelligence().loseAmount(intelligence)
+                    updateMerchantStatus()
+                    binding.sneakButton.text = "Go"
 
-                            counter += 10
+                    job = CoroutineScope(Dispatchers.IO).launch {
+
+                        while(counter < 100) {
+
+                            if(counter < 100) { counter += 10 }
+
+                            if(counter == 100) { counter = 0 }
+
+                            delay(4)
+
+                            withContext(Dispatchers.Main) {
+
+                                binding.noiseProgressBar.progress = counter
+                            }
                         }
-
-                        if(counter == 100) {
-
-                            counter = 0
-
-                        }
-
-                        delay(4)
-
-                        withContext(Dispatchers.Main) {
-
-                            binding.noiseProgressBar.progress = counter
-                        }
-
-
                     }
+                }
+
+                else {
+
+                    CurrentMessage.changeMessage(
+                        "No Intelligence",
+                        R.drawable.intelligence64,
+                        "You don't have enough intelligence to perform this action."
+                    )
+
+                    showMessage()
                 }
             }
 
@@ -81,10 +103,8 @@ class SneakFragment : Fragment() {
 
                     if(binding.successProgressBar.progress == 100) {
 
-                        activity?.supportFragmentManager?.commit {
-
-                            replace<BedFragment>(R.id.world_container)
-                        }
+                        Merchant.tittyCounter().addTitty()
+                        updateMerchantStatus()
                     }
                 }
 
@@ -97,10 +117,7 @@ class SneakFragment : Fragment() {
 
                     if(binding.successProgressBar.progress == 0) {
 
-                        activity?.supportFragmentManager?.commit {
-
-                            replace<LocationFragment>(R.id.world_container)
-                        }
+                        goToWorldMap()
                     }
                 }
 
@@ -109,11 +126,34 @@ class SneakFragment : Fragment() {
             }
         }
     }
+
+    private fun showMessage() {
+
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+    }
+
     private fun setupOpenButton() {
 
         binding.leaveButton.setOnClickListener {
 
 
+        }
+    }
+
+    private fun goToWorldMap() {
+
+        activity?.supportFragmentManager?.commit {
+
+            replace<LocationFragment>(R.id.world_container)
+        }
+    }
+
+    private fun setupLeaveButton() {
+
+        binding.leaveButton.setOnClickListener {
+
+            goToWorldMap()
         }
     }
 

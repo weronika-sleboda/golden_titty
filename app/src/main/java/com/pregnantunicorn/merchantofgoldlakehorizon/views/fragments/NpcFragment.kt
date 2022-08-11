@@ -10,7 +10,6 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.NpcFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.npcs.CurrentNpc
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -20,7 +19,6 @@ import kotlinx.coroutines.withContext
 class NpcFragment : Fragment() {
 
     private lateinit var binding: NpcFragmentBinding
-    private val npc = CurrentNpc.npc()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,41 +42,38 @@ class NpcFragment : Fragment() {
 
     private fun setupName() {
 
-        binding.npcName.text = npc.name
+        binding.npcName.text = "npc.name"
     }
 
     private fun setupIcon() {
 
-        binding.npcIcon.setImageResource(npc.icon)
+        //binding.npcIcon.setImageResource()
     }
 
     private fun updateGreeting() {
 
-        binding.npcGreeting.text = npc.greeting()
+        binding.npcGreeting.text = "npc.greeting()"
     }
 
     private fun updateFriendshipInfo() {
 
-        binding.info.friendshipAmount.text = npc.friendshipToString().invoke()
+        binding.info.friendshipAmount.text = "npc.friendshipToString().invoke()"
     }
 
     private fun setupPriceInfo() {
 
-        binding.info.requiredGold.text = npc.priceToString()
+        binding.info.requiredGold.text = "npc.priceToString()"
     }
 
     private fun hideBefriendButton() {
 
-        if(npc.befriended()) {
 
-            binding.befriendButton.isVisible = false
-        }
     }
 
     private fun updateMerchantGold() {
 
         val statusUpdate = requireActivity() as MerchantStatusUpdate
-        statusUpdate.updateGoldenCoins()
+        statusUpdate.updateGoldCoins()
     }
 
     private fun setupBefriendButton() {
@@ -87,25 +82,6 @@ class NpcFragment : Fragment() {
 
             CoroutineScope(Dispatchers.IO).launch {
 
-                if(npc.befriend()) {
-
-                    withContext(Dispatchers.Main) {
-
-                        hideBefriendButton()
-                        updateGreeting()
-                        updateFriendshipInfo()
-                        updateMerchantGold()
-
-                        if(npc.befriended()) {
-
-                        }
-                    }
-                }
-
-                else {
-
-
-                }
             }
         }
     }

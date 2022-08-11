@@ -10,7 +10,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BedFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.bed.CurrentBed
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.inn.CurrentBed
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.activities.GameOverActivity
@@ -59,7 +59,6 @@ class BedFragment : Fragment() {
         statusUpdate.updateCharisma()
         statusUpdate.updateHealth()
         statusUpdate.updateIntelligence()
-        statusUpdate.updateDayCycleCounter()
     }
 
     private fun setupSleepButton() {

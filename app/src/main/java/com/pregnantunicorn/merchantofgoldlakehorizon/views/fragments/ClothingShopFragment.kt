@@ -44,7 +44,7 @@ class ClothingShopFragment : Fragment(), RobeProductAdapter.ProductListener {
     private fun updateMerchantStatus() {
 
         val status = requireActivity() as MerchantStatusUpdate
-        status.updateGoldenCoins()
+        status.updateGoldCoins()
     }
 
     override fun onClickProduct(position: Int) {

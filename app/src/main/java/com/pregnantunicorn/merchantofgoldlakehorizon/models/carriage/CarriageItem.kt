@@ -17,7 +17,7 @@ class CarriageItem(
         if(hasAmount.invoke()) {
 
             sellAlgorithm.invoke()
-            Merchant.goldenCoins().addAmount(worth)
+            Merchant.goldCoins().addAmount(worth)
             return true
         }
 

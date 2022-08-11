@@ -13,6 +13,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.Boomerang
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentBoomerang
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentHandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.HandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.food.FoodManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.StatusUpdateType
@@ -38,7 +39,7 @@ class BackpackFragment : Fragment(),
     private lateinit var boomerangAdapter: BoomerangAdapter
     private lateinit var itemsAdapter: ItemAdapter
     private lateinit var layoutManager: LinearLayoutManager
-    private val food = Merchant.food()
+    private val food = FoodManager().foods
     private val items = ItemManager().items()
     private var boomerangs = BoomerangManager().boomerangs()
 
@@ -152,17 +153,13 @@ class BackpackFragment : Fragment(),
 
     }
 
-    private fun updateMerchantStatus(position: Int) {
+    private fun updateMerchantStatus() {
 
         val statusUpdate = requireActivity() as MerchantStatusUpdate
-
-        when(food[position].statusUpdateType) {
-
-            StatusUpdateType.CHARISMA -> statusUpdate.updateCharisma()
-            StatusUpdateType.HEALTH -> statusUpdate.updateHealth()
-            StatusUpdateType.ENERGY -> statusUpdate.updateEnergy()
-            StatusUpdateType.INTELLIGENCE -> statusUpdate.updateIntelligence()
-        }
+        statusUpdate.updateHealth()
+        statusUpdate.updatePeaches()
+        statusUpdate.updateDates()
+        statusUpdate.updateCoconuts()
     }
 
     override fun onClickFood(position: Int) {
@@ -173,8 +170,7 @@ class BackpackFragment : Fragment(),
 
                 withContext(Dispatchers.Main) {
 
-                    updateMerchantStatus(position)
-                    updateFood()
+                    updateMerchantStatus()
                 }
             }
 

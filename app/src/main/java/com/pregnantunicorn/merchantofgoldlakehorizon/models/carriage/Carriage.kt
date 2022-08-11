@@ -13,8 +13,8 @@ class Carriage {
 
             CarriageItem(
                 "Dates",
-                8,
-                "Worth: 8G",
+                9,
+                "We pay 9G for a unit",
                 R.drawable.dates64,
                 { Merchant.dates().hasAmount(amount) },
                 { Merchant.dates().loseAmount(amount)}
@@ -22,8 +22,8 @@ class Carriage {
 
             CarriageItem(
                 "Coconut",
-                5,
-                "Worth: 5G",
+                7,
+                "We pay 7G for a unit",
                 R.drawable.coconut64,
                 { Merchant.coconuts().hasAmount(amount) },
                 { Merchant.coconuts().loseAmount(amount)}
@@ -31,8 +31,8 @@ class Carriage {
 
             CarriageItem(
                 "Peaches",
-                7,
-                "Worth: 7G",
+                5,
+                "We pay 5G for a unit",
                 R.drawable.peach64,
                 { Merchant.peaches().hasAmount(amount) },
                 { Merchant.peaches().loseAmount(amount)}

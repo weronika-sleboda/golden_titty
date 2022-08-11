@@ -14,7 +14,7 @@
         android:textColor="@color/super_light_mystery"
         android:textSize="20sp"
         android:fontFamily="@font/raleway_medium"
-        android:text="@string/carriage"
+        android:text="@string/in_demand"
         android:background="@drawable/dark_one_corner_rectangle_background"/>
 
     <Button

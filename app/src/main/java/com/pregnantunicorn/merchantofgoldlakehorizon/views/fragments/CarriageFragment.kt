@@ -36,7 +36,7 @@ class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
         binding = CarriageFragmentBinding.inflate(inflater, container, false)
 
         setupLeaveButton()
-        updateCarriageItems()
+        setupCarriageItems()
 
         return binding.root
     }
@@ -44,7 +44,7 @@ class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
     private fun updateMerchantStatus() {
 
         val status = requireActivity() as MerchantStatusUpdate
-        status.updateGoldenCoins()
+        status.updateGoldCoins()
         status.updateDates()
         status.updateCoconuts()
         status.updatePeaches()
@@ -59,7 +59,6 @@ class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
                 withContext(Dispatchers.Main) {
 
                     updateMerchantStatus()
-                    updateCarriageItems()
                 }
             }
 
@@ -73,7 +72,7 @@ class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
         }
     }
 
-    private fun updateCarriageItems() {
+    private fun setupCarriageItems() {
 
         adapter = CarriageAdapter(carriageItems, this)
         layoutManager = LinearLayoutManager(context)

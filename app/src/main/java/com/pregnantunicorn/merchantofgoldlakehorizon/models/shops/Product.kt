@@ -18,9 +18,9 @@ class Product(
 
     fun buy(): Boolean {
 
-        if(Merchant.goldenCoins().hasAmount(price)) {
+        if(Merchant.goldCoins().hasAmount(price)) {
 
-            Merchant.goldenCoins().loseAmount(price)
+            Merchant.goldCoins().loseAmount(price)
             algorithm.invoke()
 
             CurrentMessage.changeMessage(
