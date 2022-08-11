@@ -15,7 +15,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
 
 class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
 
-    private  lateinit var binding: WorldActivityBinding
+    private lateinit var binding: WorldActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
