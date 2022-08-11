@@ -6,11 +6,11 @@ class Boomerang(
     val speedInfo: String,
     val styleInfo: String,
     val hitInfo: String,
-    val energyInfo: String,
+    val powerInfo: String,
     val speed: Long,
     val hitAmount: Int,
-    val energy: Int,
-    var boomerangStyleName: BoomerangStyleName,
+    val power: Int,
+    val boomerangStyle: () -> BoomerangStyle,
     private var owns: Boolean = false
 )
 {

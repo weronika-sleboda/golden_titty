@@ -5,7 +5,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.investigation.CurrentInvestigation
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.SecretGateFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.PearlTittyFragment
 
 class InvestigationTile(
     private val investigationIndex: Int,
@@ -23,7 +23,7 @@ class InvestigationTile(
 
         activity.supportFragmentManager.commit {
 
-            replace<SecretGateFragment>(R.id.world_container)
+            replace<PearlTittyFragment>(R.id.world_container)
         }
     }
 }

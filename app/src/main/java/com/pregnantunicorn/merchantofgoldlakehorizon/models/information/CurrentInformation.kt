@@ -21,7 +21,7 @@ object CurrentInformation {
         )
         {
 
-            CurrentLocation.changeLocation(LocationName.DRAGON_INN_BEDROOM)
+            CurrentLocation.changeLocation(LocationName.GREENERIA)
 
             it.supportFragmentManager.commit {
 

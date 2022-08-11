@@ -4,27 +4,30 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.bed.BedType
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.bed.CurrentBed
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.BoomerangPlaceName
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentBoomerangPlace
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.BedFragment
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.CaveFragment
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.SneakFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.PalmFragment
 
-class BedTile: Tile(true)
+class PalmTile(
+    private val boomerangPlaceName: BoomerangPlaceName
+) : Tile(true)
 {
-    override fun icon() = IconFactory().meteorsHouse64()
+    override fun icon(): Int {
+
+        return IconFactory().palmTree64()
+    }
 
     override fun background() = BackgroundFactory().grass()
 
     override fun onClick(activity: FragmentActivity) {
 
-        CurrentBed.changeBed(BedType.TAVERN_BED)
+        CurrentBoomerangPlace.changeBoomerangPlace(boomerangPlaceName)
 
         activity.supportFragmentManager.commit {
 
-            replace<BedFragment>(R.id.world_container)
+            replace<PalmFragment>(R.id.world_container)
         }
     }
 }

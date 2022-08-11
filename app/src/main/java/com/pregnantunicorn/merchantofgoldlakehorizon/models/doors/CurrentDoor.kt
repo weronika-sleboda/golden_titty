@@ -28,7 +28,7 @@ object CurrentDoor {
             "This is the place where you can restore your status on expense of health points.",
             {IconFactory().houseDoor128()},
             {
-                CurrentLocation.changeLocation(LocationName.DRAGON_INN_BEDROOM)
+                CurrentLocation.changeLocation(LocationName.GREENERIA)
 
                 it.supportFragmentManager.commit {
 

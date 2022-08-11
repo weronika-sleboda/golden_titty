@@ -10,7 +10,7 @@ import androidx.fragment.app.replace
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.SecretGateFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.PearlTittyFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
@@ -19,13 +19,13 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantSta
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 
-class SecretGateFragment: Fragment() {
+class PearlTittyFragment: Fragment() {
 
-    private lateinit var binding: SecretGateFragmentBinding
+    private lateinit var binding: PearlTittyFragmentBinding
     private lateinit var adapter: BoomerangRangeAdapter
     private lateinit var layoutManager: GridLayoutManager
     private val boomerang = CurrentBoomerang.boomerang()
-    private var boomerangStyle = CurrentBoomerangStyle.boomerangStyle(boomerang.boomerangStyleName)
+    private var boomerangStyle = CurrentBoomerang.boomerang().boomerangStyle.invoke()
 
     private var job: Job? = null
 
@@ -35,7 +35,7 @@ class SecretGateFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = SecretGateFragmentBinding.inflate(inflater, container, false)
+        binding = PearlTittyFragmentBinding.inflate(inflater, container, false)
 
         updateName()
         updateRange(boomerangStyle.range())
@@ -69,7 +69,7 @@ class SecretGateFragment: Fragment() {
 
     private fun setupFab() {
 
-        val fab = activity?.findViewById<FloatingActionButton>(R.id.item_holder)
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
 
         fab?.setOnClickListener {
 
@@ -77,19 +77,19 @@ class SecretGateFragment: Fragment() {
 
                 if(job == null) {
 
-                    if(Merchant.energy().hasAmount(boomerang.energy)) {
+                    val energy = 1
+
+                    if(Merchant.energy().hasAmount(energy)) {
 
                         fab.setImageResource(R.drawable.grab64)
-                        Merchant.energy().loseAmount(0)
+                        Merchant.energy().loseAmount(1)
                         updateMerchantStatus()
 
                         job = CoroutineScope(Dispatchers.IO).launch {
 
                             while(true) {
 
-                                boomerangStyle = CurrentBoomerangStyle.boomerangStyle(
-                                    boomerang.boomerangStyleName
-                                )
+                                boomerangStyle = CurrentBoomerang.boomerang().boomerangStyle.invoke()
 
                                 withContext(Dispatchers.Main) {
 
@@ -125,7 +125,7 @@ class SecretGateFragment: Fragment() {
 
                             withContext(Dispatchers.Main) {
 
-                                binding.switchOn.progress += 10
+                                binding.switchOn.progress += boomerang.power
 
                                 updateMerchantStatus()
 

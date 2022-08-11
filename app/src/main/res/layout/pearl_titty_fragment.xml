@@ -34,17 +34,17 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/dark_mystery"
+        android:textColor="@color/extreme_dark_mystery"
         android:textSize="16sp"
         android:fontFamily="@font/raleway_bold"
-        android:text="@string/switch_on"
+        android:text="@string/destruction"
         android:textAllCaps="true"
-        android:background="@color/super_light_mystery"/>
+        android:background="@color/mystery"/>
 
     <ProgressBar
         android:id="@+id/switch_on"
         style="?android:attr/progressBarStyleHorizontal"
-        android:progressDrawable="@drawable/green_progress_bar_background"
+        android:progressDrawable="@drawable/red_progress_bar_background"
         android:layout_width="match_parent"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"

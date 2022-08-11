@@ -26,7 +26,7 @@ class BoomerangAdapter(
         val speedInfo = binding.speedInfo
         val styleInfo = binding.styleInfo
         val hitInfo = binding.hitInfo
-        val energyCostInfo = binding.energyCostInfo
+        val powerInfo = binding.powerInfo
         val buttonIcon = binding.buttonIcon
     }
 
@@ -45,7 +45,7 @@ class BoomerangAdapter(
         holder.speedInfo.text = boomerangs[position].speedInfo
         holder.styleInfo.text = boomerangs[position].styleInfo
         holder.hitInfo.text = boomerangs[position].hitInfo
-        holder.energyCostInfo.text = boomerangs[position].energyInfo
+        holder.powerInfo.text = boomerangs[position].powerInfo
 
         holder.buttonIcon.setOnClickListener {
 

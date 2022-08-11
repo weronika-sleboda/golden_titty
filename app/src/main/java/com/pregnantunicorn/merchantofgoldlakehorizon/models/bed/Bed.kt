@@ -47,6 +47,7 @@ class Bed(
         Merchant.energy().restore()
         Merchant.charisma().restore()
         Merchant.intelligence().restore()
+        RentTime.raiseCounter()
         changeAndShowMessage()
     }
 }

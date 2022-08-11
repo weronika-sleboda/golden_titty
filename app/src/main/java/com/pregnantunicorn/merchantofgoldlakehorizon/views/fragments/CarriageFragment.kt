@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.CarriageFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.carriage.Carriage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.trading.DealFactory
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.CarriageAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -18,10 +20,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CarriageFragment : Fragment() {
+class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
 
     private lateinit var binding: CarriageFragmentBinding
-    private var deal = DealFactory.deal()
+    private lateinit var adapter: CarriageAdapter
+    private lateinit var layoutManager: LinearLayoutManager
+    private var carriageItems = Carriage().carriageItems()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,86 +35,56 @@ class CarriageFragment : Fragment() {
 
         binding = CarriageFragmentBinding.inflate(inflater, container, false)
 
-        updateDeal()
-        setupChangeDealButton()
-        setupAcceptButton()
         setupLeaveButton()
+        updateCarriageItems()
 
         return binding.root
     }
 
-    private fun updateDeal() {
-
-        binding.deal.demandName.text = deal.name
-        binding.deal.demandIcon.setImageResource(deal.icon)
-        binding.deal.demandAmount.text = deal.demandToString()
-        binding.deal.rewardInfo.text = deal.rewardToString()
-
-    }
-
-    private fun updateMerchantPersuasion() {
-
-        val statusUpdate = requireActivity() as MerchantStatusUpdate
-
-    }
-
-    private fun setupChangeDealButton() {
-
-        binding.changeDealButton.root.setOnClickListener {
-
-            CoroutineScope(Dispatchers.IO).launch {
-
-                if(DealFactory.changeDeal()) {
-
-                    deal = DealFactory.deal()
-
-                    withContext(Dispatchers.Main) {
-
-                        updateMerchantPersuasion()
-                        updateDeal()
-                    }
-                }
-
-                else {  showMessage() }
-            }
-        }
-    }
-
     private fun updateMerchantStatus() {
 
-        val statusUpdate = requireActivity() as MerchantStatusUpdate
-        statusUpdate.updateGoldenCoins()
-
-
+        val status = requireActivity() as MerchantStatusUpdate
+        status.updateGoldenCoins()
+        status.updateDates()
+        status.updateCoconuts()
+        status.updatePeaches()
     }
 
-    private fun setupAcceptButton() {
+    override fun onClickCarriageItem(position: Int) {
 
-        binding.acceptButton.setOnClickListener {
+        CoroutineScope(Dispatchers.IO).launch {
 
-            CoroutineScope(Dispatchers.IO).launch {
+            if(carriageItems[position].sell()) {
 
-                if(deal.sell()) {
+                withContext(Dispatchers.Main) {
 
-                    DealFactory.generateNewDeal()
-                    deal = DealFactory.deal()
-
-                    withContext(Dispatchers.Main) {
-
-                        updateMerchantStatus()
-                        updateDeal()
-                    }
+                    updateMerchantStatus()
+                    updateCarriageItems()
                 }
+            }
 
-                else {
+            else {
 
-                    withContext(Dispatchers.Main) {
+                withContext(Dispatchers.Main) {
 
-                        showMessage()
-                    }
+                    showMessage()
                 }
             }
         }
+    }
+
+    private fun updateCarriageItems() {
+
+        adapter = CarriageAdapter(carriageItems, this)
+        layoutManager = LinearLayoutManager(context)
+        binding.carriageRecycler.adapter = adapter
+        binding.carriageRecycler.layoutManager = layoutManager
+    }
+
+    private fun showMessage() {
+
+        InfoDialogFragment(CurrentMessage.message())
+            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 
     private fun setupLeaveButton() {
@@ -122,11 +96,5 @@ class CarriageFragment : Fragment() {
                 replace<LocationFragment>(R.id.world_container)
             }
         }
-    }
-
-    private fun showMessage() {
-
-        InfoDialogFragment(CurrentMessage.message())
-            .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 }

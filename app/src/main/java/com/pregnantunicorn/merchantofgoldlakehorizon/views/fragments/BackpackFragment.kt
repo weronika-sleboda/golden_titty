@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BackpackFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.BoomerangManager
@@ -54,6 +55,7 @@ class BackpackFragment : Fragment(),
         setupFoodTab()
         setupBoomerangTab()
         setupItemsTab()
+        setupFab()
 
         return binding.root
     }
@@ -62,6 +64,12 @@ class BackpackFragment : Fragment(),
 
         val statusUpdate = requireActivity() as MerchantStatusUpdate
         statusUpdate.updateFab()
+    }
+
+    private fun setupFab() {
+
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
+        fab?.setOnClickListener {}
     }
 
     private fun setupFoodTab() {

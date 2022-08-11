@@ -3,5 +3,6 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 enum class BoomerangStyleName {
 
     ZIGZAG,
-    UNPREDICTABLE
+    UNPREDICTABLE,
+    ENCHANTED
 }

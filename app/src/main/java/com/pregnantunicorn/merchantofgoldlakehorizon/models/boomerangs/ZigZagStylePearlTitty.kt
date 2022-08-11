@@ -6,7 +6,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
-class ZigzagStyleSecretGate : BoomerangStyle() {
+class ZigZagStylePearlTitty : BoomerangStyle() {
 
     companion object {
 
@@ -16,7 +16,7 @@ class ZigzagStyleSecretGate : BoomerangStyle() {
     }
 
 
-    override fun name() = "Peach Palm"
+    override fun name() = "Pearl Titty Altar"
 
     override fun range(): Array<BoomerangTile> {
 
@@ -41,7 +41,7 @@ class ZigzagStyleSecretGate : BoomerangStyle() {
         return false
     }
 
-    private val targetIcon = R.drawable.emblem64
+    private val targetIcon = R.drawable.pearl_titty64
 
     override fun newRange(boomerangIcon: Int): Array<BoomerangTile> {
 

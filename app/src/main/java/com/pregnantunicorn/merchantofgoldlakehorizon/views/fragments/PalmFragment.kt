@@ -25,7 +25,7 @@ class PalmFragment: Fragment() {
     private lateinit var adapter: BoomerangRangeAdapter
     private lateinit var layoutManager: GridLayoutManager
     private val boomerang = CurrentBoomerang.boomerang()
-    private var boomerangStyle = CurrentBoomerangStyle.boomerangStyle(boomerang.boomerangStyleName)
+    private var boomerangStyle = CurrentBoomerang.boomerang().boomerangStyle.invoke()
 
     private var job: Job? = null
 
@@ -69,7 +69,7 @@ class PalmFragment: Fragment() {
 
     private fun setupFab() {
 
-        val fab = activity?.findViewById<FloatingActionButton>(R.id.item_holder)
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
 
         fab?.setOnClickListener {
 
@@ -77,19 +77,19 @@ class PalmFragment: Fragment() {
 
                 if(job == null) {
 
-                    if(Merchant.energy().hasAmount(boomerang.energy)) {
+                    val energy = 1
 
-                        fab.setImageResource(R.drawable.grab64)
-                        Merchant.energy().loseAmount(0)
+                    if(Merchant.energy().hasAmount(energy)) {
+
+                        fab?.setImageResource(R.drawable.grab64)
+                        Merchant.energy().loseAmount(energy)
                         updateMerchantStatus()
 
                         job = CoroutineScope(Dispatchers.IO).launch {
 
                             while(true) {
 
-                                boomerangStyle = CurrentBoomerangStyle.boomerangStyle(
-                                    boomerang.boomerangStyleName
-                                )
+                                boomerangStyle = CurrentBoomerang.boomerang().boomerangStyle.invoke()
 
                                 withContext(Dispatchers.Main) {
 
@@ -127,13 +127,12 @@ class PalmFragment: Fragment() {
 
                                 updateMerchantStatus()
                                 showMessage()
-
                             }
                         }
 
                         withContext(Dispatchers.Main) {
 
-                            fab.setImageResource(boomerang.icon)
+                            fab?.setImageResource(boomerang.icon)
                             updateRange(boomerangStyle.range())
                         }
                     }
@@ -183,10 +182,9 @@ class PalmFragment: Fragment() {
 
     override fun onDestroy() {
 
-        super.onDestroy()
-
         job?.cancel()
         job = null
+        super.onDestroy()
     }
 
     private fun showMessage() {
