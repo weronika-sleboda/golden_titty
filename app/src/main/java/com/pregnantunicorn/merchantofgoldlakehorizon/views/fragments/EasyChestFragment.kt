@@ -32,19 +32,19 @@ class EasyChestFragment : Fragment() {
         return binding.root
     }
 
-    private fun openingCondition(): Boolean {
+    private var condition: Boolean = false
 
-        return when(Random.nextInt(4)) {
-
-            0 -> binding.firstSwitch.isChecked && binding.secondSwitch.isChecked
-            1 -> !binding.firstSwitch.isChecked && binding.secondSwitch.isChecked
-            2 -> !binding.firstSwitch.isChecked && !binding.secondSwitch.isChecked
-            else -> binding.firstSwitch.isChecked && !binding.secondSwitch.isChecked
-        }
-    }
     private fun setupOpenButton() {
 
         binding.openButton.setOnClickListener {
+
+            condition = when(Random.nextInt(4)) {
+
+                0 -> binding.firstSwitch.isChecked && binding.secondSwitch.isChecked
+                1 -> !binding.firstSwitch.isChecked && binding.secondSwitch.isChecked
+                2 -> !binding.firstSwitch.isChecked && !binding.secondSwitch.isChecked
+                else -> binding.firstSwitch.isChecked && !binding.secondSwitch.isChecked
+            }
 
             if(Merchant.intelligence().hasAmount(2)) {
 
@@ -52,7 +52,7 @@ class EasyChestFragment : Fragment() {
                 val status = requireActivity() as MerchantStatusUpdate
                 status.updateIntelligence()
 
-                if(openingCondition()) {
+                if(condition) {
 
                     activity?.supportFragmentManager?.commit {
 

@@ -59,8 +59,18 @@ class ActionFragment : Fragment() {
 
                     activity?.supportFragmentManager?.commit {
 
-                        replace<LocationFragment>(R.id.world_container)
+                        replace<PearlTittyFragment>(R.id.world_container)
                     }
+                }
+            }
+
+            else {
+
+                binding.info.successProgressBar.progress -= 10
+
+                if(binding.info.successProgressBar.progress == 0) {
+
+                    failed = true
                 }
             }
 
@@ -79,15 +89,25 @@ class ActionFragment : Fragment() {
 
                 binding.info.successProgressBar.progress += 10
 
-                if(binding.info.successProgressBar.progress == 100) {
+                if (binding.info.successProgressBar.progress == 100) {
 
                     job?.cancel()
                     job = null
 
                     activity?.supportFragmentManager?.commit {
 
-                        replace<LocationFragment>(R.id.world_container)
+                        replace<PearlTittyFragment>(R.id.world_container)
                     }
+                }
+            }
+
+            else {
+
+                binding.info.successProgressBar.progress -= 10
+
+                if(binding.info.successProgressBar.progress == 0) {
+
+                    failed = true
                 }
             }
 
@@ -95,6 +115,8 @@ class ActionFragment : Fragment() {
         }
     }
 
+
+    private var started = false
 
     private fun setupClimbButton() {
 
@@ -113,8 +135,18 @@ class ActionFragment : Fragment() {
 
                     activity?.supportFragmentManager?.commit {
 
-                        replace<LocationFragment>(R.id.world_container)
+                        replace<PearlTittyFragment>(R.id.world_container)
                     }
+                }
+            }
+
+            else {
+
+                binding.info.successProgressBar.progress -= 10
+
+                if(binding.info.successProgressBar.progress == 0) {
+
+                    failed = true
                 }
             }
 
@@ -124,7 +156,7 @@ class ActionFragment : Fragment() {
 
     private var actionIcon = R.drawable.run128
 
-    private var timer = 20
+    private var timer = 30
 
     private fun updateTimer() {
 
@@ -136,15 +168,23 @@ class ActionFragment : Fragment() {
             job?.cancel()
             job = null
 
+            demandedAction = -2
+            playerAction = -1
+
             CurrentMessage.changeMessage(
                 "You Failed",
-                R.drawable.chest64_morning,
-                "You failed to open the chest."
+                R.drawable.seagull64,
+                "You failed to enter the building."
             )
 
             showMessage()
+
+            started = false
+            binding.info.successProgressBar.progress = 0
         }
     }
+
+    private var failed = false
 
     private fun setupActionButton() {
 
@@ -152,15 +192,17 @@ class ActionFragment : Fragment() {
 
             if(job == null) {
 
-                timer = 20
+                failed = false
+                timer = 30
                 demandedAction = -2
                 playerAction = -1
-                val courage = 10
+                val courage = 1
 
-                if(Merchant.charisma().hasAmount(courage)) {
+                if(Merchant.faith().hasAmount(courage)) {
 
-                    Merchant.charisma().loseAmount(courage)
+                    Merchant.faith().loseAmount(courage)
                     updateMerchantStatus()
+                    started = true
 
                     job = CoroutineScope(Dispatchers.IO).launch {
 
@@ -193,9 +235,26 @@ class ActionFragment : Fragment() {
                             withContext(Dispatchers.Main) {
 
                                 binding.icon.setImageResource(actionIcon)
+
+                                if(failed) {
+
+                                    job?.cancel()
+                                    job = null
+
+                                    demandedAction = -2
+                                    playerAction = -1
+
+                                    CurrentMessage.changeMessage(
+                                        "You failed!",
+                                        R.drawable.seagull64,
+                                        "     You failed.    "
+                                    )
+
+                                    showMessage()
+                                }
                             }
 
-                            delay(600)
+                            delay(700)
                         }
                     }
                 }
@@ -203,9 +262,9 @@ class ActionFragment : Fragment() {
                 else {
 
                     CurrentMessage.changeMessage(
-                        "No Courage",
-                        R.drawable.intelligence64,
-                        "You don't have enough intelligence to perform this action."
+                        "No Faith",
+                        R.drawable.charisma64,
+                        "You don't have enough faith to perform this action."
                     )
 
                     showMessage()
@@ -217,7 +276,7 @@ class ActionFragment : Fragment() {
     private fun updateMerchantStatus() {
 
         val status = requireActivity() as MerchantStatusUpdate
-        status.updateCharisma()
+        status.updateFaith()
     }
 
     private fun showMessage() {

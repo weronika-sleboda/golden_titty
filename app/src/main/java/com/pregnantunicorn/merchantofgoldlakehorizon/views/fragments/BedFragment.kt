@@ -56,7 +56,7 @@ class BedFragment : Fragment() {
 
         val statusUpdate = requireActivity() as MerchantStatusUpdate
         statusUpdate.updateEnergy()
-        statusUpdate.updateCharisma()
+        statusUpdate.updateFaith()
         statusUpdate.updateHealth()
         statusUpdate.updateIntelligence()
     }

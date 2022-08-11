@@ -61,10 +61,8 @@ class PearlTittyFragment: Fragment() {
     private fun updateMerchantStatus() {
 
         val status = requireActivity() as MerchantStatusUpdate
-        status.updateDates()
-        status.updateCoconuts()
-        status.updatePeaches()
         status.updateEnergy()
+        status.updateTittyCounter()
     }
 
     private fun setupFab() {
@@ -130,6 +128,9 @@ class PearlTittyFragment: Fragment() {
                                 updateMerchantStatus()
 
                                 if(binding.switchOn.progress == 100) {
+
+                                    Merchant.tittyCounter().addTitty()
+                                    updateMerchantStatus()
 
                                     activity?.supportFragmentManager?.commit {
 

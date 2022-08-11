@@ -61,7 +61,7 @@ class SneakFragment : Fragment() {
 
                     Merchant.intelligence().loseAmount(intelligence)
                     updateMerchantStatus()
-                    binding.sneakButton.text = "Go"
+                    binding.sneakButton.text = "Sneak"
 
                     job = CoroutineScope(Dispatchers.IO).launch {
 
@@ -95,7 +95,7 @@ class SneakFragment : Fragment() {
 
             else {
 
-                binding.sneakButton.text = "Go"
+                binding.sneakButton.text = "Sneak"
 
                 if(counter < 50) {
 
@@ -103,8 +103,10 @@ class SneakFragment : Fragment() {
 
                     if(binding.successProgressBar.progress == 100) {
 
-                        Merchant.tittyCounter().addTitty()
-                        updateMerchantStatus()
+                        activity?.supportFragmentManager?.commit {
+
+                            replace<LocationFragment>(R.id.world_container)
+                        }
                     }
                 }
 

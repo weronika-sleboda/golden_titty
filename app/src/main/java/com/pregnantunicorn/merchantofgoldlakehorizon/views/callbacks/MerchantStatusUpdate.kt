@@ -5,7 +5,7 @@ interface MerchantStatusUpdate {
     fun updateAppearance()
     fun updateEnergy()
     fun updateHealth()
-    fun updateCharisma()
+    fun updateFaith()
     fun updateIntelligence()
 
     fun updateDates()

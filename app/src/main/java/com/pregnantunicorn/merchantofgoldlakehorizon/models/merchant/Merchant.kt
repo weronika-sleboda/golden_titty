@@ -8,7 +8,7 @@ object Merchant {
 
     private var energy = Status()
     private var health = Status()
-    private var charisma = Status()
+    private var faith = Status()
     private var intelligence = Status()
 
     private var dates = Resource()
@@ -23,7 +23,7 @@ object Merchant {
 
     fun health() = health
     fun energy() = energy
-    fun charisma() = charisma
+    fun faith() = faith
     fun intelligence() = intelligence
 
     fun dates() = dates

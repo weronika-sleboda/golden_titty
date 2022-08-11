@@ -15,17 +15,16 @@ class Greeneria : Location(
             it[0] = PalmTile(BoomerangPlaceName.DATE_PALM)
             it[1] = PalmTile(BoomerangPlaceName.COCONUT_PALM)
             it[2] = PalmTile(BoomerangPlaceName.PEACH_PALM)
-            it[3] = PearlTittyAltarTile(BoomerangPlaceName.PEARL_TITTY_ALTAR)
 
             it[4] = InnTile({IconFactory().tent64()},CurrentInnDoor.TENT)
             it[5] = ActionTile()
-            it[6] = ChestTile()
+            it[7] = ChestTile()
+            it[6] = InvestigationBuildingTile()
 
             it[8] = CarriageTile()
 
             it[9] = InnTile({IconFactory().npcHouse64()},CurrentInnDoor.FORGOTTEN_DEN)
 
             it[10] = UniversityTile()
-            it[11] = InvestigationBuildingTile()
         }
 )

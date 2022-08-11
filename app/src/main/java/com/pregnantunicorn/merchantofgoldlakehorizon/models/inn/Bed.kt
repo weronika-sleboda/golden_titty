@@ -42,7 +42,7 @@ class Bed(
         CurrentDayCycle.changeDayCycle()
         Merchant.health().loseAmount(healthCost)
         Merchant.energy().restore()
-        Merchant.charisma().restore()
+        Merchant.faith().restore()
         Merchant.intelligence().restore()
 
         changeAndShowMessage()

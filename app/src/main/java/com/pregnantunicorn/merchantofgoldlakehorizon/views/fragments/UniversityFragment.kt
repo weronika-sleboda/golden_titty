@@ -46,7 +46,7 @@ class UniversityFragment : Fragment(), UniversityAdapter.UniversityListener {
         val status = requireActivity() as MerchantStatusUpdate
         status.updateGoldCoins()
         status.updateHealth()
-        status.updateCharisma()
+        status.updateFaith()
         status.updateEnergy()
         status.updateIntelligence()
     }

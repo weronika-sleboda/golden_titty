@@ -25,7 +25,7 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
 
         updateEnergy()
         updateHealth()
-        updateCharisma()
+        updateFaith()
         updateIntelligence()
         updateTittyCounter()
         updateGoldCoins()
@@ -135,9 +135,9 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         binding.merchant.energy.text = Merchant.energy().amountToString()
     }
 
-    override fun updateCharisma() {
+    override fun updateFaith() {
 
-        binding.merchant.charisma.text = Merchant.charisma().amountToString()
+        binding.merchant.faith.text = Merchant.faith().amountToString()
     }
 
     override fun updateIntelligence() {

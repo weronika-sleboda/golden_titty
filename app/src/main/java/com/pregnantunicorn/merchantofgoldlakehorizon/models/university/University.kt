@@ -26,15 +26,15 @@ class University {
         UniversitySkill(
             "Charisma",
             R.drawable.charisma64,
-            "Info gathering",
-            { Merchant.charisma().maxValueReached() },
-            { Merchant.charisma().addMaxAmount(1)}
+            "Performing stunts",
+            { Merchant.faith().maxValueReached() },
+            { Merchant.faith().addMaxAmount(1)}
         ),
 
         UniversitySkill(
             "Intelligence",
             R.drawable.intelligence64,
-            "Sneaking and chest opening",
+            "Sneaking, unlocking chests",
             { Merchant.intelligence().maxValueReached() },
             { Merchant.intelligence().addMaxAmount(1)}
         ),

@@ -4,6 +4,6 @@ enum class StatusUpdateType {
 
     HEALTH,
     ENERGY,
-    CHARISMA,
+    FAITH,
     INTELLIGENCE
 }
