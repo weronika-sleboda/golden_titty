@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.food
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class Food(
@@ -14,7 +14,7 @@ class Food(
 
     fun consume(): Boolean {
 
-        if(Merchant.health().amountIsMaxed()) {
+        if(Player.health().amountIsMaxed()) {
 
             CurrentMessage.changeMessage(
                 "Full Health",
@@ -37,10 +37,10 @@ class Food(
 
         val amount = 1
 
-        if(Merchant.dates().hasAmount(amount)) {
+        if(Player.dates().hasAmount(amount)) {
 
-            Merchant.dates().loseAmount(amount)
-            Merchant.health().addAmount(1)
+            Player.dates().loseAmount(amount)
+            Player.health().addAmount(1)
             return true
         }
 
@@ -57,10 +57,10 @@ class Food(
 
         val amount = 1
 
-        if(Merchant.coconuts().hasAmount(amount)) {
+        if(Player.coconuts().hasAmount(amount)) {
 
-            Merchant.coconuts().loseAmount(amount)
-            Merchant.health().addAmount(2)
+            Player.coconuts().loseAmount(amount)
+            Player.health().addAmount(2)
             return true
         }
 
@@ -77,10 +77,10 @@ class Food(
 
         val amount = 1
 
-        if(Merchant.peaches().hasAmount(amount)) {
+        if(Player.peaches().hasAmount(amount)) {
 
-            Merchant.peaches().loseAmount(amount)
-            Merchant.health().addAmount(3)
+            Player.peaches().loseAmount(amount)
+            Player.health().addAmount(3)
             return true
         }
 

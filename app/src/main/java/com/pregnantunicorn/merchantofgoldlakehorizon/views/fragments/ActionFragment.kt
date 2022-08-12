@@ -9,9 +9,9 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ActionFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 import kotlin.random.Random
@@ -20,6 +20,10 @@ class ActionFragment : Fragment() {
 
     private lateinit var binding: ActionFragmentBinding
     private var job: Job? = null
+    private var timer = 20
+    private var demandedAction = -1
+    private var started = false
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,47 +38,94 @@ class ActionFragment : Fragment() {
         setupClimbButton()
         setupActionButton()
         setupLeaveButton()
+        setupInfoButton()
 
         binding.info.timeLeft.text = timer.toString()
         return binding.root
     }
 
-    private var demandedAction = -2
-    private var playerAction = -1
+    private fun stillHasTime(): Boolean {
+
+        return timer >= 0
+    }
+
+    private fun makeProgress() {
+
+        binding.info.successProgressBar.progress += 10
+
+        if(binding.info.successProgressBar.progress == 100) {
+
+            job?.cancel()
+            job = null
+            started = false
+
+            CurrentMessage.changeMessage(
+                "Congratulations!",
+                R.drawable.stars64,
+                "You have managed to enter the building."
+            )
+
+            showMessage()
+        }
+    }
+
+    private fun fail() {
+
+        job?.cancel()
+        job = null
+        started = false
+
+        binding.info.successProgressBar.progress = 0
+
+        CurrentMessage.changeMessage(
+            "You Failed",
+            R.drawable.fail64,
+            "Your stunt has been unsuccessful."
+        )
+
+        showMessage()
+    }
+
+    private fun showOutOfTimeMessage() {
+
+        CurrentMessage.changeMessage(
+            "Out Of Time",
+            R.drawable.hourglass64,
+            "You run out of time."
+        )
+
+        showMessage()
+    }
+
+    private fun checkWinningCondition(icon: Int) {
+
+        if(stillHasTime()) {
+
+            if(demandedAction == icon) {
+
+                makeProgress()
+            }
+
+            else {
+
+                fail()
+            }
+        }
+
+        else {
+
+            showOutOfTimeMessage()
+        }
+    }
 
     private fun setupRunButton() {
 
         binding.controller.runButton.setOnClickListener {
 
-            playerAction = 0
+            if(started) {
 
-            if(playerAction == demandedAction) {
-
-                binding.info.successProgressBar.progress += 10
-
-                if(binding.info.successProgressBar.progress == 100) {
-
-                    job?.cancel()
-                    job = null
-
-                    activity?.supportFragmentManager?.commit {
-
-                        replace<PearlTittyFragment>(R.id.world_container)
-                    }
-                }
+                checkWinningCondition(R.drawable.run128)
             }
-
-            else {
-
-                binding.info.successProgressBar.progress -= 10
-
-                if(binding.info.successProgressBar.progress == 0) {
-
-                    failed = true
-                }
-            }
-
-            binding.icon.setImageResource(actionIcon)
         }
     }
 
@@ -83,108 +134,46 @@ class ActionFragment : Fragment() {
 
         binding.controller.jumpButton.setOnClickListener {
 
-            playerAction = 1
+            if(started) {
 
-            if(playerAction == demandedAction) {
-
-                binding.info.successProgressBar.progress += 10
-
-                if (binding.info.successProgressBar.progress == 100) {
-
-                    job?.cancel()
-                    job = null
-
-                    activity?.supportFragmentManager?.commit {
-
-                        replace<PearlTittyFragment>(R.id.world_container)
-                    }
-                }
+                checkWinningCondition(R.drawable.jump128)
             }
-
-            else {
-
-                binding.info.successProgressBar.progress -= 10
-
-                if(binding.info.successProgressBar.progress == 0) {
-
-                    failed = true
-                }
-            }
-
-            binding.icon.setImageResource(actionIcon)
         }
     }
-
-
-    private var started = false
 
     private fun setupClimbButton() {
 
         binding.controller.climbButton.setOnClickListener {
 
-            playerAction = 2
+            if(started) {
 
-            if(playerAction == demandedAction) {
-
-                binding.info.successProgressBar.progress += 10
-
-                if(binding.info.successProgressBar.progress == 100) {
-
-                    job?.cancel()
-                    job = null
-
-                    activity?.supportFragmentManager?.commit {
-
-                        replace<PearlTittyFragment>(R.id.world_container)
-                    }
-                }
+                checkWinningCondition(R.drawable.climb128)
             }
-
-            else {
-
-                binding.info.successProgressBar.progress -= 10
-
-                if(binding.info.successProgressBar.progress == 0) {
-
-                    failed = true
-                }
-            }
-
-            binding.icon.setImageResource(actionIcon)
         }
     }
-
-    private var actionIcon = R.drawable.run128
-
-    private var timer = 30
 
     private fun updateTimer() {
 
+        timer--
         binding.info.timeLeft.text = timer.toString()
-
-
-        if(timer == 0) {
-
-            job?.cancel()
-            job = null
-
-            demandedAction = -2
-            playerAction = -1
-
-            CurrentMessage.changeMessage(
-                "You Failed",
-                R.drawable.seagull64,
-                "You failed to enter the building."
-            )
-
-            showMessage()
-
-            started = false
-            binding.info.successProgressBar.progress = 0
-        }
     }
 
-    private var failed = false
+    private fun startOver()  {
+
+        binding.info.successProgressBar.progress = 0
+        timer = 20
+        demandedAction = -1
+    }
+
+    private fun changeIcon() {
+
+        demandedAction = when(Random.nextInt(3)) {
+
+            0 -> R.drawable.run128
+            1 -> R.drawable.jump128
+            else -> R.drawable.climb128
+        }
+    }
 
     private fun setupActionButton() {
 
@@ -192,66 +181,26 @@ class ActionFragment : Fragment() {
 
             if(job == null) {
 
-                failed = false
-                timer = 30
-                demandedAction = -2
-                playerAction = -1
-                val courage = 1
+                startOver()
 
-                if(Merchant.faith().hasAmount(courage)) {
+                val agility = 1
 
-                    Merchant.faith().loseAmount(courage)
-                    updateMerchantStatus()
+                if(Player.agility().hasAmount(agility)) {
+
                     started = true
+                    Player.agility().loseAmount(agility)
+                    updateMerchantStatus()
 
                     job = CoroutineScope(Dispatchers.IO).launch {
 
                         while(timer > 0) {
 
-                            actionIcon = when(Random.nextInt(3)) {
-
-                                0 -> {
-
-                                    demandedAction = 0
-                                    R.drawable.run128
-                                }
-
-                                1 -> {
-
-                                    demandedAction = 1
-                                    R.drawable.jump128
-                                }
-
-                                else -> {
-
-                                    demandedAction = 2
-                                    R.drawable.climb128
-                                }
-                            }
-
-                            timer--
+                            changeIcon()
                             updateTimer()
 
                             withContext(Dispatchers.Main) {
 
-                                binding.icon.setImageResource(actionIcon)
-
-                                if(failed) {
-
-                                    job?.cancel()
-                                    job = null
-
-                                    demandedAction = -2
-                                    playerAction = -1
-
-                                    CurrentMessage.changeMessage(
-                                        "You failed!",
-                                        R.drawable.seagull64,
-                                        "     You failed.    "
-                                    )
-
-                                    showMessage()
-                                }
+                                binding.icon.setImageResource(demandedAction)
                             }
 
                             delay(700)
@@ -262,9 +211,9 @@ class ActionFragment : Fragment() {
                 else {
 
                     CurrentMessage.changeMessage(
-                        "No Faith",
-                        R.drawable.charisma64,
-                        "You don't have enough faith to perform this action."
+                        "No Agility",
+                        R.drawable.agility64,
+                        "You don't have enough agility to perform this action."
                     )
 
                     showMessage()
@@ -275,8 +224,8 @@ class ActionFragment : Fragment() {
 
     private fun updateMerchantStatus() {
 
-        val status = requireActivity() as MerchantStatusUpdate
-        status.updateFaith()
+        val status = requireActivity() as PlayerStatusUpdate
+        status.updateAgility()
     }
 
     private fun showMessage() {
@@ -306,5 +255,23 @@ class ActionFragment : Fragment() {
 
         job?.cancel()
         job = null
+    }
+
+    private fun setupInfoButton() {
+
+        binding.infoButton.setOnClickListener {
+
+            CurrentMessage.changeMessage(
+                "Instructions",
+                R.drawable.info64,
+                "1. Press the start button.\n" +
+                        "2. Follow the icons on the main screen and press the corresponding button.\n" +
+                        "3. If you click on an icon that isn't matching the one on the main screen you fail and have to start over.\n" +
+                        "4. Watch the hourglass on the left above the main screen. If you run out of time you fail.\n" +
+                        "5. When the success progress bar reaches its maximum, you will enter the building."
+            )
+
+            showMessage()
+        }
     }
 }

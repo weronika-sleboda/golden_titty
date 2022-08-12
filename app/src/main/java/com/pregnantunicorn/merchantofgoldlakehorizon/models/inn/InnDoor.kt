@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.inn
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class InnDoor(
@@ -16,9 +16,9 @@ class InnDoor(
 
     fun enter(): Boolean {
 
-        if(Merchant.goldCoins().hasAmount(price)) {
+        if(Player.goldCoins().hasAmount(price)) {
 
-            Merchant.goldCoins().loseAmount(price)
+            Player.goldCoins().loseAmount(price)
             CurrentBed.changeBed(bedType)
             return true
         }

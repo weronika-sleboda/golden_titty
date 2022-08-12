@@ -11,7 +11,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.InnDoorFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.inn.CurrentInnDoor
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 
@@ -59,7 +59,7 @@ class InnDoorFragment : Fragment() {
 
     private fun updateGold() {
 
-        val status = requireActivity() as MerchantStatusUpdate
+        val status = requireActivity() as PlayerStatusUpdate
         status.updateGoldCoins()
     }
 

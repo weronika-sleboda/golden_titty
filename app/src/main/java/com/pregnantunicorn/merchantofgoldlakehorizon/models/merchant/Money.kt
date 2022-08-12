@@ -1,7 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant
 
-class Money()
-{
+class Money {
 
     companion object {
 

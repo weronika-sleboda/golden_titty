@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
@@ -34,7 +34,7 @@ class UnpredictableStyleDates : BoomerangStyle() {
 
         if(boomerangPosition == hitPosition) {
 
-            Merchant.dates().addAmount(hitAmount)
+            Player.dates().addAmount(hitAmount)
 
             CurrentMessage.changeMessage(
                 "Target Hit!",

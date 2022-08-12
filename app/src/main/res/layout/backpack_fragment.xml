@@ -48,7 +48,7 @@
         android:textColor="@color/super_light_mystery"
         android:textSize="17sp"
         android:background="@drawable/tab_background"
-        android:text="@string/items"/>
+        android:text="@string/key_items"/>
 
     <TextView
         android:id="@+id/clothes_tab"
@@ -63,7 +63,7 @@
         android:textColor="@color/super_light_mystery"
         android:textSize="17sp"
         android:background="@drawable/tab_background"
-        android:text="@string/clothes"/>
+        android:text="@string/notes"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_column="0"

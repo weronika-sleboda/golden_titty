@@ -4,18 +4,9 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 
 object CurrentInnDoor {
 
-    const val FORGOTTEN_DEN = 0
-    const val TENT  = 1
+    const val TENT  = 0
 
     private val innDoors = arrayOf(
-
-        InnDoor(
-            "Forgotten Den",
-            { IconFactory().houseDoor64() },
-            "A cheap inn where you can restore your status.",
-            30,
-            BedType.DOUBLE_BED
-        ),
 
         InnDoor(
             "Tent",
@@ -26,7 +17,7 @@ object CurrentInnDoor {
         )
     )
 
-    private var innDoor = innDoors[FORGOTTEN_DEN]
+    private var innDoor = innDoors[TENT]
     fun innDoor() = innDoor
 
     fun changeInnDoor(innDoorIndex: Int) {

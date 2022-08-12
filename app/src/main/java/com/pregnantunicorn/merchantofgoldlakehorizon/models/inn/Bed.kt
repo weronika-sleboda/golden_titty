@@ -3,7 +3,7 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.inn
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.CurrentDayCycle
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class Bed(
@@ -40,10 +40,10 @@ class Bed(
     fun sleep() {
 
         CurrentDayCycle.changeDayCycle()
-        Merchant.health().loseAmount(healthCost)
-        Merchant.energy().restore()
-        Merchant.faith().restore()
-        Merchant.intelligence().restore()
+        Player.health().loseAmount(healthCost)
+        Player.accuracy().restore()
+        Player.agility().restore()
+        Player.stealth().restore()
 
         changeAndShowMessage()
     }

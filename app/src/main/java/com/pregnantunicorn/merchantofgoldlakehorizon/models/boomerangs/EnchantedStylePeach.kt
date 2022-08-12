@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
@@ -12,7 +12,7 @@ class EnchantedStylePeach : BoomerangStyle() {
 
     private var hitPosition = Random.nextInt(rangeSize)
 
-    override fun name() = "Coconut Palm"
+    override fun name() = "Peach Palm"
 
     override fun range(): Array<BoomerangTile> {
 
@@ -30,12 +30,12 @@ class EnchantedStylePeach : BoomerangStyle() {
 
         if(boomerangPosition1 == hitPosition || boomerangPosition2 == hitPosition) {
 
-            Merchant.coconuts().addAmount(hitAmount)
+            Player.peaches().addAmount(hitAmount)
 
             CurrentMessage.changeMessage(
                 "Target Hit!",
-                R.drawable.coconut64,
-                "Coconut has been acquired."
+                R.drawable.peach64,
+                "Peach has been acquired."
             )
 
             return true

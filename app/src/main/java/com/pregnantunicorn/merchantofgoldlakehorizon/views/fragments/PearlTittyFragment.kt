@@ -12,10 +12,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.PearlTittyFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangRangeAdapter
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 
@@ -60,8 +60,8 @@ class PearlTittyFragment: Fragment() {
 
     private fun updateMerchantStatus() {
 
-        val status = requireActivity() as MerchantStatusUpdate
-        status.updateEnergy()
+        val status = requireActivity() as PlayerStatusUpdate
+        status.updateAccuracy()
         status.updateTittyCounter()
     }
 
@@ -75,12 +75,12 @@ class PearlTittyFragment: Fragment() {
 
                 if(job == null) {
 
-                    val energy = 1
+                    val accuracy = 1
 
-                    if(Merchant.energy().hasAmount(energy)) {
+                    if(Player.accuracy().hasAmount(accuracy)) {
 
                         fab.setImageResource(R.drawable.grab64)
-                        Merchant.energy().loseAmount(1)
+                        Player.accuracy().loseAmount(accuracy)
                         updateMerchantStatus()
 
                         job = CoroutineScope(Dispatchers.IO).launch {
@@ -129,7 +129,7 @@ class PearlTittyFragment: Fragment() {
 
                                 if(binding.switchOn.progress == 100) {
 
-                                    Merchant.tittyCounter().addTitty()
+                                    Player.tittyCounter().addTitty()
                                     updateMerchantStatus()
 
                                     activity?.supportFragmentManager?.commit {

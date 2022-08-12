@@ -23,8 +23,6 @@ class Greeneria : Location(
 
             it[8] = CarriageTile()
 
-            it[9] = InnTile({IconFactory().npcHouse64()},CurrentInnDoor.FORGOTTEN_DEN)
-
             it[10] = UniversityTile()
         }
 )

@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
@@ -18,7 +18,7 @@ class EnchantedStyleDates : BoomerangStyle() {
         else -> 7
     }
 
-    override fun name() = "Coconut Palm"
+    override fun name() = "Date Palm"
 
     override fun range(): Array<BoomerangTile> {
 
@@ -36,12 +36,12 @@ class EnchantedStyleDates : BoomerangStyle() {
 
         if(boomerangPosition1 == hitPosition || boomerangPosition2 == hitPosition) {
 
-            Merchant.coconuts().addAmount(hitAmount)
+            Player.dates().addAmount(hitAmount)
 
             CurrentMessage.changeMessage(
                 "Target Hit!",
-                R.drawable.coconut64,
-                "Coconut has been acquired."
+                R.drawable.dates64,
+                "Dates have been acquired."
             )
 
             return true

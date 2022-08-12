@@ -4,17 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.NpcFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class NpcFragment : Fragment() {
 
@@ -72,7 +70,7 @@ class NpcFragment : Fragment() {
 
     private fun updateMerchantGold() {
 
-        val statusUpdate = requireActivity() as MerchantStatusUpdate
+        val statusUpdate = requireActivity() as PlayerStatusUpdate
         statusUpdate.updateGoldCoins()
     }
 

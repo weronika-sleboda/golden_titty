@@ -129,4 +129,14 @@
     <string name="action_icon_cd">action_icon_cd</string>
     <string name="success">Success</string>
     <string name="start">Start</string>
+    <string name="accuracy_icon_cd">accuracy_icon_cd</string>
+    <string name="agility_icon_cd">agility_icon_cd</string>
+    <string name="stealth_icon_cd">stealth_icon_cd</string>
+    <string name="timer_icon_cd">timer_icon_cd</string>
+    <string name="notes">Notes</string>
+    <string name="key_items">Key Items</string>
+    <string name="cost">Cost</string>
+    <string name="trance">Trance</string>
+    <string name="chest">Chest</string>
+    <string name="info_icon_cd">info_icon_cd</string>
 </resources>

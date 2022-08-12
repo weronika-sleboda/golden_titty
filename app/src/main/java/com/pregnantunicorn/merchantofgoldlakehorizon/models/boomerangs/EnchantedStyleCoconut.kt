@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
@@ -30,7 +30,7 @@ class EnchantedStyleCoconut : BoomerangStyle() {
 
         if(boomerangPosition1 == hitPosition || boomerangPosition2 == hitPosition) {
 
-            Merchant.coconuts().addAmount(hitAmount)
+            Player.coconuts().addAmount(hitAmount)
 
             CurrentMessage.changeMessage(
                 "Target Hit!",

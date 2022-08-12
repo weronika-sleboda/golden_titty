@@ -13,7 +13,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.UniversityFragm
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.university.University
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.UniversityAdapter
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -43,12 +43,12 @@ class UniversityFragment : Fragment(), UniversityAdapter.UniversityListener {
 
     private fun updateMerchantStatus() {
 
-        val status = requireActivity() as MerchantStatusUpdate
+        val status = requireActivity() as PlayerStatusUpdate
         status.updateGoldCoins()
         status.updateHealth()
-        status.updateFaith()
-        status.updateEnergy()
-        status.updateIntelligence()
+        status.updateAccuracy()
+        status.updateAgility()
+        status.updateStealth()
     }
 
     override fun onClickUniversitySkill(position: Int) {

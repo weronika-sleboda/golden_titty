@@ -1,12 +1,11 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks
 
-interface MerchantStatusUpdate {
+interface PlayerStatusUpdate {
 
-    fun updateAppearance()
-    fun updateEnergy()
     fun updateHealth()
-    fun updateFaith()
-    fun updateIntelligence()
+    fun updateAccuracy()
+    fun updateAgility()
+    fun updateStealth()
 
     fun updateDates()
     fun updateCoconuts()

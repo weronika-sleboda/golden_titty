@@ -11,10 +11,10 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BedFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.inn.CurrentBed
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.activities.GameOverActivity
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -54,11 +54,11 @@ class BedFragment : Fragment() {
 
     private fun updateMerchantStatus() {
 
-        val statusUpdate = requireActivity() as MerchantStatusUpdate
-        statusUpdate.updateEnergy()
-        statusUpdate.updateFaith()
+        val statusUpdate = requireActivity() as PlayerStatusUpdate
         statusUpdate.updateHealth()
-        statusUpdate.updateIntelligence()
+        statusUpdate.updateAccuracy()
+        statusUpdate.updateAgility()
+        statusUpdate.updateStealth()
     }
 
     private fun setupSleepButton() {
@@ -71,7 +71,7 @@ class BedFragment : Fragment() {
 
                 withContext(Dispatchers.Main) {
 
-                    if(Merchant.isDead()) {
+                    if(Player.isDead()) {
 
                         endTheGame()
                     }

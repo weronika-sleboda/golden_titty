@@ -2,8 +2,6 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
 class UnpredictableStylePearlTitty : BoomerangStyle() {

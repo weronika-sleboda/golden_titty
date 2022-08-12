@@ -5,24 +5,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="5dp"
     android:background="@drawable/extreme_dark_rectangle_background"
-    android:layout_column="6">
+    android:layout_column="5">
 
     <TextView
-        android:layout_column="0"
-        android:layout_row="0"
-        android:layout_width="85dp"
+        android:layout_width="50dp"
         android:layout_height="32dp"
+        android:layout_row="0"
+        android:layout_column="0"
         android:layout_gravity="start|center"
-        android:gravity="center"
-        android:fontFamily="@font/raleway_medium"
-        android:textColor="@color/super_light_mystery"
-        android:textSize="18sp"
         android:layout_marginStart="3dp"
-        android:text="@string/requires"
-        android:background="@drawable/extreme_dark_rectangle_background"/>
+        android:background="@drawable/extreme_dark_rectangle_background"
+        android:fontFamily="@font/raleway_medium"
+        android:gravity="center"
+        android:text="@string/cost"
+        android:textColor="@color/super_light_mystery"
+        android:textSize="18sp" />
 
     <ImageView
-        android:contentDescription="@string/energy_icon_cd"
+        android:contentDescription="@string/accuracy_icon_cd"
         android:layout_column="1"
         android:layout_row="0"
         android:layout_marginStart="3dp"
@@ -30,12 +30,27 @@
         android:layout_height="32dp"
         android:layout_gravity="start|center"
         android:background="@drawable/extreme_dark_rectangle_background"
-        android:src="@drawable/energy32"
+        android:src="@drawable/accuracy32"
         android:padding="3dp"/>
+
+    <TextView
+        android:id="@+id/time_left"
+        android:layout_column="2"
+        android:layout_row="0"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="start|center"
+        android:gravity="center"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/super_light_mystery"
+        android:textSize="18sp"
+        android:layout_marginStart="3dp"
+        android:text="@string/one"
+        android:background="@drawable/middle_dark_rectangle_background"/>
 
     <Button
         android:id="@+id/leave_button"
-        android:layout_column="2"
+        android:layout_column="3"
         android:layout_row="0"
         android:layout_width="120dp"
         android:layout_height="40dp"
@@ -51,8 +66,8 @@
 
     <ImageView
         android:id="@+id/info_button"
-        android:contentDescription="@string/charisma_icon_cd"
-        android:layout_column="3"
+        android:contentDescription="@string/info_icon_cd"
+        android:layout_column="4"
         android:layout_row="0"
         android:layout_marginStart="3dp"
         android:layout_width="35dp"

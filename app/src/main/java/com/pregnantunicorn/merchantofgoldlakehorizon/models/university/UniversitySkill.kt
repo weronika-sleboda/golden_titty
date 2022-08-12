@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.university
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class UniversitySkill(
@@ -18,14 +18,14 @@ class UniversitySkill(
 
     fun buy(): Boolean {
 
-        if(Merchant.goldCoins().hasAmount(price) && !skillMaxed.invoke()) {
+        if(Player.goldCoins().hasAmount(price) && !skillMaxed.invoke()) {
 
-            Merchant.goldCoins().loseAmount(price)
+            Player.goldCoins().loseAmount(price)
             skillAlgorithm.invoke()
             return true
         }
 
-        if(Merchant.goldCoins().hasAmount(price)) {
+        if(Player.goldCoins().hasAmount(price)) {
 
             CurrentMessage.changeMessage(
                 "Too Expensive",

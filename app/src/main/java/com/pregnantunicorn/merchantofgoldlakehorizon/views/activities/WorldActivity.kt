@@ -8,11 +8,11 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.WorldActivityBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentHandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.HandState
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
 
-class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
+class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
 
     private lateinit var binding: WorldActivityBinding
 
@@ -23,10 +23,10 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
         binding = WorldActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        updateEnergy()
         updateHealth()
-        updateFaith()
-        updateIntelligence()
+        updateAccuracy()
+        updateAgility()
+        updateStealth()
         updateTittyCounter()
         updateGoldCoins()
 
@@ -127,52 +127,47 @@ class WorldActivity : AppCompatActivity(), MerchantStatusUpdate {
 
     override fun updateHealth() {
 
-        binding.merchant.health.text = Merchant.health().amountToString()
+        binding.merchant.health.text = Player.health().amountToString()
     }
 
-    override fun updateEnergy() {
+    override fun updateAccuracy() {
 
-        binding.merchant.energy.text = Merchant.energy().amountToString()
+        binding.merchant.accuracy.text = Player.accuracy().amountToString()
     }
 
-    override fun updateFaith() {
+    override fun updateAgility() {
 
-        binding.merchant.faith.text = Merchant.faith().amountToString()
+        binding.merchant.agility.text = Player.agility().amountToString()
     }
 
-    override fun updateIntelligence() {
+    override fun updateStealth() {
 
-        binding.merchant.intelligence.text = Merchant.intelligence().amountToString()
+        binding.merchant.stealth.text = Player.stealth().amountToString()
     }
 
     override fun updateDates() {
 
-        binding.resources.dates.text = Merchant.dates().amountToString()
+        binding.resources.dates.text = Player.dates().amountToString()
     }
 
     override fun updateCoconuts() {
 
-        binding.resources.coconuts.text = Merchant.coconuts().amountToString()
+        binding.resources.coconuts.text = Player.coconuts().amountToString()
     }
 
     override fun updatePeaches() {
 
-        binding.resources.peaches.text = Merchant.peaches().amountToString()
+        binding.resources.peaches.text = Player.peaches().amountToString()
     }
 
     override fun updateTittyCounter() {
 
-        binding.merchant.tittyCounter.text = Merchant.tittyCounter().tittyCounterToString()
+        binding.merchant.tittyCounter.text = Player.tittyCounter().tittyCounterToString()
     }
 
     override fun updateGoldCoins() {
 
-        binding.merchant.goldenCoins.text = Merchant.goldCoins().amountToString()
-    }
-
-    override fun updateAppearance() {
-
-        binding.merchant.icon.setImageResource(Merchant.appearance().icon())
+        binding.merchant.goldenCoins.text = Player.goldCoins().amountToString()
     }
 
 }

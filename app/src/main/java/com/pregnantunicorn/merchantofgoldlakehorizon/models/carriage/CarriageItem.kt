@@ -1,6 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.carriage
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class CarriageItem(
@@ -17,7 +17,7 @@ class CarriageItem(
         if(hasAmount.invoke()) {
 
             sellAlgorithm.invoke()
-            Merchant.goldCoins().addAmount(worth)
+            Player.goldCoins().addAmount(worth)
             return true
         }
 

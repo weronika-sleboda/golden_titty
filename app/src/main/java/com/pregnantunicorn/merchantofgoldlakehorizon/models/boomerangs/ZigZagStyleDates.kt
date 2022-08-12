@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
@@ -40,7 +40,7 @@ class ZigZagStyleDates : BoomerangStyle() {
 
         if(boomerangPosition == hitPosition) {
 
-            Merchant.coconuts().addAmount(hitAmount)
+            Player.dates().addAmount(hitAmount)
 
             CurrentMessage.changeMessage(
                 "Target Hit!",

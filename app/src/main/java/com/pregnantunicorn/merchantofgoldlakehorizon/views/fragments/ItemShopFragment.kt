@@ -12,9 +12,8 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ItemShopFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.ItemShop
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.RobeShop
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.ItemShopAdapter
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -44,7 +43,7 @@ class ItemShopFragment : Fragment(), ItemShopAdapter.ProductListener {
 
     private fun updateMerchantStatus() {
 
-        val status = requireActivity() as MerchantStatusUpdate
+        val status = requireActivity() as PlayerStatusUpdate
         status.updateGoldCoins()
     }
 
@@ -53,8 +52,6 @@ class ItemShopFragment : Fragment(), ItemShopAdapter.ProductListener {
         CoroutineScope(Dispatchers.IO).launch {
 
             if(products[position].buy()) {
-
-                products = RobeShop().products()
 
                 withContext(Dispatchers.Main) {
 

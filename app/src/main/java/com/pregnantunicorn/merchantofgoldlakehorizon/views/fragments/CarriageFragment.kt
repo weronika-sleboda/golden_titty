@@ -13,7 +13,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.CarriageFragmen
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.carriage.Carriage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.CarriageAdapter
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -43,7 +43,7 @@ class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
 
     private fun updateMerchantStatus() {
 
-        val status = requireActivity() as MerchantStatusUpdate
+        val status = requireActivity() as PlayerStatusUpdate
         status.updateGoldCoins()
         status.updateDates()
         status.updateCoconuts()

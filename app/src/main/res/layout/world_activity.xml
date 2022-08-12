@@ -13,7 +13,7 @@
 
         <include
             android:id="@+id/merchant"
-            layout="@layout/merchant_status_layout"/>
+            layout="@layout/player_status_layout"/>
 
         <include
             android:id="@+id/resources"

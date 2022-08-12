@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.university
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 
 class University {
 
@@ -11,32 +11,32 @@ class University {
             "Health",
             R.drawable.health64,
             "Crucial for survival",
-            { Merchant.health().maxValueReached() },
-            { Merchant.health().addMaxAmount(1)}
+            { Player.health().maxValueReached() },
+            { Player.health().addMaxAmount(1)}
         ),
 
         UniversitySkill(
-            "Energy",
-            R.drawable.energy64,
-            "Throwing boomerang",
-            { Merchant.energy().maxValueReached() },
-            { Merchant.energy().addMaxAmount(1)}
+            "Accuracy",
+            R.drawable.accuracy64,
+            "Throwing boomerang, collecting herbs",
+            { Player.accuracy().maxValueReached() },
+            { Player.accuracy().addMaxAmount(1)}
         ),
 
         UniversitySkill(
-            "Charisma",
-            R.drawable.charisma64,
-            "Performing stunts",
-            { Merchant.faith().maxValueReached() },
-            { Merchant.faith().addMaxAmount(1)}
+            "Agility",
+            R.drawable.agility64,
+            "Performing stunts, shamanism",
+            { Player.agility().maxValueReached() },
+            { Player.agility().addMaxAmount(1)}
         ),
 
         UniversitySkill(
-            "Intelligence",
-            R.drawable.intelligence64,
+            "Stealth",
+            R.drawable.stealth64,
             "Sneaking, unlocking chests",
-            { Merchant.intelligence().maxValueReached() },
-            { Merchant.intelligence().addMaxAmount(1)}
+            { Player.stealth().maxValueReached() },
+            { Player.stealth().addMaxAmount(1)}
         ),
     )
 }

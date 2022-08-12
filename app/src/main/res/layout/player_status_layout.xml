@@ -17,11 +17,10 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:textSize="20sp"
-        android:layout_marginTop="5dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="3dp"
         android:text="@string/meteor"
+        android:layout_marginTop="5dp"
         android:background="@drawable/super_light_corner_rectangle_background"
         android:textColor="@color/extreme_dark_mystery"
         android:textAllCaps="true"/>
@@ -33,9 +32,10 @@
         android:layout_height="70dp"
         android:layout_row="1"
         android:layout_column="0"
-        android:layout_rowSpan="2"
+        android:layout_rowSpan="3"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="3dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/super_dark_corner_rectangle_background"
         android:paddingTop="5dp"
@@ -48,11 +48,11 @@
         android:layout_height="32dp"
         android:layout_row="1"
         android:layout_column="1"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:layout_gravity="center"
-        android:background="@color/extreme_dark_mystery"
-        android:paddingTop="5dp"
-        android:paddingBottom="2dp"
+        android:padding="3dp"
+        android:background="@drawable/extreme_dark_rectangle_background"
         android:src="@drawable/health32" />
 
     <TextView
@@ -65,27 +65,27 @@
         android:gravity="center"
         android:textSize="18sp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="3dp"
-        android:text="99/99"
-        android:paddingBottom="3dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="5dp"
         android:background="@drawable/super_dark_rectangle_background"
         android:textColor="@color/super_light_mystery"/>
 
     <ImageView
-        android:contentDescription="@string/energy_icon_cd"
+        android:contentDescription="@string/accuracy_icon_cd"
         android:layout_width="30dp"
         android:layout_height="32dp"
         android:layout_row="1"
         android:layout_column="3"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:layout_gravity="center"
-        android:background="@color/extreme_dark_mystery"
-        android:paddingTop="5dp"
-        android:paddingBottom="2dp"
-        android:src="@drawable/energy32" />
+        android:padding="3dp"
+        android:background="@drawable/extreme_dark_rectangle_background"
+        android:src="@drawable/accuracy32" />
 
     <TextView
-        android:id="@+id/energy"
+        android:id="@+id/accuracy"
         android:layout_column="4"
         android:layout_row="1"
         android:layout_width="60dp"
@@ -94,9 +94,9 @@
         android:gravity="center"
         android:textSize="18sp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="3dp"
-        android:text="99/99"
-        android:paddingBottom="3dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="5dp"
         android:background="@drawable/super_dark_rectangle_background"
         android:textColor="@color/super_light_mystery"/>
 
@@ -106,12 +106,12 @@
         android:layout_height="32dp"
         android:layout_row="1"
         android:layout_column="5"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:layout_gravity="center"
-        android:background="@color/extreme_dark_mystery"
-        android:paddingTop="5dp"
-        android:src="@drawable/pearl_titty32"
-        android:paddingBottom="2dp"/>
+        android:padding="3dp"
+        android:background="@drawable/extreme_dark_rectangle_background"
+        android:src="@drawable/pearl_titty32"/>
 
     <TextView
         android:id="@+id/titty_counter"
@@ -123,26 +123,26 @@
         android:gravity="center"
         android:textSize="18sp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="3dp"
-        android:paddingBottom="3dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="5dp"
         android:background="@drawable/super_dark_rectangle_background"
         android:textColor="@color/super_light_mystery"/>
 
     <ImageView
-        android:contentDescription="health_icon_cd"
+        android:contentDescription="@string/agility_icon_cd"
         android:layout_width="30dp"
         android:layout_height="32dp"
         android:layout_row="2"
         android:layout_column="1"
         android:layout_gravity="center"
         android:layout_marginBottom="5dp"
-        android:background="@color/extreme_dark_mystery"
-        android:paddingTop="5dp"
-        android:paddingBottom="2dp"
-        android:src="@drawable/charisma32" />
+        android:padding="3dp"
+        android:background="@drawable/extreme_dark_rectangle_background"
+        android:src="@drawable/agility32" />
 
     <TextView
-        android:id="@+id/faith"
+        android:id="@+id/agility"
         android:layout_column="2"
         android:layout_row="2"
         android:layout_width="60dp"
@@ -151,27 +151,25 @@
         android:gravity="center"
         android:textSize="18sp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="3dp"
-        android:text="99/99"
-        android:paddingBottom="3dp"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="5dp"
         android:background="@drawable/super_dark_rectangle_background"
         android:textColor="@color/super_light_mystery"/>
 
     <ImageView
-        android:contentDescription="health_icon_cd"
+        android:contentDescription="@string/stealth_icon_cd"
         android:layout_width="30dp"
         android:layout_height="32dp"
         android:layout_row="2"
         android:layout_column="3"
         android:layout_gravity="center"
         android:layout_marginBottom="5dp"
-        android:background="@color/extreme_dark_mystery"
-        android:paddingTop="5dp"
-        android:paddingBottom="2dp"
-        android:src="@drawable/intelligence32" />
+        android:padding="3dp"
+        android:background="@drawable/extreme_dark_rectangle_background"
+        android:src="@drawable/stealth32" />
 
     <TextView
-        android:id="@+id/intelligence"
+        android:id="@+id/stealth"
         android:layout_column="4"
         android:layout_row="2"
         android:layout_width="60dp"
@@ -180,21 +178,21 @@
         android:gravity="center"
         android:textSize="18sp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="3dp"
-        android:text="99/99"
-        android:paddingBottom="3dp"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="5dp"
         android:background="@drawable/super_dark_rectangle_background"
         android:textColor="@color/super_light_mystery"/>
 
     <ImageView
-        android:contentDescription="health_icon_cd"
+        android:contentDescription="@string/golden_coin_icon_cd"
         android:layout_width="30dp"
         android:layout_height="32dp"
         android:layout_row="2"
         android:layout_column="5"
         android:layout_gravity="center"
         android:layout_marginBottom="5dp"
-        android:background="@color/extreme_dark_mystery"
+        android:padding="3dp"
+        android:background="@drawable/extreme_dark_rectangle_background"
         android:src="@drawable/golden_coin32" />
 
     <TextView
@@ -205,11 +203,10 @@
         android:layout_height="32dp"
         android:fontFamily="@font/raleway_medium"
         android:gravity="center"
+        android:layout_marginBottom="5dp"
         android:textSize="18sp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="3dp"
-        android:paddingBottom="3dp"
-        android:text="99999"
+        android:paddingBottom="5dp"
         android:background="@drawable/super_dark_rectangle_background"
         android:textColor="@color/super_light_mystery"/>
 

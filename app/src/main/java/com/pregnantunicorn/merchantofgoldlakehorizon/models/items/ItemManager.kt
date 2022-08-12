@@ -1,6 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.items
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 
 class ItemManager {
 
@@ -8,13 +8,6 @@ class ItemManager {
 
         val items = mutableListOf<Item>()
 
-        for(item in Merchant.items()) {
-
-            if(item.owns()) {
-
-                items.add(item)
-            }
-        }
 
         return items
     }

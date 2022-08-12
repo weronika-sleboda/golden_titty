@@ -15,13 +15,11 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentHa
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.HandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.food.FoodManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemManager
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.StatusUpdateType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.FoodAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.ItemAdapter
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -63,7 +61,7 @@ class BackpackFragment : Fragment(),
 
     private fun updateFab() {
 
-        val statusUpdate = requireActivity() as MerchantStatusUpdate
+        val statusUpdate = requireActivity() as PlayerStatusUpdate
         statusUpdate.updateFab()
     }
 
@@ -155,7 +153,7 @@ class BackpackFragment : Fragment(),
 
     private fun updateMerchantStatus() {
 
-        val statusUpdate = requireActivity() as MerchantStatusUpdate
+        val statusUpdate = requireActivity() as PlayerStatusUpdate
         statusUpdate.updateHealth()
         statusUpdate.updatePeaches()
         statusUpdate.updateDates()

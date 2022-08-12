@@ -8,15 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.HardChestFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.SneakFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Merchant
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.MerchantStatusUpdate
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
-import java.util.concurrent.TimeUnit
-import kotlin.time.Duration
 
 class SneakFragment : Fragment() {
 
@@ -43,8 +40,8 @@ class SneakFragment : Fragment() {
 
     private fun updateMerchantStatus() {
 
-        val status = requireActivity() as MerchantStatusUpdate
-        status.updateIntelligence()
+        val status = requireActivity() as PlayerStatusUpdate
+        status.updateStealth()
         status.updateTittyCounter()
     }
 
@@ -55,11 +52,11 @@ class SneakFragment : Fragment() {
 
             if(job == null) {
 
-                val intelligence = 1
+                val stealth = 1
 
-                if(Merchant.intelligence().hasAmount(intelligence)) {
+                if(Player.stealth().hasAmount(stealth)) {
 
-                    Merchant.intelligence().loseAmount(intelligence)
+                    Player.stealth().loseAmount(stealth)
                     updateMerchantStatus()
                     binding.sneakButton.text = "Sneak"
 

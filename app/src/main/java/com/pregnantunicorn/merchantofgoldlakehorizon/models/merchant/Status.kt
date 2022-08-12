@@ -4,7 +4,7 @@ class Status {
 
     companion object {
 
-        private const val MAX_VALUE = 80
+        private const val MAX_VALUE = 30
         private const val MIN_VALUE = 0
     }
 
