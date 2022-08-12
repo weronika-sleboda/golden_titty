@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">MerchantOfGoldlakeHorizon</string>
+    <string name="app_name">Golden Titty</string>
     <string name="bed">Bed</string>
     <string name="bed_icon_cd">bed_icon_cd</string>
     <string name="sleep">Sleep</string>
     <string name="leave">Leave</string>
     <string name="bed_info">When you sleep, your status gets restored and the day cycle changes.</string>
-    <string name="ok">ok</string>
+    <string name="ok">OK</string>
     <string name="no">no</string>
     <string name="yes">yes</string>
     <string name="requires">Requires</string>
@@ -139,4 +139,8 @@
     <string name="trance">Trance</string>
     <string name="chest">Chest</string>
     <string name="info_icon_cd">info_icon_cd</string>
+    <string name="hide">Hide</string>
+    <string name="sneak">Sneak</string>
+    <string name="try_to_open">Try to open</string>
+    <string name="open">Open</string>
 </resources>

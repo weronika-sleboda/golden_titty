@@ -3,7 +3,7 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.BoomerangPlaceName
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.inn.CurrentInnDoor
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances.CurrentEntrance
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.tiles.*
 
 class Greeneria : Location(
@@ -16,13 +16,43 @@ class Greeneria : Location(
             it[1] = PalmTile(BoomerangPlaceName.COCONUT_PALM)
             it[2] = PalmTile(BoomerangPlaceName.PEACH_PALM)
 
-            it[4] = InnTile({IconFactory().tent64()},CurrentInnDoor.TENT)
-            it[5] = ActionTile()
-            it[7] = ChestTile()
-            it[6] = InvestigationBuildingTile()
+            it[3] = EntranceTile(CurrentEntrance.TENT,
+                { IconFactory().tent64() },
+                { BackgroundFactory().grass() }
+            )
 
-            it[8] = CarriageTile()
+            it[4] = EntranceTile(CurrentEntrance.TEMPLE_OF_LAST_DAY_ATTENTION_SEEKING,
+                { IconFactory().pearlTittyTemple64() },
+                { BackgroundFactory().grass() }
+            )
 
-            it[10] = UniversityTile()
+            it[5] = EntranceTile(CurrentEntrance.TEMPLE_OF_TITTIES_AND_LEGS,
+                { IconFactory().pearlTittyTemple64() },
+                { BackgroundFactory().grass() }
+            )
+
+            it[6] = EntranceTile(CurrentEntrance.TEMPLE_OF_MOST_TRUE_TRUTH,
+                { IconFactory().pearlTittyTemple64() },
+                { BackgroundFactory().grass() }
+            )
+
+            it[7] = EntranceTile(CurrentEntrance.TEMPLE_OF_GRAND_BOOTY,
+                { IconFactory().pearlTittyTemple64() },
+                { BackgroundFactory().grass() }
+            )
+
+            it[8] = EntranceTile(CurrentEntrance.TEMPLE_OF_MONOTITTEISM,
+                { IconFactory().pearlTittyTemple64() },
+                { BackgroundFactory().grass() }
+            )
+
+            it[9] = CarriageTile()
+
+            it[11] = UniversityTile()
+
+            it[10] = EntranceTile(CurrentEntrance.TEMPLE_OF_LATTER_DAY_VAGINA_RAPTURE,
+                { IconFactory().pearlTittyTemple64() },
+                { BackgroundFactory().grass() }
+            )
         }
 )

@@ -24,7 +24,6 @@ class ActionFragment : Fragment() {
     private var demandedAction = -1
     private var started = false
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -101,31 +100,19 @@ class ActionFragment : Fragment() {
 
         if(stillHasTime()) {
 
-            if(demandedAction == icon) {
+            if(demandedAction == icon) { makeProgress() }
 
-                makeProgress()
-            }
-
-            else {
-
-                fail()
-            }
+            else { fail() }
         }
 
-        else {
-
-            showOutOfTimeMessage()
-        }
+        else { showOutOfTimeMessage() }
     }
 
     private fun setupRunButton() {
 
         binding.controller.runButton.setOnClickListener {
 
-            if(started) {
-
-                checkWinningCondition(R.drawable.run128)
-            }
+            if(started) { checkWinningCondition(R.drawable.run128) }
         }
     }
 
@@ -134,10 +121,7 @@ class ActionFragment : Fragment() {
 
         binding.controller.jumpButton.setOnClickListener {
 
-            if(started) {
-
-                checkWinningCondition(R.drawable.jump128)
-            }
+            if(started) { checkWinningCondition(R.drawable.jump128) }
         }
     }
 
@@ -145,10 +129,7 @@ class ActionFragment : Fragment() {
 
         binding.controller.climbButton.setOnClickListener {
 
-            if(started) {
-
-                checkWinningCondition(R.drawable.climb128)
-            }
+            if(started) { checkWinningCondition(R.drawable.climb128) }
         }
     }
 
@@ -251,8 +232,8 @@ class ActionFragment : Fragment() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
 
+        super.onDestroy()
         job?.cancel()
         job = null
     }

@@ -16,7 +16,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatu
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlin.random.Random
 
-class EasyChestFragment : Fragment() {
+class ChestFragment : Fragment() {
 
     private lateinit var binding: ChestFragmentBinding
 
@@ -31,6 +31,7 @@ class EasyChestFragment : Fragment() {
         setupIcon()
         setupOpenButton()
         setupLeaveButton()
+        setupInfoButton()
 
         return binding.root
     }
@@ -72,7 +73,7 @@ class EasyChestFragment : Fragment() {
 
                     CurrentMessage.changeMessage(
                         "You Failed",
-                        R.drawable.chest64_morning,
+                        R.drawable.padlock64,
                         "You failed to open the chest."
                     )
 
@@ -96,6 +97,22 @@ class EasyChestFragment : Fragment() {
 
                 replace<LocationFragment>(R.id.world_container)
             }
+        }
+    }
+
+    private fun setupInfoButton() {
+
+        binding.info.infoButton.setOnClickListener {
+
+            CurrentMessage.changeMessage(
+                "Instructions",
+                R.drawable.info64,
+                "1. Tweak the switches and then press the open button.\n" +
+                        "2. Try different combinations of switches in their off and on states" +
+                        " until you succeed to open the chest."
+            )
+
+            showMessage()
         }
     }
 }

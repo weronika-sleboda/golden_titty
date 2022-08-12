@@ -14,6 +14,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.PearlTittyFragm
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.temples.CurrentTemple
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangRangeAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -26,6 +27,7 @@ class PearlTittyFragment: Fragment() {
     private lateinit var layoutManager: GridLayoutManager
     private val boomerang = CurrentBoomerang.boomerang()
     private var boomerangStyle = CurrentBoomerang.boomerang().boomerangStyle.invoke()
+    private val templeName = CurrentTemple.templeName()
 
     private var job: Job? = null
 
@@ -47,7 +49,7 @@ class PearlTittyFragment: Fragment() {
 
     private fun updateName() {
 
-        binding.name.text = boomerangStyle.name()
+        binding.name.text = templeName
     }
 
     private fun updateRange(range: Array<BoomerangTile>) {
@@ -131,6 +133,12 @@ class PearlTittyFragment: Fragment() {
 
                                     Player.tittyCounter().addTitty()
                                     updateMerchantStatus()
+
+                                    CurrentMessage.changeMessage(
+                                        "Titty Destroyed",
+                                        R.drawable.stars64,
+                                        "Heretic titty has been destroyed."
+                                    )
 
                                     activity?.supportFragmentManager?.commit {
 

@@ -1,23 +1,19 @@
-package com.pregnantunicorn.merchantofgoldlakehorizon.models.inn
+package com.pregnantunicorn.merchantofgoldlakehorizon.models.tent
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.CurrentDayCycle
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
-class Bed(
-    private val icon: () -> Int,
-    private val healthCost: Int,
-)
-{
+class SleepingBag {
 
+    private var healthCost = 1
     fun healthCostToString() = "$healthCost"
 
-    fun icon(): Int {
-
-        return icon.invoke()
-    }
+    fun icon(): Int = IconFactory().sleepingBag64()
+    fun info() = "Sleep and restore your status at the expense of 1 health point."
 
     private fun changeAndShowMessage() {
 

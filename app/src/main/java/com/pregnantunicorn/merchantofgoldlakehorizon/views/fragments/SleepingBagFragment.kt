@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BedFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.inn.CurrentBed
+import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.SleepingBagFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.tent.SleepingBag
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.activities.GameOverActivity
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -21,10 +21,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class BedFragment : Fragment() {
+class SleepingBagFragment : Fragment() {
 
-    private lateinit var binding: BedFragmentBinding
-    private val bed = CurrentBed.bed()
+    private lateinit var binding: SleepingBagFragmentBinding
+    private var sleepingBag: SleepingBag? = SleepingBag()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,7 +32,7 @@ class BedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = BedFragmentBinding.inflate(inflater, container, false)
+        binding = SleepingBagFragmentBinding.inflate(inflater, container, false)
 
         setupIcon()
         setupSleepButton()
@@ -44,12 +44,12 @@ class BedFragment : Fragment() {
 
     private fun setupIcon() {
 
-        binding.icon.setImageResource(bed.icon())
+        binding.icon.setImageResource(sleepingBag?.icon()!!)
     }
 
     private fun setupHealthCostToString() {
 
-        binding.requirement.healthCost.text = bed.healthCostToString()
+        binding.requirement.healthCost.text = sleepingBag?.healthCostToString()
     }
 
     private fun updateMerchantStatus() {
@@ -67,7 +67,7 @@ class BedFragment : Fragment() {
 
             CoroutineScope(Dispatchers.IO).launch {
 
-                bed.sleep()
+                sleepingBag?.sleep()
 
                 withContext(Dispatchers.Main) {
 
@@ -113,5 +113,11 @@ class BedFragment : Fragment() {
 
         InfoDialogFragment(CurrentMessage.message())
             .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+    }
+
+    override fun onDestroy() {
+
+        sleepingBag = null
+        super.onDestroy()
     }
 }

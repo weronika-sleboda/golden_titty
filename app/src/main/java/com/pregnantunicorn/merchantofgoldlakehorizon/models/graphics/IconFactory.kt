@@ -6,6 +6,26 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 
 class IconFactory {
 
+    fun pearlTittyTemple64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.pearl_titty_temple64_morning }
+            DayCycle.SUNSET -> { R.drawable.pearl_titty_temple64_sunset }
+            DayCycle.NIGHT -> { R.drawable.pearl_titty_temple64_night }
+        }
+    }
+
+    fun pearlTittyDoor128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.pearl_titty_door128_morning }
+            DayCycle.SUNSET -> { R.drawable.pearl_titty_door128_sunset }
+            DayCycle.NIGHT -> { R.drawable.pearl_titty_door128_night }
+        }
+    }
+
     fun palmLeaf64(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {

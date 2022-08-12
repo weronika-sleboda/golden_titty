@@ -8,17 +8,17 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.InnDoorFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.inn.CurrentInnDoor
+import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.EntranceFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances.CurrentEntrance
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances.Entrance
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 
-class InnDoorFragment : Fragment() {
+class EntranceFragment : Fragment() {
 
-    private lateinit var binding: InnDoorFragmentBinding
-    private val innDoor = CurrentInnDoor.innDoor()
+    private lateinit var binding: EntranceFragmentBinding
+    private var entrance: Entrance? = CurrentEntrance.entrance()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,12 +26,11 @@ class InnDoorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = InnDoorFragmentBinding.inflate(inflater, container, false)
+        binding = EntranceFragmentBinding.inflate(inflater, container, false)
 
         setupIcon()
         setupName()
         setupInfo()
-        setupRequiredGoldInfo()
         setupEnterButton()
         setupLeaveButton()
         return binding.root
@@ -39,28 +38,17 @@ class InnDoorFragment : Fragment() {
 
     private fun setupName() {
 
-        binding.name.text = innDoor.name
+        binding.name.text = entrance?.name
     }
 
     private fun setupIcon() {
 
-        binding.icon.setImageResource(innDoor.icon.invoke())
+        binding.icon.setImageResource(entrance?.icon?.invoke()!!)
     }
 
     private fun setupInfo() {
 
-        binding.info.text = innDoor.info
-    }
-
-    private fun setupRequiredGoldInfo() {
-
-        binding.requirement.requiredGold.text = innDoor.priceToString()
-    }
-
-    private fun updateGold() {
-
-        val status = requireActivity() as PlayerStatusUpdate
-        status.updateGoldCoins()
+        binding.info.text = entrance?.info
     }
 
     private fun setupEnterButton() {
@@ -69,15 +57,15 @@ class InnDoorFragment : Fragment() {
 
             CoroutineScope(Dispatchers.IO).launch {
 
-                if(innDoor.enter()) {
-
-                    updateGold()
-                    goToBedFragment()
-                }
-
-                else {
+                if(!entrance?.enter(requireActivity())!!) {
 
                     withContext(Dispatchers.Main) {
+
+                        CurrentMessage.changeMessage(
+                            "Locked",
+                            R.drawable.padlock64,
+                            "The door is locked.You need to have a key."
+                        )
 
                         showMessage()
                     }
@@ -90,14 +78,6 @@ class InnDoorFragment : Fragment() {
 
         InfoDialogFragment(CurrentMessage.message())
             .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
-    }
-
-    private fun goToBedFragment() {
-
-        activity?.supportFragmentManager?.commit {
-
-            replace<BedFragment>(R.id.world_container)
-        }
     }
 
     private fun setupLeaveButton() {

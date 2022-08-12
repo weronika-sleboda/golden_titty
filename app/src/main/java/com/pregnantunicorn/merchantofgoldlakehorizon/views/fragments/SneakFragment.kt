@@ -1,6 +1,8 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments
 
 import android.os.Bundle
+import android.text.TextUtils
+import android.text.TextUtils.replace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +11,8 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.SneakFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.BoomerangPlaceName
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentBoomerangPlace
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
@@ -18,8 +22,8 @@ import kotlinx.coroutines.*
 class SneakFragment : Fragment() {
 
     private lateinit var binding: SneakFragmentBinding
-    private var counter = 0
     private var job: Job? = null
+    private var noise = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,13 +33,29 @@ class SneakFragment : Fragment() {
 
         binding = SneakFragmentBinding.inflate(inflater, container, false)
 
-        binding.noiseProgressBar.max = 100
-        binding.successProgressBar.max = 100
-        setupOpenButton()
-        setupStopButton()
+        setupName()
+        setupIcon()
+        setupSneakButton()
         setupLeaveButton()
+        setupInfoButton()
+        defineMaxProgress()
 
         return binding.root
+    }
+
+    private fun defineMaxProgress() {
+
+        binding.successProgressBar.max = 120
+    }
+
+    private fun setupName() {
+
+        binding.name.text = ""
+    }
+
+    private fun setupIcon() {
+
+        binding.icon.setImageResource(R.drawable.enemy_monk_brown128)
     }
 
     private fun updateMerchantStatus() {
@@ -45,9 +65,66 @@ class SneakFragment : Fragment() {
         status.updateTittyCounter()
     }
 
-    private fun setupStopButton() {
+    private fun updateNoise() {
 
-        binding.sneakButton.text = "Hide"
+        noise += 5
+
+        if(noise == 100) {
+
+            noise = 0
+        }
+    }
+
+    private fun checkWinningCondition() {
+
+        if(binding.noiseProgressBar.progress >= 45) {
+
+            binding.successProgressBar.progress -= 40
+
+            if(binding.successProgressBar.progress == 0) {
+
+                CurrentMessage.changeMessage(
+                    "Pearl Titty Monk",
+                    R.drawable.enemy_monk_brown64,
+                    "Hey you there! Get out of here!"
+                )
+
+                showMessage()
+
+                CurrentBoomerangPlace.changeBoomerangPlace(
+                    BoomerangPlaceName.PEARL_TITTY_ALTAR)
+
+                goToWorldMap()
+            }
+        }
+
+        else {
+
+            binding.successProgressBar.progress += 40
+
+            if (binding.successProgressBar.progress == 120) {
+
+                goToTittyFragment()
+            }
+        }
+    }
+
+    private fun goToTittyFragment() {
+
+        activity?.supportFragmentManager?.commit {
+
+            replace<PearlTittyFragment>(R.id.world_container)
+        }
+    }
+
+    private fun updateSneakButtonText(text: Int) {
+
+        binding.sneakButton.text = resources.getString(text)
+    }
+
+    private fun setupSneakButton() {
+
+        updateSneakButtonText(R.string.hide)
         binding.sneakButton.setOnClickListener {
 
             if(job == null) {
@@ -58,21 +135,20 @@ class SneakFragment : Fragment() {
 
                     Player.stealth().loseAmount(stealth)
                     updateMerchantStatus()
-                    binding.sneakButton.text = "Sneak"
+
+                   updateSneakButtonText(R.string.sneak)
 
                     job = CoroutineScope(Dispatchers.IO).launch {
 
-                        while(counter < 100) {
+                        while(true) {
 
-                            if(counter < 100) { counter += 10 }
+                            updateNoise()
 
-                            if(counter == 100) { counter = 0 }
-
-                            delay(4)
+                            delay(10)
 
                             withContext(Dispatchers.Main) {
 
-                                binding.noiseProgressBar.progress = counter
+                                binding.noiseProgressBar.progress = noise
                             }
                         }
                     }
@@ -81,9 +157,9 @@ class SneakFragment : Fragment() {
                 else {
 
                     CurrentMessage.changeMessage(
-                        "No Intelligence",
-                        R.drawable.intelligence64,
-                        "You don't have enough intelligence to perform this action."
+                        "No Stealth",
+                        R.drawable.stealth64,
+                        "You don't have enough stealth to perform this action."
                     )
 
                     showMessage()
@@ -92,36 +168,10 @@ class SneakFragment : Fragment() {
 
             else {
 
-                binding.sneakButton.text = "Sneak"
-
-                if(counter < 50) {
-
-                    binding.successProgressBar.progress += 25
-
-                    if(binding.successProgressBar.progress == 100) {
-
-                        activity?.supportFragmentManager?.commit {
-
-                            replace<LocationFragment>(R.id.world_container)
-                        }
-                    }
-                }
-
-                else {
-
-                    if(binding.successProgressBar.progress > 0) {
-
-                        binding.successProgressBar.progress -= 25
-                    }
-
-                    if(binding.successProgressBar.progress == 0) {
-
-                        goToWorldMap()
-                    }
-                }
-
                 job?.cancel()
                 job = null
+                updateSneakButtonText(R.string.hide)
+                checkWinningCondition()
             }
         }
     }
@@ -130,14 +180,6 @@ class SneakFragment : Fragment() {
 
         InfoDialogFragment(CurrentMessage.message())
             .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
-    }
-
-    private fun setupOpenButton() {
-
-        binding.leaveButton.setOnClickListener {
-
-
-        }
     }
 
     private fun goToWorldMap() {
@@ -161,5 +203,23 @@ class SneakFragment : Fragment() {
 
         job?.cancel()
         job = null
+    }
+
+    private fun setupInfoButton() {
+
+        binding.info.infoButton.setOnClickListener {
+
+            CurrentMessage.changeMessage(
+                "Instructions",
+                R.drawable.info64,
+                "1. Press hide button to see the noise meter moving.\n" +
+                        "2. Press sneak button when you see the noise being minimal.\n" +
+                        "3. The noise meter has the value of 100 and the noise you are making should be below 40.\n" +
+                        "4. When your sneak is successful the success progress bar will move by 20.\n" +
+                        "5. Sneak until the success progress reaches its maximum value."
+            )
+
+            showMessage()
+        }
     }
 }

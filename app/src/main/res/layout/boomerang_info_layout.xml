@@ -5,25 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="5dp"
     android:background="@drawable/extreme_dark_rectangle_background"
-    android:layout_column="5">
-
-    <TextView
-        android:layout_width="50dp"
-        android:layout_height="32dp"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:layout_gravity="start|center"
-        android:layout_marginStart="3dp"
-        android:background="@drawable/extreme_dark_rectangle_background"
-        android:fontFamily="@font/raleway_medium"
-        android:gravity="center"
-        android:text="@string/cost"
-        android:textColor="@color/super_light_mystery"
-        android:textSize="18sp" />
+    android:layout_column="4">
 
     <ImageView
         android:contentDescription="@string/accuracy_icon_cd"
-        android:layout_column="1"
+        android:layout_column="0"
         android:layout_row="0"
         android:layout_marginStart="3dp"
         android:layout_width="32dp"
@@ -35,7 +21,7 @@
 
     <TextView
         android:id="@+id/time_left"
-        android:layout_column="2"
+        android:layout_column="1"
         android:layout_row="0"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -50,9 +36,9 @@
 
     <Button
         android:id="@+id/leave_button"
-        android:layout_column="3"
+        android:layout_column="2"
         android:layout_row="0"
-        android:layout_width="120dp"
+        android:layout_width="200dp"
         android:layout_height="40dp"
         app:backgroundTint="@null"
         android:layout_marginStart="10dp"
@@ -67,7 +53,7 @@
     <ImageView
         android:id="@+id/info_button"
         android:contentDescription="@string/info_icon_cd"
-        android:layout_column="4"
+        android:layout_column="3"
         android:layout_row="0"
         android:layout_marginStart="3dp"
         android:layout_width="35dp"

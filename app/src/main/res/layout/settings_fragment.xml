@@ -12,9 +12,10 @@
         android:layout_gravity="start|center_horizontal"
         android:gravity="center"
         android:textColor="@color/super_light_mystery"
-        android:textSize="20sp"
+        android:textSize="12sp"
+        android:textAllCaps="true"
         android:fontFamily="@font/raleway_medium"
-        android:text="Settings"
+        android:text="@string/settings"
         android:background="@drawable/dark_one_corner_rectangle_background"/>
 
     <GridLayout
