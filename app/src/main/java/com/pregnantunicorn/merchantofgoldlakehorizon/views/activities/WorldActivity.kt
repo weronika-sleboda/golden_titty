@@ -7,6 +7,7 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.WorldActivityBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentHandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
@@ -59,7 +60,7 @@ class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
         binding.worldButton.setOnClickListener {
 
             selectWorldButton()
-            goToWorldMap()
+            CurrentFragment.executeFragment(this)
         }
     }
 

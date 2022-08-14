@@ -1,56 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="340dp"
+        android:layout_width="280dp"
         android:layout_height="35dp"
         android:layout_gravity="start|center_horizontal"
         android:gravity="center"
         android:textColor="@color/super_light_mystery"
         android:textSize="17sp"
-        android:text="Temple Of Latter Day Vagina Rapture"
         android:fontFamily="@font/raleway_medium"
+        android:text="@string/for_sale"
         android:background="@drawable/dark_one_corner_rectangle_background"/>
 
     <include
-        android:id="@+id/info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
-        layout="@layout/boomerang_info_layout"/>
+        layout="@layout/cafeteria_info_layout"/>
 
-    <TextView
+    <Button
+        android:id="@+id/leave_button"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_gravity="center"
+        android:layout_height="40dp"
+        app:backgroundTint="@null"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/light_mystery"
+        android:textSize="18sp"
+        android:text="@string/leave"
         android:gravity="center"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/extreme_dark_mystery"
-        android:textSize="16sp"
-        android:fontFamily="@font/raleway_bold"
-        android:text="@string/destruction"
-        android:textAllCaps="true"
-        android:background="@color/mystery"/>
-
-    <ProgressBar
-        android:id="@+id/destruction"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:progressDrawable="@drawable/red_progress_bar_background"
-        android:layout_width="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:padding="5dp"
-        android:background="@drawable/super_dark_rectangle_background"
-        android:layout_height="25dp" />
+        android:background="@drawable/dark_rectangle_gradient_button_background"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -60,7 +48,7 @@
         android:layout_marginBottom="70dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/boomerang_tile_recycler"
+            android:id="@+id/cafeteria_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

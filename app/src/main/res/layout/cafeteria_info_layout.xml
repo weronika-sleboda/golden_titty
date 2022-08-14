@@ -10,7 +10,7 @@
         android:id="@+id/title"
         android:layout_column="0"
         android:layout_row="0"
-        android:layout_width="55dp"
+        android:layout_width="145dp"
         android:layout_height="32dp"
         android:layout_gravity="start|center"
         android:gravity="center"
@@ -18,7 +18,7 @@
         android:textColor="@color/super_light_mystery"
         android:textSize="18sp"
         android:layout_marginStart="3dp"
-        android:text="@string/price"
+        android:text="Price per drink"
         android:background="@drawable/extreme_dark_rectangle_background"/>
 
     <ImageView
@@ -34,10 +34,9 @@
         android:padding="3dp"/>
 
     <TextView
-        android:id="@+id/required_gold"
         android:layout_column="2"
         android:layout_row="0"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:layout_height="32dp"
         android:layout_gravity="start|center"
         android:gravity="center"
@@ -45,6 +44,7 @@
         android:textColor="@color/super_light_mystery"
         android:textSize="18sp"
         android:layout_marginStart="3dp"
+        android:text="@string/drink_price"
         android:background="@drawable/middle_dark_rectangle_background"/>
 
 </GridLayout>

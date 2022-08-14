@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.UniversityFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.university.University
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.university.UniversitySkill
@@ -36,6 +38,11 @@ class UniversityFragment : Fragment(), UniversityAdapter.UniversityListener {
     ): View {
 
         binding = UniversityFragmentBinding.inflate(inflater, container, false)
+
+        CoroutineScope(Dispatchers.IO).launch {
+
+            CurrentFragment.changeFragment(FragmentType.UNIVERSITY_FRAGMENT)
+        }
 
         setupLeaveButton()
         setupUniversitySkills()

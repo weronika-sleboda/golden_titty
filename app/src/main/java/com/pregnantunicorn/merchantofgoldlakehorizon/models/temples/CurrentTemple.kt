@@ -14,8 +14,6 @@ object CurrentTemple {
             TempleName.GRAND_BOOTY -> "Temple Of Grand Booty"
             TempleName.HOLY_NIPPLE_REVIVAL -> "Temple Of Holy Nipple Revival"
             TempleName.MONOTITTEISM -> "Temple Of Monotitteism"
-            TempleName.THE_MOST_TRUE_TRUTH -> "Temple Of The Most True Truth"
-            TempleName.LAST_DAY_ATTENTION_SEEKING -> "Temple Of Last Day Attention Seeking"
             TempleName.PUSSYCAT_PROPHET -> "Temple of Pussycat Prophet"
         }
     }

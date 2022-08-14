@@ -9,11 +9,16 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.LocationFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world.CurrentLocation
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world.Location
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.TileAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class LocationFragment: Fragment(), TileAdapter.TileListener {
 
@@ -29,6 +34,11 @@ class LocationFragment: Fragment(), TileAdapter.TileListener {
     ): View {
 
         binding = LocationFragmentBinding.inflate(inflater, container, false)
+
+        CoroutineScope(Dispatchers.IO).launch {
+
+            CurrentFragment.changeFragment(FragmentType.LOCATION_FRAGMENT)
+        }
 
         updateName()
         updateLocation()

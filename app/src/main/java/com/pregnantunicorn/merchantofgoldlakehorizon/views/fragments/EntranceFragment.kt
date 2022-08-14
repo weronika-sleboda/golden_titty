@@ -10,6 +10,8 @@ import androidx.fragment.app.replace
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.EntranceFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances.CurrentEntrance
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances.Entrance
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
@@ -28,6 +30,11 @@ class EntranceFragment : Fragment() {
     ): View {
 
         binding = EntranceFragmentBinding.inflate(inflater, container, false)
+
+        CoroutineScope(Dispatchers.IO).launch {
+
+            CurrentFragment.changeFragment(FragmentType.ENTRANCE_FRAGMENT)
+        }
 
         setupIcon()
         setupName()

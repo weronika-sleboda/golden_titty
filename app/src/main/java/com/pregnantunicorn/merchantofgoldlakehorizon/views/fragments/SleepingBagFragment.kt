@@ -11,6 +11,8 @@ import androidx.fragment.app.replace
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.SleepingBagFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.tent.SleepingBag
@@ -34,6 +36,11 @@ class SleepingBagFragment : Fragment() {
     ): View {
 
         binding = SleepingBagFragmentBinding.inflate(inflater, container, false)
+
+        CoroutineScope(Dispatchers.IO).launch {
+
+            CurrentFragment.changeFragment(FragmentType.SLEEPING_BAG_FRAGMENT)
+        }
 
         setupIcon()
         setupSleepButton()

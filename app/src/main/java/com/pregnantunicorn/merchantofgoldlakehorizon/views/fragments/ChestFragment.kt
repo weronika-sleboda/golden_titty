@@ -10,11 +10,16 @@ import androidx.fragment.app.replace
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ChestFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 class ChestFragment : Fragment() {

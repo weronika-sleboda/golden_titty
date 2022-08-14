@@ -13,6 +13,8 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.CarriageFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.carriage.Carriage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.carriage.CarriageItem
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.CarriageAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
@@ -36,6 +38,11 @@ class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
     ): View {
 
         binding = CarriageFragmentBinding.inflate(inflater, container, false)
+
+        CoroutineScope(Dispatchers.IO).launch {
+
+            CurrentFragment.changeFragment(FragmentType.CARRIAGE_FRAGMENT)
+        }
 
         setupLeaveButton()
         setupCarriageItems()

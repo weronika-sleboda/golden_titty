@@ -21,7 +21,7 @@ object CurrentInformation {
         )
         {
 
-            CurrentLocation.changeLocation(LocationName.GREENERIA)
+            CurrentLocation.changeLocation(LocationName.RAINBOW_FOREST)
 
             it.supportFragmentManager.commit {
 

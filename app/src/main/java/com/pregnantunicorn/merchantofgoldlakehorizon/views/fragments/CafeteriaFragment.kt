@@ -10,12 +10,13 @@ import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BoomerangShopFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.CafeteriaFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.BoomerangShopManager
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangShopAdapter
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.Cafeteria
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.CafeteriaAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -23,12 +24,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class BoomerangShopFragment : Fragment(), BoomerangShopAdapter.BoomerangShopListener {
+class CafeteriaFragment : Fragment(), CafeteriaAdapter.DrinkListener {
 
-    private lateinit var binding: BoomerangShopFragmentBinding
-    private lateinit var adapter: BoomerangShopAdapter
+    private lateinit var binding: CafeteriaFragmentBinding
+    private lateinit var adapter: CafeteriaAdapter
     private lateinit var layoutManager: LinearLayoutManager
-    private var shopItems = BoomerangShopManager().shopItems()
+    private var shopItems = Cafeteria().drinks
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,11 +37,11 @@ class BoomerangShopFragment : Fragment(), BoomerangShopAdapter.BoomerangShopList
         savedInstanceState: Bundle?
     ): View {
 
-        binding = BoomerangShopFragmentBinding.inflate(inflater, container, false)
+        binding = CafeteriaFragmentBinding.inflate(inflater, container, false)
 
         CoroutineScope(Dispatchers.IO).launch {
 
-            CurrentFragment.changeFragment(FragmentType.BOOMERANG_SHOP_FRAGMENT)
+            CurrentFragment.changeFragment(FragmentType.CAFETERIA_FRAGMENT)
         }
 
         setupName()
@@ -68,7 +69,7 @@ class BoomerangShopFragment : Fragment(), BoomerangShopAdapter.BoomerangShopList
         status.updateGoldCoins()
     }
 
-    override fun onClickShopItem(position: Int) {
+    override fun onClickDrink(position: Int) {
 
         CoroutineScope(Dispatchers.IO).launch {
 
@@ -78,8 +79,6 @@ class BoomerangShopFragment : Fragment(), BoomerangShopAdapter.BoomerangShopList
 
                     showMessage()
                     updateMerchantStatus()
-                    shopItems = BoomerangShopManager().shopItems()
-                    updateShopItems()
                 }
             }
 
@@ -95,10 +94,10 @@ class BoomerangShopFragment : Fragment(), BoomerangShopAdapter.BoomerangShopList
 
     private fun updateShopItems() {
 
-        adapter = BoomerangShopAdapter(shopItems, this)
+        adapter = CafeteriaAdapter(shopItems, this)
         layoutManager = LinearLayoutManager(context)
-        binding.boomerangShopRecycler.adapter = adapter
-        binding.boomerangShopRecycler.layoutManager = layoutManager
+        binding.cafeteriaRecycler.adapter = adapter
+        binding.cafeteriaRecycler.layoutManager = layoutManager
     }
 
     private fun showMessage() {

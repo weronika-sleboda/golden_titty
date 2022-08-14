@@ -6,8 +6,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.temples.CurrentTemple
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.temples.TempleName
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.SleepingBagFragment
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.SneakFragment
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
 
 object CurrentEntrance {
 
@@ -17,10 +16,12 @@ object CurrentEntrance {
     const val TEMPLE_OF_TITTIES_AND_LEGS = 3
     const val TEMPLE_OF_HOLY_NIPPLE_REVIVAL = 4
     const val TEMPLE_OF_MONOTITTEISM = 5
-    const val TEMPLE_OF_LAST_DAY_ATTENTION_SEEKING = 6
-    const val TEMPLE_OF_MOST_TRUE_TRUTH = 7
-    const val TEMPLE_END_TIMES_TWERK = 8
-    const val TEMPLE_OF_PUSSYCAT_PROPHET = 9
+    const val TEMPLE_OF_END_TIMES_TWERK = 6
+    const val TEMPLE_OF_PUSSYCAT_PROPHET = 7
+    const val BOOMERANG_SHOP = 8
+    const val CAFETERIA = 9
+    const val UNIVERSITY = 10
+    const val CARRIAGE = 11
 
     private val entrances = arrayOf(
 
@@ -124,40 +125,6 @@ object CurrentEntrance {
         ),
 
         Entrance(
-            "Temple Of Last Day Attention Seeking",
-            { IconFactory().pearlTittyDoor128() },
-            "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
-            "Enter",
-            { true },
-            {
-
-                CurrentTemple.changeTempleName(TempleName.LAST_DAY_ATTENTION_SEEKING)
-
-                it.supportFragmentManager.commit {
-
-                    replace<SneakFragment>(R.id.world_container)
-                }
-            }
-        ),
-
-        Entrance(
-            "Temple Of Most True Truth",
-            { IconFactory().pearlTittyDoor128() },
-            "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
-            "Enter",
-            { true },
-            {
-
-                CurrentTemple.changeTempleName(TempleName.THE_MOST_TRUE_TRUTH)
-
-                it.supportFragmentManager.commit {
-
-                    replace<SneakFragment>(R.id.world_container)
-                }
-            }
-        ),
-
-        Entrance(
             "Temple Of End Times Twerk",
             { IconFactory().pearlTittyDoor128() },
             "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
@@ -187,6 +154,68 @@ object CurrentEntrance {
                 it.supportFragmentManager.commit {
 
                     replace<SneakFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+        Entrance(
+            "Boomerang Shop",
+            { IconFactory().houseDoor128() },
+            "This is the place where you can buy boomerangs.",
+            "Enter",
+            { true },
+            {
+
+                it.supportFragmentManager.commit {
+
+                    replace<BoomerangShopFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+        Entrance(
+            "Cafeteria",
+            { IconFactory().houseDoor128() },
+            "This is the place where you can buy drinks which restore your accuracy, agility or stealth.",
+            "Enter",
+            { true },
+            {
+
+                it.supportFragmentManager.commit {
+
+                    replace<CafeteriaFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+
+        Entrance(
+            "University",
+            { IconFactory().houseDoor128() },
+            "This is the place where you can upgrade your health, accuracy, agility and stealth.",
+            "Enter",
+            { true },
+            {
+
+                it.supportFragmentManager.commit {
+
+                    replace<UniversityFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+
+        Entrance(
+            "Carriage",
+            { IconFactory().carriage128() },
+            "Here you can sell fruits that you pick up from the palms.",
+            "Look Inside",
+            { true },
+            {
+
+                it.supportFragmentManager.commit {
+
+                    replace<CarriageFragment>(R.id.world_container)
                 }
             }
         )
