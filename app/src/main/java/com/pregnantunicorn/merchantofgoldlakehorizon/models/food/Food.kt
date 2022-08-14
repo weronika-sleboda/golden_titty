@@ -17,40 +17,6 @@ class Food(
 
     fun consume(): Boolean {
 
-
-        if(Player.accuracy().amountIsMaxed()) {
-
-            CurrentMessage.changeMessage(
-                "Full Accuracy",
-                R.drawable.accuracy64,
-                "Your accuracy is already full."
-            )
-
-            return false
-        }
-
-        if(Player.agility().amountIsMaxed()) {
-
-            CurrentMessage.changeMessage(
-                "Full Agility",
-                R.drawable.agility64,
-                "Your agility is already full."
-            )
-
-            return false
-        }
-
-        if(Player.stealth().amountIsMaxed()) {
-
-            CurrentMessage.changeMessage(
-                "Full Stealth",
-                R.drawable.stealth64,
-                "Your stealth is already full."
-            )
-
-            return false
-        }
-
         return when(foodType) {
 
             FoodType.DATES -> consumeDates()
@@ -166,7 +132,7 @@ class Food(
             return true
         }
 
-        if(Player.health().amountIsMaxed()) {
+        if(Player.accuracy().amountIsMaxed()) {
 
             CurrentMessage.changeMessage(
                 "Full Accuracy",
@@ -197,7 +163,7 @@ class Food(
             return true
         }
 
-        if(Player.health().amountIsMaxed()) {
+        if(Player.agility().amountIsMaxed()) {
 
             CurrentMessage.changeMessage(
                 "Full Agility",
@@ -228,7 +194,7 @@ class Food(
             return true
         }
 
-        if(Player.health().amountIsMaxed()) {
+        if(Player.stealth().amountIsMaxed()) {
 
             CurrentMessage.changeMessage(
                 "Full Stealth",
