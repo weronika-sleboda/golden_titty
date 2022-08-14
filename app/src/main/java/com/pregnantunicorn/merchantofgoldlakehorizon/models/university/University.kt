@@ -57,7 +57,7 @@ class University {
                 CurrentMessage.changeMessage(
                     "Stealth",
                     R.drawable.stealth64,
-                    "Stealth allow you to sneak into the temples and open the chest. The greater the value" +
+                    "Stealth allow you to sneak into the temples and open the chests. The greater the value" +
                             " the more attempts you can make to sneak or unlock chests."
                 )
             },

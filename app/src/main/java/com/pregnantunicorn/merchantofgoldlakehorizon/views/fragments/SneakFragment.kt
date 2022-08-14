@@ -199,7 +199,7 @@ class SneakFragment : Fragment() {
 
         activity?.supportFragmentManager?.commit {
 
-            replace<LocationFragment>(R.id.world_container)
+            replace<EntranceFragment>(R.id.world_container)
         }
     }
 

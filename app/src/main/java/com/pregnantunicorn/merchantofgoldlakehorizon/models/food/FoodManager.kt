@@ -18,7 +18,7 @@ class FoodManager {
             "Coconut",
             R.drawable.coconut64,
             "Health: +2",
-            { Player.dates().amountToString() },
+            { Player.coconuts().amountToString() },
             FoodType.COCONUTS
         ),
 
@@ -26,7 +26,7 @@ class FoodManager {
             "Peach",
             R.drawable.peach64,
             "Health: +3",
-            { Player.dates().amountToString() },
+            { Player.peaches().amountToString() },
             FoodType.PEACHES
         ),
 
@@ -42,7 +42,7 @@ class FoodManager {
             "Smoothie",
             R.drawable.smoothie64,
             "Agility: +5",
-            { Player.agility().amountToString() },
+            { Player.smoothie().amountToString() },
             FoodType.SMOOTHIE
         ),
 

@@ -41,7 +41,7 @@ class FoodAdapter(
         holder.icon.setImageResource(foodManagers[position].icon)
         holder.name.text = foodManagers[position].name
         holder.info.text = foodManagers[position].info
-        holder.amount.text = foodManagers[position].amountToString.invoke()
+        holder.amount.text = foodManagers[position].amountToString()
         holder.buttonIcon.setImageResource(foodManagers[position].icon)
 
         holder.buttonIcon.setOnClickListener {

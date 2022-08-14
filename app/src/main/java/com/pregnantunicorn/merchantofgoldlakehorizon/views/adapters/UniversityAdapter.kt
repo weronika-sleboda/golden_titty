@@ -44,7 +44,7 @@ class UniversityAdapter(
         holder.name.text = universitySkills[position].name
         holder.price.text = universitySkills[position].priceToString()
 
-        holder.upgradeButton.setOnClickListener {
+        holder.infoButton.setOnClickListener {
 
             universitySkills[position].infoAlgorithm.invoke()
             universityListener.onClickInfo(position)

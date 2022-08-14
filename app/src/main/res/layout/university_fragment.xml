@@ -15,6 +15,7 @@
         android:fontFamily="@font/raleway_medium"
         android:textSize="15sp"
         android:textAllCaps="true"
+        android:text="@string/education"
         android:background="@drawable/dark_one_corner_rectangle_background"/>
 
     <Button
