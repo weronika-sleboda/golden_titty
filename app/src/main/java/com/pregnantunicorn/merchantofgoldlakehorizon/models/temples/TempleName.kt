@@ -10,4 +10,5 @@ enum class TempleName {
     TITTIES_AND_LEGS,
     THE_MOST_TRUE_TRUTH,
     MONOTITTEISM,
+    PUSSYCAT_PROPHET
 }

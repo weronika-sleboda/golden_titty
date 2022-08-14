@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.activities.MainMenuActivity
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.SettingsFragmentBinding
@@ -26,8 +27,15 @@ class SettingsFragment : Fragment() {
 
         setupMainMenuButton()
         setupExitGameButton()
+        setupFab()
 
         return binding.root
+    }
+
+    private fun setupFab() {
+
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
+        fab?.setOnClickListener {}
     }
 
     private fun setupMainMenuButton() {

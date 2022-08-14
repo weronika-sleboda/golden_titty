@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ActionFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -38,6 +39,7 @@ class ActionFragment : Fragment() {
         setupActionButton()
         setupLeaveButton()
         setupInfoButton()
+        setupFab()
 
         binding.info.timeLeft.text = timer.toString()
         return binding.root
@@ -66,6 +68,12 @@ class ActionFragment : Fragment() {
 
             showMessage()
         }
+    }
+
+    private fun setupFab() {
+
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
+        fab?.setOnClickListener {}
     }
 
     private fun fail() {
@@ -231,13 +239,6 @@ class ActionFragment : Fragment() {
         }
     }
 
-    override fun onDestroy() {
-
-        super.onDestroy()
-        job?.cancel()
-        job = null
-    }
-
     private fun setupInfoButton() {
 
         binding.infoButton.setOnClickListener {
@@ -255,4 +256,12 @@ class ActionFragment : Fragment() {
             showMessage()
         }
     }
+
+    override fun onDestroy() {
+
+        super.onDestroy()
+        job?.cancel()
+        job = null
+    }
+
 }

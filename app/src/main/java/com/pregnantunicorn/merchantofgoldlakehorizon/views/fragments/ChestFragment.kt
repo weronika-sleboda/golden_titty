@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ChestFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -19,6 +20,7 @@ import kotlin.random.Random
 class ChestFragment : Fragment() {
 
     private lateinit var binding: ChestFragmentBinding
+    private var hasBeenUnlocked: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,11 +31,18 @@ class ChestFragment : Fragment() {
         binding = ChestFragmentBinding.inflate(inflater, container, false)
 
         setupIcon()
-        setupOpenButton()
+        setupUnlockButton()
         setupLeaveButton()
         setupInfoButton()
+        setupFab()
 
         return binding.root
+    }
+
+    private fun setupFab() {
+
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
+        fab?.setOnClickListener {}
     }
 
     private fun setupIcon() {
@@ -41,13 +50,11 @@ class ChestFragment : Fragment() {
         binding.icon.setImageResource(IconFactory().ironChest128())
     }
 
-    private var condition: Boolean = false
+    private fun setupUnlockButton() {
 
-    private fun setupOpenButton() {
+        binding.unlockButton.setOnClickListener {
 
-        binding.openButton.setOnClickListener {
-
-            condition = when(Random.nextInt(4)) {
+            hasBeenUnlocked = when(Random.nextInt(4)) {
 
                 0 -> binding.firstSwitch.isChecked && binding.secondSwitch.isChecked
                 1 -> !binding.firstSwitch.isChecked && binding.secondSwitch.isChecked
@@ -61,7 +68,7 @@ class ChestFragment : Fragment() {
                 val status = requireActivity() as PlayerStatusUpdate
                 status.updateStealth()
 
-                if(condition) {
+                if(hasBeenUnlocked) {
 
                     activity?.supportFragmentManager?.commit {
 
@@ -107,7 +114,7 @@ class ChestFragment : Fragment() {
             CurrentMessage.changeMessage(
                 "Instructions",
                 R.drawable.info64,
-                "1. Tweak the switches and then press the open button.\n" +
+                "1. Tweak the switches and then press the unlock button.\n" +
                         "2. Try different combinations of switches in their off and on states" +
                         " until you succeed to open the chest."
             )

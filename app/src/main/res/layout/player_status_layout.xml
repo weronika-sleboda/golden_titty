@@ -40,7 +40,7 @@
         android:background="@drawable/super_dark_corner_rectangle_background"
         android:paddingTop="5dp"
         android:paddingBottom="2dp"
-        android:src="@drawable/sonny64_white" />
+        android:src="@drawable/meteor64_white_robe" />
 
     <ImageView
         android:contentDescription="@string/health_icon_cd"
@@ -193,7 +193,7 @@
         android:layout_marginBottom="5dp"
         android:padding="3dp"
         android:background="@drawable/extreme_dark_rectangle_background"
-        android:src="@drawable/golden_coin32" />
+        android:src="@drawable/gold_coin32" />
 
     <TextView
         android:id="@+id/golden_coins"

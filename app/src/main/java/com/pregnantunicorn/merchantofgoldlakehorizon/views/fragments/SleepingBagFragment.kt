@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.SleepingBagFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.tent.SleepingBag
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.activities.GameOverActivity
@@ -38,8 +39,15 @@ class SleepingBagFragment : Fragment() {
         setupSleepButton()
         setupLeaveButton()
         setupHealthCostToString()
+        setupFab()
 
         return binding.root
+    }
+
+    private fun setupFab() {
+
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
+        fab?.setOnClickListener {}
     }
 
     private fun setupIcon() {

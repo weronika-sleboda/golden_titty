@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.carriage
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 
 class Carriage {
 

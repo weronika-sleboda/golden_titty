@@ -15,19 +15,19 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="start"
-            android:src="@drawable/double_madman_boomerang128"/>
+            android:src="@drawable/pilgrim128"/>
 
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
-            android:src="@drawable/cross_boomerang128"/>
+            android:src="@drawable/nomad_boomerang128"/>
 
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="end"
-            android:src="@drawable/double_crash_boomerang128"/>
+            android:src="@drawable/shaman_boomerang128"/>
 
         <TextView
             android:layout_width="320dp"
@@ -37,10 +37,10 @@
             android:background="@drawable/extreme_dark_oval_background"
             android:fontFamily="@font/dense_regular"
             android:gravity="center"
-            android:text="G o l d e n   T i t t y"
+            android:text="@string/golden_titty"
             android:textAllCaps="true"
             android:textColor="@color/super_light_mystery"
-            android:textSize="45sp" />
+            android:textSize="60sp" />
 
     </FrameLayout>
 
@@ -55,7 +55,7 @@
             android:layout_height="206dp"
             android:layout_gravity="center"
             android:contentDescription="@string/sonny256_icon_cd"
-            android:src="@drawable/sonny256_white" />
+            android:src="@drawable/meteor256" />
 
     </FrameLayout>
 

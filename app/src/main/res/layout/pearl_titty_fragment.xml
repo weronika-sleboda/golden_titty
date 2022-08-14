@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="280dp"
+        android:layout_width="340dp"
         android:layout_height="35dp"
         android:layout_gravity="start|center_horizontal"
         android:gravity="center"
@@ -43,7 +42,7 @@
         android:background="@color/mystery"/>
 
     <ProgressBar
-        android:id="@+id/switch_on"
+        android:id="@+id/destruction"
         style="?android:attr/progressBarStyleHorizontal"
         android:progressDrawable="@drawable/red_progress_bar_background"
         android:layout_width="match_parent"
@@ -61,7 +60,7 @@
         android:layout_marginBottom="70dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/fish_pond_recycler"
+            android:id="@+id/boomerang_tile_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

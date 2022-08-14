@@ -7,8 +7,7 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.WorldActivityBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentHandState
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.HandState
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
 
@@ -35,8 +34,6 @@ class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
         updatePeaches()
 
         updateFab()
-        setupFab()
-
         selectWorldButton()
         setupWorldButton()
         setupBackpackButton()
@@ -47,18 +44,6 @@ class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
     override fun updateFab() {
 
         binding.itemHolder.setImageResource(CurrentHandState.fabIcon())
-    }
-
-    private fun setupFab() {
-
-        binding.itemHolder.setOnClickListener {
-
-            if(CurrentHandState.handState() != HandState.EMPTY) {
-
-                CurrentHandState.changeHandState(HandState.EMPTY)
-                updateFab()
-            }
-        }
     }
 
     private fun goToWorldMap() {
@@ -170,4 +155,5 @@ class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
         binding.merchant.goldenCoins.text = Player.goldCoins().amountToString()
     }
 
+    override fun onBackPressed() {}
 }

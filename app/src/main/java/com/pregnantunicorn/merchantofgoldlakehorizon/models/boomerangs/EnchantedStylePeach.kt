@@ -1,7 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import kotlin.random.Random
 
@@ -44,7 +44,7 @@ class EnchantedStylePeach : BoomerangStyle() {
         return false
     }
 
-    private val targetIcon = R.drawable.coconut64
+    private val targetIcon = R.drawable.peach64
 
     override fun newRange(boomerangIcon: Int): Array<BoomerangTile> {
 

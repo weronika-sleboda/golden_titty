@@ -1,24 +1,59 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
+import kotlin.random.Random
 
 object CurrentBoomerang {
 
-    const val BUTTERFLY = 0
-    const val MARKSMAN = 1
+    const val BANANA = 0
+    const val NOMAD = 1
+    const val BUTTERFLY = 2
+    const val PILGRIM = 3
+    const val BANDIT = 4
+    const val WARRIOR = 5
+    const val SEDUCER = 6
+    const val SHAMAN = 7
+    const val CURSED = 8
+    const val SNAKE = 9
 
     val boomerangs = arrayOf(
 
         Boomerang(
-            "Butterfly",
-            R.drawable.butterfly_boomerang64,
-            "Speed: 30ms",
-            "Style: Unpredictable",
+            "Banana",
+            R.drawable.banana_boomerang64,
+            "Required accuracy: 5",
+            5,
+            "Speed: Very Slow",
+            "Style: Zig Zag",
             "Hits: 1",
-            "Power: 50",
-            30,
-            1,
-            50,
+            "Power: 1",
+            { 400 },
+            { 1 },
+            { 1 },
+            {
+                when(CurrentBoomerangPlace.boomerangPlace()) {
+
+                    BoomerangPlaceName.COCONUT_PALM -> ZigZagStyleCoconut()
+                    BoomerangPlaceName.DATE_PALM -> ZigZagStyleDates()
+                    BoomerangPlaceName.PEACH_PALM -> ZigZagStylePeach()
+                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> ZigZagStylePearlTitty()
+                }
+            },
+            true
+        ),
+
+        Boomerang(
+            "Nomad",
+            R.drawable.nomad_boomerang64,
+            "Required accuracy: 3",
+            3,
+            "Speed: Normal",
+            "Style: Unpredictable",
+            "Hits: 2",
+            "Power: 1",
+            { 200 },
+            { 2 },
+            { 1 },
             {
                 when(CurrentBoomerangPlace.boomerangPlace()) {
 
@@ -32,15 +67,17 @@ object CurrentBoomerang {
         ),
 
         Boomerang(
-            "Marksman",
-            R.drawable.marksman_boomerang64,
-            "Speed: 300ms",
+            "Butterfly",
+            R.drawable.butterfly_boomerang64,
+            "Required accuracy: 3",
+            3,
+            "Speed: Normal",
             "Style: Zig Zag",
             "Hits: 1",
             "Power: 1",
-            300,
-            1,
-            1,
+            { 200 },
+            { 1 },
+            { 1 },
             {
                 when(CurrentBoomerangPlace.boomerangPlace()) {
 
@@ -51,10 +88,195 @@ object CurrentBoomerang {
                 }
             },
             true
-        )
+        ),
+
+        Boomerang(
+            "Pilgrim",
+            R.drawable.pilgrim_boomerang64,
+            "Required accuracy: 2",
+            2,
+            "Speed: Fast",
+            "Style: Zig Zag",
+            "Hits: 1",
+            "Power: 1",
+            { 100 },
+            { 1 },
+            { 1 },
+            {
+                when(CurrentBoomerangPlace.boomerangPlace()) {
+
+                    BoomerangPlaceName.COCONUT_PALM -> ZigZagStyleCoconut()
+                    BoomerangPlaceName.DATE_PALM -> ZigZagStyleDates()
+                    BoomerangPlaceName.PEACH_PALM -> ZigZagStylePeach()
+                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> ZigZagStylePearlTitty()
+                }
+            }
+        ),
+
+        Boomerang(
+            "Bandit",
+            R.drawable.bandit_boomerang64,
+            "Required accuracy: 5",
+            5,
+            "Speed: Fast",
+            "Style: Unpredictable",
+            "Hits: 2",
+            "Power: 3",
+            { 100 },
+            { 2 },
+            { 3 },
+            {
+                when(CurrentBoomerangPlace.boomerangPlace()) {
+
+                    BoomerangPlaceName.COCONUT_PALM -> UnpredictableStyleCoconut()
+                    BoomerangPlaceName.DATE_PALM -> UnpredictableStyleDates()
+                    BoomerangPlaceName.PEACH_PALM -> UnpredictableStylePeach()
+                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> UnpredictableStylePearlTitty()
+                }
+            }
+        ),
+
+        Boomerang(
+            "Warrior",
+            R.drawable.warrior_boomerang64,
+            "Required accuracy: 3",
+            3,
+            "Speed: Normal",
+            "Style: Zig Zag",
+            "Hits: 1",
+            "Power: 3",
+            { 200 },
+            { 1 },
+            { 3 },
+            {
+                when(CurrentBoomerangPlace.boomerangPlace()) {
+
+                    BoomerangPlaceName.COCONUT_PALM -> ZigZagStyleCoconut()
+                    BoomerangPlaceName.DATE_PALM -> ZigZagStyleDates()
+                    BoomerangPlaceName.PEACH_PALM -> ZigZagStylePeach()
+                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> ZigZagStylePearlTitty()
+                }
+            }
+        ),
+
+        Boomerang(
+            "Seducer",
+            R.drawable.seducer_boomerang64,
+            "Required accuracy: 2",
+            2,
+            "Speed: Extremely Slow",
+            "Style: Unpredictable",
+            "Hits: 3",
+            "Power: 1",
+            { 500 },
+            { 3 },
+            { 1 },
+            {
+                when(CurrentBoomerangPlace.boomerangPlace()) {
+
+                    BoomerangPlaceName.COCONUT_PALM -> UnpredictableStyleCoconut()
+                    BoomerangPlaceName.DATE_PALM -> UnpredictableStyleDates()
+                    BoomerangPlaceName.PEACH_PALM -> UnpredictableStylePeach()
+                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> UnpredictableStylePearlTitty()
+                }
+            }
+        ),
+
+        Boomerang(
+            "Shaman",
+            R.drawable.shaman_boomerang64,
+            "Required accuracy: 1",
+            1,
+            "Speed: Normal",
+            "Style: Enchanted",
+            "Hits: 2",
+            "Power: 3",
+            { 200 },
+            { 2 },
+            { 3 },
+            {
+                when(CurrentBoomerangPlace.boomerangPlace()) {
+
+                    BoomerangPlaceName.COCONUT_PALM -> EnchantedStyleCoconut()
+                    BoomerangPlaceName.DATE_PALM -> EnchantedStyleDates()
+                    BoomerangPlaceName.PEACH_PALM -> EnchantedStylePeach()
+                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> EnchantedStylePearlTitty()
+                }
+            }
+        ),
+
+        Boomerang(
+            "Cursed",
+            R.drawable.cursed_boomerang64,
+            "Required accuracy: 2",
+            2,
+            "Speed: Insanely Fast",
+            "Style: ???",
+            "Hits: Random (1 - 5)",
+            "Power: 10",
+            { 5 },
+            { 1 + Random.nextInt(5) },
+            { 10 },
+            {
+
+                when(Random.nextInt(3)) {
+
+                    0 -> when(CurrentBoomerangPlace.boomerangPlace()) {
+
+                        BoomerangPlaceName.COCONUT_PALM -> EnchantedStyleCoconut()
+                        BoomerangPlaceName.DATE_PALM -> EnchantedStyleDates()
+                        BoomerangPlaceName.PEACH_PALM -> EnchantedStylePeach()
+                        BoomerangPlaceName.PEARL_TITTY_ALTAR -> EnchantedStylePearlTitty()
+                    }
+
+                    1 -> when(CurrentBoomerangPlace.boomerangPlace()) {
+
+                        BoomerangPlaceName.COCONUT_PALM -> UnpredictableStyleCoconut()
+                        BoomerangPlaceName.DATE_PALM -> UnpredictableStyleDates()
+                        BoomerangPlaceName.PEACH_PALM -> UnpredictableStylePeach()
+                        BoomerangPlaceName.PEARL_TITTY_ALTAR -> UnpredictableStylePearlTitty()
+                    }
+
+                    else -> {
+
+                        when(CurrentBoomerangPlace.boomerangPlace()) {
+
+                            BoomerangPlaceName.COCONUT_PALM -> ZigZagStyleCoconut()
+                            BoomerangPlaceName.DATE_PALM -> ZigZagStyleDates()
+                            BoomerangPlaceName.PEACH_PALM -> ZigZagStylePeach()
+                            BoomerangPlaceName.PEARL_TITTY_ALTAR -> ZigZagStylePearlTitty()
+                        }
+                    }
+
+                }
+            }
+        ),
+
+        Boomerang(
+            "Snake",
+            R.drawable.snake_bommerang64,
+            "Required accuracy: 1",
+            1,
+            "Speed: ???",
+            "Style: Unpredictable",
+            "Hits: 10",
+            "Power: 1",
+            { 5 + Random.nextLong(500) },
+            { 10 },
+            { 1 },
+            {
+                when(CurrentBoomerangPlace.boomerangPlace()) {
+
+                    BoomerangPlaceName.COCONUT_PALM -> UnpredictableStyleCoconut()
+                    BoomerangPlaceName.DATE_PALM -> UnpredictableStyleDates()
+                    BoomerangPlaceName.PEACH_PALM -> UnpredictableStylePeach()
+                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> UnpredictableStylePearlTitty()
+                }
+            }
+        ),
     )
 
-    private var boomerang = boomerangs[BUTTERFLY]
+    private var boomerang = boomerangs[BANANA]
     fun boomerang() = boomerang
 
     fun changeBoomerang(boomerangIndex: Int ){

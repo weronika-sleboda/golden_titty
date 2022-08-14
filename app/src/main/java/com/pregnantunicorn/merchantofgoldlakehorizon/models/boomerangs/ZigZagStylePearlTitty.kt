@@ -7,11 +7,9 @@ class ZigZagStylePearlTitty : BoomerangStyle() {
 
     companion object {
 
-        private var hitPosition = 1
+        private var hitPosition = 2
         private var boomerangPosition = 0
-        //*** Position has to be stored in companion object so that the boomerang can move.
     }
-
 
     override fun name() = "Pearl Titty Altar"
 
@@ -45,17 +43,17 @@ class ZigZagStylePearlTitty : BoomerangStyle() {
         return Array(rangeSize) { BoomerangTile(background = {BackgroundFactory().divineFloor()})}.also {
 
 
-            hitPosition++
+            hitPosition--
 
-            if(hitPosition == 3) { hitPosition = 1 }
-
-            boomerangPosition++
+            if(hitPosition == 0) { hitPosition = 2 }
 
             it[hitPosition] = BoomerangTile(
                 background = {BackgroundFactory().divineFloor()},
                 targetIsVisible = true,
                 targetIcon = targetIcon,
             )
+
+            boomerangPosition++
 
             if(boomerangPosition >= rangeSize) {
 

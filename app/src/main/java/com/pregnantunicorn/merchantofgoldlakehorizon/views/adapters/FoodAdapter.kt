@@ -24,6 +24,7 @@ class FoodAdapter(
         val icon = binding.icon
         val name = binding.name
         val info = binding.info
+        val amount = binding.amount
         val buttonIcon = binding.buttonIcon
     }
 
@@ -40,6 +41,7 @@ class FoodAdapter(
         holder.icon.setImageResource(foodManagers[position].icon)
         holder.name.text = foodManagers[position].name
         holder.info.text = foodManagers[position].info
+        holder.amount.text = foodManagers[position].amountToString.invoke()
         holder.buttonIcon.setImageResource(foodManagers[position].icon)
 
         holder.buttonIcon.setOnClickListener {

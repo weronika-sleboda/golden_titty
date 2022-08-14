@@ -16,6 +16,7 @@ object CurrentTemple {
             TempleName.MONOTITTEISM -> "Temple Of Monotitteism"
             TempleName.THE_MOST_TRUE_TRUTH -> "Temple Of The Most True Truth"
             TempleName.LAST_DAY_ATTENTION_SEEKING -> "Temple Of Last Day Attention Seeking"
+            TempleName.PUSSYCAT_PROPHET -> "Temple of Pussycat Prophet"
         }
     }
 

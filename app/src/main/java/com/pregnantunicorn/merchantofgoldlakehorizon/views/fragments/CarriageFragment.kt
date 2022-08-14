@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.CarriageFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.carriage.Carriage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.carriage.CarriageItem
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.CarriageAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
@@ -25,7 +27,7 @@ class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
     private lateinit var binding: CarriageFragmentBinding
     private lateinit var adapter: CarriageAdapter
     private lateinit var layoutManager: LinearLayoutManager
-    private var carriageItems = Carriage().carriageItems()
+    private var carriageItems: Array<CarriageItem>? = Carriage().carriageItems()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,8 +39,15 @@ class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
 
         setupLeaveButton()
         setupCarriageItems()
+        setupFab()
 
         return binding.root
+    }
+
+    private fun setupFab() {
+
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
+        fab?.setOnClickListener {}
     }
 
     private fun updateMerchantStatus() {
@@ -54,7 +63,7 @@ class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
 
         CoroutineScope(Dispatchers.IO).launch {
 
-            if(carriageItems[position].sell()) {
+            if(carriageItems?.get(position)?.sell()!!) {
 
                 withContext(Dispatchers.Main) {
 
@@ -74,7 +83,7 @@ class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
 
     private fun setupCarriageItems() {
 
-        adapter = CarriageAdapter(carriageItems, this)
+        adapter = CarriageAdapter(carriageItems!!, this)
         layoutManager = LinearLayoutManager(context)
         binding.carriageRecycler.adapter = adapter
         binding.carriageRecycler.layoutManager = layoutManager
@@ -95,5 +104,11 @@ class CarriageFragment : Fragment(), CarriageAdapter.CarriageListener {
                 replace<LocationFragment>(R.id.world_container)
             }
         }
+    }
+
+    override fun onDestroy() {
+
+        carriageItems = null
+        super.onDestroy()
     }
 }

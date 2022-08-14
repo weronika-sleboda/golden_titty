@@ -23,6 +23,7 @@ class BoomerangAdapter(
 
         val icon = binding.icon
         val name = binding.name
+        val requiredAccuracy = binding.requiredAccuracy
         val speedInfo = binding.speedInfo
         val styleInfo = binding.styleInfo
         val hitInfo = binding.hitInfo
@@ -42,6 +43,7 @@ class BoomerangAdapter(
 
         holder.icon.setImageResource(boomerangs[position].icon)
         holder.name.text = boomerangs[position].name
+        holder.requiredAccuracy.text = boomerangs[position].requiredAccuracyToString
         holder.speedInfo.text = boomerangs[position].speedInfo
         holder.styleInfo.text = boomerangs[position].styleInfo
         holder.hitInfo.text = boomerangs[position].hitInfo

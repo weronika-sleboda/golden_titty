@@ -38,8 +38,7 @@
                 android:layout_width="235dp"
                 android:layout_height="235dp"
                 android:layout_gravity="center"
-                android:padding="5dp"
-                android:src="@drawable/eye256"/>
+                android:padding="5dp"/>
 
         </FrameLayout>
 

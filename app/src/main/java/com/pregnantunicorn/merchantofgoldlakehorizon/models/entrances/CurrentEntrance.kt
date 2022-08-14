@@ -19,7 +19,8 @@ object CurrentEntrance {
     const val TEMPLE_OF_MONOTITTEISM = 5
     const val TEMPLE_OF_LAST_DAY_ATTENTION_SEEKING = 6
     const val TEMPLE_OF_MOST_TRUE_TRUTH = 7
-    const val END_TIMES_TWERK = 8
+    const val TEMPLE_END_TIMES_TWERK = 8
+    const val TEMPLE_OF_PUSSYCAT_PROPHET = 9
 
     private val entrances = arrayOf(
 
@@ -38,7 +39,7 @@ object CurrentEntrance {
         ),
 
         Entrance(
-            "Temple Of Last Day Vagina Rapture",
+            "Temple Of Latter Day Vagina Rapture",
             { IconFactory().pearlTittyDoor128() },
             "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
             "Enter",
@@ -157,7 +158,7 @@ object CurrentEntrance {
         ),
 
         Entrance(
-            "The Temple Of End Times Twerk",
+            "Temple Of End Times Twerk",
             { IconFactory().pearlTittyDoor128() },
             "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
             "Enter",
@@ -165,6 +166,23 @@ object CurrentEntrance {
             {
 
                 CurrentTemple.changeTempleName(TempleName.END_TIMES_TWERK)
+
+                it.supportFragmentManager.commit {
+
+                    replace<SneakFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+        Entrance(
+            "Temple Of Pussycat Prophet",
+            { IconFactory().pearlTittyDoor128() },
+            "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
+            "Enter",
+            { true },
+            {
+
+                CurrentTemple.changeTempleName(TempleName.PUSSYCAT_PROPHET)
 
                 it.supportFragmentManager.commit {
 

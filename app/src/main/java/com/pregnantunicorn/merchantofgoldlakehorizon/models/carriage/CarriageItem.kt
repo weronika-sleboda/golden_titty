@@ -1,6 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.carriage
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class CarriageItem(

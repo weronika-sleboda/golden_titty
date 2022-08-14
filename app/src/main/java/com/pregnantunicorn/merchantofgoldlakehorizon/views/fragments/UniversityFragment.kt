@@ -8,10 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.UniversityFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.university.University
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.university.UniversitySkill
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.UniversityAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -25,7 +27,7 @@ class UniversityFragment : Fragment(), UniversityAdapter.UniversityListener {
     private lateinit var binding: UniversityFragmentBinding
     private lateinit var adapter: UniversityAdapter
     private lateinit var layoutManager: LinearLayoutManager
-    private var universitySkills = University().skills
+    private var universitySkills: Array<UniversitySkill>? = University().skills
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,8 +39,15 @@ class UniversityFragment : Fragment(), UniversityAdapter.UniversityListener {
 
         setupLeaveButton()
         setupUniversitySkills()
+        setupFab()
 
         return binding.root
+    }
+
+    private fun setupFab() {
+
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
+        fab?.setOnClickListener {}
     }
 
     private fun updateMerchantStatus() {
@@ -51,11 +60,11 @@ class UniversityFragment : Fragment(), UniversityAdapter.UniversityListener {
         status.updateStealth()
     }
 
-    override fun onClickUniversitySkill(position: Int) {
+    override fun onClickSkillUpgrade(position: Int) {
 
         CoroutineScope(Dispatchers.IO).launch {
 
-            if(universitySkills[position].buy()) {
+            if(universitySkills?.get(position)?.buy()!!) {
 
                 withContext(Dispatchers.Main) {
 
@@ -67,15 +76,26 @@ class UniversityFragment : Fragment(), UniversityAdapter.UniversityListener {
 
                 withContext(Dispatchers.Main) {
 
+                    CurrentMessage.changeMessage(
+                        "Too Expensive",
+                        R.drawable.gold_coin_64,
+                        "You don't have enough gold coins."
+                    )
+
                     showMessage()
                 }
             }
         }
     }
 
+    override fun onClickInfo(position: Int) {
+
+        showMessage()
+    }
+
     private fun setupUniversitySkills() {
 
-        adapter = UniversityAdapter(universitySkills, this)
+        adapter = UniversityAdapter(universitySkills!!, this)
         layoutManager = LinearLayoutManager(context)
         binding.universityRecycler.adapter = adapter
         binding.universityRecycler.layoutManager = layoutManager
@@ -96,5 +116,11 @@ class UniversityFragment : Fragment(), UniversityAdapter.UniversityListener {
                 replace<LocationFragment>(R.id.world_container)
             }
         }
+    }
+
+    override fun onDestroy() {
+
+        universitySkills = null
+        super.onDestroy()
     }
 }

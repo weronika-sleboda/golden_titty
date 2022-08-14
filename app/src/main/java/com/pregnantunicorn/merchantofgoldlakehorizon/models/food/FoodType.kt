@@ -4,5 +4,8 @@ enum class FoodType {
 
     DATES,
     COCONUTS,
-    PEACHES
+    PEACHES,
+    CAPPUCCINO,
+    SMOOTHIE,
+    HERBAL_TEA,
 }

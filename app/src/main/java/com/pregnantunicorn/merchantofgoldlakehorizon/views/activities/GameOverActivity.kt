@@ -26,4 +26,6 @@ class GameOverActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onBackPressed() {}
 }

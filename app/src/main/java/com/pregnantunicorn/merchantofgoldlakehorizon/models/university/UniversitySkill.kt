@@ -1,19 +1,19 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.university
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class UniversitySkill(
     val name: String,
     val icon: Int,
-    val info: String,
+    val infoAlgorithm: () -> Unit,
     private val skillMaxed: () -> Boolean,
     private val skillAlgorithm: () -> Unit
 )
 {
 
-    private var price = 500
+    private var price = 100
     fun priceToString() = "Price: $price" + "G"
 
     fun buy(): Boolean {
@@ -29,7 +29,7 @@ class UniversitySkill(
 
             CurrentMessage.changeMessage(
                 "Too Expensive",
-                R.drawable.golden_coin_64,
+                R.drawable.gold_coin_64,
                 "You don't have enough golden coins."
             )
         }

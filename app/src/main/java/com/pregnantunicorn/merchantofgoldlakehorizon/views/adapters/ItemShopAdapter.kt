@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ProductLayoutBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.Product
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.BoomerangShopItem
 
 class ItemShopAdapter(
-    private val products: List<Product>,
+    private val boomerangShopItems: List<BoomerangShopItem>,
     private val productListener: ProductListener
 
 ) : RecyclerView.Adapter<ItemShopAdapter.ViewHolder>() {
@@ -37,9 +37,9 @@ class ItemShopAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.icon.setImageResource(products[position].icon)
-        holder.name.text = products[position].name
-        holder.price.text = products[position].priceToString()
+        holder.icon.setImageResource(boomerangShopItems[position].icon)
+        holder.name.text = boomerangShopItems[position].name
+        holder.price.text = boomerangShopItems[position].priceToString()
 
         holder.buttonIcon.setOnClickListener {
 
@@ -48,6 +48,6 @@ class ItemShopAdapter(
 
     }
 
-    override fun getItemCount() = products.size
+    override fun getItemCount() = boomerangShopItems.size
 
 }

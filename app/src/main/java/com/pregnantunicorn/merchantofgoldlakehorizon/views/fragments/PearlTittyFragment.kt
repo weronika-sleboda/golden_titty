@@ -12,7 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.PearlTittyFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.temples.CurrentTemple
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangRangeAdapter
@@ -25,9 +25,9 @@ class PearlTittyFragment: Fragment() {
     private lateinit var binding: PearlTittyFragmentBinding
     private lateinit var adapter: BoomerangRangeAdapter
     private lateinit var layoutManager: GridLayoutManager
-    private val boomerang = CurrentBoomerang.boomerang()
-    private var boomerangStyle = CurrentBoomerang.boomerang().boomerangStyle.invoke()
-    private val templeName = CurrentTemple.templeName()
+    private var boomerang: Boomerang? = CurrentBoomerang.boomerang()
+    private var boomerangStyle: BoomerangStyle? = CurrentBoomerang.boomerang().boomerangStyle.invoke()
+    private var templeName: String? = CurrentTemple.templeName()
 
     private var job: Job? = null
 
@@ -40,11 +40,24 @@ class PearlTittyFragment: Fragment() {
         binding = PearlTittyFragmentBinding.inflate(inflater, container, false)
 
         updateName()
-        updateRange(boomerangStyle.range())
+        updateRange(boomerangStyle?.range()!!)
         setupLeaveButton()
         setupFab()
         setupInfoButton()
+        defineMaxProgress()
+        setupRequiredAccuracyToString()
+
         return binding.root
+    }
+
+    private fun setupRequiredAccuracyToString() {
+
+        binding.info.requiredAccuracy.text = boomerang?.requiredAccuracy.toString()
+    }
+
+    private fun defineMaxProgress() {
+
+        binding.destruction.max = 10
     }
 
     private fun updateName() {
@@ -56,8 +69,8 @@ class PearlTittyFragment: Fragment() {
 
         adapter = BoomerangRangeAdapter(range)
         layoutManager = GridLayoutManager(context, 4)
-        binding.fishPondRecycler.adapter = adapter
-        binding.fishPondRecycler.layoutManager = layoutManager
+        binding.boomerangTileRecycler.adapter = adapter
+        binding.boomerangTileRecycler.layoutManager = layoutManager
     }
 
     private fun updateMerchantStatus() {
@@ -77,12 +90,10 @@ class PearlTittyFragment: Fragment() {
 
                 if(job == null) {
 
-                    val accuracy = 1
-
-                    if(Player.accuracy().hasAmount(accuracy)) {
+                    if(Player.accuracy().hasAmount(boomerang?.requiredAccuracy!!)) {
 
                         fab.setImageResource(R.drawable.grab64)
-                        Player.accuracy().loseAmount(accuracy)
+                        Player.accuracy().loseAmount(boomerang?.requiredAccuracy!!)
                         updateMerchantStatus()
 
                         job = CoroutineScope(Dispatchers.IO).launch {
@@ -93,10 +104,10 @@ class PearlTittyFragment: Fragment() {
 
                                 withContext(Dispatchers.Main) {
 
-                                    updateRange(boomerangStyle.newRange(boomerang.icon))
+                                    updateRange(boomerangStyle?.newRange(boomerang?.icon!!)!!)
                                 }
 
-                                delay(boomerang.speed)
+                                delay(boomerang?.speed?.invoke()!!)
                             }
                         }
                     }
@@ -104,9 +115,9 @@ class PearlTittyFragment: Fragment() {
                     else {
 
                         CurrentMessage.changeMessage(
-                            "No Energy",
-                            R.drawable.energy64,
-                            "You don't have enough energy to perform this action."
+                            "No Accuracy",
+                            R.drawable.accuracy64,
+                            "You don't have enough accuracy to perform this action."
                         )
 
                         showMessage()
@@ -118,18 +129,21 @@ class PearlTittyFragment: Fragment() {
                     job?.cancel()
                     job = null
 
+                    fab.setImageResource(boomerang?.icon!!)
+                    updateRange(boomerangStyle?.range()!!)
+
                     CoroutineScope(Dispatchers.IO).launch {
 
-                        if(boomerangStyle.checkHitCondition(boomerang.hitAmount))
+                        if(boomerangStyle?.checkHitCondition(boomerang?.hitAmount?.invoke()!!)!!)
                         {
 
                             withContext(Dispatchers.Main) {
 
-                                binding.switchOn.progress += boomerang.power
+                                binding.destruction.progress += boomerang?.power!!.invoke()
 
                                 updateMerchantStatus()
 
-                                if(binding.switchOn.progress == 100) {
+                                if(binding.destruction.progress == 10) {
 
                                     Player.tittyCounter().addTitty()
                                     updateMerchantStatus()
@@ -140,18 +154,14 @@ class PearlTittyFragment: Fragment() {
                                         "Heretic titty has been destroyed."
                                     )
 
+                                    showMessage()
+
                                     activity?.supportFragmentManager?.commit {
 
                                         replace<LocationFragment>(R.id.world_container)
                                     }
                                 }
                             }
-                        }
-
-                        withContext(Dispatchers.Main) {
-
-                            fab.setImageResource(boomerang.icon)
-                            updateRange(boomerangStyle.range())
                         }
                     }
                 }
@@ -202,10 +212,14 @@ class PearlTittyFragment: Fragment() {
 
     override fun onDestroy() {
 
-        super.onDestroy()
-
         job?.cancel()
         job = null
+
+        boomerang = null
+        boomerangStyle = null
+        templeName = null
+
+        super.onDestroy()
     }
 
     private fun showMessage() {

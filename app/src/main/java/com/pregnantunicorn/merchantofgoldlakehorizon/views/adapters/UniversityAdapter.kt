@@ -2,6 +2,7 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.UniversityLayoutBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.university.UniversitySkill
@@ -16,7 +17,8 @@ class UniversityAdapter(
 
     interface UniversityListener {
 
-        fun onClickUniversitySkill(position: Int)
+        fun onClickSkillUpgrade(position: Int)
+        fun onClickInfo(position: Int)
     }
 
     class ViewHolder(binding: UniversityLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -24,8 +26,8 @@ class UniversityAdapter(
         val icon = binding.icon
         val name = binding.name
         val price = binding.price
-        val info = binding.info
-        val buttonIcon = binding.buttonIcon
+        val infoButton = binding.infoButton
+        val upgradeButton = binding.upgradeButton
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -41,11 +43,16 @@ class UniversityAdapter(
         holder.icon.setImageResource(universitySkills[position].icon)
         holder.name.text = universitySkills[position].name
         holder.price.text = universitySkills[position].priceToString()
-        holder.info.text = universitySkills[position].info
 
-        holder.buttonIcon.setOnClickListener {
+        holder.upgradeButton.setOnClickListener {
 
-            universityListener.onClickUniversitySkill(position)
+            universitySkills[position].infoAlgorithm.invoke()
+            universityListener.onClickInfo(position)
+        }
+
+        holder.upgradeButton.setOnClickListener {
+
+            universityListener.onClickSkillUpgrade(position)
         }
 
     }

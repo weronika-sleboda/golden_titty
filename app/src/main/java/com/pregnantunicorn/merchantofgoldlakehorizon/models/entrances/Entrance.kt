@@ -1,9 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances
 
 import androidx.fragment.app.FragmentActivity
-import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class Entrance(
     val name: String,

@@ -1,13 +1,14 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.food
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class Food(
     val name: String,
     val icon: Int,
     val info: String,
+    val amountToString: () -> String,
     private val foodType: FoodType,
 )
 {
@@ -30,6 +31,9 @@ class Food(
             FoodType.DATES -> consumeDates()
             FoodType.PEACHES -> consumePeaches()
             FoodType.COCONUTS -> consumeCoconut()
+            FoodType.CAPPUCCINO -> consumeCappuccino()
+            FoodType.SMOOTHIE -> consumeSmoothie()
+            FoodType.HERBAL_TEA -> consumeHerbalTea()
         }
     }
 
@@ -93,4 +97,63 @@ class Food(
         return false
     }
 
+    private fun consumeCappuccino(): Boolean {
+
+        val amount = 1
+
+        if(Player.cappuccino().hasAmount(amount)) {
+
+            Player.cappuccino().loseAmount(amount)
+            Player.accuracy().addAmount(5)
+            return true
+        }
+
+        CurrentMessage.changeMessage(
+            "No Cappuccinos",
+            R.drawable.cappuccino64,
+            "You don't have any of these."
+        )
+
+        return false
+    }
+
+    private fun consumeSmoothie(): Boolean {
+
+        val amount = 1
+
+        if(Player.smoothie().hasAmount(amount)) {
+
+            Player.smoothie().loseAmount(amount)
+            Player.agility().addAmount(5)
+            return true
+        }
+
+        CurrentMessage.changeMessage(
+            "No Smoothies",
+            R.drawable.smoothie64,
+            "You don't have any of these."
+        )
+
+        return false
+    }
+
+    private fun consumeHerbalTea(): Boolean {
+
+        val amount = 1
+
+        if(Player.herbalTea().hasAmount(amount)) {
+
+            Player.herbalTea().loseAmount(amount)
+            Player.stealth().addAmount(5)
+            return true
+        }
+
+        CurrentMessage.changeMessage(
+            "No Herbal Teas",
+            R.drawable.herbal_tea64,
+            "You don't have any of these."
+        )
+
+        return false
+    }
 }

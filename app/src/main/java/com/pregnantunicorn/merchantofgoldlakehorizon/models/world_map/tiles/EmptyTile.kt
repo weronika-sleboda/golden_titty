@@ -12,7 +12,7 @@ class EmptyTile(
 {
     override fun icon(): Int {
 
-        return R.drawable.energy32
+        return R.drawable.accuracy32
     }
 
     override fun background() = background.invoke()

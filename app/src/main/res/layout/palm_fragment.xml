@@ -34,7 +34,7 @@
         android:layout_marginBottom="70dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/fish_pond_recycler"
+            android:id="@+id/boomerang_tile_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

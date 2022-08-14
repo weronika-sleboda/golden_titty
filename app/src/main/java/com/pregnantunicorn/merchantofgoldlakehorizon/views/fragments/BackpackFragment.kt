@@ -9,11 +9,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BackpackFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.BoomerangManager
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentBoomerang
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentHandState
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.HandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.food.Food
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.food.FoodManager
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.Item
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangAdapter
@@ -37,9 +36,11 @@ class BackpackFragment : Fragment(),
     private lateinit var boomerangAdapter: BoomerangAdapter
     private lateinit var itemsAdapter: ItemAdapter
     private lateinit var layoutManager: LinearLayoutManager
-    private val food = FoodManager().foods
-    private val items = ItemManager().items()
-    private var boomerangs = BoomerangManager().boomerangs()
+    private var food: Array<Food>? = FoodManager().foods
+    private var boomerangs: List<Boomerang>? = BoomerangManager().boomerangs()
+    private var grabIconClicks = 0
+
+    private var items: List<Item>? = ItemManager().items()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -90,7 +91,7 @@ class BackpackFragment : Fragment(),
 
     private fun updateFood() {
 
-        foodAdapter = FoodAdapter(food, this)
+        foodAdapter = FoodAdapter(food!!, this)
         layoutManager = LinearLayoutManager(context)
         binding.backpackRecycler.adapter = foodAdapter
         binding.backpackRecycler.layoutManager = layoutManager
@@ -115,7 +116,7 @@ class BackpackFragment : Fragment(),
 
     private fun updateBoomerangs() {
 
-        boomerangAdapter = BoomerangAdapter(boomerangs, this)
+        boomerangAdapter = BoomerangAdapter(boomerangs!!, this)
         layoutManager = LinearLayoutManager(context)
         binding.backpackRecycler.adapter = boomerangAdapter
         binding.backpackRecycler.layoutManager = layoutManager
@@ -164,7 +165,7 @@ class BackpackFragment : Fragment(),
 
         CoroutineScope(Dispatchers.IO).launch {
 
-            if(food[position].consume()) {
+            if(food?.get(position)?.consume()!!) {
 
                 withContext(Dispatchers.Main) {
 
@@ -187,10 +188,36 @@ class BackpackFragment : Fragment(),
 
     override fun onClickBoomerang(position: Int) {
 
-        CurrentBoomerang.changeBoomerang(position)
-        CurrentHandState.changeHandState(HandState.BOOMERANG)
+        grabIconClicks++
+
+        when(grabIconClicks) {
+
+            1 -> {
+
+                CurrentBoomerang.changeBoomerang(position)
+                CurrentHandState.changeHandState(HandState.BOOMERANG)
+            }
+
+            else -> {
+
+                grabIconClicks = 0
+
+                if(CurrentHandState.handState() != HandState.EMPTY) {
+
+                    CurrentHandState.changeHandState(HandState.EMPTY)
+                    updateFab()
+                }
+            }
+        }
 
         updateFab()
     }
 
+    override fun onDestroy() {
+
+        food = null
+        boomerangs = null
+        items = null
+        super.onDestroy()
+    }
 }

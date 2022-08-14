@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.EntranceFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances.CurrentEntrance
@@ -33,7 +34,15 @@ class EntranceFragment : Fragment() {
         setupInfo()
         setupEnterButton()
         setupLeaveButton()
+        setupFab()
+
         return binding.root
+    }
+
+    private fun setupFab() {
+
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
+        fab?.setOnClickListener {}
     }
 
     private fun setupName() {
@@ -89,5 +98,11 @@ class EntranceFragment : Fragment() {
                 replace<LocationFragment>(R.id.world_container)
             }
         }
+    }
+
+    override fun onDestroy() {
+
+        entrance = null
+        super.onDestroy()
     }
 }

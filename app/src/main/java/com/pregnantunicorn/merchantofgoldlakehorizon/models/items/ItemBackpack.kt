@@ -13,7 +13,7 @@ class ItemBackpack {
 
         Item(
             "Boomerang",
-            R.drawable.boomerang64
+            R.drawable.bookcase128_morning
         )
     )
 }

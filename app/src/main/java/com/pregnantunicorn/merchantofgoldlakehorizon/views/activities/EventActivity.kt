@@ -10,7 +10,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.Info
 class EventActivity : AppCompatActivity() {
 
     private lateinit var binding: EventActivityBinding
-    private val event = EventFactory.currentEvent()
+    //private val event = EventFactory.currentEvent()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -29,27 +29,27 @@ class EventActivity : AppCompatActivity() {
 
     private fun updateName() {
 
-        binding.npcName.text = event.eventLine().name
+        //binding.npcName.text = event.eventLine().name
     }
 
     private fun updateIcon() {
 
-        binding.npcIcon.setImageResource(event.eventLine().icon)
+       // binding.npcIcon.setImageResource(event.eventLine().icon)
     }
 
     private fun updateLine() {
 
-        binding.npcLine.text = event.eventLine().line
+        //binding.npcLine.text = event.eventLine().line
     }
 
     private fun updateButtonText() {
 
-        binding.actionButton.text = event.eventLine().buttonText
+        //binding.actionButton.text = event.eventLine().buttonText
     }
 
     private fun setupActionButton() {
 
-        binding.actionButton.setOnClickListener {
+       /** binding.actionButton.setOnClickListener {
 
             event.proceed()
             updateName()
@@ -62,6 +62,8 @@ class EventActivity : AppCompatActivity() {
                 goToWorldMap()
             }
         }
+
+       **/
     }
 
     private fun goToWorldMap() {
@@ -78,4 +80,6 @@ class EventActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onBackPressed() {}
 }

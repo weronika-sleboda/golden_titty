@@ -12,7 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.PalmFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangRangeAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
@@ -24,8 +24,8 @@ class PalmFragment: Fragment() {
     private lateinit var binding: PalmFragmentBinding
     private lateinit var adapter: BoomerangRangeAdapter
     private lateinit var layoutManager: GridLayoutManager
-    private val boomerang = CurrentBoomerang.boomerang()
-    private var boomerangStyle = CurrentBoomerang.boomerang().boomerangStyle.invoke()
+    private var boomerang: Boomerang? = CurrentBoomerang.boomerang()
+    private var boomerangStyle: BoomerangStyle? = CurrentBoomerang.boomerang().boomerangStyle.invoke()
 
     private var job: Job? = null
 
@@ -38,24 +38,33 @@ class PalmFragment: Fragment() {
         binding = PalmFragmentBinding.inflate(inflater, container, false)
 
         updateName()
-        updateRange(boomerangStyle.range())
+        updateRange(boomerangStyle?.range()!!)
         setupLeaveButton()
         setupFab()
         setupInfoButton()
+        setupRequiredAccuracyToString()
+        setupFab()
+
         return binding.root
+    }
+
+
+    private fun setupRequiredAccuracyToString() {
+
+        binding.info.requiredAccuracy.text = boomerang?.requiredAccuracy.toString()
     }
 
     private fun updateName() {
 
-        binding.name.text = boomerangStyle.name()
+        binding.name.text = boomerangStyle?.name()
     }
 
     private fun updateRange(range: Array<BoomerangTile>) {
 
         adapter = BoomerangRangeAdapter(range)
         layoutManager = GridLayoutManager(context, 4)
-        binding.fishPondRecycler.adapter = adapter
-        binding.fishPondRecycler.layoutManager = layoutManager
+        binding.boomerangTileRecycler.adapter = adapter
+        binding.boomerangTileRecycler.layoutManager = layoutManager
     }
 
     private fun updateMerchantStatus() {
@@ -77,12 +86,10 @@ class PalmFragment: Fragment() {
 
                 if(job == null) {
 
-                    val accuracy = 1
-
-                    if(Player.accuracy().hasAmount(accuracy)) {
+                    if(Player.accuracy().hasAmount(boomerang?.requiredAccuracy!!)) {
 
                         fab.setImageResource(R.drawable.grab64)
-                        Player.accuracy().loseAmount(accuracy)
+                        Player.accuracy().loseAmount(boomerang?.requiredAccuracy!!)
                         updateMerchantStatus()
 
                         job = CoroutineScope(Dispatchers.IO).launch {
@@ -93,10 +100,10 @@ class PalmFragment: Fragment() {
 
                                 withContext(Dispatchers.Main) {
 
-                                    updateRange(boomerangStyle.newRange(boomerang.icon))
+                                    updateRange(boomerangStyle?.newRange(boomerang?.icon!!)!!)
                                 }
 
-                                delay(boomerang.speed)
+                                delay(boomerang?.speed?.invoke()!!)
                             }
                         }
                     }
@@ -104,9 +111,9 @@ class PalmFragment: Fragment() {
                     else {
 
                         CurrentMessage.changeMessage(
-                            "No Energy",
-                            R.drawable.energy64,
-                            "You don't have enough energy to perform this action."
+                            "No Accuracy",
+                            R.drawable.accuracy64,
+                            "You don't have enough accuracy to perform this action."
                         )
 
                         showMessage()
@@ -120,7 +127,13 @@ class PalmFragment: Fragment() {
 
                     CoroutineScope(Dispatchers.IO).launch {
 
-                        if(boomerangStyle.checkHitCondition(boomerang.hitAmount))
+                        withContext(Dispatchers.Main) {
+
+                            fab.setImageResource(boomerang?.icon!!)
+                            updateRange(boomerangStyle?.range()!!)
+                        }
+
+                        if(boomerangStyle?.checkHitCondition(boomerang?.hitAmount?.invoke()!!)!!)
                         {
 
                             withContext(Dispatchers.Main) {
@@ -128,12 +141,6 @@ class PalmFragment: Fragment() {
                                 updateMerchantStatus()
                                 showMessage()
                             }
-                        }
-
-                        withContext(Dispatchers.Main) {
-
-                            fab?.setImageResource(boomerang.icon)
-                            updateRange(boomerangStyle.range())
                         }
                     }
                 }
@@ -184,6 +191,10 @@ class PalmFragment: Fragment() {
 
         job?.cancel()
         job = null
+
+        boomerang = null
+        boomerangStyle = null
+
         super.onDestroy()
     }
 

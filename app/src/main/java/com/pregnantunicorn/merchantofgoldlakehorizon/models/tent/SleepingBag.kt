@@ -4,7 +4,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.CurrentDayCycle
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 class SleepingBag {

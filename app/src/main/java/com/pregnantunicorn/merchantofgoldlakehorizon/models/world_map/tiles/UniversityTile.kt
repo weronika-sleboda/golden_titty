@@ -10,7 +10,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.UniversityF
 
 class UniversityTile : Tile(true)
 {
-    override fun icon() = IconFactory().university64()
+    override fun icon() = IconFactory().npcHouse64()
     override fun background() = BackgroundFactory().grass()
 
     override fun onClick(activity: FragmentActivity) {

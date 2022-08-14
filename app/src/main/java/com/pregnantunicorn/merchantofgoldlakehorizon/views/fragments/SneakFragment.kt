@@ -1,19 +1,18 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments
 
 import android.os.Bundle
-import android.text.TextUtils
-import android.text.TextUtils.replace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.SneakFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.BoomerangPlaceName
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentBoomerangPlace
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.merchant.Player
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -39,8 +38,15 @@ class SneakFragment : Fragment() {
         setupLeaveButton()
         setupInfoButton()
         defineMaxProgress()
+        setupFab()
 
         return binding.root
+    }
+
+    private fun setupFab() {
+
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
+        fab?.setOnClickListener {}
     }
 
     private fun defineMaxProgress() {
@@ -55,7 +61,7 @@ class SneakFragment : Fragment() {
 
     private fun setupIcon() {
 
-        binding.icon.setImageResource(R.drawable.enemy_monk_brown128)
+        //binding.icon.setImageResource(R.drawable.enemy_monk_brown128)
     }
 
     private fun updateMerchantStatus() {
@@ -85,7 +91,7 @@ class SneakFragment : Fragment() {
 
                 CurrentMessage.changeMessage(
                     "Pearl Titty Monk",
-                    R.drawable.enemy_monk_brown64,
+                    R.drawable.goddess_nikita64,
                     "Hey you there! Get out of here!"
                 )
 

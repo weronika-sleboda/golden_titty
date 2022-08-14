@@ -5,13 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.InformationFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.information.CurrentInformation
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.information.Information
 
 class InformationFragment : Fragment() {
 
     private lateinit var binding: InformationFragmentBinding
-    private val information = CurrentInformation.information()
+    private var information: Information? = CurrentInformation.information()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,31 +28,44 @@ class InformationFragment : Fragment() {
         setupIcon()
         setupInfo()
         setupLeaveButton()
+        setupFab()
 
         return binding.root
     }
 
+    private fun setupFab() {
+
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
+        fab?.setOnClickListener {}
+    }
+
     private fun setupIcon() {
 
-        binding.icon.setImageResource(information.icon)
+        binding.icon.setImageResource(information?.icon!!)
     }
 
     private fun setupName() {
 
-        binding.name.text = information.name
+        binding.name.text = information?.name
     }
 
     private fun setupInfo() {
 
-        binding.info.text = information.info
+        binding.info.text = information?.info
     }
 
     private fun setupLeaveButton() {
 
-        binding.leaveButton.text = information.buttonText
+        binding.leaveButton.text = information?.buttonText
         binding.leaveButton.setOnClickListener {
 
-            information.algorithm.invoke(requireActivity())
+            information?.algorithm?.invoke(requireActivity())
         }
+    }
+
+    override fun onDestroy() {
+
+        information = null
+        super.onDestroy()
     }
 }

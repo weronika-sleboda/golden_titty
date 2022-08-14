@@ -29,7 +29,6 @@
         android:layout_height="32dp"
         android:layout_gravity="start|center"
         android:background="@drawable/extreme_dark_rectangle_background"
-        android:src="@drawable/intelligence32"
         android:padding="3dp"/>
 
     <TextView
