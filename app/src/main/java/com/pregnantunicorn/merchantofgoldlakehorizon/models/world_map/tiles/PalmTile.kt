@@ -11,15 +11,14 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.PalmFragment
 
 class PalmTile(
+    private val icon: () -> Int,
+    private val background: () -> Int,
     private val boomerangPlaceName: BoomerangPlaceName
 ) : Tile(true)
 {
-    override fun icon(): Int {
+    override fun icon() = icon.invoke()
 
-        return IconFactory().palmTree64()
-    }
-
-    override fun background() = BackgroundFactory().grass()
+    override fun background() = background.invoke()
 
     override fun onClick(activity: FragmentActivity) {
 

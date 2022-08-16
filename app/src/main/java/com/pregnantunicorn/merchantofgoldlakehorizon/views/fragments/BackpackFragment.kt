@@ -12,12 +12,14 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BackpackFragmen
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.food.Food
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.food.FoodManager
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.Item
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.items.ItemManager
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.CurrentHandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.HandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.key_items.KeyItem
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.key_items.KeyItemManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.FoodAdapter
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.ItemAdapter
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.KeyItemAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -28,19 +30,17 @@ import kotlinx.coroutines.withContext
 class BackpackFragment : Fragment(),
     FoodAdapter.FoodListener,
     BoomerangAdapter.BoomerangListener,
-    ItemAdapter.ItemListener
+    KeyItemAdapter.ItemListener
 {
 
     private lateinit var binding: BackpackFragmentBinding
     private lateinit var foodAdapter: FoodAdapter
     private lateinit var boomerangAdapter: BoomerangAdapter
-    private lateinit var itemsAdapter: ItemAdapter
+    private lateinit var itemsAdapter: KeyItemAdapter
     private lateinit var layoutManager: LinearLayoutManager
     private var food: Array<Food>? = FoodManager().foods
     private var boomerangs: List<Boomerang>? = BoomerangManager().boomerangs()
-    private var grabIconClicks = 0
-
-    private var items: List<Item>? = ItemManager().items()
+    private var keyItems: List<KeyItem>? = KeyItemManager().items()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -84,7 +84,6 @@ class BackpackFragment : Fragment(),
     private fun selectFoodTab() {
 
         binding.foodTab.setBackgroundResource(R.drawable.selected_tab_background)
-        binding.clothesTab.setBackgroundResource(R.drawable.tab_background)
         binding.itemsTab.setBackgroundResource(R.drawable.tab_background)
         binding.boomerangTab.setBackgroundResource(R.drawable.tab_background)
     }
@@ -109,7 +108,6 @@ class BackpackFragment : Fragment(),
     private fun selectBoomerangTab() {
 
         binding.foodTab.setBackgroundResource(R.drawable.tab_background)
-        binding.clothesTab.setBackgroundResource(R.drawable.tab_background)
         binding.itemsTab.setBackgroundResource(R.drawable.tab_background)
         binding.boomerangTab.setBackgroundResource(R.drawable.selected_tab_background)
     }
@@ -135,14 +133,13 @@ class BackpackFragment : Fragment(),
     private fun selectItemsTab() {
 
         binding.foodTab.setBackgroundResource(R.drawable.tab_background)
-        binding.clothesTab.setBackgroundResource(R.drawable.tab_background)
         binding.itemsTab.setBackgroundResource(R.drawable.selected_tab_background)
         binding.boomerangTab.setBackgroundResource(R.drawable.tab_background)
     }
 
     private fun updateItems() {
 
-        itemsAdapter = ItemAdapter(ItemManager().items(), this)
+        itemsAdapter = KeyItemAdapter(KeyItemManager().items(), this)
         layoutManager = LinearLayoutManager(context)
         binding.backpackRecycler.adapter = itemsAdapter
         binding.backpackRecycler.layoutManager = layoutManager
@@ -150,6 +147,10 @@ class BackpackFragment : Fragment(),
 
     override fun onClickItem(position: Int) {
 
+        keyItems?.get(position)?.equip()
+        CurrentHandState.changeHandState(HandState.KEY_ITEM)
+
+        updateFab()
     }
 
     private fun updateMerchantStatus() {
@@ -188,27 +189,8 @@ class BackpackFragment : Fragment(),
 
     override fun onClickBoomerang(position: Int) {
 
-        grabIconClicks++
-
-        when(grabIconClicks) {
-
-            1 -> {
-
-                CurrentBoomerang.changeBoomerang(position)
-                CurrentHandState.changeHandState(HandState.BOOMERANG)
-            }
-
-            else -> {
-
-                grabIconClicks = 0
-
-                if(CurrentHandState.handState() != HandState.EMPTY) {
-
-                    CurrentHandState.changeHandState(HandState.EMPTY)
-                    updateFab()
-                }
-            }
-        }
+        CurrentBoomerang.changeBoomerang(position)
+        CurrentHandState.changeHandState(HandState.BOOMERANG)
 
         updateFab()
     }
@@ -217,7 +199,7 @@ class BackpackFragment : Fragment(),
 
         food = null
         boomerangs = null
-        items = null
+        keyItems = null
         super.onDestroy()
     }
 }

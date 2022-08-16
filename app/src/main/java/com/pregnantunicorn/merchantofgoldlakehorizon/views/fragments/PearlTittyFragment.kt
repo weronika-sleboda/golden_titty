@@ -14,9 +14,11 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.PearlTittyFragm
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.CurrentHandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.HandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.temples.CurrentTemple
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.temple_floors.CurrentTempleFloor
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangRangeAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
@@ -29,7 +31,6 @@ class PearlTittyFragment: Fragment() {
     private lateinit var layoutManager: GridLayoutManager
     private var boomerang: Boomerang? = CurrentBoomerang.boomerang()
     private var boomerangStyle: BoomerangStyle? = CurrentBoomerang.boomerang().boomerangStyle.invoke()
-    private var templeName: String? = CurrentTemple.templeName()
 
     private var job: Job? = null
 
@@ -46,7 +47,6 @@ class PearlTittyFragment: Fragment() {
             CurrentFragment.changeFragment(FragmentType.PEARL_TITTY_FRAGMENT)
         }
 
-        updateName()
         updateRange(boomerangStyle?.range()!!)
         setupLeaveButton()
         setupFab()
@@ -65,11 +65,6 @@ class PearlTittyFragment: Fragment() {
     private fun defineMaxProgress() {
 
         binding.destruction.max = 10
-    }
-
-    private fun updateName() {
-
-        binding.name.text = templeName
     }
 
     private fun updateRange(range: Array<BoomerangTile>) {
@@ -155,6 +150,8 @@ class PearlTittyFragment: Fragment() {
                                     Player.tittyCounter().addTitty()
                                     updateMerchantStatus()
 
+                                    CurrentTempleFloor.currentFloor().conquer()
+
                                     CurrentMessage.changeMessage(
                                         "Titty Destroyed",
                                         R.drawable.stars64,
@@ -224,7 +221,6 @@ class PearlTittyFragment: Fragment() {
 
         boomerang = null
         boomerangStyle = null
-        templeName = null
 
         super.onDestroy()
     }

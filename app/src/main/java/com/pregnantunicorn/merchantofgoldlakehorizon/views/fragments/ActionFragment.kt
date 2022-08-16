@@ -10,6 +10,8 @@ import androidx.fragment.app.replace
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ActionFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.BoomerangPlaceName
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.CurrentBoomerangPlace
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
@@ -70,10 +72,18 @@ class ActionFragment : Fragment() {
             CurrentMessage.changeMessage(
                 "Congratulations!",
                 R.drawable.stars64,
-                "You have managed to enter the building."
+                "You have managed to enter the chamber."
             )
 
             showMessage()
+
+            CurrentBoomerangPlace.changeBoomerangPlace(
+                BoomerangPlaceName.PEARL_TITTY_ALTAR)
+
+            activity?.supportFragmentManager?.commit {
+
+                replace<PearlTittyFragment>(R.id.world_container)
+            }
         }
     }
 

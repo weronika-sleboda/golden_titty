@@ -4,24 +4,24 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.temples.CurrentTemple
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.temples.TempleName
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.temple_floors.CurrentTempleFloor
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.temple_floors.TempleFloorName
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
 
 object CurrentEntrance {
 
     const val TENT  = 0
     const val TEMPLE_OF_LATTER_DAY_VAGINA_RAPTURE = 1
-    const val TEMPLE_OF_GRAND_BOOTY = 2
-    const val TEMPLE_OF_TITTIES_AND_LEGS = 3
-    const val TEMPLE_OF_HOLY_NIPPLE_REVIVAL = 4
-    const val TEMPLE_OF_MONOTITTEISM = 5
-    const val TEMPLE_OF_END_TIMES_TWERK = 6
-    const val TEMPLE_OF_PUSSYCAT_PROPHET = 7
-    const val BOOMERANG_SHOP = 8
-    const val CAFETERIA = 9
-    const val UNIVERSITY = 10
-    const val CARRIAGE = 11
+    const val BOOMERANG_SHOP = 2
+    const val CAFETERIA = 3
+    const val UNIVERSITY = 4
+    const val CARRIAGE = 5
+    const val CAVE = 6
+    const val HUT = 7
+    const val CITY_COUNCIL = 8
+    const val BUNGALOW = 9
+    const val MAUSOLEUM = 10
+    const val LIBRARY = 11
 
     private val entrances = arrayOf(
 
@@ -42,118 +42,14 @@ object CurrentEntrance {
         Entrance(
             "Temple Of Latter Day Vagina Rapture",
             { IconFactory().pearlTittyDoor128() },
-            "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
+            "This is the place where the pearl titty artifacts are located. Enter each floor and destroy them.",
             "Enter",
             { true },
             {
 
-                CurrentTemple.changeTempleName(TempleName.LATTER_DAY_VAGINA_RAPTURE)
-
                 it.supportFragmentManager.commit {
 
-                    replace<SneakFragment>(R.id.world_container)
-                }
-            }
-        ),
-
-        Entrance(
-            "Temple Of Grand Booty",
-            { IconFactory().pearlTittyDoor128() },
-            "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
-            "Enter",
-            { true },
-            {
-
-                CurrentTemple.changeTempleName(TempleName.GRAND_BOOTY)
-
-                it.supportFragmentManager.commit {
-
-                    replace<SneakFragment>(R.id.world_container)
-                }
-            }
-        ),
-
-        Entrance(
-            "Temple Of Titties And Legs",
-            { IconFactory().pearlTittyDoor128() },
-            "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
-            "Enter",
-            { true },
-            {
-
-                CurrentTemple.changeTempleName(TempleName.TITTIES_AND_LEGS)
-
-                it.supportFragmentManager.commit {
-
-                    replace<SneakFragment>(R.id.world_container)
-                }
-            }
-        ),
-
-        Entrance(
-            "Temple Of Holy Nipple Revival",
-            { IconFactory().pearlTittyDoor128() },
-            "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
-            "Enter",
-            { true },
-            {
-
-                CurrentTemple.changeTempleName(TempleName.HOLY_NIPPLE_REVIVAL)
-
-                it.supportFragmentManager.commit {
-
-                    replace<SneakFragment>(R.id.world_container)
-                }
-            }
-        ),
-
-        Entrance(
-            "Temple Of Monotitteism",
-            { IconFactory().pearlTittyDoor128() },
-            "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
-            "Enter",
-            { true },
-            {
-
-                CurrentTemple.changeTempleName(TempleName.MONOTITTEISM)
-
-                it.supportFragmentManager.commit {
-
-                    replace<SneakFragment>(R.id.world_container)
-                }
-            }
-        ),
-
-        Entrance(
-            "Temple Of End Times Twerk",
-            { IconFactory().pearlTittyDoor128() },
-            "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
-            "Enter",
-            { true },
-            {
-
-                CurrentTemple.changeTempleName(TempleName.END_TIMES_TWERK)
-
-                it.supportFragmentManager.commit {
-
-                    replace<SneakFragment>(R.id.world_container)
-                }
-            }
-        ),
-
-        Entrance(
-            "Temple Of Pussycat Prophet",
-            { IconFactory().pearlTittyDoor128() },
-            "This is the place where you can find one of the pearl titty artifacts hanging on the wall.",
-            "Enter",
-            { true },
-            {
-
-                CurrentTemple.changeTempleName(TempleName.PUSSYCAT_PROPHET)
-
-                it.supportFragmentManager.commit {
-
-                    replace<SneakFragment>(R.id.world_container)
+                    replace<TempleFragment>(R.id.world_container)
                 }
             }
         ),
@@ -216,6 +112,107 @@ object CurrentEntrance {
                 it.supportFragmentManager.commit {
 
                     replace<CarriageFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+        Entrance(
+            "Cave",
+            { IconFactory().cave128() },
+            "It looks like the bandits are residing here.",
+            "Enter",
+            { true },
+            {
+
+                CurrentTempleFloor.changeFloor(TempleFloorName.FIRST_FLOOR)
+                it.supportFragmentManager.commit {
+
+                    replace<SneakFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+        Entrance(
+            "Hut",
+            { IconFactory().houseDoor128() },
+            "There are some people living here.",
+            "Enter",
+            { true },
+            {
+
+
+                CurrentTempleFloor.changeFloor(TempleFloorName.SECOND_FLOOR)
+                it.supportFragmentManager.commit {
+
+                    replace<SneakFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+        Entrance(
+            "City Council",
+            { IconFactory().houseDoor128() },
+            "The town is managed from this building.",
+            "Enter",
+            { true },
+            {
+
+
+                CurrentTempleFloor.changeFloor(TempleFloorName.THIRD_FLOOR)
+                it.supportFragmentManager.commit {
+
+                    replace<SneakFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+        Entrance(
+            "Bungalow",
+            { IconFactory().houseDoor128() },
+            "There are some people living here.",
+            "Enter",
+            { true },
+            {
+
+
+                CurrentTempleFloor.changeFloor(TempleFloorName.FOURTH_FLOOR)
+                it.supportFragmentManager.commit {
+
+                    replace<SneakFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+        Entrance(
+            "Mausoleum",
+            { IconFactory().houseDoor128() },
+            "The tombs of the saints of the pearl titty worshippers are located here.",
+            "Enter",
+            { true },
+            {
+
+
+                CurrentTempleFloor.changeFloor(TempleFloorName.FIFTH_FLOOR)
+                it.supportFragmentManager.commit {
+
+                    replace<SneakFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+        Entrance(
+            "Library",
+            { IconFactory().houseDoor128() },
+            "This is the place where you can read books.",
+            "Enter",
+            { true },
+            {
+
+
+                CurrentTempleFloor.changeFloor(TempleFloorName.SIXTH_FLOOR)
+                it.supportFragmentManager.commit {
+
+                    replace<SneakFragment>(R.id.world_container)
                 }
             }
         )

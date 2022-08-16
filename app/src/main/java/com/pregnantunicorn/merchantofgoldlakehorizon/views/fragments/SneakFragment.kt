@@ -16,6 +16,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.Cur
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.temple_floors.CurrentTempleFloor
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
@@ -92,7 +93,7 @@ class SneakFragment : Fragment() {
 
         if(binding.noiseProgressBar.progress >= 45) {
 
-            binding.successProgressBar.progress -= 40
+            binding.successProgressBar.progress = 0
 
             if(binding.successProgressBar.progress == 0) {
 
@@ -104,9 +105,6 @@ class SneakFragment : Fragment() {
 
                 showMessage()
 
-                CurrentBoomerangPlace.changeBoomerangPlace(
-                    BoomerangPlaceName.PEARL_TITTY_ALTAR)
-
                 goToWorldMap()
             }
         }
@@ -117,16 +115,22 @@ class SneakFragment : Fragment() {
 
             if (binding.successProgressBar.progress == 120) {
 
-                goToTittyFragment()
+                CurrentBoomerangPlace.changeBoomerangPlace(
+                    BoomerangPlaceName.PEARL_TITTY_ALTAR
+                )
+
+                CurrentTempleFloor.currentFloor().unlock()
+
+                CurrentMessage.changeMessage(
+                    "Congratulations!",
+                    R.drawable.stars64,
+                    "The temple floor has been unlocked."
+                )
+
+                showMessage()
+
+                goToWorldMap()
             }
-        }
-    }
-
-    private fun goToTittyFragment() {
-
-        activity?.supportFragmentManager?.commit {
-
-            replace<PearlTittyFragment>(R.id.world_container)
         }
     }
 

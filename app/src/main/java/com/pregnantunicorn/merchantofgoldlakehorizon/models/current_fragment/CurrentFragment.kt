@@ -27,6 +27,7 @@ object CurrentFragment {
             FragmentType.SLEEPING_BAG_FRAGMENT -> FragmentTransition().sleepingBagFragment(activity)
             FragmentType.SNEAK_FRAGMENT -> FragmentTransition().sneakFragment(activity)
             FragmentType.UNIVERSITY_FRAGMENT -> FragmentTransition().universityFragment(activity)
+            FragmentType.TEMPLE_FRAGMENT -> FragmentTransition().templeFragment(activity)
         }
     }
 }

@@ -14,6 +14,8 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.PalmFragmentBin
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.CurrentHandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.HandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangRangeAdapter

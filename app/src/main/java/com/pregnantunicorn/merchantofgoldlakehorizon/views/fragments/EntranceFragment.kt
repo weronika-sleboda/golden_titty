@@ -69,6 +69,8 @@ class EntranceFragment : Fragment() {
 
     private fun setupEnterButton() {
 
+        binding.enterButton.text = entrance?.buttonText
+
         binding.enterButton.setOnClickListener {
 
             CoroutineScope(Dispatchers.IO).launch {

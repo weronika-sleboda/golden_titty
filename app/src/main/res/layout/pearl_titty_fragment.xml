@@ -13,7 +13,7 @@
         android:gravity="center"
         android:textColor="@color/super_light_mystery"
         android:textSize="17sp"
-        android:text="Temple Of Latter Day Vagina Rapture"
+        android:text="@string/pearl_titty_altar"
         android:fontFamily="@font/raleway_medium"
         android:background="@drawable/dark_one_corner_rectangle_background"/>
 

@@ -6,6 +6,177 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 
 class IconFactory {
 
+    fun palace64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.palace64_morning }
+            DayCycle.SUNSET -> { R.drawable.palace64_sunset }
+            DayCycle.NIGHT -> { R.drawable.palace64_night }
+        }
+    }
+
+    fun statue64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.statue64_morning }
+            DayCycle.SUNSET -> { R.drawable.statue64_sunset }
+            DayCycle.NIGHT -> { R.drawable.statue64_night }
+        }
+    }
+
+    fun library64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.library64_morning }
+            DayCycle.SUNSET -> { R.drawable.library64_sunset }
+            DayCycle.NIGHT -> { R.drawable.library64_night }
+        }
+    }
+
+    fun mausoleum64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.mausoleum64_morning }
+            DayCycle.SUNSET -> { R.drawable.mausoleum64_sunset}
+            DayCycle.NIGHT -> { R.drawable.mausoleum64_night }
+        }
+    }
+
+    fun templeDoor64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.temple_door64_morning }
+            DayCycle.SUNSET -> { R.drawable.temple_door64_sunset }
+            DayCycle.NIGHT -> { R.drawable.temple_door64_night }
+        }
+    }
+
+    fun house64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.house64_morning }
+            DayCycle.SUNSET -> { R.drawable.house64_sunset }
+            DayCycle.NIGHT -> { R.drawable.house64_night }
+        }
+    }
+
+    fun bigBungalow64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.big_bungalow64_morning }
+            DayCycle.SUNSET -> { R.drawable.big_bungalow64_sunset }
+            DayCycle.NIGHT -> { R.drawable.big_bungalow64_night }
+        }
+    }
+
+    fun bungalow64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.bungalow64_morning }
+            DayCycle.SUNSET -> { R.drawable.bungalow64_sunset }
+            DayCycle.NIGHT -> { R.drawable.bungalow64_night }
+        }
+    }
+
+    fun saintFluffyGrave64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.saint_fluffy_grave64_morning }
+            DayCycle.SUNSET -> { R.drawable.saint_fluffy_grave64_sunset }
+            DayCycle.NIGHT -> { R.drawable.saint_fluffy_grave64_night }
+        }
+    }
+
+    fun saintFluffyGrave128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.saint_fluffy_grave128_morning }
+            DayCycle.SUNSET -> { R.drawable.saint_fluffy_grave128_sunset }
+            DayCycle.NIGHT -> { R.drawable.saint_fluffy_grave128_night }
+        }
+    }
+
+    fun handle64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.handle64_morning }
+            DayCycle.SUNSET -> { R.drawable.handle64_sunset }
+            DayCycle.NIGHT -> { R.drawable.handle64_night }
+        }
+    }
+
+    fun cave64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.cave64_morning }
+            DayCycle.SUNSET -> { R.drawable.cave64_sunset }
+            DayCycle.NIGHT -> { R.drawable.cave64_night }
+        }
+    }
+
+    fun bigHut64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.big_hut64_morning }
+            DayCycle.SUNSET -> { R.drawable.big_hut64_sunset }
+            DayCycle.NIGHT -> { R.drawable.big_hut64_night }
+        }
+    }
+
+    fun hut64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.hut64_morning }
+            DayCycle.SUNSET -> { R.drawable.hut64_sunset }
+            DayCycle.NIGHT -> { R.drawable.hut64_night }
+        }
+    }
+
+    fun datePalm64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.date_palm64_morning }
+            DayCycle.SUNSET -> { R.drawable.date_palm64_sunset }
+            DayCycle.NIGHT -> { R.drawable.date_palm64_night }
+        }
+    }
+
+    fun coconutPalm64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.coconut_palm64_morning }
+            DayCycle.SUNSET -> { R.drawable.coconut_palm64_sunset}
+            DayCycle.NIGHT -> { R.drawable.coconut_palm64_night}
+        }
+    }
+
+    fun peachPalm64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.peach_palm64_morning }
+            DayCycle.SUNSET -> { R.drawable.peach_palm64_sunset }
+            DayCycle.NIGHT -> { R.drawable.peach_palm64_night }
+        }
+    }
+
+
     fun pearlTittyTemple64(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
@@ -245,16 +416,6 @@ class IconFactory {
             DayCycle.MORNING -> { R.drawable.carriage256_morning}
             DayCycle.SUNSET -> { R.drawable.carriage256_sunset}
             DayCycle.NIGHT -> { R.drawable.carriage256_night}
-        }
-    }
-
-    fun cave64(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.cave64_morning}
-            DayCycle.SUNSET -> { R.drawable.cave64_sunset }
-            DayCycle.NIGHT -> { R.drawable.cave64_night }
         }
     }
 
