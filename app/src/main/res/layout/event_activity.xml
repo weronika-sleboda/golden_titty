@@ -15,12 +15,12 @@
 
         <TextView
             android:id="@+id/npc_name"
-            android:layout_width="300dp"
+            android:layout_width="340dp"
             android:layout_height="40dp"
             android:layout_gravity="start|center_horizontal"
             android:gravity="center"
             android:textColor="@color/super_light_mystery"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:fontFamily="@font/raleway_medium"
             android:background="@drawable/dark_one_corner_rectangle_background"/>
 

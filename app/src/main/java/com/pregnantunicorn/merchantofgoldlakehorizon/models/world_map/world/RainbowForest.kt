@@ -72,10 +72,10 @@ class RainbowForest : Location(
             )
 
 
-            it[11] = EntranceTile(
-                CurrentEntrance.CAVE,
+            it[11] = TittyTile(
                 { IconFactory().cave64() },
-                {BackgroundFactory().grass()}
+                {BackgroundFactory().grass()},
+                BoomerangPlaceName.PEARL_TITTY_ALTAR
             )
 
             it[12] = EmptyTile { BackgroundFactory().water()}

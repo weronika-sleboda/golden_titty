@@ -171,6 +171,7 @@ class BackpackFragment : Fragment(),
                 withContext(Dispatchers.Main) {
 
                     updateMerchantStatus()
+                    updateFood()
                 }
             }
 

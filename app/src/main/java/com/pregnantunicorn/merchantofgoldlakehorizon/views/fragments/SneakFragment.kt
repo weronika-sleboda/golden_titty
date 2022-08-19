@@ -99,7 +99,7 @@ class SneakFragment : Fragment() {
 
                 CurrentMessage.changeMessage(
                     "Pearl Titty Monk",
-                    R.drawable.goddess_nikita64,
+                    R.drawable.nikita64,
                     "Hey you there! Get out of here!"
                 )
 

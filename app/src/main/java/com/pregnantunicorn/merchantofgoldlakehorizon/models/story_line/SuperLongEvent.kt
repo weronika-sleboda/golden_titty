@@ -9,6 +9,8 @@ class SuperLongEvent(
     private val sixthLine: Act,
     private val seventhLine: Act,
     private val eightLine: Act,
+    private val ninthLine: Act,
+    private val tenthLine: Act
 
     ): Event()
 {
@@ -22,10 +24,10 @@ class SuperLongEvent(
 
     override fun eventLine(): Act {
 
-        if(counter == 9) {
+        if(counter == 11) {
 
             completeEvent()
-            counter = 9
+            counter = 11
         }
 
         return when(counter) {
@@ -36,8 +38,10 @@ class SuperLongEvent(
             4 -> fourthLine
             5 -> fifthLine
             6 -> sixthLine
-            7-> seventhLine
-            else -> { eightLine }
+            7 -> seventhLine
+            8 -> eightLine
+            9 -> ninthLine
+            else -> { tenthLine }
         }
     }
 }
