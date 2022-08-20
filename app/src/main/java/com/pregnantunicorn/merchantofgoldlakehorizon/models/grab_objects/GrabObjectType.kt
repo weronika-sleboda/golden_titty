@@ -1,6 +1,6 @@
-package com.pregnantunicorn.merchantofgoldlakehorizon.models.key_items
+package com.pregnantunicorn.merchantofgoldlakehorizon.models.grab_objects
 
-enum class KeyItemType {
+enum class GrabObjectType {
 
     FIRST_FLOOR,
     SECOND_FLOOR,

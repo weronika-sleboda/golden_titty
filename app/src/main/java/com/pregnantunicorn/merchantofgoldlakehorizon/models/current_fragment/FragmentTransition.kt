@@ -4,7 +4,6 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.BoomerangShopManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
 
 class FragmentTransition {
@@ -46,7 +45,7 @@ class FragmentTransition {
 
         activity.supportFragmentManager.commit {
 
-            replace<PearlTittyFragment>(R.id.world_container)
+            replace<MonkFragment>(R.id.world_container)
         }
     }
 

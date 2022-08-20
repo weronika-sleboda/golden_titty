@@ -1,14 +1,9 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.BoomerangPlaceName
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances.CurrentEntrance
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.Cafeteria
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.tiles.*
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.BoomerangShopFragment
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.PearlTittyFragment
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.SleepingBagFragment
 
 class PearlCoast : Location(
     "Pearl Coast", Array(16) { EmptyTile { BackgroundFactory().grass() } as Tile }

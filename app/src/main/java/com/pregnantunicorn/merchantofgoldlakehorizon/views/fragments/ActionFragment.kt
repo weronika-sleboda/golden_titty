@@ -78,11 +78,11 @@ class ActionFragment : Fragment() {
             showMessage()
 
             CurrentBoomerangPlace.changeBoomerangPlace(
-                BoomerangPlaceName.PEARL_TITTY_ALTAR)
+                BoomerangPlaceName.TEMPLE)
 
             activity?.supportFragmentManager?.commit {
 
-                replace<PearlTittyFragment>(R.id.world_container)
+                replace<MonkFragment>(R.id.world_container)
             }
         }
     }

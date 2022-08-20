@@ -1,59 +1,50 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.key_items
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.R
-
 object KeyItems {
 
-    private const val REVIVAL_STONE = 0
-    private const val YARN_BALL = 1
-    private const val SAINT_FLUFFY_RELIC = 2
-    private const val STAFF_OF_CATFIGHT = 3
-    private const val HOLY_TOILET_SCROLL = 4
-    private const val SINNER_STONING_STONE = 5
-    private const val ENGAGEMENT_RINGS = 6
+    private const val FIRST_FLOOR_KEY = 0
+    private const val SECOND_FLOOR_KEY = 1
+    private const val THIRD_FLOOR_KEY = 2
+    private const val FOURTH_FLOOR_KEY = 3
+    private const val FIFTH_FLOOR_KEY = 4
+    private const val SIXTH_FLOOR_KEY = 5
+    private const val FIFTH_SEVENTH_FLOOR_KEY = 6
 
     private var keyItems = arrayOf(
 
         KeyItem(
-            "Revival Stone",
-            R.drawable.revival_stone64,
-            KeyItemType.REVIVAL_STONE
+            "First Floor Key",
+            KeyItemType.FIRST_FLOOR
         ),
 
         KeyItem(
-            "Yarn Ball",
-            R.drawable.yarn_ball64,
-            KeyItemType.YARN_BALL
+            "Second Floor Key",
+            KeyItemType.SECOND_FLOOR
         ),
 
         KeyItem(
-            "Saint Fluffy Relic",
-            R.drawable.saint_fluffy_relic64,
-            KeyItemType.SAINT_FLUFFY_RELIC
+            "Third Floor Key",
+            KeyItemType.THIRD_FLOOR
         ),
 
         KeyItem(
-            "Staff Of Catfight",
-            R.drawable.fake_titty_damnation_staff64,
-            KeyItemType.STAFF_OF_CATFIGHT
+            "Fourth Floor Key",
+            KeyItemType.FOURTH_FLOOR
         ),
 
         KeyItem(
-            "Holy Toilet Scroll",
-            R.drawable.holy_toilet_paper_scroll64,
-            KeyItemType.HOLY_TOILET_SCROLL
+            "Fifth Floor Key",
+            KeyItemType.FIFTH_FLOOR
         ),
 
         KeyItem(
-            "Inquisitor Stone",
-            R.drawable.sinner_stoning_stone64,
-            KeyItemType.INQUISITOR_STONE
+            "Sixth Floor Key",
+            KeyItemType.SIXTH_FLOOR
         ),
 
         KeyItem(
-            "Engagement Rings",
-            R.drawable.engagement_rings64,
-            KeyItemType.ENGAGEMENT_RINGS
+            "Seventh Floor Key",
+            KeyItemType.SEVENTH_FLOOR
         ),
     )
 
@@ -63,13 +54,13 @@ object KeyItems {
 
         return when(keyItemType) {
 
-            KeyItemType.REVIVAL_STONE -> keyItems[REVIVAL_STONE]
-            KeyItemType.YARN_BALL -> keyItems[YARN_BALL]
-            KeyItemType.ENGAGEMENT_RINGS -> keyItems[ENGAGEMENT_RINGS]
-            KeyItemType.STAFF_OF_CATFIGHT-> keyItems[STAFF_OF_CATFIGHT]
-            KeyItemType.HOLY_TOILET_SCROLL -> keyItems[HOLY_TOILET_SCROLL]
-            KeyItemType.SAINT_FLUFFY_RELIC -> keyItems[SAINT_FLUFFY_RELIC]
-            KeyItemType.INQUISITOR_STONE -> keyItems[SINNER_STONING_STONE]
+            KeyItemType.FIRST_FLOOR -> keyItems[FIRST_FLOOR_KEY]
+            KeyItemType.SECOND_FLOOR -> keyItems[SECOND_FLOOR_KEY]
+            KeyItemType.THIRD_FLOOR -> keyItems[THIRD_FLOOR_KEY]
+            KeyItemType.FOURTH_FLOOR -> keyItems[FOURTH_FLOOR_KEY]
+            KeyItemType.FIFTH_FLOOR -> keyItems[FIFTH_FLOOR_KEY]
+            KeyItemType.SIXTH_FLOOR -> keyItems[SIXTH_FLOOR_KEY]
+            KeyItemType.SEVENTH_FLOOR-> keyItems[FIFTH_SEVENTH_FLOOR_KEY]
         }
     }
 }

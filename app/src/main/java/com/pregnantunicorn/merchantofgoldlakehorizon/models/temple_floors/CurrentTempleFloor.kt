@@ -1,5 +1,7 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.temple_floors
 
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.key_items.KeyItemType
+
 object CurrentTempleFloor {
 
     private const val FIRST_FLOOR = 0
@@ -12,13 +14,13 @@ object CurrentTempleFloor {
 
     private val floors = arrayOf(
 
-        TempleFloor("First Floor", TempleFloorName.FIRST_FLOOR),
-        TempleFloor("Second Floor", TempleFloorName.SECOND_FLOOR),
-        TempleFloor("Third Floor", TempleFloorName.THIRD_FLOOR),
-        TempleFloor("Fourth Floor", TempleFloorName.FOURTH_FLOOR),
-        TempleFloor("Fifth Floor", TempleFloorName.FIFTH_FLOOR),
-        TempleFloor("Sixth Floor", TempleFloorName.SIXTH_FLOOR),
-        TempleFloor("Seventh Floor", TempleFloorName.SEVENTH_FLOOR),
+        TempleFloor("First Floor", TempleFloorName.FIRST_FLOOR, KeyItemType.FIRST_FLOOR),
+        TempleFloor("Second Floor", TempleFloorName.SECOND_FLOOR, KeyItemType.SECOND_FLOOR),
+        TempleFloor("Third Floor", TempleFloorName.THIRD_FLOOR, KeyItemType.THIRD_FLOOR),
+        TempleFloor("Fourth Floor", TempleFloorName.FOURTH_FLOOR, KeyItemType.FOURTH_FLOOR),
+        TempleFloor("Fifth Floor", TempleFloorName.FIFTH_FLOOR, KeyItemType.FIFTH_FLOOR),
+        TempleFloor("Sixth Floor", TempleFloorName.SIXTH_FLOOR, KeyItemType.SIXTH_FLOOR),
+        TempleFloor("Seventh Floor", TempleFloorName.SEVENTH_FLOOR, KeyItemType.SEVENTH_FLOOR),
     )
 
     fun floors() = floors

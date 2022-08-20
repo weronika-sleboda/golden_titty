@@ -4,7 +4,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
 import kotlin.random.Random
 
-class EnchantedStylePearlTitty : BoomerangStyle() {
+class EnchantedStyleMonk : BoomerangStyle() {
 
     companion object {
 
@@ -14,7 +14,7 @@ class EnchantedStylePearlTitty : BoomerangStyle() {
     private var boomerangPosition1 = Random.nextInt(rangeSize)
     private var boomerangPosition2 = Random.nextInt(rangeSize)
 
-    override fun name() = "Pearl Titty Altar"
+    override fun name() = "Temple Of Latter Day Vagina Rapture"
 
     override fun range(): Array<BoomerangTile> {
 
@@ -38,7 +38,12 @@ class EnchantedStylePearlTitty : BoomerangStyle() {
         return false
     }
 
-    private val targetIcon = R.drawable.pearl_titty64
+    private val targetIcon = when(Random.nextInt(3)) {
+
+        0 -> R.drawable.enemy_monk64_black
+        1 -> R.drawable.enemy_monk64_white
+        else -> R.drawable.enemy_monk64_brown
+    }
 
     override fun newRange(boomerangIcon: Int): Array<BoomerangTile> {
 

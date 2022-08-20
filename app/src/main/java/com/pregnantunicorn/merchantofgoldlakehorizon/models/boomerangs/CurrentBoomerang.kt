@@ -36,7 +36,7 @@ object CurrentBoomerang {
                     BoomerangPlaceName.COCONUT_PALM -> ZigZagStyleCoconut()
                     BoomerangPlaceName.DATE_PALM -> ZigZagStyleDates()
                     BoomerangPlaceName.PEACH_PALM -> ZigZagStylePeach()
-                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> ZigZagStylePearlTitty()
+                    BoomerangPlaceName.TEMPLE -> ZigZagStyleMonk()
                 }
             },
             true
@@ -60,10 +60,10 @@ object CurrentBoomerang {
                     BoomerangPlaceName.COCONUT_PALM -> UnpredictableStyleCoconut()
                     BoomerangPlaceName.DATE_PALM -> UnpredictableStyleDates()
                     BoomerangPlaceName.PEACH_PALM -> UnpredictableStylePeach()
-                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> UnpredictableStylePearlTitty()
+                    BoomerangPlaceName.TEMPLE -> UnpredictableStyleMonk()
                 }
             },
-            true
+            false
         ),
 
         Boomerang(
@@ -84,10 +84,10 @@ object CurrentBoomerang {
                     BoomerangPlaceName.COCONUT_PALM -> ZigZagStyleCoconut()
                     BoomerangPlaceName.DATE_PALM -> ZigZagStyleDates()
                     BoomerangPlaceName.PEACH_PALM -> ZigZagStylePeach()
-                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> ZigZagStylePearlTitty()
+                    BoomerangPlaceName.TEMPLE -> ZigZagStyleMonk()
                 }
             },
-            true
+            false
         ),
 
         Boomerang(
@@ -108,7 +108,7 @@ object CurrentBoomerang {
                     BoomerangPlaceName.COCONUT_PALM -> ZigZagStyleCoconut()
                     BoomerangPlaceName.DATE_PALM -> ZigZagStyleDates()
                     BoomerangPlaceName.PEACH_PALM -> ZigZagStylePeach()
-                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> ZigZagStylePearlTitty()
+                    BoomerangPlaceName.TEMPLE -> ZigZagStyleMonk()
                 }
             }
         ),
@@ -131,7 +131,7 @@ object CurrentBoomerang {
                     BoomerangPlaceName.COCONUT_PALM -> UnpredictableStyleCoconut()
                     BoomerangPlaceName.DATE_PALM -> UnpredictableStyleDates()
                     BoomerangPlaceName.PEACH_PALM -> UnpredictableStylePeach()
-                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> UnpredictableStylePearlTitty()
+                    BoomerangPlaceName.TEMPLE -> UnpredictableStyleMonk()
                 }
             }
         ),
@@ -154,7 +154,7 @@ object CurrentBoomerang {
                     BoomerangPlaceName.COCONUT_PALM -> ZigZagStyleCoconut()
                     BoomerangPlaceName.DATE_PALM -> ZigZagStyleDates()
                     BoomerangPlaceName.PEACH_PALM -> ZigZagStylePeach()
-                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> ZigZagStylePearlTitty()
+                    BoomerangPlaceName.TEMPLE -> ZigZagStyleMonk()
                 }
             }
         ),
@@ -177,7 +177,7 @@ object CurrentBoomerang {
                     BoomerangPlaceName.COCONUT_PALM -> UnpredictableStyleCoconut()
                     BoomerangPlaceName.DATE_PALM -> UnpredictableStyleDates()
                     BoomerangPlaceName.PEACH_PALM -> UnpredictableStylePeach()
-                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> UnpredictableStylePearlTitty()
+                    BoomerangPlaceName.TEMPLE -> UnpredictableStyleMonk()
                 }
             }
         ),
@@ -200,7 +200,7 @@ object CurrentBoomerang {
                     BoomerangPlaceName.COCONUT_PALM -> EnchantedStyleCoconut()
                     BoomerangPlaceName.DATE_PALM -> EnchantedStyleDates()
                     BoomerangPlaceName.PEACH_PALM -> EnchantedStylePeach()
-                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> EnchantedStylePearlTitty()
+                    BoomerangPlaceName.TEMPLE -> EnchantedStyleMonk()
                 }
             }
         ),
@@ -226,7 +226,7 @@ object CurrentBoomerang {
                         BoomerangPlaceName.COCONUT_PALM -> EnchantedStyleCoconut()
                         BoomerangPlaceName.DATE_PALM -> EnchantedStyleDates()
                         BoomerangPlaceName.PEACH_PALM -> EnchantedStylePeach()
-                        BoomerangPlaceName.PEARL_TITTY_ALTAR -> EnchantedStylePearlTitty()
+                        BoomerangPlaceName.TEMPLE -> EnchantedStyleMonk()
                     }
 
                     1 -> when(CurrentBoomerangPlace.boomerangPlace()) {
@@ -234,7 +234,7 @@ object CurrentBoomerang {
                         BoomerangPlaceName.COCONUT_PALM -> UnpredictableStyleCoconut()
                         BoomerangPlaceName.DATE_PALM -> UnpredictableStyleDates()
                         BoomerangPlaceName.PEACH_PALM -> UnpredictableStylePeach()
-                        BoomerangPlaceName.PEARL_TITTY_ALTAR -> UnpredictableStylePearlTitty()
+                        BoomerangPlaceName.TEMPLE -> UnpredictableStyleMonk()
                     }
 
                     else -> {
@@ -244,7 +244,7 @@ object CurrentBoomerang {
                             BoomerangPlaceName.COCONUT_PALM -> ZigZagStyleCoconut()
                             BoomerangPlaceName.DATE_PALM -> ZigZagStyleDates()
                             BoomerangPlaceName.PEACH_PALM -> ZigZagStylePeach()
-                            BoomerangPlaceName.PEARL_TITTY_ALTAR -> ZigZagStylePearlTitty()
+                            BoomerangPlaceName.TEMPLE -> ZigZagStyleMonk()
                         }
                     }
 
@@ -270,7 +270,7 @@ object CurrentBoomerang {
                     BoomerangPlaceName.COCONUT_PALM -> UnpredictableStyleCoconut()
                     BoomerangPlaceName.DATE_PALM -> UnpredictableStyleDates()
                     BoomerangPlaceName.PEACH_PALM -> UnpredictableStylePeach()
-                    BoomerangPlaceName.PEARL_TITTY_ALTAR -> UnpredictableStylePearlTitty()
+                    BoomerangPlaceName.TEMPLE -> UnpredictableStyleMonk()
                 }
             }
         ),

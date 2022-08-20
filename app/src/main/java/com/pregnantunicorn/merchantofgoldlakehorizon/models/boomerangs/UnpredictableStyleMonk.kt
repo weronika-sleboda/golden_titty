@@ -2,27 +2,28 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs
 
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
+import kotlin.random.Random
 
-class ZigZagStylePearlTitty : BoomerangStyle() {
+class UnpredictableStyleMonk : BoomerangStyle() {
 
     companion object {
 
-        private var hitPosition = 2
-        private var boomerangPosition = 0
+        private var hitPosition = 1
     }
 
-    override fun name() = "Pearl Titty Altar"
+    private var boomerangPosition = Random.nextInt(rangeSize)
+
+    override fun name() = "Temple Of Latter Day Vagina Rapture"
 
     override fun range(): Array<BoomerangTile> {
 
-        return Array(rangeSize){ BoomerangTile(background = {BackgroundFactory().divineFloor()}) }.also {
+        return Array(rangeSize) { BoomerangTile(background = {BackgroundFactory().divineFloor()}) }.also {
 
             it[hitPosition] = BoomerangTile(
                 background = {BackgroundFactory().divineFloor()},
                 targetIsVisible = true,
                 targetIcon = targetIcon,
             )
-
         }
     }
 
@@ -36,29 +37,26 @@ class ZigZagStylePearlTitty : BoomerangStyle() {
         return false
     }
 
-    private val targetIcon = R.drawable.pearl_titty64
+    private val targetIcon = when(Random.nextInt(3)) {
+
+        0 -> R.drawable.enemy_monk64_black
+        1 -> R.drawable.enemy_monk64_white
+        else -> R.drawable.enemy_monk64_brown
+    }
 
     override fun newRange(boomerangIcon: Int): Array<BoomerangTile> {
 
-        return Array(rangeSize) { BoomerangTile(background = {BackgroundFactory().divineFloor()})}.also {
+        return Array(rangeSize) { BoomerangTile(background = {BackgroundFactory().divineFloor()}) }.also {
 
+            hitPosition++
 
-            hitPosition--
-
-            if(hitPosition == 0) { hitPosition = 2 }
+            if(hitPosition == 3) { hitPosition = 1 }
 
             it[hitPosition] = BoomerangTile(
                 background = {BackgroundFactory().divineFloor()},
                 targetIsVisible = true,
                 targetIcon = targetIcon,
             )
-
-            boomerangPosition++
-
-            if(boomerangPosition >= rangeSize) {
-
-                boomerangPosition = 0
-            }
 
             if(boomerangPosition == hitPosition) {
 

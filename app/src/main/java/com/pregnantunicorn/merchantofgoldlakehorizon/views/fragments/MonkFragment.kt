@@ -1,5 +1,6 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,7 @@ import androidx.fragment.app.replace
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
-import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.PearlTittyFragmentBinding
+import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.MonkFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
@@ -18,15 +19,17 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.CurrentHa
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.HandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.story_line.EventFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.temple_floors.CurrentTempleFloor
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.activities.EventActivity
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangRangeAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 
-class PearlTittyFragment: Fragment() {
+class MonkFragment: Fragment() {
 
-    private lateinit var binding: PearlTittyFragmentBinding
+    private lateinit var binding: MonkFragmentBinding
     private lateinit var adapter: BoomerangRangeAdapter
     private lateinit var layoutManager: GridLayoutManager
     private var boomerang: Boomerang? = CurrentBoomerang.boomerang()
@@ -40,7 +43,7 @@ class PearlTittyFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = PearlTittyFragmentBinding.inflate(inflater, container, false)
+        binding = MonkFragmentBinding.inflate(inflater, container, false)
 
         CoroutineScope(Dispatchers.IO).launch {
 
@@ -64,7 +67,9 @@ class PearlTittyFragment: Fragment() {
 
     private fun defineMaxProgress() {
 
-        binding.destruction.max = 10
+        val health = 10
+        binding.enemyHealth.max = health
+        binding.enemyHealth.progress = health
     }
 
     private fun updateRange(range: Array<BoomerangTile>) {
@@ -141,31 +146,34 @@ class PearlTittyFragment: Fragment() {
 
                             withContext(Dispatchers.Main) {
 
-                                binding.destruction.progress += boomerang?.power!!.invoke()
+                                binding.enemyHealth.progress -= boomerang?.power!!.invoke()
 
                                 updateMerchantStatus()
 
-                                if(binding.destruction.progress == 10) {
+                                if(binding.enemyHealth.progress == 0) {
 
                                     Player.tittyCounter().addTitty()
                                     updateMerchantStatus()
 
                                     CurrentTempleFloor.currentFloor().conquer()
 
-                                    CurrentMessage.changeMessage(
-                                        "Titty Destroyed",
-                                        R.drawable.stars64,
-                                        "Heretic titty has been destroyed."
-                                    )
-
-                                    showMessage()
-
-                                    activity?.supportFragmentManager?.commit {
-
-                                        replace<LocationFragment>(R.id.world_container)
-                                    }
+                                    val intent = Intent(context, EventActivity::class.java)
+                                    startActivity(intent)
                                 }
                             }
+                        }
+
+                        else {
+
+                            Player.health().loseAmount(1)
+
+                            CurrentMessage.changeMessage(
+                                "Damage",
+                                R.drawable.stars64,
+                                "You have been hit by the enemy."
+                            )
+
+                            showMessage()
                         }
                     }
                 }

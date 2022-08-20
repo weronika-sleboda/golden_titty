@@ -67,7 +67,7 @@ class EventActivity : AppCompatActivity() {
 
         EventFactory.increaseProgress()
 
-        val intent = Intent(baseContext, EventActivity::class.java)
+        val intent = Intent(baseContext, WorldActivity::class.java)
         startActivity(intent)
     }
 

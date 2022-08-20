@@ -1,15 +1,10 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.BoomerangPlaceName
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances.CurrentEntrance
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.shops.Cafeteria
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.tiles.*
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.BoomerangShopFragment
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.PearlTittyFragment
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.SleepingBagFragment
 
 class RainbowForest : Location(
     "Rainbow Forest", Array(16) { EmptyTile { BackgroundFactory().grass() } as Tile }
@@ -72,10 +67,10 @@ class RainbowForest : Location(
             )
 
 
-            it[11] = TittyTile(
+            it[11] = EntranceTile(
+                CurrentEntrance.CAVE,
                 { IconFactory().cave64() },
-                {BackgroundFactory().grass()},
-                BoomerangPlaceName.PEARL_TITTY_ALTAR
+                {BackgroundFactory().grass()}
             )
 
             it[12] = EmptyTile { BackgroundFactory().water()}

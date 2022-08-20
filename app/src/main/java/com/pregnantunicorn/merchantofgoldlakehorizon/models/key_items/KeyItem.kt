@@ -1,12 +1,15 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.key_items
 
+import com.pregnantunicorn.merchantofgoldlakehorizon.R
+
 class KeyItem(
     val name: String,
-    val icon: Int,
     private val keyItemType: KeyItemType
 )
 {
-    private var owns = true
+    val icon = R.drawable.key64
+
+    private var owns = false
 
     fun owns() = owns
 

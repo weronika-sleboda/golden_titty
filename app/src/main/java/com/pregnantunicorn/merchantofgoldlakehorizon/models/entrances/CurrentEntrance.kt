@@ -3,6 +3,8 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.grab_objects.CurrentGrabObject
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.grab_objects.GrabObjectType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.temple_floors.CurrentTempleFloor
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.temple_floors.TempleFloorName
@@ -22,6 +24,7 @@ object CurrentEntrance {
     const val BUNGALOW = 9
     const val MAUSOLEUM = 10
     const val LIBRARY = 11
+    const val SECRET_GATE = 12
 
     private val entrances = arrayOf(
 
@@ -42,7 +45,7 @@ object CurrentEntrance {
         Entrance(
             "Temple Of Latter Day Vagina Rapture",
             { IconFactory().pearlTittyDoor128() },
-            "This is the place where the pearl titty artifacts are located. Enter each floor and destroy them.",
+            "This is the place where the the Golden Titty is located. Clear each floor and abduct the titty.",
             "Enter",
             { true },
             {
@@ -86,10 +89,10 @@ object CurrentEntrance {
 
 
         Entrance(
-            "University",
-            { IconFactory().houseDoor128() },
-            "This is the place where you can upgrade your health, accuracy, agility and stealth.",
-            "Enter",
+            "Camp Fire",
+            { IconFactory().campFire128() },
+            "This is the place where you can upgrade your health, accuracy, agility and stealth for gold coins.",
+            "Approach",
             { true },
             {
 
@@ -124,7 +127,8 @@ object CurrentEntrance {
             { true },
             {
 
-                CurrentTempleFloor.changeFloor(TempleFloorName.FIRST_FLOOR)
+                CurrentGrabObject.changeGrabObject(GrabObjectType.FIRST_FLOOR)
+
                 it.supportFragmentManager.commit {
 
                     replace<SneakFragment>(R.id.world_container)
@@ -141,7 +145,8 @@ object CurrentEntrance {
             {
 
 
-                CurrentTempleFloor.changeFloor(TempleFloorName.SECOND_FLOOR)
+                CurrentGrabObject.changeGrabObject(GrabObjectType.SECOND_FLOOR)
+
                 it.supportFragmentManager.commit {
 
                     replace<SneakFragment>(R.id.world_container)
@@ -158,7 +163,8 @@ object CurrentEntrance {
             {
 
 
-                CurrentTempleFloor.changeFloor(TempleFloorName.THIRD_FLOOR)
+                CurrentGrabObject.changeGrabObject(GrabObjectType.THIRD_FLOOR)
+
                 it.supportFragmentManager.commit {
 
                     replace<SneakFragment>(R.id.world_container)
@@ -175,7 +181,8 @@ object CurrentEntrance {
             {
 
 
-                CurrentTempleFloor.changeFloor(TempleFloorName.FOURTH_FLOOR)
+                CurrentGrabObject.changeGrabObject(GrabObjectType.FOURTH_FLOOR)
+
                 it.supportFragmentManager.commit {
 
                     replace<SneakFragment>(R.id.world_container)
@@ -192,7 +199,8 @@ object CurrentEntrance {
             {
 
 
-                CurrentTempleFloor.changeFloor(TempleFloorName.FIFTH_FLOOR)
+                CurrentGrabObject.changeGrabObject(GrabObjectType.FIFTH_FLOOR)
+
                 it.supportFragmentManager.commit {
 
                     replace<SneakFragment>(R.id.world_container)
@@ -209,7 +217,25 @@ object CurrentEntrance {
             {
 
 
-                CurrentTempleFloor.changeFloor(TempleFloorName.SIXTH_FLOOR)
+                CurrentGrabObject.changeGrabObject(GrabObjectType.SIXTH_FLOOR)
+
+                it.supportFragmentManager.commit {
+
+                    replace<SneakFragment>(R.id.world_container)
+                }
+            }
+        ),
+
+        Entrance(
+            "Secret Gate",
+            { IconFactory().houseDoor128() },
+            "???",
+            "Enter",
+            { true },
+            {
+
+                CurrentGrabObject.changeGrabObject(GrabObjectType.SEVENTH_FLOOR)
+
                 it.supportFragmentManager.commit {
 
                     replace<SneakFragment>(R.id.world_container)

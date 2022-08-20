@@ -13,7 +13,7 @@
         android:gravity="center"
         android:textColor="@color/super_light_mystery"
         android:textSize="17sp"
-        android:text="@string/pearl_titty_altar"
+        android:text="@string/temple_of_latter_day_vagina_rapture"
         android:fontFamily="@font/raleway_medium"
         android:background="@drawable/dark_one_corner_rectangle_background"/>
 
@@ -37,14 +37,14 @@
         android:textColor="@color/extreme_dark_mystery"
         android:textSize="16sp"
         android:fontFamily="@font/raleway_bold"
-        android:text="@string/destruction"
+        android:text="@string/enemy_s_health"
         android:textAllCaps="true"
         android:background="@color/mystery"/>
 
     <ProgressBar
-        android:id="@+id/destruction"
+        android:id="@+id/enemy_health"
         style="?android:attr/progressBarStyleHorizontal"
-        android:progressDrawable="@drawable/red_progress_bar_background"
+        android:progressDrawable="@drawable/green_progress_bar_background"
         android:layout_width="match_parent"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"

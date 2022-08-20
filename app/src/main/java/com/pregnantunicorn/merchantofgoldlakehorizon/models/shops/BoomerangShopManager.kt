@@ -8,6 +8,35 @@ class BoomerangShopManager {
     private val shop = arrayOf(
 
         BoomerangShopItem(
+            "Nomad",
+            R.drawable.nomad_boomerang64,
+            "Required accuracy: 3",
+            "Speed: Normal",
+            "Style: Unpredictable",
+            "Hits: 2",
+            "Power: 1",
+            150
+        )
+        {
+            (CurrentBoomerang.boomerangs[CurrentBoomerang.NOMAD].addToBackpack())
+        },
+
+        BoomerangShopItem(
+            "Butterfly",
+            R.drawable.butterfly_boomerang64,
+            "Required accuracy: 3",
+            "Speed: Normal",
+            "Style: Zig Zag",
+            "Hits: 1",
+            "Power: 1",
+            80
+        )
+        {
+            (CurrentBoomerang.boomerangs[CurrentBoomerang.BUTTERFLY].addToBackpack())
+        },
+
+
+        BoomerangShopItem(
             "Pilgrim",
             R.drawable.pilgrim_boomerang64,
             "Required accuracy: 2",
@@ -72,24 +101,34 @@ class BoomerangShopManager {
 
         val boomerangs = CurrentBoomerang.boomerangs
 
-        if(!boomerangs[CurrentBoomerang.PILGRIM].owns()) {
+        if(!boomerangs[CurrentBoomerang.NOMAD].owns()) {
 
             shopItems.add(shop[0])
         }
 
-        if(!boomerangs[CurrentBoomerang.BANDIT].owns()) {
+        if(!boomerangs[CurrentBoomerang.BUTTERFLY].owns()) {
 
             shopItems.add(shop[1])
         }
 
-        if(!boomerangs[CurrentBoomerang.WARRIOR].owns()) {
+        if(!boomerangs[CurrentBoomerang.PILGRIM].owns()) {
 
             shopItems.add(shop[2])
         }
 
-        if(!boomerangs[CurrentBoomerang.SEDUCER].owns()) {
+        if(!boomerangs[CurrentBoomerang.BANDIT].owns()) {
 
             shopItems.add(shop[3])
+        }
+
+        if(!boomerangs[CurrentBoomerang.WARRIOR].owns()) {
+
+            shopItems.add(shop[4])
+        }
+
+        if(!boomerangs[CurrentBoomerang.SEDUCER].owns()) {
+
+            shopItems.add(shop[5])
         }
 
         return shopItems

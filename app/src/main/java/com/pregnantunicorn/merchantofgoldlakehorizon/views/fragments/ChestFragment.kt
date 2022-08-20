@@ -12,6 +12,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ChestFragmentBinding
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.grab_objects.GrabObject
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
@@ -67,9 +68,11 @@ class ChestFragment : Fragment() {
                 else -> binding.firstSwitch.isChecked && !binding.secondSwitch.isChecked
             }
 
-            if(Player.stealth().hasAmount(2)) {
+            val stealth = 1
 
-                Player.stealth().loseAmount(2)
+            if(Player.stealth().hasAmount(stealth)) {
+
+                Player.stealth().loseAmount(stealth)
                 val status = requireActivity() as PlayerStatusUpdate
                 status.updateStealth()
 
@@ -77,7 +80,7 @@ class ChestFragment : Fragment() {
 
                     activity?.supportFragmentManager?.commit {
 
-                        replace<LocationFragment>(R.id.world_container)
+                        replace<GrabObjectFragment>(R.id.world_container)
                     }
                 }
 
@@ -92,7 +95,20 @@ class ChestFragment : Fragment() {
                     showMessage()
                 }
             }
+
+            else {
+
+                CurrentMessage.changeMessage(
+                    "No Stealth",
+                    R.drawable.stealth64,
+                    "You don't have enough stealth to perform this action."
+                )
+
+                showMessage()
+            }
         }
+
+
     }
 
     private fun showMessage() {

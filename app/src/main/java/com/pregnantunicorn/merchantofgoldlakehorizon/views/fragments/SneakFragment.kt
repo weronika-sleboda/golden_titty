@@ -115,21 +115,10 @@ class SneakFragment : Fragment() {
 
             if (binding.successProgressBar.progress == 120) {
 
-                CurrentBoomerangPlace.changeBoomerangPlace(
-                    BoomerangPlaceName.PEARL_TITTY_ALTAR
-                )
+                activity?.supportFragmentManager?.commit {
 
-                CurrentTempleFloor.currentFloor().unlock()
-
-                CurrentMessage.changeMessage(
-                    "Congratulations!",
-                    R.drawable.stars64,
-                    "The temple floor has been unlocked."
-                )
-
-                showMessage()
-
-                goToWorldMap()
+                    replace<ChestFragment>(R.id.world_container)
+                }
             }
         }
     }

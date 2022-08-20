@@ -5,12 +5,18 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.CurrentHandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.HandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.key_items.CurrentKeyItem
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.key_items.KeyItem
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.key_items.KeyItemType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.ActionFragment
 
 class TempleFloor(
     val name: String,
-    private val templeFloorName: TempleFloorName
+    private val templeFloorName: TempleFloorName,
+    private val requiredKeyItem: KeyItemType
 )
 {
     fun state(): String {
@@ -26,11 +32,6 @@ class TempleFloor(
     private var isLocked = true
     fun isLocked() = isLocked
 
-    fun unlock() {
-
-        isLocked = false
-    }
-
     fun conquer() {
 
         isConquered = true
@@ -40,7 +41,8 @@ class TempleFloor(
 
     fun open(fragmentActivity: FragmentActivity): Boolean {
 
-        if(!isLocked) {
+        if(CurrentHandState.handState() == HandState.KEY_ITEM
+            && CurrentKeyItem.keyItemType() == requiredKeyItem) {
 
             CurrentTempleFloor.changeFloor(templeFloorName)
 
@@ -55,7 +57,7 @@ class TempleFloor(
         CurrentMessage.changeMessage(
             "Locked",
             R.drawable.padlock64,
-            "The door is locked."
+            "The door is locked. You need to have a key."
         )
 
         return false
