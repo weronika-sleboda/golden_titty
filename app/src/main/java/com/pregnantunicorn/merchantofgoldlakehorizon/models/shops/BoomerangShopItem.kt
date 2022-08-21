@@ -22,19 +22,6 @@ class BoomerangShopItem(
 
     fun buy(): Boolean {
 
-        if(Player.goldCoins().hasAmount(price)) {
-
-            Player.goldCoins().loseAmount(price)
-            algorithm.invoke()
-
-            CurrentMessage.changeMessage(
-                "$name Acquired", icon,
-                "$name has been acquired."
-            )
-
-            return true
-        }
-
         CurrentMessage.changeMessage(
             "Too Expensive", R.drawable.gold_coin_64,
             "You don't have enough golden coins."

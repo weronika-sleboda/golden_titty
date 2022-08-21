@@ -11,14 +11,14 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.PalmFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.*
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.CurrentHandState
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.HandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.CurrentHandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.HandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangRangeAdapter
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.PalmAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
@@ -26,10 +26,10 @@ import kotlinx.coroutines.*
 class PalmFragment: Fragment() {
 
     private lateinit var binding: PalmFragmentBinding
-    private lateinit var adapter: BoomerangRangeAdapter
+    private lateinit var adapter: PalmAdapter
     private lateinit var layoutManager: GridLayoutManager
-    private var boomerang: Boomerang? = CurrentBoomerang.boomerang()
-    private var boomerangStyle: BoomerangStyle? = CurrentBoomerang.boomerang().boomerangStyle.invoke()
+    private var boomerang: Boomerang? = Boomerang()
+    private var palm: Palm? = boomerang?.palm()
 
     private var job: Job? = null
 
@@ -47,30 +47,23 @@ class PalmFragment: Fragment() {
         }
 
         updateName()
-        updateRange(boomerangStyle?.range()!!)
+        updateRange(palm?.range()!!)
         setupLeaveButton()
         setupFab()
         setupInfoButton()
-        setupRequiredAccuracyToString()
         setupFab()
 
         return binding.root
     }
 
-
-    private fun setupRequiredAccuracyToString() {
-
-        binding.info.requiredAccuracy.text = boomerang?.requiredAccuracy.toString()
-    }
-
     private fun updateName() {
 
-        binding.name.text = boomerangStyle?.name()
+        binding.name.text = palm?.name()
     }
 
-    private fun updateRange(range: Array<BoomerangTile>) {
+    private fun updateRange(range: Array<PalmTile>) {
 
-        adapter = BoomerangRangeAdapter(range)
+        adapter = PalmAdapter(range)
         layoutManager = GridLayoutManager(context, 4)
         binding.boomerangTileRecycler.adapter = adapter
         binding.boomerangTileRecycler.layoutManager = layoutManager
@@ -95,24 +88,26 @@ class PalmFragment: Fragment() {
 
                 if(job == null) {
 
-                    if(Player.accuracy().hasAmount(boomerang?.requiredAccuracy!!)) {
+                    val accuracy = 1
+
+                    if(Player.accuracy().hasAmount(accuracy)) {
 
                         fab.setImageResource(R.drawable.grab64)
-                        Player.accuracy().loseAmount(boomerang?.requiredAccuracy!!)
+                        Player.accuracy().loseAmount(accuracy)
                         updateMerchantStatus()
 
                         job = CoroutineScope(Dispatchers.IO).launch {
 
                             while(true) {
 
-                                boomerangStyle = CurrentBoomerang.boomerang().boomerangStyle.invoke()
+                                palm = boomerang?.palm()
 
                                 withContext(Dispatchers.Main) {
 
-                                    updateRange(boomerangStyle?.newRange(boomerang?.icon!!)!!)
+                                    updateRange(palm?.newRange(boomerang?.icon()!!)!!)
                                 }
 
-                                delay(boomerang?.speed?.invoke()!!)
+                                delay(boomerang?.speed!!)
                             }
                         }
                     }
@@ -138,11 +133,11 @@ class PalmFragment: Fragment() {
 
                         withContext(Dispatchers.Main) {
 
-                            fab.setImageResource(boomerang?.icon!!)
-                            updateRange(boomerangStyle?.range()!!)
+                            fab.setImageResource(boomerang?.icon()!!)
+                            updateRange(palm?.range()!!)
                         }
 
-                        if(boomerangStyle?.checkHitCondition(boomerang?.hitAmount?.invoke()!!)!!)
+                        if(palm?.checkHitCondition() == true)
                         {
 
                             withContext(Dispatchers.Main) {
@@ -202,7 +197,7 @@ class PalmFragment: Fragment() {
         job = null
 
         boomerang = null
-        boomerangStyle = null
+        palm = null
 
         super.onDestroy()
     }

@@ -33,7 +33,7 @@
         android:textColor="@color/super_light_mystery"
         android:textSize="17sp"
         android:background="@drawable/tab_background"
-        android:text="@string/boomerangs"/>
+        android:text="@string/tools"/>
 
     <TextView
         android:id="@+id/items_tab"

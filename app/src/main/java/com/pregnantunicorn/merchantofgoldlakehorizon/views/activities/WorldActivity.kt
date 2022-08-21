@@ -6,7 +6,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.WorldActivityBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.CurrentHandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.CurrentHandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
@@ -27,8 +27,8 @@ class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
         updateAccuracy()
         updateAgility()
         updateStealth()
-        updateTittyCounter()
-        updateGoldCoins()
+        updateStone()
+        updateWood()
 
         updateDates()
         updateCoconuts()
@@ -146,14 +146,14 @@ class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
         binding.resources.peaches.text = Player.peaches().amountToString()
     }
 
-    override fun updateTittyCounter() {
+    override fun updateStone() {
 
-        binding.merchant.tittyCounter.text = Player.tittyCounter().tittyCounterToString()
+        binding.merchant.stone.text = Player.stone().amountToString()
     }
 
-    override fun updateGoldCoins() {
+    override fun updateWood() {
 
-        binding.merchant.goldenCoins.text = Player.goldCoins().amountToString()
+        binding.merchant.wood.text = Player.wood().amountToString()
     }
 
     override fun onBackPressed() {}

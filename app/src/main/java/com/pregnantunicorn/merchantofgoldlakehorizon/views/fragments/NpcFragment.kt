@@ -79,7 +79,7 @@ class NpcFragment : Fragment() {
     private fun updateMerchantGold() {
 
         val statusUpdate = requireActivity() as PlayerStatusUpdate
-        statusUpdate.updateGoldCoins()
+
     }
 
     private fun setupBefriendButton() {

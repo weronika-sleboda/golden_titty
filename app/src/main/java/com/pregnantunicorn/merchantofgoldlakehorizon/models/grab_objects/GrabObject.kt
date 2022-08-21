@@ -1,8 +1,19 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.grab_objects
 
-data class GrabObject(
+class GrabObject(
     val name: String,
     val icon: Int,
     val info: String,
-    val grabAlgorithm: () -> Unit,
+    private val grabAlgorithm: () -> Unit,
 )
+{
+
+    private var isLooted = false
+    fun isLooted() = isLooted
+
+    fun grab() {
+
+        grabAlgorithm.invoke()
+        isLooted = true
+    }
+}

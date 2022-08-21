@@ -154,4 +154,19 @@
     <string name="temple_of_latter_day_vagina_rapture">Temple Of Latter Day Vagina Rapture</string>
     <string name="enemy_s_health">Enemy\'s Health</string>
     <string name="skills">Skills</string>
+    <string name="tool_icon_cd">tool_icon_cd</string>
+    <string name="lift_icon_cd">lift_icon_cd</string>
+    <string name="dig_icon_cd">dig_icon_cd</string>
+    <string name="smash_icon_cd">smash_icon_cd</string>
+    <string name="stone_icon_cd" />
+    <string name="wood_icon_cd">wood_icon_cd</string>
+    <string name="cave">Cave</string>
+    <string name="tools">Tools</string>
+    <string name="palm">Palm</string>
+    <string name="wood_palm_icon_cd">wood_palm_icon_cd</string>
+    <string name="power">Power</string>
+    <string name="successful_cut">Successful Cut</string>
+    <string name="cut">Cut</string>
+    <string name="take_a_swing">Take a swing</string>
+    <string name="sleeping_bag">Sleeping Bag</string>
 </resources>

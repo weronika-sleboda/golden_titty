@@ -15,8 +15,7 @@
         android:layout_gravity="start|center_horizontal"
         android:gravity="center"
         android:textColor="@color/super_light_mystery"
-        android:textSize="15sp"
-        android:textAllCaps="true"
+        android:textSize="18sp"
         android:fontFamily="@font/raleway_medium"
         android:background="@drawable/dark_one_corner_rectangle_background"/>
 

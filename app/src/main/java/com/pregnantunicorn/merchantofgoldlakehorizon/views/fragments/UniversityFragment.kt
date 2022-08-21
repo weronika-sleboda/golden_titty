@@ -60,7 +60,6 @@ class UniversityFragment : Fragment(), UniversityAdapter.UniversityListener {
     private fun updateMerchantStatus() {
 
         val status = requireActivity() as PlayerStatusUpdate
-        status.updateGoldCoins()
         status.updateHealth()
         status.updateAccuracy()
         status.updateAgility()

@@ -8,15 +8,6 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
 
 class FragmentTransition {
 
-    fun templeFragment(activity: FragmentActivity) {
-
-        activity.supportFragmentManager.commit {
-
-            replace<TempleFragment>(R.id.world_container)
-        }
-    }
-
-
     fun locationFragment(activity: FragmentActivity) {
 
         activity.supportFragmentManager.commit {
@@ -29,7 +20,7 @@ class FragmentTransition {
 
         activity.supportFragmentManager.commit {
 
-            replace<SneakFragment>(R.id.world_container)
+            replace<AxeFragment>(R.id.world_container)
         }
     }
 
@@ -37,15 +28,7 @@ class FragmentTransition {
 
         activity.supportFragmentManager.commit {
 
-            replace<ActionFragment>(R.id.world_container)
-        }
-    }
-
-    fun pearlTittyFragment(activity: FragmentActivity) {
-
-        activity.supportFragmentManager.commit {
-
-            replace<MonkFragment>(R.id.world_container)
+            replace<HammerFragment>(R.id.world_container)
         }
     }
 
@@ -57,21 +40,6 @@ class FragmentTransition {
         }
     }
 
-    fun carriageFragment(activity: FragmentActivity) {
-
-        activity.supportFragmentManager.commit {
-
-            replace<CarriageFragment>(R.id.world_container)
-        }
-    }
-
-    fun boomerangShopFragment(activity: FragmentActivity) {
-
-        activity.supportFragmentManager.commit {
-
-            replace<BoomerangShopFragment>(R.id.world_container)
-        }
-    }
 
     fun cafeteriaFragment(activity: FragmentActivity) {
 

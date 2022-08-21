@@ -2,14 +2,13 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world
 
 object CurrentLocation {
 
-    private var location: LocationName = LocationName.RAINBOW_FOREST
+    private var location: LocationName = LocationName.SLEAZEHOLE_ISLAND
 
     fun location(): Location {
 
         return when(location) {
 
-            LocationName.RAINBOW_FOREST -> RainbowForest()
-            LocationName.PEARL_COAST -> PearlCoast()
+            LocationName.SLEAZEHOLE_ISLAND -> SleazeholeIsland()
         }
     }
 

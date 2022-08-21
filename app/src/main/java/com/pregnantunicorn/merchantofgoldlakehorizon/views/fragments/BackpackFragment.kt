@@ -9,15 +9,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
 import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.BackpackFragmentBinding
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.boomerangs.*
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.*
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.food.Food
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.food.FoodManager
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.CurrentHandState
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.hand_state.HandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.CurrentHandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.HandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.key_items.KeyItem
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.key_items.KeyItemManager
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
-import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.BoomerangAdapter
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.ToolsAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.FoodAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.adapters.KeyItemAdapter
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
@@ -29,17 +29,17 @@ import kotlinx.coroutines.withContext
 
 class BackpackFragment : Fragment(),
     FoodAdapter.FoodListener,
-    BoomerangAdapter.BoomerangListener,
+    ToolsAdapter.BoomerangListener,
     KeyItemAdapter.ItemListener
 {
 
     private lateinit var binding: BackpackFragmentBinding
     private lateinit var foodAdapter: FoodAdapter
-    private lateinit var boomerangAdapter: BoomerangAdapter
+    private lateinit var toolsAdapter: ToolsAdapter
     private lateinit var itemsAdapter: KeyItemAdapter
     private lateinit var layoutManager: LinearLayoutManager
     private var food: Array<Food>? = FoodManager().foods
-    private var boomerangs: List<Boomerang>? = BoomerangManager().boomerangs()
+    private var tools: Array<Tool>? = Tools().tools
     private var keyItems: List<KeyItem>? = KeyItemManager().items()
 
     override fun onCreateView(
@@ -114,9 +114,9 @@ class BackpackFragment : Fragment(),
 
     private fun updateBoomerangs() {
 
-        boomerangAdapter = BoomerangAdapter(boomerangs!!, this)
+        toolsAdapter = ToolsAdapter(tools!!, this)
         layoutManager = LinearLayoutManager(context)
-        binding.backpackRecycler.adapter = boomerangAdapter
+        binding.backpackRecycler.adapter = toolsAdapter
         binding.backpackRecycler.layoutManager = layoutManager
     }
 
@@ -190,16 +190,14 @@ class BackpackFragment : Fragment(),
 
     override fun onClickBoomerang(position: Int) {
 
-        CurrentBoomerang.changeBoomerang(position)
-        CurrentHandState.changeHandState(HandState.BOOMERANG)
-
+        tools?.get(position)?.equip()
         updateFab()
     }
 
     override fun onDestroy() {
 
         food = null
-        boomerangs = null
+        tools = null
         keyItems = null
         super.onDestroy()
     }

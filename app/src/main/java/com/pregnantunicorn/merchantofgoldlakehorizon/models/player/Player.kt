@@ -7,6 +7,9 @@ object Player {
     private var agility = Status()
     private var stealth = Status()
 
+    private var stone = Resource()
+    private var wood = Resource()
+
     private var dates = Resource()
     private var coconuts = Resource()
     private var peaches = Resource()
@@ -14,8 +17,6 @@ object Player {
     private var smoothie = Resource()
     private var herbalTea = Resource()
 
-    private var tittyCounter = TittyCounter()
-    private var goldCoins = Money()
 
     fun isDead() = health.amountIsZero()
     fun health() = health
@@ -30,7 +31,6 @@ object Player {
     fun smoothie() = smoothie
     fun herbalTea() = herbalTea
 
-    fun goldCoins() = goldCoins
-    fun tittyCounter() = tittyCounter
-
+    fun stone() = stone
+    fun wood() = wood
 }

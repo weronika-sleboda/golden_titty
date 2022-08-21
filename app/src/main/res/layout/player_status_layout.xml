@@ -40,7 +40,7 @@
         android:background="@drawable/super_dark_corner_rectangle_background"
         android:paddingTop="5dp"
         android:paddingBottom="2dp"
-        android:src="@drawable/meteor64_white_robe" />
+        android:src="@drawable/meteor64" />
 
     <ImageView
         android:contentDescription="@string/health_icon_cd"
@@ -101,7 +101,7 @@
         android:textColor="@color/super_light_mystery"/>
 
     <ImageView
-        android:contentDescription="@string/pearl_titty_icon_cd"
+        android:contentDescription="@string/stone_icon_cd"
         android:layout_width="30dp"
         android:layout_height="32dp"
         android:layout_row="1"
@@ -111,10 +111,10 @@
         android:layout_gravity="center"
         android:padding="3dp"
         android:background="@drawable/extreme_dark_rectangle_background"
-        android:src="@drawable/pearl_titty32"/>
+        android:src="@drawable/stone32"/>
 
     <TextView
-        android:id="@+id/titty_counter"
+        android:id="@+id/stone"
         android:layout_column="6"
         android:layout_row="1"
         android:layout_width="60dp"
@@ -184,7 +184,7 @@
         android:textColor="@color/super_light_mystery"/>
 
     <ImageView
-        android:contentDescription="@string/golden_coin_icon_cd"
+        android:contentDescription="@string/wood_icon_cd"
         android:layout_width="30dp"
         android:layout_height="32dp"
         android:layout_row="2"
@@ -193,10 +193,10 @@
         android:layout_marginBottom="5dp"
         android:padding="3dp"
         android:background="@drawable/extreme_dark_rectangle_background"
-        android:src="@drawable/gold_coin32" />
+        android:src="@drawable/wood32" />
 
     <TextView
-        android:id="@+id/golden_coins"
+        android:id="@+id/wood"
         android:layout_column="6"
         android:layout_row="2"
         android:layout_width="60dp"

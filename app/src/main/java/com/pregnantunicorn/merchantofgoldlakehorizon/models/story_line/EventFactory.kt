@@ -7,21 +7,11 @@ object EventFactory {
     private var storyProgress = 0
     private var event: Event = OpeningEvent.event
 
+    fun storyProgress() = storyProgress
+
     fun currentEvent(): Event {
 
-        return when(storyProgress) {
-
-            0 -> OpeningEvent.event
-            1 -> FirstFloorEvent.event
-            2 -> SecondFloorEvent.event
-            3 -> ThirdFloorEvent.event
-            4 -> FourthFloorEvent.event
-            5 -> FifthFloorEvent.event
-            6 -> SixthFloorEvent.event
-            7 -> SeventhFloorEvent.event
-
-            else -> EndingEvent.event
-        }
+        return OpeningEvent.event
     }
 
     fun changeEvent(eventTitle: EventTitle) {

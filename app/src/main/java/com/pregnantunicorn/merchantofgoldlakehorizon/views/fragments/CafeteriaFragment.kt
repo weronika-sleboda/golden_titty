@@ -66,7 +66,6 @@ class CafeteriaFragment : Fragment(), CafeteriaAdapter.DrinkListener {
     private fun updateMerchantStatus() {
 
         val status = requireActivity() as PlayerStatusUpdate
-        status.updateGoldCoins()
     }
 
     override fun onClickDrink(position: Int) {

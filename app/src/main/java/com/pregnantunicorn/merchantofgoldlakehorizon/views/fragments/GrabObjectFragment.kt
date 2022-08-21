@@ -57,7 +57,7 @@ class GrabObjectFragment : Fragment() {
 
             CoroutineScope(Dispatchers.IO).launch {
 
-                grabObject.grabAlgorithm.invoke()
+                grabObject.grab()
 
                 withContext(Dispatchers.Main) {
 

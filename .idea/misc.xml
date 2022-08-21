@@ -162,6 +162,7 @@
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/action_controller_layout.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/action_fragment.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/action_info_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/axe_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/backpack_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/bed_fragment.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/bed_info_layout.xml" value="0.17552083333333332" />
@@ -204,6 +205,9 @@
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/gem_supplier_fragment.xml" value="0.125" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/gold_requirement_layout.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/grab_object_fragment.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/hammer_controller_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/hammer_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/hammer_info_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/hard_chest_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/info_dialog_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/information_fragment.xml" value="0.11811023622047244" />
@@ -267,6 +271,9 @@
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/temple_floor_layout.xml" value="0.131640625" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/temple_fragment.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/tile_layout.xml" value="0.1331521739130435" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/tool_info_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/tool_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/tool_tile_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/tournament_activity.xml" value="0.131640625" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/university_fragment.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/university_layout.xml" value="0.17552083333333332" />

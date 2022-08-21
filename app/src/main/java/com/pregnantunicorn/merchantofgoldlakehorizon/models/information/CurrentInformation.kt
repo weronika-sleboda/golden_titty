@@ -3,34 +3,36 @@ package com.pregnantunicorn.merchantofgoldlakehorizon.models.information
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances.CurrentEntrance
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world.CurrentLocation
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world.LocationName
+import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.EntranceFragment
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.LocationFragment
 
 object CurrentInformation {
 
-    const val OPENING_INFO = 0
+    const val CANDY_DRAGON = 0
 
     private val facts = arrayOf(
 
         Information(
-            "Jin",
-            "Sir? You seem distant. This is your new house. I will collect the money for the rent each 7th day cycle.",
-            R.drawable.jin128,
-            "Sure, bye!"
+            "Candy The Dragon",
+            "[He is busy licking his tail]",
+            R.drawable.aaliyah64,
+            "Leave"
         )
         {
 
-            CurrentLocation.changeLocation(LocationName.RAINBOW_FOREST)
+            CurrentEntrance.changeEntrance(CurrentEntrance.CAVE)
 
             it.supportFragmentManager.commit {
 
-                replace<LocationFragment>(R.id.world_container)
+                replace<EntranceFragment>(R.id.world_container)
             }
         }
     )
 
-    private var information = facts[OPENING_INFO]
+    private var information = facts[CANDY_DRAGON]
     fun information() = information
 
 }

@@ -18,22 +18,6 @@ class UniversitySkill(
 
     fun buy(): Boolean {
 
-        if(Player.goldCoins().hasAmount(price) && !skillMaxed.invoke()) {
-
-            Player.goldCoins().loseAmount(price)
-            skillAlgorithm.invoke()
-            return true
-        }
-
-        if(Player.goldCoins().hasAmount(price)) {
-
-            CurrentMessage.changeMessage(
-                "Too Expensive",
-                R.drawable.gold_coin_64,
-                "You don't have enough golden coins."
-            )
-        }
-
         if(skillMaxed.invoke()) {
 
             CurrentMessage.changeMessage(

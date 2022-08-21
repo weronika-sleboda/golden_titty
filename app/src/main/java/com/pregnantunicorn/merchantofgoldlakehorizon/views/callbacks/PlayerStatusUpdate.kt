@@ -10,8 +10,8 @@ interface PlayerStatusUpdate {
     fun updateDates()
     fun updateCoconuts()
     fun updatePeaches()
-    fun updateTittyCounter()
-    fun updateGoldCoins()
+    fun updateStone()
+    fun updateWood()
 
     fun updateFab()
 }

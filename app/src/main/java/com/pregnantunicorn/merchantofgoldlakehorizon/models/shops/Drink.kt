@@ -15,19 +15,7 @@ class Drink(
 
     fun buy(): Boolean {
 
-        if(Player.goldCoins().hasAmount(price)) {
 
-            Player.goldCoins().loseAmount(price)
-            shopAlgorithm.invoke()
-
-            CurrentMessage.changeMessage(
-                "$name Acquired",
-                icon,
-                "$name has been acquired."
-            )
-
-            return true
-        }
 
         CurrentMessage.changeMessage(
             "Too Expensive",
