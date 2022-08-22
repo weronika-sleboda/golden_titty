@@ -14,8 +14,10 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.Cur
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.FragmentType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.CurrentHammer
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.CurrentHandState
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.HandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.Tool
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
@@ -28,6 +30,7 @@ class HammerFragment : Fragment() {
     private var timer = 20
     private var demandedAction = -1
     private var started = false
+    private var hammer: Tool? = CurrentHammer.hammer()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -69,7 +72,7 @@ class HammerFragment : Fragment() {
             job = null
             started = false
 
-            Player.stone().addAmount(1)
+            Player.stone().addAmount(hammer?.hitAmount()!!)
             updateMerchantStatus()
 
             CurrentMessage.changeMessage(
@@ -199,10 +202,10 @@ class HammerFragment : Fragment() {
                             while(timer > 0) {
 
                                 changeIcon()
-                                updateTimer()
 
                                 withContext(Dispatchers.Main) {
 
+                                    updateTimer()
                                     binding.icon.setImageResource(demandedAction)
                                 }
 
@@ -227,7 +230,7 @@ class HammerFragment : Fragment() {
 
                     CurrentMessage.changeMessage(
                         "No Hammer",
-                        R.drawable.hammer64,
+                        R.drawable.caveman_hammer64,
                         "Equip a hammer."
                     )
 
@@ -288,8 +291,10 @@ class HammerFragment : Fragment() {
     override fun onDestroy() {
 
         super.onDestroy()
+
         job?.cancel()
         job = null
+        hammer = null
     }
 
 }

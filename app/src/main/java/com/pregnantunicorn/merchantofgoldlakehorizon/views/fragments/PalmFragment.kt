@@ -28,7 +28,7 @@ class PalmFragment: Fragment() {
     private lateinit var binding: PalmFragmentBinding
     private lateinit var adapter: PalmAdapter
     private lateinit var layoutManager: GridLayoutManager
-    private var boomerang: Boomerang? = Boomerang()
+    private var boomerang: Boomerang? = CurrentBoomerang.boomerang()
     private var palm: Palm? = boomerang?.palm()
 
     private var job: Job? = null
@@ -107,7 +107,7 @@ class PalmFragment: Fragment() {
                                     updateRange(palm?.newRange(boomerang?.icon()!!)!!)
                                 }
 
-                                delay(boomerang?.speed!!)
+                                delay(boomerang?.speed?.invoke()!!)
                             }
                         }
                     }
@@ -137,7 +137,7 @@ class PalmFragment: Fragment() {
                             updateRange(palm?.range()!!)
                         }
 
-                        if(palm?.checkHitCondition() == true)
+                        if(palm?.checkHitCondition(boomerang?.hitAmount()!!) == true)
                         {
 
                             withContext(Dispatchers.Main) {

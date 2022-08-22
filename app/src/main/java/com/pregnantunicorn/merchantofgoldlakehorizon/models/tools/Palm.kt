@@ -6,6 +6,6 @@ abstract class Palm {
 
     abstract fun name(): String
     abstract fun range(): Array<PalmTile>
-    abstract fun checkHitCondition(): Boolean
+    abstract fun checkHitCondition(hitAmount: Int): Boolean
     abstract fun newRange(boomerangIcon: Int): Array<PalmTile>
 }

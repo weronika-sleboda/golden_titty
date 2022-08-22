@@ -1,17 +1,38 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.tools
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
+class Hammer(
+    private val name: String,
+    private val icon: Int,
+    private val hitAmount: Int,
+    private val requiredWood: Int,
+    private val requiredStone: Int,
+    private val hammerIndex: Int,
+    private var owns: Boolean
+) : Tool {
 
-class Hammer : Tool {
+    override fun icon() = icon
 
-    override fun icon() = IconFactory().hammer64()
+    override fun name() = name
 
-    override fun name() = "Hammer"
+    override fun type() = "Amount per hit: $hitAmount"
 
-    override fun info() = "Used for mining"
+    override fun info() = "Info: For mining"
 
     override fun equip() {
 
+        CurrentHammer.changeHammer(hammerIndex)
         CurrentHandState.changeHandState(HandState.HAMMER)
     }
+
+    override fun owns() = owns
+
+    override fun addToBackpack() {
+
+        owns = true
+    }
+
+    override fun requiredWood(): Int = requiredWood
+    override fun requiredStone(): Int = requiredStone
+
+    override fun hitAmount() = hitAmount
 }

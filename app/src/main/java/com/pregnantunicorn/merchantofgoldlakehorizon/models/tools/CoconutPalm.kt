@@ -24,11 +24,11 @@ class CoconutPalm : Palm() {
         }
     }
 
-    override fun checkHitCondition(): Boolean {
+    override fun checkHitCondition(hitAmount: Int): Boolean {
 
         if(boomerangPosition == hitPosition) {
 
-            Player.coconuts().addAmount(1)
+            Player.coconuts().addAmount(hitAmount)
 
             CurrentMessage.changeMessage(
                 "Target Hit!",

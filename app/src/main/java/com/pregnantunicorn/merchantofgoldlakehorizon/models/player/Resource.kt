@@ -8,7 +8,7 @@ class Resource {
         private const val MAX_VALUE = 999
     }
 
-    private var amount = 0
+    private var amount = 30
 
     fun amountToString() = "$amount"
 

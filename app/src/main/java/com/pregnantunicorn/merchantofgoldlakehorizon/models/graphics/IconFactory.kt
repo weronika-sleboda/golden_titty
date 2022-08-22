@@ -6,9 +6,23 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.day_cycle.DayCycle
 
 class IconFactory {
 
-    fun boomerang64() = R.drawable.boomerang64
-    fun axe64() = R.drawable.axe64
-    fun hammer64() = R.drawable.hammer64
+    fun nomadBoomerang64() = R.drawable.nomad_boomerang64
+    fun bananaBoomerang64() = R.drawable.banana_boomerang64
+    fun shamanBoomerang64() = R.drawable.shaman_boomerang64
+
+    fun cavemanHammer64() = R.drawable.caveman_hammer64
+    fun pilgrimHammer64() = R.drawable.pilgrim_hammer64
+    fun knockoutHammer64() = R.drawable.knockout_hammer64
+
+    fun chieftainAxe64() = R.drawable.chieftain_axe64
+    fun merchantAxe64() = R.drawable.merchant_axe64
+    fun dwarfAxe64() = R.drawable.dwarf_axe64
+
+    fun saphonee64() = R.drawable.saphonee64
+    fun saphonee128() = R.drawable.saphonee128
+    fun saphonee256() = R.drawable.saphonee256
+
+    fun constructionSite64() = R.drawable.construction_site64
 
     fun woodPalm64(): Int {
 
@@ -70,6 +84,66 @@ class IconFactory {
         }
     }
 
+    fun hut64Nr3(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.hut3_morning64 }
+            DayCycle.SUNSET -> { R.drawable.hut3_sunset64 }
+            DayCycle.NIGHT -> { R.drawable.hut3_night64 }
+        }
+    }
+
+    fun hut128Nr3(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.hut3_morning128 }
+            DayCycle.SUNSET -> { R.drawable.hut3_sunset128 }
+            DayCycle.NIGHT -> { R.drawable.hut3_night128 }
+        }
+    }
+
+    fun hut64Nr4(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.hut4_morning64 }
+            DayCycle.SUNSET -> { R.drawable.hut4_sunset64 }
+            DayCycle.NIGHT -> { R.drawable.hut4_night64 }
+        }
+    }
+
+    fun hut128Nr4(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.hut4_morning128 }
+            DayCycle.SUNSET -> { R.drawable.hut4_sunset128 }
+            DayCycle.NIGHT -> { R.drawable.hut4_night128 }
+        }
+    }
+
+    fun hut64Nr5(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.hut5_morning64 }
+            DayCycle.SUNSET -> { R.drawable.hut5_sunset64 }
+            DayCycle.NIGHT -> { R.drawable.hut5_night64 }
+        }
+    }
+
+    fun hut128Nr5(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.hut5_morning128 }
+            DayCycle.SUNSET -> { R.drawable.hut5_sunset128 }
+            DayCycle.NIGHT -> { R.drawable.hut5_night128 }
+        }
+    }
+
     fun templeDoor128(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
@@ -116,26 +190,6 @@ class IconFactory {
         }
     }
 
-    fun bigBungalow64(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.big_bungalow64_morning }
-            DayCycle.SUNSET -> { R.drawable.big_bungalow64_sunset }
-            DayCycle.NIGHT -> { R.drawable.big_bungalow64_night }
-        }
-    }
-
-    fun bungalow64(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.bungalow64_morning }
-            DayCycle.SUNSET -> { R.drawable.bungalow64_sunset }
-            DayCycle.NIGHT -> { R.drawable.bungalow64_night }
-        }
-    }
-
     fun saintFluffyGrave128(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
@@ -153,26 +207,6 @@ class IconFactory {
             DayCycle.MORNING -> { R.drawable.cave64_morning }
             DayCycle.SUNSET -> { R.drawable.cave64_sunset }
             DayCycle.NIGHT -> { R.drawable.cave64_night }
-        }
-    }
-
-    fun bigHut64(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.big_hut64_morning }
-            DayCycle.SUNSET -> { R.drawable.big_hut64_sunset }
-            DayCycle.NIGHT -> { R.drawable.big_hut64_night }
-        }
-    }
-
-    fun hut64(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.hut64_morning }
-            DayCycle.SUNSET -> { R.drawable.hut64_sunset }
-            DayCycle.NIGHT -> { R.drawable.hut64_night }
         }
     }
 

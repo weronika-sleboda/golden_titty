@@ -4,9 +4,9 @@ class BoomerangShopManager {
 
     fun name() = "Boomerang Shop"
 
-    fun shopItems(): List<BoomerangShopItem> {
+    fun shopItems(): List<ShopItem> {
 
-        val shopItems = mutableListOf<BoomerangShopItem>()
+        val shopItems = mutableListOf<ShopItem>()
 
         return shopItems
     }

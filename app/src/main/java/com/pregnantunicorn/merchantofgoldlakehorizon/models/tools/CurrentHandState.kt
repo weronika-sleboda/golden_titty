@@ -19,11 +19,11 @@ object CurrentHandState {
 
             HandState.EMPTY -> R.drawable.grab64
 
-            HandState.BOOMERANG -> { Boomerang().icon() }
+            HandState.BOOMERANG -> { CurrentBoomerang.boomerang().icon() }
 
-            HandState.HAMMER -> { Hammer().icon() }
+            HandState.HAMMER -> { CurrentHammer.hammer().icon() }
 
-            HandState.AXE -> { Axe().icon() }
+            HandState.AXE -> { CurrentAxe.axe().icon() }
 
             else -> { CurrentKeyItem.keyItem().icon }
         }

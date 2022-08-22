@@ -4,9 +4,26 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.merchantofgoldlakehorizon.R
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.workshop.Workshop
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.fragments.*
 
 class FragmentTransition {
+
+    fun workshopFragment(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<WorkshopFragment>(R.id.world_container)
+        }
+    }
+
+    fun constructionFragment(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<ConstructionFragment>(R.id.world_container)
+        }
+    }
 
     fun locationFragment(activity: FragmentActivity) {
 

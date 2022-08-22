@@ -39,7 +39,7 @@ class BackpackFragment : Fragment(),
     private lateinit var itemsAdapter: KeyItemAdapter
     private lateinit var layoutManager: LinearLayoutManager
     private var food: Array<Food>? = FoodManager().foods
-    private var tools: Array<Tool>? = Tools().tools
+    private var tools: List<Tool>? = BackpackTools().tools()
     private var keyItems: List<KeyItem>? = KeyItemManager().items()
 
     override fun onCreateView(

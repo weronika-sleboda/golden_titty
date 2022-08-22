@@ -5,7 +5,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
 
 
-class BoomerangShopItem(
+class ShopItem(
     val name: String,
     val icon: Int,
     val requiredAccuracy: String,

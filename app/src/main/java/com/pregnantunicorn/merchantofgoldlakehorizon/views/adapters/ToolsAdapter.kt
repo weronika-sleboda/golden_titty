@@ -7,7 +7,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.databinding.ToolLayoutBindi
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.Tool
 
 class ToolsAdapter(
-    private val tools: Array<Tool>,
+    private val tools: List<Tool>,
     private val boomerangListener: BoomerangListener
 
 ) : RecyclerView.Adapter<ToolsAdapter.ViewHolder>() {
@@ -23,6 +23,7 @@ class ToolsAdapter(
 
         val icon = binding.icon
         val name = binding.name
+        val type = binding.type
         val info = binding.info
         val buttonIcon = binding.buttonIcon
     }
@@ -39,6 +40,7 @@ class ToolsAdapter(
 
         holder.icon.setImageResource(tools[position].icon())
         holder.name.text = tools[position].name()
+        holder.type.text = tools[position].type()
         holder.info.text = tools[position].info()
 
         holder.buttonIcon.setOnClickListener {

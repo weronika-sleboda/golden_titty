@@ -30,11 +30,11 @@ class DatesPalm : Palm() {
         }
     }
 
-    override fun checkHitCondition(): Boolean {
+    override fun checkHitCondition(hitAmount: Int): Boolean {
 
         if(boomerangPosition == hitPosition) {
 
-            Player.dates().addAmount(1)
+            Player.dates().addAmount(hitAmount)
 
             CurrentMessage.changeMessage(
                 "Target Hit!",

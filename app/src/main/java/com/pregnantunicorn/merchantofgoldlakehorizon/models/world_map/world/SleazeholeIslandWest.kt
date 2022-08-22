@@ -1,12 +1,14 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.world
 
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.construction.BuildingType
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.construction.Buildings
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.PalmType
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.BackgroundFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.entrances.CurrentEntrance
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.world_map.tiles.*
 
-class SleazeholeIsland : Location(
+class SleazeholeIslandWest : Location(
     "Sleazehole Island", Array(16) { EmptyTile { BackgroundFactory().beach() } as Tile }
 
         .also {
@@ -24,7 +26,6 @@ class SleazeholeIsland : Location(
                 {BackgroundFactory().beach()}
             )
 
-
             it[2] = EntranceTile(
                 CurrentEntrance.CAVE,
                 { IconFactory().cave64() },
@@ -37,12 +38,31 @@ class SleazeholeIsland : Location(
                 PalmType.COCONUT
             )
 
+            it[4] = ConstructionTile(
+                Buildings.building(BuildingType.CAMP_FIRE),
+                CurrentEntrance.CAMP_FIRE
+            )
+
             it[5] = EmptyTile { BackgroundFactory().beach() }
             it[6] = EmptyTile { BackgroundFactory().beach() }
+
+            it[7] = LocationTile(
+                LocationName.SLEAZEHOLE_ISLAND_EAST
+            ) { BackgroundFactory().beach() }
 
             it[8] = PalmTile({IconFactory().datePalm64()},
                 { BackgroundFactory().beach() },
                 PalmType.PEACH,
+            )
+
+            it[9] = ConstructionTile(
+                Buildings.building(BuildingType.WORKSHOP),
+                CurrentEntrance.WORKSHOP
+            )
+
+            it[10] = ConstructionTile(
+                Buildings.building(BuildingType.CAFETERIA),
+                CurrentEntrance.CAFETERIA
             )
 
             it[11] = WoodPalmTile()

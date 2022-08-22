@@ -1,17 +1,39 @@
 package com.pregnantunicorn.merchantofgoldlakehorizon.models.tools
 
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
+class Axe(
+    private val name: String,
+    private val icon: Int,
+    private val hitAmount: Int,
+    private val requiredWood: Int,
+    private val requiredStone: Int,
+    private val axeIndex: Int,
+    private var owns: Boolean
+) : Tool {
 
-class Axe : Tool {
+    override fun icon() = icon
 
-    override fun icon() = IconFactory().axe64()
+    override fun name() = name
 
-    override fun name() = "Axe"
+    override fun type() = "Amount per hit: $hitAmount"
 
-    override fun info() = "Used for woodcutting"
+    override fun info() = "Info: For Woodcutting"
 
     override fun equip() {
 
+        CurrentAxe.changeAxe(axeIndex)
         CurrentHandState.changeHandState(HandState.AXE)
     }
+
+    override fun owns() = owns
+
+    override fun addToBackpack() {
+
+        owns = true
+    }
+
+    override fun requiredWood(): Int = requiredWood
+    override fun requiredStone(): Int = requiredStone
+
+    override fun hitAmount() = hitAmount
 }
+

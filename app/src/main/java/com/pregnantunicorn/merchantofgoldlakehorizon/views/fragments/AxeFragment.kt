@@ -15,8 +15,7 @@ import com.pregnantunicorn.merchantofgoldlakehorizon.models.current_fragment.Fra
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.graphics.IconFactory
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.player.Player
 import com.pregnantunicorn.merchantofgoldlakehorizon.models.message.CurrentMessage
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.CurrentHandState
-import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.HandState
+import com.pregnantunicorn.merchantofgoldlakehorizon.models.tools.*
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.merchantofgoldlakehorizon.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
@@ -26,6 +25,7 @@ class AxeFragment : Fragment() {
     private lateinit var binding: AxeFragmentBinding
     private var job: Job? = null
     private var noise = 0
+    private var axe: Tool? = CurrentAxe.axe()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -109,7 +109,7 @@ class AxeFragment : Fragment() {
 
                 binding.successProgressBar.progress = 0
 
-                Player.wood().addAmount(1)
+                Player.wood().addAmount(axe?.hitAmount()!!)
                 updateMerchantStatus()
 
                 CurrentMessage.changeMessage(
@@ -178,7 +178,7 @@ class AxeFragment : Fragment() {
 
                     CurrentMessage.changeMessage(
                         "No Axe",
-                        R.drawable.axe64,
+                        R.drawable.chieftain_axe64,
                         "Equip an axe."
                     )
 

@@ -23,11 +23,11 @@ class PeachPalm : Palm() {
         }
     }
 
-    override fun checkHitCondition(): Boolean {
+    override fun checkHitCondition(hitAmount: Int): Boolean {
 
         if(boomerangPosition == hitPosition) {
 
-            Player.peaches().addAmount(1)
+            Player.peaches().addAmount(hitAmount)
 
             CurrentMessage.changeMessage(
                 "Target Hit!",
