@@ -6,11 +6,23 @@
     android:background="@drawable/extreme_dark_rectangle_background"
     android:layout_column="5">
 
-    <TextView
-        android:id="@+id/title"
+    <ImageView
+        android:contentDescription="@string/charisma_icon_cd"
         android:layout_column="0"
         android:layout_row="0"
-        android:layout_width="55dp"
+        android:layout_marginStart="3dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="start|center"
+        android:background="@drawable/extreme_dark_rectangle_background"
+        android:src="@drawable/coconut32"
+        android:padding="3dp"/>
+
+    <TextView
+        android:id="@+id/required_coconut"
+        android:layout_column="1"
+        android:layout_row="0"
+        android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_gravity="start|center"
         android:gravity="center"
@@ -18,23 +30,10 @@
         android:textColor="@color/super_light_mystery"
         android:textSize="18sp"
         android:layout_marginStart="3dp"
-        android:text="@string/price"
-        android:background="@drawable/extreme_dark_rectangle_background"/>
-
-    <ImageView
-        android:contentDescription="@string/charisma_icon_cd"
-        android:layout_column="1"
-        android:layout_row="0"
-        android:layout_marginStart="3dp"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_gravity="start|center"
-        android:background="@drawable/extreme_dark_rectangle_background"
-        android:src="@drawable/gold_coin32"
-        android:padding="3dp"/>
+        android:text="@string/one"
+        android:background="@drawable/middle_dark_rectangle_background"/>
 
     <TextView
-        android:id="@+id/required_gold"
         android:layout_column="2"
         android:layout_row="0"
         android:layout_width="100dp"
@@ -44,35 +43,21 @@
         android:fontFamily="@font/raleway_medium"
         android:textColor="@color/super_light_mystery"
         android:textSize="18sp"
-        android:layout_marginStart="3dp"
-        android:background="@drawable/middle_dark_rectangle_background"/>
-    <TextView
-        android:layout_column="3"
-        android:layout_row="0"
-        android:layout_width="100dp"
-        android:layout_height="32dp"
-        android:layout_gravity="start|center"
-        android:gravity="center"
-        android:fontFamily="@font/raleway_medium"
-        android:textColor="@color/super_light_mystery"
-        android:textSize="18sp"
-        android:layout_marginStart="3dp"
-        android:text="@string/friendship"
+        android:layout_marginStart="5dp"
+        android:text="@string/health"
         android:background="@drawable/extreme_dark_rectangle_background"/>
 
-    <TextView
-        android:id="@+id/friendship_amount"
-        android:layout_column="4"
+    <ProgressBar
+        android:layout_column="3"
         android:layout_row="0"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_gravity="start|center"
-        android:gravity="center"
-        android:fontFamily="@font/raleway_medium"
-        android:textColor="@color/super_light_mystery"
-        android:textSize="18sp"
-        android:layout_marginStart="3dp"
-        android:text="3"
-        android:background="@drawable/middle_dark_rectangle_background"/>
+        android:id="@+id/health_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/green_progress_bar_background"
+        android:layout_width="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginEnd="5dp"
+        android:padding="5dp"
+        android:background="@drawable/extreme_dark_rectangle_background"
+        android:layout_height="32dp" />
 
 </GridLayout>

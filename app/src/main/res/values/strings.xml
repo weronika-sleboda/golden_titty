@@ -172,4 +172,9 @@
     <string name="construction_icon_cd">construction_icon_cd</string>
     <string name="build">Build</string>
     <string name="make_icon_cd">make_icon_cd</string>
+    <string name="golden_titty_icon_cd">golden_titty_icon_cd</string>
+    <string name="health">Health</string>
+    <string name="feed">Feed</string>
+    <string name="talk">Talk</string>
+    <string name="ask">Ask</string>
 </resources>

@@ -7,7 +7,7 @@
     android:columnCount="2">
 
     <TextView
-        android:id="@+id/npc_name"
+        android:id="@+id/name"
         android:layout_width="280dp"
         android:layout_height="35dp"
         android:layout_gravity="start|center_horizontal"
@@ -33,15 +33,14 @@
         android:columnCount="2">
 
         <ImageView
-            android:id="@+id/npc_icon"
+            android:id="@+id/icon"
             android:contentDescription="@string/bed_icon_cd"
             android:layout_column="0"
             android:layout_row="0"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
+            android:layout_width="118dp"
+            android:layout_height="118dp"
             android:layout_gravity="center"
             android:padding="10dp"
-            android:src="@drawable/mei128"
             android:background="@drawable/left_extreme_dark_shape_background"/>
 
         <LinearLayout
@@ -56,10 +55,10 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:background="@drawable/right_light_shape_background"
-            android:layout_height="128dp">
+            android:layout_height="118dp">
 
             <TextView
-                android:id="@+id/npc_greeting"
+                android:id="@+id/greeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -76,7 +75,7 @@
     </GridLayout>
 
     <Button
-        android:id="@+id/befriend_button"
+        android:id="@+id/feed_button"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_width="match_parent"
@@ -86,7 +85,22 @@
         android:textColor="@color/light_mystery"
         android:textSize="18sp"
         android:gravity="center"
-        android:text="@string/befriend"
+        android:text="@string/feed"
+        android:background="@drawable/dark_rectangle_gradient_button_background"/>
+
+    <Button
+        android:id="@+id/talk_button"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:backgroundTint="@null"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/light_mystery"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="@string/ask"
         android:background="@drawable/dark_rectangle_gradient_button_background"/>
 
     <Button
