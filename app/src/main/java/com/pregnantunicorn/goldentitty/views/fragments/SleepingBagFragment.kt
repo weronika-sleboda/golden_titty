@@ -108,7 +108,7 @@ class SleepingBagFragment : Fragment() {
 
         activity?.supportFragmentManager?.commit {
 
-            replace<EntranceFragment>(R.id.world_container)
+            replace<LocationFragment>(R.id.world_container)
         }
     }
 

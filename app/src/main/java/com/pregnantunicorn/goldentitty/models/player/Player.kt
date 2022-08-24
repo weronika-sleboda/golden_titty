@@ -5,7 +5,7 @@ object Player {
     private var health = Status()
     private var energy = Status()
     private var storyProgress = StoryProgress()
-    private var stone = Resource()
+    private var iron = Resource()
     private var wood = Resource()
     private var coconuts = Resource()
 
@@ -15,7 +15,7 @@ object Player {
     fun energy() = energy
     fun storyProgress() = storyProgress
     fun coconuts() = coconuts
-    fun stone() = stone
+    fun iron() = iron
     fun wood() = wood
 
     fun reset() {
@@ -23,7 +23,7 @@ object Player {
         health = Status()
         energy = Status()
         storyProgress = StoryProgress()
-        stone = Resource()
+        iron = Resource()
         wood = Resource()
         coconuts = Resource()
     }
@@ -32,7 +32,7 @@ object Player {
         health: Status,
         energy: Status,
         storyProgress: StoryProgress,
-        stone: Resource,
+        iron: Resource,
         wood: Resource,
         coconuts: Resource
     )
@@ -40,7 +40,7 @@ object Player {
         this.health = health
         this.energy = energy
         this.storyProgress = storyProgress
-        this.stone = stone
+        this.iron = iron
         this.wood = wood
         this.coconuts = coconuts
     }

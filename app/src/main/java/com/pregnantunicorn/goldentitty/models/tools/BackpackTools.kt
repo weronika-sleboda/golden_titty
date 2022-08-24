@@ -6,7 +6,7 @@ class BackpackTools {
 
         val tools = mutableListOf<Tool>()
 
-        for(tool in Tools.tools) {
+        for(tool in Tools.tools()) {
 
             if(tool.owns()) {
 

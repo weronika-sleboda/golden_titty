@@ -38,11 +38,17 @@ class NpcFragment : Fragment() {
         updateHealth()
         setupGreeting()
         updateHealth()
+        setupRequiredFoodIcon()
         setupFeedButton()
         setupLeaveButton()
         setupFab()
 
         return binding.root
+    }
+
+    private fun setupRequiredFoodIcon() {
+
+        binding.info.foodIcon.setImageResource(npc?.requiredFoodIcon()!!)
     }
 
     private fun setupFab() {
@@ -75,7 +81,7 @@ class NpcFragment : Fragment() {
     private fun updatePlayerStatus() {
 
         val status = requireActivity() as PlayerStatusUpdate
-        status.updateCoconuts()
+        status.updateFish()
     }
 
     private fun setupFeedButton() {

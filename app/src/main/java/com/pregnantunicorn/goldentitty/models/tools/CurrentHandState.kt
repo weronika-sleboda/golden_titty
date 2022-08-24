@@ -25,6 +25,14 @@ object CurrentHandState {
 
             HandState.AXE -> { CurrentAxe.axe().icon() }
 
+            HandState.SPEAR -> { CurrentSpear.spear().icon() }
+
+            HandState.KNIFE -> { R.drawable.knife64 }
+
+            HandState.SHOVEL -> { R.drawable.shovel64 }
+
+            HandState.SWORD -> { CurrentSword.sword().icon() }
+
             else -> { CurrentKeyItem.keyItem().icon }
         }
     }

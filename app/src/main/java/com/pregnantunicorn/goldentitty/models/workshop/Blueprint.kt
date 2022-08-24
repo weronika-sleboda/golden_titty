@@ -16,15 +16,15 @@ class Blueprint(
     val info = tool.info()
 
     fun woodToString() = "${tool.requiredWood()}"
-    fun stoneToString() = "${tool.requiredStone()}"
+    fun stoneToString() = "${tool.requiredIron()}"
 
     fun make(): Boolean {
 
         if(Player.wood().hasAmount(tool.requiredWood())
-            && Player.stone().hasAmount(tool.requiredStone())) {
+            && Player.iron().hasAmount(tool.requiredIron())) {
 
             Player.wood().loseAmount(tool.requiredWood())
-            Player.stone().loseAmount(tool.requiredStone())
+            Player.iron().loseAmount(tool.requiredIron())
             tool.addToBackpack()
 
             CurrentMessage.changeMessage(

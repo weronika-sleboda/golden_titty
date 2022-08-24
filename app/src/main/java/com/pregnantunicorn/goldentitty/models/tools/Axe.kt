@@ -5,7 +5,7 @@ class Axe(
     private val icon: Int,
     private val hitAmount: Int,
     private val requiredWood: Int,
-    private val requiredStone: Int,
+    private val requiredIron: Int,
     private val axeIndex: Int,
     private var owns: Boolean
 ) : Tool {
@@ -32,8 +32,13 @@ class Axe(
     }
 
     override fun requiredWood(): Int = requiredWood
-    override fun requiredStone(): Int = requiredStone
+    override fun requiredIron(): Int = requiredIron
 
     override fun hitAmount() = hitAmount
+
+    override fun setOwns(owns: Boolean) {
+
+        this.owns = owns
+    }
 }
 

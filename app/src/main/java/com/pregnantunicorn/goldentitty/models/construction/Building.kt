@@ -11,21 +11,21 @@ class Building(
     val smallIcon: () -> Int,
     val buildingType: BuildingType,
     private val wood: Int,
-    private val stone: Int
+    private val iron: Int
 )
 {
     private var isBuild = false
     fun isBuild() = isBuild
 
     fun woodToString() = "$wood"
-    fun stoneToString() = "$stone"
+    fun ironToString() = "$iron"
 
     fun build(): Boolean {
 
-        if(Player.wood().hasAmount(wood) && Player.stone().hasAmount(stone)) {
+        if(Player.wood().hasAmount(wood) && Player.iron().hasAmount(iron)) {
 
             Player.wood().loseAmount(wood)
-            Player.stone().loseAmount(stone)
+            Player.iron().loseAmount(iron)
             Player.storyProgress().increaseProgress()
 
             isBuild = true

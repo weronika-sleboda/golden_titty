@@ -60,7 +60,7 @@ class WorkshopFragment : Fragment(), WorkshopAdapter.WorkshopListener {
     private fun updatePlayerStatus() {
 
         val status = requireActivity() as PlayerStatusUpdate
-        status.updateStone()
+        status.updateIron()
         status.updateWood()
     }
 

@@ -8,6 +8,8 @@ import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.WorldActivityBinding
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
+import com.pregnantunicorn.goldentitty.models.food.FoodType
+import com.pregnantunicorn.goldentitty.models.food.Foods
 import com.pregnantunicorn.goldentitty.models.player.Player
 import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.goldentitty.views.fragments.*
@@ -25,9 +27,9 @@ class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
 
         updateHealth()
         updateEnergy()
-        updateStoryProgress()
         updateCoconuts()
-        updateStone()
+        updateFish()
+        updateIron()
         updateWood()
 
         updateFab()
@@ -117,19 +119,19 @@ class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
         binding.player.energy.text = Player.energy().amountToString()
     }
 
-    override fun updateStoryProgress() {
-
-        binding.player.storyProgress.text = Player.storyProgress().progressToString()
-    }
-
     override fun updateCoconuts() {
 
-        binding.player.coconuts.text = Player.coconuts().amountToString()
+        binding.player.coconuts.text = Foods.food(FoodType.COCONUT).amountToString()
     }
 
-    override fun updateStone() {
+    override fun updateFish() {
 
-        binding.player.stone.text = Player.stone().amountToString()
+        binding.player.fish.text = Foods.food(FoodType.FISH).amountToString()
+    }
+
+    override fun updateIron() {
+
+        binding.player.iron.text = Player.iron().amountToString()
     }
 
     override fun updateWood() {

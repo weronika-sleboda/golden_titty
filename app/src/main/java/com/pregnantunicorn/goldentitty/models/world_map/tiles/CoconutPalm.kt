@@ -6,7 +6,7 @@ import androidx.fragment.app.replace
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
-import com.pregnantunicorn.goldentitty.views.fragments.PalmFragment
+import com.pregnantunicorn.goldentitty.views.fragments.CoconutPalmFragment
 
 class CoconutPalm: Tile(true)
 {
@@ -18,7 +18,7 @@ class CoconutPalm: Tile(true)
 
         activity.supportFragmentManager.commit {
 
-            replace<PalmFragment>(R.id.world_container)
+            replace<CoconutPalmFragment>(R.id.world_container)
         }
     }
 }

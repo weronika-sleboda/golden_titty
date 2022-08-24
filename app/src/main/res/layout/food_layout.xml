@@ -72,6 +72,7 @@
         android:padding="10dp"
         android:layout_marginEnd="5dp"
         android:background="@drawable/dark_oval_gradient_button_background"
+        android:src="@drawable/mouth64"
         android:layout_gravity="center|end"/>
 
 </GridLayout>

@@ -31,15 +31,29 @@ class SleazeholeIslandWest : Location(
 
             it[3] = WoodPalmTile()
 
+            it[8] = ExcavationTile()
+
 
             it[4] = ConstructionTile(
                 Buildings.building(BuildingType.CAMP_FIRE),
                 CurrentEntrance.CAMP_FIRE
             )
 
-            it[5] = NpcTile(R.drawable.jin64, CurrentNpc.JIN)
+            if(!CurrentNpc.jin().hasHouse()) {
 
-            it[7] = LocationTile(
+                it[5] = NpcTile(R.drawable.jin64, CurrentNpc.JIN)
+            }
+
+            else { it[5] = EmptyTile { BackgroundFactory().beach() } }
+
+            if(!CurrentNpc.saphonee().hasHouse()) {
+
+                it[6] = NpcTile(R.drawable.saphonee64, CurrentNpc.SAPHONEE)
+            }
+
+            else { it[6] = EmptyTile { BackgroundFactory().beach() } }
+
+            it[7] = SecretGateTile(
                 LocationName.SLEAZEHOLE_ISLAND_EAST
             ) { BackgroundFactory().beach() }
 
@@ -53,9 +67,10 @@ class SleazeholeIslandWest : Location(
                 CurrentEntrance.CAFETERIA
             )
 
-            it[12] = EmptyTile { BackgroundFactory().water()}
-            it[13] = EmptyTile { BackgroundFactory().water()}
-            it[14] = EmptyTile { BackgroundFactory().water()}
+
+            it[12] = CampFireTile()
+            it[13] = FishingSpotTile()
+            it[14] = BattlefieldTile()
             it[15] = EmptyTile { BackgroundFactory().water()}
         }
 )

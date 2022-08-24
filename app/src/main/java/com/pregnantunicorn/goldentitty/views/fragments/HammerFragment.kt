@@ -72,13 +72,13 @@ class HammerFragment : Fragment() {
             job = null
             started = false
 
-            Player.stone().addAmount(hammer?.hitAmount()!!)
+            Player.iron().addAmount(hammer?.hitAmount()!!)
             updatePlayerStatus()
 
             CurrentMessage.changeMessage(
-                "Stone acquired",
+                "Iron acquired",
                 R.drawable.stone64,
-                "You have acquired stone."
+                "You have acquired iron."
             )
 
             showMessage()
@@ -217,9 +217,9 @@ class HammerFragment : Fragment() {
                     else {
 
                         CurrentMessage.changeMessage(
-                            "No Agility",
-                            R.drawable.agility64,
-                            "You don't have enough agility to perform this action."
+                            "No Energy",
+                            R.drawable.energy64,
+                            "You don't have enough energy to perform this action."
                         )
 
                         showMessage()
@@ -230,7 +230,7 @@ class HammerFragment : Fragment() {
 
                     CurrentMessage.changeMessage(
                         "No Hammer",
-                        R.drawable.caveman_hammer64,
+                        R.drawable.info64,
                         "Equip a hammer."
                     )
 
@@ -245,7 +245,7 @@ class HammerFragment : Fragment() {
 
         val status = requireActivity() as PlayerStatusUpdate
         status.updateEnergy()
-        status.updateStone()
+        status.updateIron()
     }
 
     private fun showMessage() {
@@ -258,7 +258,7 @@ class HammerFragment : Fragment() {
 
         activity?.supportFragmentManager?.commit {
 
-            replace<EntranceFragment>(R.id.world_container)
+            replace<LocationFragment>(R.id.world_container)
         }
     }
 

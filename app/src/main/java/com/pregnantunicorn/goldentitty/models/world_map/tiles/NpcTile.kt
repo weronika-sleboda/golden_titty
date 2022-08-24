@@ -5,10 +5,8 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
-import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.npcs.CurrentNpc
 import com.pregnantunicorn.goldentitty.views.fragments.NpcFragment
-import com.pregnantunicorn.goldentitty.views.fragments.PalmFragment
 
 class NpcTile(
     private val icon: Int,

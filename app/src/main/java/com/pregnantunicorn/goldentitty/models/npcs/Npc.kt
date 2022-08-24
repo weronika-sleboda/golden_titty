@@ -1,6 +1,8 @@
 package com.pregnantunicorn.goldentitty.models.npcs
 
 import com.pregnantunicorn.goldentitty.R
+import com.pregnantunicorn.goldentitty.models.food.FoodType
+import com.pregnantunicorn.goldentitty.models.food.Foods
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.player.Player
 import com.pregnantunicorn.goldentitty.models.player.Status
@@ -15,16 +17,34 @@ class Npc(
 )
 {
 
+    private var hasHouse = false
+    fun hasHouse() = hasHouse
+
+    fun moveToHouse() {
+
+        hasHouse = true
+    }
+
     private val maxHealth = 10
     private val minValue = 0
     private var health = maxHealth
 
+    fun requiredFoodIcon(): Int {
+
+        return if(!hasHouse) {
+
+            R.drawable.fish32
+        }
+
+        else { R.drawable.fried_fish32 }
+    }
+
     fun maxHealth() = maxHealth
     fun health() = health
 
-    private fun addHealth() {
+    private fun addHealth(amount: Int) {
 
-        health++
+        health += amount
 
         if(health > maxHealth) {
 
@@ -48,18 +68,48 @@ class Npc(
 
     fun feed(): Boolean {
 
-        if(Player.coconuts().hasAmount(1)) {
+        if(health != maxHealth) {
 
-            addHealth()
-            return true
+            val amount = 1
+
+            if(hasHouse) {
+
+                if(Foods.food(FoodType.FRIED_FISH).hasAmount(amount)) {
+
+                    Foods.food(FoodType.FRIED_FISH).removeAmount(amount)
+                    addHealth(3)
+                    return true
+                }
+
+                CurrentMessage.changeMessage(
+                    "No Fried Fish",
+                    R.drawable.fried_fish64,
+                    "You don't have any of these."
+                )
+
+                return false
+            }
+
+            if(!hasHouse) {
+
+                if(Foods.food(FoodType.FISH).hasAmount(amount)) {
+
+                    Foods.food(FoodType.FISH).removeAmount(amount)
+                    addHealth(1)
+                    return true
+                }
+
+                CurrentMessage.changeMessage(
+                    "No Fish",
+                    R.drawable.fish64,
+                    "You don't have any of these."
+                )
+
+                return false
+            }
         }
-
-        CurrentMessage.changeMessage(
-            "No Coconuts",
-            R.drawable.coconut64,
-            "You don't have any of these."
-        )
 
         return false
     }
+
 }

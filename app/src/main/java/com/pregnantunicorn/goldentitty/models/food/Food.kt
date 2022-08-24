@@ -1,52 +1,72 @@
 package com.pregnantunicorn.goldentitty.models.food
 
-import com.pregnantunicorn.goldentitty.R
-import com.pregnantunicorn.goldentitty.models.player.Player
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 
 class Food(
     val name: String,
     val icon: Int,
     val info: String,
-    private val amountToString: () -> String,
+    private val consumeAlgorithm: () -> Unit,
 )
 {
+    private val maxAmount = 999
+    private val minAmount = 0
+    private var amount = 0
 
-    fun amountToString() = "Amount: ${amountToString.invoke()}"
+    fun amountToString() = "$amount"
+    fun backpackAmount() = "Amount: $amount"
+    fun hasAmount(amount: Int) = this.amount >= amount
+    fun amountIsMaxed() = amount == maxAmount
+
+    fun add(amount: Int) {
+
+        this.amount += amount
+
+        if(this.amount > maxAmount) {
+
+            this.amount = maxAmount
+        }
+    }
+
+    fun removeAmount(amount: Int) {
+
+        this.amount -= amount
+
+        if(this.amount < minAmount) {
+
+            this.amount = minAmount
+        }
+    }
 
     fun consume(): Boolean {
 
-        return consumeCoconut()
-    }
-
-    private fun consumeCoconut(): Boolean {
-
         val amount = 1
 
-        if(Player.coconuts().hasAmount(amount)) {
+        if(this.amount >= amount) {
 
-            Player.coconuts().loseAmount(amount)
-            Player.health().addAmount(2)
+            removeAmount(1)
+            consumeAlgorithm.invoke()
             return true
         }
 
-        if(Player.health().amountIsMaxed()) {
-
-            CurrentMessage.changeMessage(
-                "Full Health",
-                R.drawable.health64,
-                "Your health is already full."
-            )
-
-            return false
-        }
-
         CurrentMessage.changeMessage(
-            "No Coconuts",
-            R.drawable.coconut64,
-            "You don't have any of these."
+            "No $name",
+            icon,
+            "You don't have any of these"
         )
 
         return false
     }
+
+    fun resetAmount() {
+
+        amount = 0
+    }
+
+    fun setAmount(amount: Int) {
+
+        this.amount = amount
+    }
+
+    fun amount() = amount
 }

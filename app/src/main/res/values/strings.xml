@@ -177,4 +177,9 @@
     <string name="feed">Feed</string>
     <string name="talk">Talk</string>
     <string name="ask">Ask</string>
+    <string name="fish_icon_cd">fish_icon_cd</string>
+    <string name="iron_icon_cd">iron_icon_cd</string>
+    <string name="camp_fire">Camp Fire</string>
+    <string name="ingredient_icon_cd">ingredient_icon_cd</string>
+    <string name="enemy_health">Enemy Health</string>
 </resources>

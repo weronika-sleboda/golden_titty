@@ -41,7 +41,7 @@ class InformationFragment : Fragment() {
 
     private fun setupIcon() {
 
-        binding.icon.setImageResource(information?.icon!!)
+        binding.icon.setImageResource(information?.icon?.invoke()!!)
     }
 
     private fun setupName() {

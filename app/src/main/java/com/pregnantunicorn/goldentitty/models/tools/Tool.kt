@@ -8,9 +8,10 @@ interface Tool {
     fun info(): String
     fun equip()
     fun owns(): Boolean
+    fun setOwns(owns: Boolean)
     fun addToBackpack()
 
     fun requiredWood(): Int
-    fun requiredStone(): Int
+    fun requiredIron(): Int
     fun hitAmount(): Int
 }

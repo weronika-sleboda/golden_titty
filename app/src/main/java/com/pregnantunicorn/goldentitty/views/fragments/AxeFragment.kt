@@ -165,9 +165,9 @@ class AxeFragment : Fragment() {
                     else {
 
                         CurrentMessage.changeMessage(
-                            "No Stealth",
-                            R.drawable.stealth64,
-                            "You don't have enough stealth to perform this action."
+                            "No Energy",
+                            R.drawable.energy64,
+                            "You don't have enough energy to perform this action."
                         )
 
                         showMessage()
@@ -178,7 +178,7 @@ class AxeFragment : Fragment() {
 
                     CurrentMessage.changeMessage(
                         "No Axe",
-                        R.drawable.chieftain_axe64,
+                        R.drawable.info64,
                         "Equip an axe."
                     )
 

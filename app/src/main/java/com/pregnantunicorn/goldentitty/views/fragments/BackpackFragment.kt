@@ -12,6 +12,7 @@ import com.pregnantunicorn.goldentitty.databinding.BackpackFragmentBinding
 import com.pregnantunicorn.goldentitty.models.tools.*
 import com.pregnantunicorn.goldentitty.models.food.Food
 import com.pregnantunicorn.goldentitty.models.food.FoodManager
+import com.pregnantunicorn.goldentitty.models.food.Foods
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItem
@@ -38,7 +39,7 @@ class BackpackFragment : Fragment(),
     private lateinit var toolsAdapter: ToolsAdapter
     private lateinit var itemsAdapter: KeyItemAdapter
     private lateinit var layoutManager: LinearLayoutManager
-    private var food: Array<Food>? = FoodManager().foods
+    private var food: Array<Food>? = Foods.foods()
     private var tools: List<Tool>? = BackpackTools().tools()
     private var keyItems: List<KeyItem>? = KeyItemManager().items()
 

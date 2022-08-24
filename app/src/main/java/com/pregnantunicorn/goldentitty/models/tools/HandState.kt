@@ -6,5 +6,9 @@ enum class HandState {
     BOOMERANG,
     KEY_ITEM,
     HAMMER,
-    AXE
+    AXE,
+    SPEAR,
+    KNIFE,
+    SHOVEL,
+    SWORD
 }

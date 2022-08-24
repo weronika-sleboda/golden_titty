@@ -1,8 +1,6 @@
 package com.pregnantunicorn.goldentitty.models.world_map.world
 
-import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
-import com.pregnantunicorn.goldentitty.models.npcs.CurrentNpc
 import com.pregnantunicorn.goldentitty.models.world_map.tiles.*
 
 class SleazeholeIslandEast: Location(
@@ -10,11 +8,9 @@ class SleazeholeIslandEast: Location(
 
         .also {
 
-            it[4] = LocationTile(
+            it[4] = SecretGateTile(
                 LocationName.SLEAZEHOLE_ISLAND_WEST
             ) { BackgroundFactory().beach() }
-
-            it[5] = NpcTile(R.drawable.saphonee64, CurrentNpc.SAPHONEE)
 
             it[12] = EmptyTile { BackgroundFactory().water()}
             it[13] = EmptyTile { BackgroundFactory().water()}

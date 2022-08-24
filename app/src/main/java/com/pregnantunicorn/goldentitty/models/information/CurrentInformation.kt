@@ -4,32 +4,43 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.entrances.CurrentEntrance
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
+import com.pregnantunicorn.goldentitty.models.world_map.world.CurrentLocation
+import com.pregnantunicorn.goldentitty.models.world_map.world.LocationName
 import com.pregnantunicorn.goldentitty.views.fragments.EntranceFragment
+import com.pregnantunicorn.goldentitty.views.fragments.LocationFragment
 
 object CurrentInformation {
 
-    const val CANDY_DRAGON = 0
+    const val EXCAVATION_SITE_WEST = 0
+    const val EXCAVATION_SITE_EAST = 1
+    const val SECRET_GATE = 2
 
     private val facts = arrayOf(
 
         Information(
-            "Candy The Dragon",
-            "[He is busy licking his tail]",
-            R.drawable.daniel128,
+            "Excavation Site",
+            "The site has been already excavated.",
+            { IconFactory().excavationSite128() },
             "Leave"
         )
         {
 
-            CurrentEntrance.changeEntrance(CurrentEntrance.CAVE)
+            CurrentLocation.changeLocation(LocationName.SLEAZEHOLE_ISLAND_WEST)
 
             it.supportFragmentManager.commit {
 
-                replace<EntranceFragment>(R.id.world_container)
+                replace<LocationFragment>(R.id.world_container)
             }
-        }
+        },
     )
 
-    private var information = facts[CANDY_DRAGON]
+    private var information = facts[EXCAVATION_SITE_WEST]
     fun information() = information
+
+    fun changeInformation(infoIndex: Int) {
+
+        information = facts[infoIndex]
+    }
 
 }

@@ -7,7 +7,7 @@ class Boomerang(
     val speed: () -> Long,
     private val hitAmount: () -> Int,
     private val requiredWood: Int,
-    private val requiredStone: Int,
+    private val requiredIron: Int,
     private val boomerangIndex: Int,
     private var owns: Boolean
 ): Tool {
@@ -36,7 +36,12 @@ class Boomerang(
     }
 
     override fun requiredWood(): Int = requiredWood
-    override fun requiredStone(): Int = requiredStone
+    override fun requiredIron(): Int = requiredIron
 
     override fun hitAmount() = hitAmount.invoke()
+
+    override fun setOwns(owns: Boolean) {
+
+        this.owns = owns
+    }
 }

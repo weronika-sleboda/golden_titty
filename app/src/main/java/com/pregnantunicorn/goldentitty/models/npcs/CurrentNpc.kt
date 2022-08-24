@@ -57,4 +57,7 @@ object CurrentNpc {
     }
 
     fun npcs() = npcs
+
+    fun jin() = npcs[JIN]
+    fun saphonee() = npcs[SAPHONEE]
 }

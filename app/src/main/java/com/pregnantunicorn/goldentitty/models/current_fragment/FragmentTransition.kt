@@ -8,6 +8,38 @@ import com.pregnantunicorn.goldentitty.views.fragments.*
 
 class FragmentTransition {
 
+    fun battlefieldFragment(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<BattlefieldFragment>(R.id.world_container)
+        }
+    }
+
+    fun excavationFragment(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<ExcavationFragment>(R.id.world_container)
+        }
+    }
+
+    fun campFireFragment(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<CampFireFragment>(R.id.world_container)
+        }
+    }
+
+    fun fishingSpotFragment(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<FishingSpotFragment>(R.id.world_container)
+        }
+    }
+
     fun workshopFragment(activity: FragmentActivity) {
 
         activity.supportFragmentManager.commit {
@@ -52,7 +84,7 @@ class FragmentTransition {
 
         activity.supportFragmentManager.commit {
 
-            replace<PalmFragment>(R.id.world_container)
+            replace<CoconutPalmFragment>(R.id.world_container)
         }
     }
 
@@ -61,7 +93,7 @@ class FragmentTransition {
 
         activity.supportFragmentManager.commit {
 
-            replace<CafeteriaFragment>(R.id.world_container)
+            replace<CampFireFragment>(R.id.world_container)
         }
     }
 

@@ -10,9 +10,9 @@ class BackgroundFactory {
 
         return when(CurrentDayCycle.dayCycle()) {
 
-            DayCycle.MORNING -> { R.drawable.boomerang_tile_morning_background }
-            DayCycle.SUNSET -> { R.drawable.boomerang_tile_sunset_background}
-            DayCycle.NIGHT -> { R.drawable.boomerang_tile_night_background}
+            DayCycle.MORNING -> { R.drawable.palm_tile_morning_background }
+            DayCycle.SUNSET -> { R.drawable.palm_tile_sunset_background}
+            DayCycle.NIGHT -> { R.drawable.palm_tile_night_background}
         }
     }
 

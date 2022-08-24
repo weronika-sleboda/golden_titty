@@ -1,7 +1,8 @@
 package com.pregnantunicorn.goldentitty.models.tools
 
 import com.pregnantunicorn.goldentitty.R
-import com.pregnantunicorn.goldentitty.models.player.Player
+import com.pregnantunicorn.goldentitty.models.food.FoodType
+import com.pregnantunicorn.goldentitty.models.food.Foods
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import kotlin.random.Random
 
@@ -17,11 +18,11 @@ class CoconutPalm {
 
     fun name() = "Coconut Palm"
 
-    fun range(): Array<PalmTile> {
+    fun range(): Array<ToolTile> {
 
-        return Array(rangeSize) { PalmTile() }.also {
+        return Array(rangeSize) { ToolTile() }.also {
 
-            it[hitPosition] = PalmTile(
+            it[hitPosition] = ToolTile(
                 targetIsVisible = true,
                 targetIcon = targetIcon,
             )
@@ -33,7 +34,7 @@ class CoconutPalm {
 
         if(boomerangPosition == hitPosition) {
 
-            Player.coconuts().addAmount(hitAmount)
+            Foods.food(FoodType.COCONUT).add(hitAmount)
 
             CurrentMessage.changeMessage(
                 "Target Hit!",
@@ -49,9 +50,9 @@ class CoconutPalm {
 
     private val targetIcon = R.drawable.coconut64
 
-    fun newRange(boomerangIcon: Int): Array<PalmTile> {
+    fun newRange(boomerangIcon: Int): Array<ToolTile> {
 
-        return Array(rangeSize) {  PalmTile() }.also {
+        return Array(rangeSize) {  ToolTile() }.also {
 
             boomerangPosition++
 
@@ -60,16 +61,16 @@ class CoconutPalm {
                 boomerangPosition = 0
             }
 
-            it[hitPosition] = PalmTile(
+            it[hitPosition] = ToolTile(
                 targetIcon = targetIcon,
                 targetIsVisible = true,
             )
 
             if(boomerangPosition == hitPosition) {
 
-                it[boomerangPosition] = PalmTile(
-                    boomerangIcon = boomerangIcon,
-                    boomerangIsVisible = true,
+                it[boomerangPosition] = ToolTile(
+                    hitIcon = boomerangIcon,
+                    hitIconIsVisible = true,
                     targetIsVisible = true,
                     targetIcon = targetIcon,
                 )
@@ -77,9 +78,9 @@ class CoconutPalm {
 
             else {
 
-                it[boomerangPosition] = PalmTile(
-                    boomerangIcon = boomerangIcon,
-                    boomerangIsVisible = true,
+                it[boomerangPosition] = ToolTile(
+                    hitIcon = boomerangIcon,
+                    hitIconIsVisible = true,
                 )
             }
         }

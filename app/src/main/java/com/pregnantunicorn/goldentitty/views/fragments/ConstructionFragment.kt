@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.ConstructionFragmentBinding
 import com.pregnantunicorn.goldentitty.models.construction.Building
@@ -42,6 +43,7 @@ class ConstructionFragment : Fragment() {
         setupIcon()
         setupName()
         setupInfo()
+        setupFab()
         setupRequirementInfo()
         setupBuildButton()
         setupLeaveButton()
@@ -49,17 +51,22 @@ class ConstructionFragment : Fragment() {
         return binding.root
     }
 
+    private fun setupFab() {
+
+        val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
+        fab?.setOnClickListener {}
+    }
+
     private fun updatePlayerStatus() {
 
         val status = requireActivity() as PlayerStatusUpdate
         status.updateWood()
-        status.updateStone()
-        status.updateStoryProgress()
+        status.updateIron()
     }
 
     private fun setupRequirementInfo() {
 
-        binding.requirement.requiredStone.text = building?.stoneToString()
+        binding.requirement.requiredStone.text = building?.ironToString()
         binding.requirement.requiredWood.text = building?.woodToString()
     }
 

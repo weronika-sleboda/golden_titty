@@ -16,7 +16,7 @@ object CurrentGrabObject {
             "This is the key that opens the door to the first floor of the Temple of the Latter Day Vagina Rapture."
         )
         {
-            KeyItems.getKeyItem(KeyItemType.FIRST_FLOOR).add()
+
         },
 
      )

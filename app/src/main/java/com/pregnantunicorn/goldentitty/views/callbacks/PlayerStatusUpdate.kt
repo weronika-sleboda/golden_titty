@@ -4,9 +4,9 @@ interface PlayerStatusUpdate {
 
     fun updateHealth()
     fun updateEnergy()
-    fun updateStoryProgress()
     fun updateCoconuts()
-    fun updateStone()
+    fun updateFish()
+    fun updateIron()
     fun updateWood()
 
     fun updateFab()
