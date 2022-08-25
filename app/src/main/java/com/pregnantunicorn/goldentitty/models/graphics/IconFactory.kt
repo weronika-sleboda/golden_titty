@@ -6,6 +6,36 @@ import com.pregnantunicorn.goldentitty.models.day_cycle.DayCycle
 
 class IconFactory {
 
+    fun templeDoor256(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.temple_door256_morning}
+            DayCycle.SUNSET -> { R.drawable.temple_door256_sunset }
+            DayCycle.NIGHT -> { R.drawable.temple_door256_night }
+        }
+    }
+
+    fun templeDoor64(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.temple_door64_morning}
+            DayCycle.SUNSET -> { R.drawable.temple_door64_sunset }
+            DayCycle.NIGHT -> { R.drawable.temple_door64_night }
+        }
+    }
+
+    fun templeDoor128(): Int {
+
+        return when(CurrentDayCycle.dayCycle()) {
+
+            DayCycle.MORNING -> { R.drawable.temple_door128_morning}
+            DayCycle.SUNSET -> { R.drawable.temple_door128_sunset }
+            DayCycle.NIGHT -> { R.drawable.temple_door128_night }
+        }
+    }
+
     fun secretGate128(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
@@ -294,16 +324,6 @@ class IconFactory {
             DayCycle.MORNING -> { R.drawable.hut5_morning128 }
             DayCycle.SUNSET -> { R.drawable.hut5_sunset128 }
             DayCycle.NIGHT -> { R.drawable.hut5_night128 }
-        }
-    }
-
-    fun templeDoor128(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.temple_door128_morning}
-            DayCycle.SUNSET -> { R.drawable.temple_door128_sunset }
-            DayCycle.NIGHT -> { R.drawable.temple_door128_night }
         }
     }
 

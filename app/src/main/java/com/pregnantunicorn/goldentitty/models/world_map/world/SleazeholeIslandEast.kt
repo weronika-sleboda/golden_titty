@@ -12,6 +12,9 @@ class SleazeholeIslandEast: Location(
                 LocationName.SLEAZEHOLE_ISLAND_WEST
             ) { BackgroundFactory().beach() }
 
+            it[5] = TempleTile()
+
+
             it[12] = EmptyTile { BackgroundFactory().water()}
             it[13] = EmptyTile { BackgroundFactory().water()}
             it[14] = EmptyTile { BackgroundFactory().water()}

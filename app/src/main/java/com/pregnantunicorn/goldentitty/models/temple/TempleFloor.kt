@@ -1,5 +1,7 @@
 package com.pregnantunicorn.goldentitty.models.temple
 
+import com.pregnantunicorn.goldentitty.R
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.key_items.CurrentKeyItem
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItemType
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItems
@@ -11,8 +13,12 @@ class TempleFloor(
     private val reward: KeyItemType,
     private val rewardIcon: Int,
     private val rewardName: String,
+    private val enemyName: EnemyName,
+    private val templeFloorNumber: TempleFloorNumber
 )
 {
+
+    fun icon() = IconFactory().templeDoor64()
 
     private var conquered = false
     fun conquered() = conquered
@@ -34,8 +40,16 @@ class TempleFloor(
 
         if(CurrentKeyItem.keyItemType() == keyItemType) {
 
+            TempleFloors.changeTempleFloor(templeFloorNumber)
+            CurrentEnemy.changeEnemyName(enemyName)
             return true
         }
+
+        CurrentMessage.changeMessage(
+            "Locked",
+            R.drawable.padlock64,
+            "The door is locked. You need a key."
+        )
 
         return false
     }
@@ -48,6 +62,6 @@ class TempleFloor(
             "The enemy dropped a key item."
         )
 
-        KeyItems.getKeyItem(keyItemType).add()
+        KeyItems.getKeyItem(reward).add()
     }
 }

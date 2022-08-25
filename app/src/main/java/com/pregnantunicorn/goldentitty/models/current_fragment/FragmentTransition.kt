@@ -8,6 +8,14 @@ import com.pregnantunicorn.goldentitty.views.fragments.*
 
 class FragmentTransition {
 
+    fun templeFragment(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<TempleFragment>(R.id.world_container)
+        }
+    }
+
     fun battlefieldFragment(activity: FragmentActivity) {
 
         activity.supportFragmentManager.commit {

@@ -23,6 +23,7 @@ import com.pregnantunicorn.goldentitty.models.player.Player
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.temple.CurrentEnemy
 import com.pregnantunicorn.goldentitty.models.temple.Enemy
+import com.pregnantunicorn.goldentitty.models.temple.TempleFloors
 import com.pregnantunicorn.goldentitty.views.activities.GameOverActivity
 import com.pregnantunicorn.goldentitty.views.adapters.ToolTileAdapter
 import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
@@ -54,6 +55,7 @@ class BattlefieldFragment: Fragment() {
         }
 
         updateName()
+        setupEnemyDamageInfo()
         updateRange(battleField!!.range(enemy?.icon!!))
         setupLeaveButton()
         setupFab()
@@ -62,6 +64,11 @@ class BattlefieldFragment: Fragment() {
         setupFab()
 
         return binding.root
+    }
+
+    private fun setupEnemyDamageInfo() {
+
+        binding.info.enemyDamage.text = enemy?.damage.toString()
     }
 
     private fun updateEnemyHealth() {
@@ -162,6 +169,9 @@ class BattlefieldFragment: Fragment() {
                             }
 
                             if(enemy?.health() == 0) {
+
+                                TempleFloors.templeFloor().beat()
+                                showMessage()
 
                                 activity?.supportFragmentManager?.commit {
 

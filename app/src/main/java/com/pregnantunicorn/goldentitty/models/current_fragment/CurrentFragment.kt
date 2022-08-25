@@ -29,6 +29,7 @@ object CurrentFragment {
             FragmentType.CAMP_FIRE_FRAGMENT -> FragmentTransition().campFireFragment(activity)
             FragmentType.EXCAVATION_FRAGMENT -> FragmentTransition().excavationFragment(activity)
             FragmentType.BATTLEFIELD_FRAGMENT -> FragmentTransition().battlefieldFragment(activity)
+            FragmentType.TEMPLE_FRAGMENT -> FragmentTransition().templeFragment(activity)
         }
     }
 }

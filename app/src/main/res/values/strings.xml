@@ -182,4 +182,8 @@
     <string name="camp_fire">Camp Fire</string>
     <string name="ingredient_icon_cd">ingredient_icon_cd</string>
     <string name="enemy_health">Enemy Health</string>
+    <string name="tempel_door_icon_cd">temple_door_icon</string>
+    <string name="temple_door_icon_cd">temple_door_icon_cd</string>
+    <string name="temple_ruins">Temple Ruins</string>
+    <string name="attack_icon_cd">attack_icon_cd</string>
 </resources>
