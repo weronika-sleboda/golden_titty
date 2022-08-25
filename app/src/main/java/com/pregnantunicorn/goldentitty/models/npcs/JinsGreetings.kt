@@ -6,7 +6,7 @@ class JinsGreetings {
 
     fun greeting(): String {
 
-        return when(Player.storyProgress().progress()) {
+        return when(0) {
 
             0 -> "Come, let us gather some wood and stone. We need to build a workshop so that we can make better tools."
             1 -> ""

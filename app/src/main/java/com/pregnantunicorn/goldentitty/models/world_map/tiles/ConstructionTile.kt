@@ -15,6 +15,7 @@ import com.pregnantunicorn.goldentitty.views.fragments.EntranceFragment
 class ConstructionTile(
     private val building: Building,
     private val entranceIndex: Int,
+    private val background: () -> Int = { BackgroundFactory().beach() }
 ): Tile(true)
 {
     override fun icon() : Int {
@@ -30,7 +31,7 @@ class ConstructionTile(
         }
     }
 
-    override fun background() = BackgroundFactory().beach()
+    override fun background() = background.invoke()
 
     override fun onClick(activity: FragmentActivity) {
 

@@ -10,7 +10,7 @@ class KeyItem(
 )
 {
 
-    private var owns = true
+    private var owns = false
 
     fun owns() = owns
 

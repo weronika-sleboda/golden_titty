@@ -11,7 +11,8 @@ class Building(
     val smallIcon: () -> Int,
     val buildingType: BuildingType,
     private val wood: Int,
-    private val iron: Int
+    private val iron: Int,
+    private val buildAlgorithm: () -> Unit
 )
 {
     private var isBuild = false
@@ -26,7 +27,7 @@ class Building(
 
             Player.wood().loseAmount(wood)
             Player.iron().loseAmount(iron)
-            Player.storyProgress().increaseProgress()
+            buildAlgorithm.invoke()
 
             isBuild = true
 

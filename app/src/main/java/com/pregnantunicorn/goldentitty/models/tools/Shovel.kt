@@ -4,7 +4,7 @@ import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 
 class Shovel : Tool {
 
-    private var owns = true
+    private var owns = false
 
     override fun icon() = IconFactory().shovel64()
 

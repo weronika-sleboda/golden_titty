@@ -1,5 +1,7 @@
 package com.pregnantunicorn.goldentitty.models.world_map.world
 
+import com.pregnantunicorn.goldentitty.models.construction.BuildingType
+import com.pregnantunicorn.goldentitty.models.construction.Buildings
 import com.pregnantunicorn.goldentitty.models.day_cycle.CurrentDayCycle
 import com.pregnantunicorn.goldentitty.models.day_cycle.DayCycle
 import com.pregnantunicorn.goldentitty.models.entrances.CurrentEntrance
@@ -16,28 +18,24 @@ class TickyTackaEast: Location(
 
         .also {
 
-            it[0] = EntranceTile(
-                CurrentEntrance.EXCAVATION_SITE_NR2,
-                { IconFactory().excavationSite64() },
-                {BackgroundFactory().beach() }
+            it[0] = ConstructionTile(
+                Buildings.building(BuildingType.EXCAVATION_SITE_NR2),
+                CurrentEntrance.EXCAVATION_SITE_NR2
             )
 
-            it[1] = EntranceTile(
-                CurrentEntrance.EXCAVATION_SITE_NR3,
-                { IconFactory().excavationSite64() },
-                {BackgroundFactory().beach() }
+            it[1] = ConstructionTile(
+                Buildings.building(BuildingType.EXCAVATION_SITE_NR3),
+                CurrentEntrance.EXCAVATION_SITE_NR3
             )
 
-            it[2] = EntranceTile(
-                CurrentEntrance.EXCAVATION_SITE_NR4,
-                { IconFactory().excavationSite64() },
-                {BackgroundFactory().beach() }
+            it[2] = ConstructionTile(
+                Buildings.building(BuildingType.EXCAVATION_SITE_NR4),
+                CurrentEntrance.EXCAVATION_SITE_NR4
             )
 
-            it[3] = EntranceTile(
-                CurrentEntrance.EXCAVATION_SITE_NR5,
-                { IconFactory().excavationSite64() },
-                {BackgroundFactory().beach() }
+            it[3] = ConstructionTile(
+                Buildings.building(BuildingType.EXCAVATION_SITE_NR5),
+                CurrentEntrance.EXCAVATION_SITE_NR5
             )
 
             it[4] = EntranceTile(
@@ -46,16 +44,14 @@ class TickyTackaEast: Location(
                 {BackgroundFactory().beach() }
             )
 
-            it[8] = EntranceTile(
-                CurrentEntrance.EXCAVATION_SITE_NR6,
-                { IconFactory().excavationSite64() },
-                {BackgroundFactory().beach() }
+            it[8] = ConstructionTile(
+                Buildings.building(BuildingType.EXCAVATION_SITE_NR6),
+                CurrentEntrance.EXCAVATION_SITE_NR6
             )
 
-            it[9] = EntranceTile(
-                CurrentEntrance.EXCAVATION_SITE_NR7,
-                { IconFactory().excavationSite64() },
-                {BackgroundFactory().beach() }
+            it[9] = ConstructionTile(
+                Buildings.building(BuildingType.EXCAVATION_SITE_NR7),
+                CurrentEntrance.EXCAVATION_SITE_NR7
             )
 
             if(CurrentHandState.handState() == HandState.KEY_ITEM &&

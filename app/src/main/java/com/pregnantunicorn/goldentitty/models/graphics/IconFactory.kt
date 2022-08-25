@@ -344,15 +344,7 @@ class IconFactory {
     fun darkRider128() = R.drawable.dark_rider128
     fun darkRider256() = R.drawable.dark_rider256
 
-    fun constructionSite64(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.construction_site64_morning }
-            DayCycle.SUNSET -> { R.drawable.construction_site64_sunset }
-            DayCycle.NIGHT -> { R.drawable.construction_site64_night }
-        }
-    }
+    fun constructionSite64() = R.drawable.construction_site64
 
     fun workshop64(): Int {
 

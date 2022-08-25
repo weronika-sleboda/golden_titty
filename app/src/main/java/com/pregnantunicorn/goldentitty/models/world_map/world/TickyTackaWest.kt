@@ -1,5 +1,7 @@
 package com.pregnantunicorn.goldentitty.models.world_map.world
 
+import com.pregnantunicorn.goldentitty.models.construction.BuildingType
+import com.pregnantunicorn.goldentitty.models.construction.Buildings
 import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.entrances.CurrentEntrance
@@ -36,10 +38,9 @@ class TickyTackaWest : Location(
                 {BackgroundFactory().grass() }
             )
 
-            it[4] = EntranceTile(
-                CurrentEntrance.CAMP_FIRE,
-                { IconFactory().campFire64() },
-                {BackgroundFactory().beach() }
+            it[4] = ConstructionTile(
+                Buildings.building(BuildingType.CAMP_FIRE),
+                CurrentEntrance.CAMP_FIRE
             )
 
             if(!CurrentNpc.jin().hasHouse()) {
@@ -51,34 +52,30 @@ class TickyTackaWest : Location(
 
             if(!CurrentNpc.saphonee().hasHouse()) {
 
-                it[6] = NpcTile(IconFactory().sapphire64(), CurrentNpc.SAPHONEE)
+                it[6] = NpcTile(IconFactory().saphonee64(), CurrentNpc.SAPHONEE)
             }
 
             else { it[6] = EmptyTile { BackgroundFactory().beach() } }
 
-            it[8] = EntranceTile(
-                CurrentEntrance.JINS_HUT,
-                {IconFactory().jinsHut64()},
-                {BackgroundFactory().grass()}
-            )
+            it[8] = ConstructionTile(
+                Buildings.building(BuildingType.JINS_HUT),
+                CurrentEntrance.JINS_HUT
+            ) { BackgroundFactory().grass() }
 
-            it[9] = EntranceTile(
-                CurrentEntrance.SAPHONEES_HUT,
-                {IconFactory().saphoneesHut64() },
-                { BackgroundFactory().grass()}
-            )
+            it[9] = ConstructionTile(
+                Buildings.building(BuildingType.SAPHONEES_HUT),
+                CurrentEntrance.SAPHONEES_HUT
+            ) { BackgroundFactory().grass() }
 
-            it[10] = EntranceTile(
-                CurrentEntrance.WORKSHOP,
-                {IconFactory().workshop64() },
-                { BackgroundFactory().grass()}
-            )
+            it[10] = ConstructionTile(
+                Buildings.building(BuildingType.WORKSHOP),
+                CurrentEntrance.WORKSHOP
+            ) { BackgroundFactory().grass() }
 
-            it[4] = EntranceTile(
-                CurrentEntrance.EXCAVATION_SITE_NR1,
-                {IconFactory().excavationSite64()},
-                {BackgroundFactory().beach() }
-            )
+            it[7] = ConstructionTile(
+                Buildings.building(BuildingType.EXCAVATION_SITE_NR1),
+                CurrentEntrance.EXCAVATION_SITE_NR1
+            ) { BackgroundFactory().beach() }
 
             it[11] = EntranceTile(
                 CurrentEntrance.WESTERN_GATE,
@@ -88,11 +85,10 @@ class TickyTackaWest : Location(
 
             it[12] = EmptyTile { BackgroundFactory().water() }
 
-            it[13] = EntranceTile(
-                CurrentEntrance.FISHING_SPOT,
-                {IconFactory().pier64() },
-                {BackgroundFactory().water()}
-            )
+            it[13] = ConstructionTile(
+                Buildings.building(BuildingType.PIER),
+                CurrentEntrance.PIER
+            ) { BackgroundFactory().water() }
 
             it[14] = EmptyTile { BackgroundFactory().water()}
             it[15] = EmptyTile { BackgroundFactory().water()}

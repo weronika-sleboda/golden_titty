@@ -89,11 +89,7 @@ class HammerFragment : Fragment() {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {
-
-            CurrentHandState.changeHandState(HandState.EMPTY)
-            fab.setImageResource(CurrentHandState.fabIcon())
-        }
+        fab?.setOnClickListener {}
     }
 
     private fun fail() {

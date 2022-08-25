@@ -74,7 +74,7 @@
         android:layout_height="64dp"
         android:padding="7dp"
         android:layout_marginEnd="5dp"
-        android:src="@drawable/grab64"
+        android:src="@drawable/empty_hand64"
         android:background="@drawable/dark_oval_gradient_button_background"
         android:layout_gravity="center|end"/>
 

@@ -346,7 +346,7 @@ object Tools {
                 5,
                 15,
                 BANDIT_SWORD,
-                true,
+                false,
             ),
 
             Sword(
@@ -358,7 +358,7 @@ object Tools {
                 8,
                 20,
                 WARRIOR_SWORD,
-                true,
+                false,
             ),
 
             Sword(
@@ -370,7 +370,7 @@ object Tools {
                 12,
                 30,
                 ASSASSIN_SWORD,
-                true,
+                false,
             ),
         )
     }

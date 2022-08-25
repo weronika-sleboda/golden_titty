@@ -1,6 +1,7 @@
 package com.pregnantunicorn.goldentitty.models.construction
 
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
+import com.pregnantunicorn.goldentitty.models.npcs.CurrentNpc
 
 object Buildings {
 
@@ -27,7 +28,7 @@ object Buildings {
             BuildingType.CAMP_FIRE,
             10,
             5
-        ),
+        ) {},
 
         Building(
             "Workshop",
@@ -37,7 +38,7 @@ object Buildings {
             BuildingType.WORKSHOP,
             15,
             10
-        ),
+        ) {},
 
         Building(
             "Jin's Hut",
@@ -47,7 +48,7 @@ object Buildings {
             BuildingType.JINS_HUT,
             15,
             10
-        ),
+        ) { CurrentNpc.jin().moveToHouse() },
 
         Building(
             "Saphonee's Hut",
@@ -57,17 +58,17 @@ object Buildings {
             BuildingType.SAPHONEES_HUT,
             15,
             10
-        ),
+        ) { CurrentNpc.saphonee().moveToHouse() },
 
         Building(
             "Pier",
             "Building the pier will allow you to acquire fish. The fish restores health which is crucial for survival.",
             { IconFactory().pier128() },
             { IconFactory().pier64() },
-            BuildingType.JINS_HUT,
+            BuildingType.PIER,
             15,
             10
-        ),
+        ) {},
 
         Building(
             "Excavation Site Nr1",
@@ -77,7 +78,7 @@ object Buildings {
             BuildingType.EXCAVATION_SITE_NR1,
             15,
             10
-        ),
+        ) {},
 
         Building(
             "Excavation Site Nr2",
@@ -87,7 +88,7 @@ object Buildings {
             BuildingType.EXCAVATION_SITE_NR2,
             15,
             10
-        ),
+        ) {},
 
         Building(
             "Excavation Site Nr3",
@@ -97,7 +98,7 @@ object Buildings {
             BuildingType.EXCAVATION_SITE_NR3,
             15,
             10
-        ),
+        ) {},
 
         Building(
             "Excavation Site Nr4",
@@ -107,7 +108,7 @@ object Buildings {
             BuildingType.EXCAVATION_SITE_NR4,
             15,
             10
-        ),
+        ) {},
 
         Building(
             "Excavation Site Nr5",
@@ -117,7 +118,7 @@ object Buildings {
             BuildingType.EXCAVATION_SITE_NR5,
             15,
             10
-        ),
+        ) {},
 
         Building(
             "Excavation Site Nr6",
@@ -127,7 +128,7 @@ object Buildings {
             BuildingType.EXCAVATION_SITE_NR6,
             15,
             10
-        ),
+        ) {},
 
         Building(
             "Excavation Site Nr7",
@@ -137,7 +138,7 @@ object Buildings {
             BuildingType.EXCAVATION_SITE_NR7,
             15,
             10
-        ),
+        ) {},
     )
 
     fun building(buildingType: BuildingType): Building {

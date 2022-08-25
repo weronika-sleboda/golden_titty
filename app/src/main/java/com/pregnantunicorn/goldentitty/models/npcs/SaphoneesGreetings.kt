@@ -6,7 +6,7 @@ class SaphoneesGreetings {
 
     fun greeting(): String {
 
-        return when(Player.storyProgress().progress()) {
+        return when(0) {
 
             0 -> "I won't sleep in the the same tent with two guys. I want a hut for myself. Until then I sleep outside."
             1 -> ""

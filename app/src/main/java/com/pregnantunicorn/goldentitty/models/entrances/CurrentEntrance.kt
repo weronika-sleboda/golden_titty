@@ -26,7 +26,7 @@ object CurrentEntrance {
     const val CAVE = 3
     const val WOOD_PALM = 4
     const val COCONUT_PALM = 5
-    const val FISHING_SPOT = 6
+    const val PIER = 6
     const val WORKSHOP = 7
     const val CAMP_FIRE = 8
     const val EXCAVATION_SITE_NR1 = 9
