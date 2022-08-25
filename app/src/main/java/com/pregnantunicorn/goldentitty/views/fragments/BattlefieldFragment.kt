@@ -12,11 +12,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.BattlefieldFragmentBinding
-import com.pregnantunicorn.goldentitty.databinding.GameOverActivityBinding
-import com.pregnantunicorn.goldentitty.databinding.SupplierFragmentBinding
 import com.pregnantunicorn.goldentitty.models.tools.*
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
+import com.pregnantunicorn.goldentitty.models.death.DeathReason
+import com.pregnantunicorn.goldentitty.models.death.GameOverCause
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.models.player.Player
@@ -134,7 +135,7 @@ class BattlefieldFragment: Fragment() {
 
                         CurrentMessage.changeMessage(
                             "No Energy",
-                            R.drawable.energy64,
+                            IconFactory().energy64(),
                             "You don't have enough energy to perform this action."
                         )
 
@@ -187,6 +188,8 @@ class BattlefieldFragment: Fragment() {
 
                             if(Player.isDead()) {
 
+                                DeathReason.changeGameOverCause(GameOverCause.METEOR_KILLED)
+
                                 val intent = Intent(context, GameOverActivity::class.java)
                                 startActivity(intent)
                             }
@@ -199,7 +202,7 @@ class BattlefieldFragment: Fragment() {
 
                 CurrentMessage.changeMessage(
                     "No Sword",
-                    R.drawable.info64,
+                    IconFactory().info64(),
                     "Equip a sword."
                 )
 
@@ -214,7 +217,7 @@ class BattlefieldFragment: Fragment() {
 
             CurrentMessage.changeMessage(
                 "Instructions",
-                R.drawable.info64,
+                IconFactory().info64(),
                 "1. Grab a sword from your backpack.\n" +
                         "2. Click on the sword icon at the bottom app bar in order to attack.\n" +
                         "3. When the target icon meets the enemy icon, click on the sword icon to hit the enemy.\n" +

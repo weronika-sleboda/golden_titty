@@ -12,6 +12,7 @@ import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.HammerFragmentBinding
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.player.Player
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHammer
@@ -77,7 +78,7 @@ class HammerFragment : Fragment() {
 
             CurrentMessage.changeMessage(
                 "Iron acquired",
-                R.drawable.stone64,
+                IconFactory().iron64(),
                 "You have acquired iron."
             )
 
@@ -88,7 +89,11 @@ class HammerFragment : Fragment() {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     private fun fail() {
@@ -101,7 +106,7 @@ class HammerFragment : Fragment() {
 
         CurrentMessage.changeMessage(
             "You Failed",
-            R.drawable.fail64,
+            IconFactory().fail64(),
             "You have failed."
         )
 
@@ -112,7 +117,7 @@ class HammerFragment : Fragment() {
 
         CurrentMessage.changeMessage(
             "Out Of Time",
-            R.drawable.hourglass64,
+            IconFactory().hourglass64(),
             "You run out of time."
         )
 
@@ -135,7 +140,7 @@ class HammerFragment : Fragment() {
 
         binding.controller.liftButton.setOnClickListener {
 
-            if(started) { checkWinningCondition(R.drawable.lift128) }
+            if(started) { checkWinningCondition(IconFactory().lift128()) }
         }
     }
 
@@ -144,7 +149,7 @@ class HammerFragment : Fragment() {
 
         binding.controller.digButton.setOnClickListener {
 
-            if(started) { checkWinningCondition(R.drawable.dig128) }
+            if(started) { checkWinningCondition(IconFactory().dig128()) }
         }
     }
 
@@ -152,7 +157,7 @@ class HammerFragment : Fragment() {
 
         binding.controller.smashButton.setOnClickListener {
 
-            if(started) { checkWinningCondition(R.drawable.smash128) }
+            if(started) { checkWinningCondition(IconFactory().smash128()) }
         }
     }
 
@@ -173,9 +178,9 @@ class HammerFragment : Fragment() {
 
         demandedAction = when(Random.nextInt(3)) {
 
-            0 -> R.drawable.lift128
-            1 -> R.drawable.smash128
-            else -> R.drawable.dig128
+            0 -> IconFactory().lift128()
+            1 -> IconFactory().smash128()
+            else -> IconFactory().dig128()
         }
     }
 
@@ -218,7 +223,7 @@ class HammerFragment : Fragment() {
 
                         CurrentMessage.changeMessage(
                             "No Energy",
-                            R.drawable.energy64,
+                            IconFactory().energy64(),
                             "You don't have enough energy to perform this action."
                         )
 
@@ -230,7 +235,7 @@ class HammerFragment : Fragment() {
 
                     CurrentMessage.changeMessage(
                         "No Hammer",
-                        R.drawable.info64,
+                        IconFactory().info64(),
                         "Equip a hammer."
                     )
 
@@ -276,7 +281,7 @@ class HammerFragment : Fragment() {
 
             CurrentMessage.changeMessage(
                 "Instructions",
-                R.drawable.info64,
+                IconFactory().info64(),
                 "1. Press the start button.\n" +
                         "2. Follow the icons on the main screen and press the corresponding button.\n" +
                         "3. If you click on an icon that isn't matching the one on the main screen you fail and have to start over.\n" +

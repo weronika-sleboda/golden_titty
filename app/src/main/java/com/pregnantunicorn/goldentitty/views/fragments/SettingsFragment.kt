@@ -10,6 +10,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.goldentitty.views.activities.MainMenuActivity
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.SettingsFragmentBinding
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
+import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
+import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.YesOrNoDialogFragment
 import kotlin.system.exitProcess
 
@@ -35,14 +38,18 @@ class SettingsFragment : Fragment() {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     private fun setupMainMenuButton() {
 
         binding.mainMenuButton.setOnClickListener {
 
-            showYesOrNoDialogFragment("Main menu", R.drawable.question_mark64,
+            showYesOrNoDialogFragment("Main menu", IconFactory().questionMark64(),
                 "Are you sure you want to exit to main menu? All unsaved progress will be lost."
             ) { goToMainMenu() }
         }
@@ -52,7 +59,7 @@ class SettingsFragment : Fragment() {
 
         binding.exitButton.setOnClickListener {
 
-            showYesOrNoDialogFragment("Exit game", R.drawable.question_mark64,
+            showYesOrNoDialogFragment("Exit game", IconFactory().questionMark64(),
                 "Are you sure you want to exit the game? All unsaved progress will be lost."
             ) { exitGame()}
 

@@ -1,6 +1,5 @@
 package com.pregnantunicorn.goldentitty.models.tools
 
-import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 
 class Shovel : Tool {

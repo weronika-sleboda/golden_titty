@@ -1,11 +1,12 @@
 package com.pregnantunicorn.goldentitty.models.temple
 
-import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.key_items.CurrentKeyItem
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItemType
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItems
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
+import com.pregnantunicorn.goldentitty.models.tools.HandState
 
 class TempleFloor(
     val name: String,
@@ -38,7 +39,8 @@ class TempleFloor(
 
     fun open(): Boolean {
 
-        if(CurrentKeyItem.keyItemType() == keyItemType) {
+        if(CurrentHandState.handState() == HandState.KEY_ITEM &&
+            CurrentKeyItem.keyItemType() == keyItemType) {
 
             TempleFloors.changeTempleFloor(templeFloorNumber)
             CurrentEnemy.changeEnemyName(enemyName)
@@ -47,7 +49,7 @@ class TempleFloor(
 
         CurrentMessage.changeMessage(
             "Locked",
-            R.drawable.padlock64,
+            IconFactory().padlock64(),
             "The door is locked. You need a key."
         )
 

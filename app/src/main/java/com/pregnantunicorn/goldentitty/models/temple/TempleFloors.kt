@@ -1,6 +1,5 @@
 package com.pregnantunicorn.goldentitty.models.temple
 
-import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItemType
 
@@ -16,7 +15,7 @@ object TempleFloors {
             "First Floor",
             KeyItemType.FIRST_FLOOR_KEY,
             KeyItemType.EMERALD,
-            R.drawable.emerald64,
+            IconFactory().emerald64(),
         "Emerald",
             EnemyName.PASHA,
             TempleFloorNumber.NR1
@@ -26,7 +25,7 @@ object TempleFloors {
             "Second Floor",
             KeyItemType.SECOND_FLOOR_KEY,
             KeyItemType.SAPPHIRE,
-            R.drawable.sapphire64,
+            IconFactory().sapphire64(),
             "Sapphire",
             EnemyName.SENTINO,
             TempleFloorNumber.NR2
@@ -36,7 +35,7 @@ object TempleFloors {
             "Second Floor",
             KeyItemType.THIRD_FLOOR_KEY,
             KeyItemType.RUBY,
-            R.drawable.ruby64,
+            IconFactory().ruby64(),
             "Ruby",
             EnemyName.DARK_RIDER,
             TempleFloorNumber.NR3

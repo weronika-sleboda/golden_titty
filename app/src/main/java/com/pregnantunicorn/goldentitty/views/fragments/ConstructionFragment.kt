@@ -15,6 +15,8 @@ import com.pregnantunicorn.goldentitty.models.construction.CurrentBuilding
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
+import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -54,7 +56,11 @@ class ConstructionFragment : Fragment() {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     private fun updatePlayerStatus() {

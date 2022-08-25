@@ -8,6 +8,30 @@ import com.pregnantunicorn.goldentitty.views.fragments.*
 
 class FragmentTransition {
 
+    fun informationFragment(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<InformationFragment>(R.id.world_container)
+        }
+    }
+
+    fun goldenTittyFragment(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<GoldenTittyFragment>(R.id.world_container)
+        }
+    }
+
+    fun chidinmaStatueFragment(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<ChidinmaStatueFragment>(R.id.world_container)
+        }
+    }
+
     fun templeFragment(activity: FragmentActivity) {
 
         activity.supportFragmentManager.commit {

@@ -1,5 +1,8 @@
 package com.pregnantunicorn.goldentitty.models.key_items
 
+import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
+import com.pregnantunicorn.goldentitty.models.tools.HandState
+
 class KeyItem(
     val icon: Int,
     val name: String,
@@ -7,7 +10,7 @@ class KeyItem(
 )
 {
 
-    private var owns = false
+    private var owns = true
 
     fun owns() = owns
 
@@ -23,6 +26,7 @@ class KeyItem(
 
     fun equip() {
 
+        CurrentHandState.changeHandState(HandState.KEY_ITEM)
         CurrentKeyItem.changeKeyItem(keyItemType)
     }
 }

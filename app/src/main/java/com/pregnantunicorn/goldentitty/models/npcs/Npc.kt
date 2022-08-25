@@ -4,9 +4,6 @@ import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.food.FoodType
 import com.pregnantunicorn.goldentitty.models.food.Foods
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
-import com.pregnantunicorn.goldentitty.models.player.Player
-import com.pregnantunicorn.goldentitty.models.player.Status
-import kotlin.math.max
 
 class Npc(
     val name: String,

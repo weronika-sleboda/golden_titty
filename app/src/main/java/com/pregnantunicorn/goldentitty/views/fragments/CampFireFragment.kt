@@ -11,18 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.CampFireFragmentBinding
-import com.pregnantunicorn.goldentitty.databinding.WorkshopFragmentBinding
 import com.pregnantunicorn.goldentitty.models.camp_fire.Recipe
 import com.pregnantunicorn.goldentitty.models.camp_fire.Recipes
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
-import com.pregnantunicorn.goldentitty.models.workshop.Blueprint
-import com.pregnantunicorn.goldentitty.models.workshop.Workshop
 import com.pregnantunicorn.goldentitty.views.adapters.CampFireAdapter
-import com.pregnantunicorn.goldentitty.views.adapters.WorkshopAdapter
 import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -60,7 +57,11 @@ class CampFireFragment : Fragment(), CampFireAdapter.RecipeListener {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     private fun updatePlayerStatus() {
@@ -100,7 +101,7 @@ class CampFireFragment : Fragment(), CampFireAdapter.RecipeListener {
 
                     CurrentMessage.changeMessage(
                         "No Knife",
-                        R.drawable.info64,
+                        IconFactory().info64(),
                         "Equip a knife."
                     )
                     showMessage()

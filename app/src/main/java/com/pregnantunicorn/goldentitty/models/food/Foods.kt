@@ -1,6 +1,6 @@
 package com.pregnantunicorn.goldentitty.models.food
 
-import com.pregnantunicorn.goldentitty.R
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.player.Player
 
 object Foods {
@@ -14,7 +14,7 @@ object Foods {
 
         Food(
             "Coconut",
-            R.drawable.coconut64,
+            IconFactory().coconut64(),
             "Energy: +1"
         )
         {
@@ -23,7 +23,7 @@ object Foods {
 
         Food(
             "Coconut Water",
-            R.drawable.coconut_water64,
+            IconFactory().coconutWater64(),
             "Energy: +3"
         )
         {
@@ -32,7 +32,7 @@ object Foods {
 
         Food(
             "Fish",
-            R.drawable.fish64,
+            IconFactory().fish64(),
             "Health: +1"
         )
         {
@@ -41,7 +41,7 @@ object Foods {
 
         Food(
             "Fried Fish",
-            R.drawable.fried_fish64,
+            IconFactory().friedFish64(),
             "Health: +3"
         )
         {
@@ -88,7 +88,7 @@ object Foods {
 
             Food(
                 "Coconut",
-                R.drawable.coconut64,
+                IconFactory().coconut64(),
                 "Energy: +1"
             )
             {
@@ -97,7 +97,7 @@ object Foods {
 
             Food(
                 "Coconut Water",
-                R.drawable.coconut_water64,
+                IconFactory().coconutWater64(),
                 "Energy: +3"
             )
             {
@@ -106,7 +106,7 @@ object Foods {
 
             Food(
                 "Fish",
-                R.drawable.fish64,
+                IconFactory().fish64(),
                 "Health: +1"
             )
             {
@@ -115,7 +115,7 @@ object Foods {
 
             Food(
                 "Fried Fish",
-                R.drawable.fried_fish64,
+                IconFactory().friedFish64(),
                 "Health: +3"
             )
             {

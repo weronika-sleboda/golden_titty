@@ -17,7 +17,7 @@ object OpeningEvent {
 
         Act(
             "Two Months Later",
-            R.drawable.vacations256,
+            R.drawable.golden_titty256,
             "The Golden Titty was worth more than you expected. You became filthy rich and bought a house on the Pearl Coast Beach.",
             "Yeah!"
         ),

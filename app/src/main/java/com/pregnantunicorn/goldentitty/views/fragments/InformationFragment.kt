@@ -8,8 +8,15 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.InformationFragmentBinding
+import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
+import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.information.CurrentInformation
 import com.pregnantunicorn.goldentitty.models.information.Information
+import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
+import com.pregnantunicorn.goldentitty.models.tools.HandState
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class InformationFragment : Fragment() {
 
@@ -24,6 +31,11 @@ class InformationFragment : Fragment() {
 
         binding = InformationFragmentBinding.inflate(inflater, container, false)
 
+        CoroutineScope(Dispatchers.IO).launch {
+
+            CurrentFragment.changeFragment(FragmentType.INFORMATION_FRAGMENT)
+        }
+
         setupName()
         setupIcon()
         setupInfo()
@@ -36,7 +48,11 @@ class InformationFragment : Fragment() {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     private fun setupIcon() {

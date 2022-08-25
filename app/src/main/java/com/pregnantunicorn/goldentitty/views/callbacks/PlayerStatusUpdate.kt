@@ -8,6 +8,5 @@ interface PlayerStatusUpdate {
     fun updateFish()
     fun updateIron()
     fun updateWood()
-
     fun updateFab()
 }

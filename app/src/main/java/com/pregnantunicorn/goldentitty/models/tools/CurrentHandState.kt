@@ -1,6 +1,6 @@
 package com.pregnantunicorn.goldentitty.models.tools
 
-import com.pregnantunicorn.goldentitty.R
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.key_items.CurrentKeyItem
 
 object CurrentHandState {
@@ -17,7 +17,7 @@ object CurrentHandState {
 
         return when(handState) {
 
-            HandState.EMPTY -> R.drawable.grab64
+            HandState.EMPTY -> IconFactory().emptyHand64()
 
             HandState.BOOMERANG -> { CurrentBoomerang.boomerang().icon() }
 
@@ -27,9 +27,9 @@ object CurrentHandState {
 
             HandState.SPEAR -> { CurrentSpear.spear().icon() }
 
-            HandState.KNIFE -> { R.drawable.knife64 }
+            HandState.KNIFE -> { IconFactory().knife64()}
 
-            HandState.SHOVEL -> { R.drawable.shovel64 }
+            HandState.SHOVEL -> { IconFactory().shovel64() }
 
             HandState.SWORD -> { CurrentSword.sword().icon() }
 

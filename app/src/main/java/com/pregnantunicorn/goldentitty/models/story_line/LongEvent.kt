@@ -36,7 +36,7 @@ class LongEvent(
             4 -> fourthLine
             5 -> fifthLine
             6 -> sixthLine
-            7 -> eightLine
+            7 -> seventhLine
             else -> { eightLine }
         }
     }

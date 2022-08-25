@@ -5,13 +5,10 @@ import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
 class ExcavationTile {
 
     private var background = BackgroundFactory().beach()
-    private var hasBeenClicked = false
-
-    fun hasBeenClicked() = hasBeenClicked
 
     private fun changeBackground() {
 
-        background = BackgroundFactory().woodenFloor()
+        background = BackgroundFactory().soil()
 
     }
 
@@ -20,6 +17,5 @@ class ExcavationTile {
     fun onClick() {
 
         changeBackground()
-        hasBeenClicked = true
     }
 }

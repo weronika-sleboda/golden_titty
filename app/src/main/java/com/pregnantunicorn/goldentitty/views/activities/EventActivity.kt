@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pregnantunicorn.goldentitty.databinding.EventActivityBinding
 import com.pregnantunicorn.goldentitty.models.story_line.EventFactory
+import com.pregnantunicorn.goldentitty.models.story_line.events.EndingEvent
 
 class EventActivity : AppCompatActivity() {
 
@@ -56,18 +57,30 @@ class EventActivity : AppCompatActivity() {
             updateIcon()
             updateButtonText()
 
-            if(event.hasAlreadyHappened()) {
+            if(EndingEvent.event.hasAlreadyHappened()) {
 
-                goToWorldMap()
+                exitToMainMenu()
+            }
+
+            else {
+
+                if(event.hasAlreadyHappened()) {
+
+                    goToWorldMap()
+                }
             }
         }
     }
 
     private fun goToWorldMap() {
 
-        EventFactory.increaseProgress()
-
         val intent = Intent(baseContext, WorldActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun exitToMainMenu() {
+
+        val intent = Intent(baseContext, MainMenuActivity::class.java)
         startActivity(intent)
     }
 

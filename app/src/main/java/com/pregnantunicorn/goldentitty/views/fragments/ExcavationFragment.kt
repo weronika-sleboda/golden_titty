@@ -15,9 +15,8 @@ import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.excavation.CurrentExcavationSite
 import com.pregnantunicorn.goldentitty.models.excavation.ExcavationSite
-import com.pregnantunicorn.goldentitty.models.information.CurrentInformation
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
-import com.pregnantunicorn.goldentitty.models.npcs.CurrentNpc
 import com.pregnantunicorn.goldentitty.models.player.Player
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
@@ -102,9 +101,9 @@ class ExcavationFragment: Fragment(), ExcavationTileAdapter.TileListener {
                     excavationSite!!.addKeyAlgorithm.invoke()
 
                     CurrentMessage.changeMessage(
-                        "Key Found",
-                        R.drawable.key64,
-                        "The key to the ruins has been added to your backpack."
+                        excavationSite!!.keyItemName,
+                        excavationSite!!.keyItemIcon,
+                        "A key item has been added to your backpack."
                     )
 
                     showMessage()
@@ -118,7 +117,7 @@ class ExcavationFragment: Fragment(), ExcavationTileAdapter.TileListener {
 
                 CurrentMessage.changeMessage(
                     "No Energy",
-                    R.drawable.energy64,
+                    IconFactory().energy64(),
                     "You don't have enough energy to perform this action."
                 )
 
@@ -130,7 +129,7 @@ class ExcavationFragment: Fragment(), ExcavationTileAdapter.TileListener {
 
             CurrentMessage.changeMessage(
                 "No Shovel",
-                R.drawable.info64,
+                IconFactory().info64(),
                 "Equip a shovel."
             )
 
@@ -170,6 +169,7 @@ class ExcavationFragment: Fragment(), ExcavationTileAdapter.TileListener {
 
         binding.leaveButton.setOnClickListener {
 
+            excavationSite!!.leave()
             goToWorldMap()
         }
     }

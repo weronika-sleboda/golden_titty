@@ -67,7 +67,6 @@
         android:id="@+id/item_holder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/grab64"
         app:maxImageSize="55dp"
         app:tint="@null"
         app:layout_anchor="@id/bottom_app_bar"

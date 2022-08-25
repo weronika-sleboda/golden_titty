@@ -1,9 +1,9 @@
 package com.pregnantunicorn.goldentitty.models.tools
 
-import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.food.FoodType
 import com.pregnantunicorn.goldentitty.models.food.Foods
 import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import kotlin.random.Random
 
@@ -35,7 +35,7 @@ class FishingSpot {
 
             CurrentMessage.changeMessage(
                 "Target Hit!",
-                R.drawable.fish64,
+                IconFactory().fish64(),
                 "Fish has been acquired."
             )
 
@@ -45,8 +45,8 @@ class FishingSpot {
         return false
     }
 
-    private val targetIcon = R.drawable.fish64
-    private val hitIcon = R.drawable.target64
+    private val targetIcon = IconFactory().fish64()
+    private val hitIcon = IconFactory().target64()
 
     fun newRange(): Array<ToolTile> {
 

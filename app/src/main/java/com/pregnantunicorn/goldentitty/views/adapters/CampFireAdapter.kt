@@ -4,9 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pregnantunicorn.goldentitty.databinding.CampFireLayoutBinding
-import com.pregnantunicorn.goldentitty.databinding.WorkshopLayoutBinding
 import com.pregnantunicorn.goldentitty.models.camp_fire.Recipe
-import com.pregnantunicorn.goldentitty.models.workshop.Blueprint
 
 class CampFireAdapter(
     private val recipes: Array<Recipe>,

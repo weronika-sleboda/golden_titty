@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pregnantunicorn.goldentitty.databinding.GameOverActivityBinding
+import com.pregnantunicorn.goldentitty.models.death.DeathReason
 
 class GameOverActivity : AppCompatActivity() {
 
@@ -15,9 +16,14 @@ class GameOverActivity : AppCompatActivity() {
         binding = GameOverActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupDeathReason()
         setupMainMenuButton()
     }
 
+    private fun setupDeathReason() {
+
+        binding.deathReason.text = DeathReason.deathReason()
+    }
     private fun setupMainMenuButton() {
 
         binding.mainMenuButton.setOnClickListener {

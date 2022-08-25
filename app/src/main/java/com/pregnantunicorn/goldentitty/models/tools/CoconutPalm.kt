@@ -1,8 +1,8 @@
 package com.pregnantunicorn.goldentitty.models.tools
 
-import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.food.FoodType
 import com.pregnantunicorn.goldentitty.models.food.Foods
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import kotlin.random.Random
 
@@ -38,7 +38,7 @@ class CoconutPalm {
 
             CurrentMessage.changeMessage(
                 "Target Hit!",
-                R.drawable.coconut64,
+                IconFactory().coconut64(),
                 "Coconut has been acquired."
             )
 
@@ -48,7 +48,7 @@ class CoconutPalm {
         return false
     }
 
-    private val targetIcon = R.drawable.coconut64
+    private val targetIcon = IconFactory().coconut64()
 
     fun newRange(boomerangIcon: Int): Array<ToolTile> {
 

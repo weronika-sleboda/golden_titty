@@ -3,7 +3,9 @@ package com.pregnantunicorn.goldentitty.views.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.TempleFloorLayoutBinding
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.temple.TempleFloor
 
 class TempleFloorAdapter(
@@ -41,12 +43,20 @@ class TempleFloorAdapter(
         holder.name.text = templeFloors[position].name
         holder.state.text = templeFloors[position].state()
 
-        holder.buttonIcon.setImageResource(templeFloors[position].icon())
-        holder.buttonIcon.setOnClickListener {
+        if(!templeFloors[position].conquered()) {
 
-            templeFloorListener.onClickTempleFloor(position)
+            holder.buttonIcon.setImageResource(templeFloors[position].icon())
+            holder.buttonIcon.setOnClickListener {
+
+                templeFloorListener.onClickTempleFloor(position)
+            }
         }
 
+        else {
+
+            holder.buttonIcon.setImageResource(IconFactory().conqueredFloor64())
+            holder.buttonIcon.setBackgroundResource(R.drawable.dark_oval_background)
+        }
     }
 
     override fun getItemCount() = templeFloors.size

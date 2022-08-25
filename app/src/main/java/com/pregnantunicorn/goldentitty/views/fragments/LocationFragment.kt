@@ -11,7 +11,10 @@ import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.LocationFragmentBinding
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
+import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.models.world_map.world.CurrentLocation
 import com.pregnantunicorn.goldentitty.models.world_map.world.Location
 import com.pregnantunicorn.goldentitty.views.adapters.TileAdapter
@@ -51,7 +54,12 @@ class LocationFragment: Fragment(), TileAdapter.TileListener {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     private fun updateName() {
@@ -87,8 +95,10 @@ class LocationFragment: Fragment(), TileAdapter.TileListener {
 
             CurrentMessage.changeMessage(
                 "Instructions",
-                R.drawable.info64,
-                "1. To interact with the environment, click on the rectangle tile. All tiles that display icons are clickable."
+                IconFactory().info64(),
+                "1. To interact with the environment, click on the rectangle tile. All tiles that display icons are clickable." +
+                        "\n2. To equip a tool click on the backpack icon and then on the empty hand icon next to the tool. " +
+                        "\n3. To empty your hand click on the action button to the right of the bottom bar."
             )
 
             showMessage()

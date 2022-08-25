@@ -1,6 +1,6 @@
 package com.pregnantunicorn.goldentitty.models.construction
 
-import com.pregnantunicorn.goldentitty.R
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.player.Player
 
@@ -41,7 +41,7 @@ class Building(
 
         CurrentMessage.changeMessage(
             "No Resources",
-            R.drawable.fail64,
+            IconFactory().fail64(),
             "You lack resources."
         )
 

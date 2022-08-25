@@ -1,7 +1,7 @@
 package com.pregnantunicorn.goldentitty.models.tools
 
-import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.player.Player
 import kotlin.random.Random
@@ -20,10 +20,10 @@ class BattleField {
 
     fun range(targetIcon: Int): Array<ToolTile> {
 
-        return Array(rangeSize) { ToolTile(background = { BackgroundFactory().hereticFloor() }) }.also {
+        return Array(rangeSize) { ToolTile(background = { BackgroundFactory().templeFloor() }) }.also {
 
             it[hitPosition] = ToolTile(
-                background = { BackgroundFactory().hereticFloor() },
+                background = { BackgroundFactory().templeFloor() },
                 targetIsVisible = true,
                 targetIcon = targetIcon,
             )
@@ -40,7 +40,7 @@ class BattleField {
 
         CurrentMessage.changeMessage(
             "Damage",
-            R.drawable.health64,
+            IconFactory().health64(),
             "You have been hit by the enemy."
         )
 
@@ -49,11 +49,11 @@ class BattleField {
         return false
     }
 
-    private var targetIcon = R.drawable.target64
+    private var targetIcon = IconFactory().target64()
 
     fun newRange(enemyIcon: Int): Array<ToolTile> {
 
-        return Array(rangeSize) {  ToolTile(background = { BackgroundFactory().hereticFloor() }) }.also {
+        return Array(rangeSize) {  ToolTile(background = { BackgroundFactory().templeFloor() }) }.also {
 
             hitPosition++
 
@@ -63,7 +63,7 @@ class BattleField {
             }
 
             it[hitPosition] = ToolTile(
-                background = { BackgroundFactory().hereticFloor() },
+                background = { BackgroundFactory().templeFloor() },
                 targetIcon = enemyIcon,
                 targetIsVisible = true,
             )
@@ -71,7 +71,7 @@ class BattleField {
             if(swordPosition == hitPosition) {
 
                 it[swordPosition] = ToolTile(
-                    background = { BackgroundFactory().hereticFloor() },
+                    background = { BackgroundFactory().templeFloor() },
                     hitIcon = targetIcon,
                     hitIconIsVisible = true,
                     targetIsVisible = true,
@@ -82,7 +82,7 @@ class BattleField {
             else {
 
                 it[swordPosition] = ToolTile(
-                    background = { BackgroundFactory().hereticFloor() },
+                    background = { BackgroundFactory().templeFloor() },
                     hitIcon = targetIcon,
                     hitIconIsVisible = true,
                 )

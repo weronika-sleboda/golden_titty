@@ -287,25 +287,46 @@
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/layout/yes_or_no_dialog_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.184" />
         <entry key="..\:/Users/weron/StudioProjects/DivineMessengerMerchantOfGoldlake/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.184" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/drawable/morning_beach_background.xml" value="0.181" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/drawable/morning_icon_background.xml" value="0.181" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/drawable/palm_tile_morning_background.xml" value="0.1785" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/drawable/palm_tile_night_background.xml" value="0.181" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/drawable/red_progress_bar_background.xml" value="0.181" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/axe_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/axe_info_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/backpack_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/battlefield_fragment.xml" value="0.14316239316239315" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/book_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/bookcase_requirement_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/boomerang_shop_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/cafeteria_info_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/camp_fire_food_requirement.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/camp_fire_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/camp_fire_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/chidinma_statue_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/construction_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/construction_info_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/demon_statue_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/enemy_health_layout.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/entrance_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/event_activity.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/excavation_fragment.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/excavation_tile_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/fishing_spot_fragment.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/fishing_spot_tile.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/food_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/game_over_activity.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/golden_titty_fragment.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/grab_object_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/hammer_controller_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/hammer_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/hammer_info_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/info_dialog_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/information_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/insertion_statue_layout.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/key_item_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/location_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/main_menu_activity.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/npc_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/npc_house_fragment.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/npc_house_info_layout.xml" value="0.17447916666666666" />
@@ -314,17 +335,22 @@
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/palm_info_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/palm_tile_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/player_status_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/settings_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/sleeping_bag_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/sleeping_bag_info_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/supplier_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/temple_floor.xml" value="0.130859375" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/temple_floor_fragment.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/temple_floor_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/tile_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/tool_info_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/tool_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/tool_tile_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/workshop_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/workshop_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/workshop_tool_requirement.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/world_activity.xml" value="0.1" />
+        <entry key="..\:/Users/weron/StudioProjects/GoldenTitty/app/src/main/res/layout/yes_or_no_dialog_fragment.xml" value="0.17552083333333332" />
       </map>
     </option>
   </component>

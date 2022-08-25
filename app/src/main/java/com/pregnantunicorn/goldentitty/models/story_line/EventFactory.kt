@@ -4,10 +4,7 @@ import com.pregnantunicorn.goldentitty.models.story_line.events.*
 
 object EventFactory {
 
-    private var storyProgress = 0
-    private var event: Event = OpeningEvent.event
-
-    fun storyProgress() = storyProgress
+    private var eventTitle = EventTitle.OPENING
 
     fun currentEvent(): Event {
 
@@ -16,16 +13,6 @@ object EventFactory {
 
     fun changeEvent(eventTitle: EventTitle) {
 
-
-    }
-
-    fun increaseProgress() {
-
-        storyProgress++
-
-        if(storyProgress >= 8) {
-
-            storyProgress = 8
-        }
+        this.eventTitle = eventTitle
     }
 }

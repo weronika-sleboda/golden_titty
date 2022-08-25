@@ -1,6 +1,5 @@
 package com.pregnantunicorn.goldentitty.models.current_fragment
 
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 
 object CurrentFragment {
@@ -30,6 +29,9 @@ object CurrentFragment {
             FragmentType.EXCAVATION_FRAGMENT -> FragmentTransition().excavationFragment(activity)
             FragmentType.BATTLEFIELD_FRAGMENT -> FragmentTransition().battlefieldFragment(activity)
             FragmentType.TEMPLE_FRAGMENT -> FragmentTransition().templeFragment(activity)
+            FragmentType.CHIDINMA_STATUE_FRAGMENT -> FragmentTransition().chidinmaStatueFragment(activity)
+            FragmentType.GOLDEN_TITTY_FRAGMENT -> FragmentTransition().goldenTittyFragment(activity)
+            FragmentType.INFORMATION_FRAGMENT -> FragmentTransition().informationFragment(activity)
         }
     }
 }

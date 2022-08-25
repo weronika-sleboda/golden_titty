@@ -186,4 +186,8 @@
     <string name="temple_door_icon_cd">temple_door_icon_cd</string>
     <string name="temple_ruins">Temple Ruins</string>
     <string name="attack_icon_cd">attack_icon_cd</string>
+    <string name="insert">Insert</string>
+    <string name="demon_statue">Demon Statue</string>
+    <string name="take_it">Take It</string>
+    <string name="statue_of_goddess_chidinma">Statue of Goddess Chidinma</string>
 </resources>

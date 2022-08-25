@@ -16,115 +16,33 @@ class BackgroundFactory {
         }
     }
 
-    fun blueCarpet(): Int {
+    fun templeFloor(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
 
-            DayCycle.MORNING -> { R.drawable.blue_carpet_morning }
-            DayCycle.SUNSET -> { R.drawable.blue_carpet_sunset}
-            DayCycle.NIGHT -> { R.drawable.blue_carpet_night}
+            DayCycle.MORNING -> { R.drawable.temple_floor_morning }
+            DayCycle.SUNSET -> { R.drawable.temple_floor_sunset}
+            DayCycle.NIGHT -> { R.drawable.temple_floor_night }
         }
     }
 
-    fun whiteFloor(): Int {
+    fun soil(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
 
-            DayCycle.MORNING -> { R.drawable.white_floor_morning }
-            DayCycle.SUNSET -> { R.drawable.white_floor_sunset}
-            DayCycle.NIGHT -> { R.drawable.white_floor_night }
+            DayCycle.MORNING -> { R.drawable.soil_morning }
+            DayCycle.SUNSET -> { R.drawable.soil_sunset}
+            DayCycle.NIGHT -> { R.drawable.soil_night }
         }
     }
-
-    fun divineFloor(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.divine_temple_morning}
-            DayCycle.SUNSET -> { R.drawable.divine_temple_sunset}
-            DayCycle.NIGHT -> { R.drawable.divine_temple_night }
-        }
-    }
-
-    fun hereticFloor(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.heretic_temple_morning }
-            DayCycle.SUNSET -> { R.drawable.heretic_temple_sunset}
-            DayCycle.NIGHT -> { R.drawable.heretic_temple_night }
-        }
-    }
-
-    fun redCarpet(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.red_carpet_morning_background }
-            DayCycle.SUNSET -> { R.drawable.red_carpet_sunset_background}
-            DayCycle.NIGHT -> { R.drawable.red_carpet_night_background }
-        }
-    }
-
-    fun woodenFloor(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.wooden_floor_morning }
-            DayCycle.SUNSET -> { R.drawable.wooden_floor_sunset}
-            DayCycle.NIGHT -> { R.drawable.wooden_floor_night }
-        }
-    }
-
-    fun pinkCarpet(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.pink_carpet_morning }
-            DayCycle.SUNSET -> { R.drawable.pink_carpet_sunset }
-            DayCycle.NIGHT -> { R.drawable.pink_carpet_night }
-        }
-    }
-
-
 
     fun grass(): Int {
 
         return when(CurrentDayCycle.dayCycle()) {
 
-            DayCycle.MORNING -> { R.drawable.morning_grass_background }
-            DayCycle.SUNSET -> { R.drawable.sunset_grass_background }
-            DayCycle.NIGHT -> { R.drawable.night_grass_background }
-        }
-    }
-
-    fun jungle(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.morning_jungle_background }
-            DayCycle.SUNSET -> { R.drawable.sunset_jungle_background }
-            DayCycle.NIGHT -> { R.drawable.night_jungle_background }
-        }
-    }
-
-    fun volcano(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.morning_volcano_background }
-            DayCycle.SUNSET -> { R.drawable.sunset_volcano_background }
-            DayCycle.NIGHT -> { R.drawable.night_volcano_background }
-        }
-    }
-
-    fun snow(): Int {
-
-        return when(CurrentDayCycle.dayCycle()) {
-
-            DayCycle.MORNING -> { R.drawable.morning_snow_background }
-            DayCycle.SUNSET -> { R.drawable.sunset_snow_background }
-            DayCycle.NIGHT -> { R.drawable.night_snow_background }
+            DayCycle.MORNING -> { R.drawable.grass_morning }
+            DayCycle.SUNSET -> { R.drawable.grass_sunset }
+            DayCycle.NIGHT -> { R.drawable.beach_grass }
         }
     }
 
@@ -132,9 +50,9 @@ class BackgroundFactory {
 
         return when(CurrentDayCycle.dayCycle()) {
 
-            DayCycle.MORNING -> { R.drawable.morning_water_background }
-            DayCycle.SUNSET -> { R.drawable.sunset_water_background }
-            DayCycle.NIGHT -> { R.drawable.night_water_background }
+            DayCycle.MORNING -> { R.drawable.water_morning }
+            DayCycle.SUNSET -> { R.drawable.water_sunset }
+            DayCycle.NIGHT -> { R.drawable.water_night }
         }
     }
 
@@ -142,9 +60,9 @@ class BackgroundFactory {
 
         return when(CurrentDayCycle.dayCycle()) {
 
-            DayCycle.MORNING -> { R.drawable.morning_beach_background }
-            DayCycle.SUNSET -> { R.drawable.sunset_beach_background }
-            DayCycle.NIGHT -> { R.drawable.night_beach_background }
+            DayCycle.MORNING -> { R.drawable.beach_morning }
+            DayCycle.SUNSET -> { R.drawable.beach_sunset }
+            DayCycle.NIGHT -> { R.drawable.beach_night }
         }
     }
 }

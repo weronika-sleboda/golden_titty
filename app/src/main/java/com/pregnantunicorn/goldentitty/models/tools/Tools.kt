@@ -162,7 +162,7 @@ object Tools {
 
         Sword(
             "Bandit Sword",
-            R.drawable.bandit_sword64,
+            IconFactory().banditSword64(),
             "Power: 1, Speed: Very Slow",
             { 400 },
             { 1 },
@@ -174,7 +174,7 @@ object Tools {
 
         Sword(
             "Warrior Sword",
-            R.drawable.warrior_sword64,
+            IconFactory().warriorSword64(),
             "Power: 3, Speed: Normal",
             { 200 },
             { 3 },
@@ -186,7 +186,7 @@ object Tools {
 
         Sword(
             "Assassin Sword",
-            R.drawable.assassin_sword64,
+            IconFactory().assassinSword64(),
             "Power: 5, Speed: Fast",
             { 100 },
             { 5 },

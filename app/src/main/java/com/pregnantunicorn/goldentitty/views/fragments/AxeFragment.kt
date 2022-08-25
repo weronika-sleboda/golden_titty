@@ -53,7 +53,11 @@ class AxeFragment : Fragment() {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     private fun defineMaxProgress() {
@@ -93,7 +97,7 @@ class AxeFragment : Fragment() {
 
                 CurrentMessage.changeMessage(
                     "You failed",
-                    R.drawable.fail64,
+                    IconFactory().fail64(),
                     "You failed."
                 )
 
@@ -114,7 +118,7 @@ class AxeFragment : Fragment() {
 
                 CurrentMessage.changeMessage(
                     "Wood Acquired",
-                    R.drawable.wood64,
+                    IconFactory().wood64(),
                     "You have acquired wood."
                 )
 
@@ -166,7 +170,7 @@ class AxeFragment : Fragment() {
 
                         CurrentMessage.changeMessage(
                             "No Energy",
-                            R.drawable.energy64,
+                            IconFactory().energy64(),
                             "You don't have enough energy to perform this action."
                         )
 
@@ -178,7 +182,7 @@ class AxeFragment : Fragment() {
 
                     CurrentMessage.changeMessage(
                         "No Axe",
-                        R.drawable.info64,
+                        IconFactory().info64(),
                         "Equip an axe."
                     )
 
@@ -231,12 +235,11 @@ class AxeFragment : Fragment() {
 
             CurrentMessage.changeMessage(
                 "Instructions",
-                R.drawable.info64,
-                "1. Press hide button to see the noise meter moving.\n" +
-                        "2. Press sneak button when you see the noise being minimal.\n" +
-                        "3. The noise meter has the value of 100 and the noise you are making should be below 40.\n" +
-                        "4. When your sneak is successful the success progress bar will move by 20.\n" +
-                        "5. Sneak until the success progress reaches its maximum value."
+                IconFactory().info64(),
+                "1. Press hide button to see the power meter moving.\n" +
+                        "2. Press cut button when you see the power meter being above 45% . The power meter has the max value of 100.\n" +
+                        "3. When your cut is successful the success progress bar will move by 20.\n" +
+                        "4. Cut until the success progress bar reaches its maximum value."
             )
 
             showMessage()

@@ -13,6 +13,8 @@ import com.pregnantunicorn.goldentitty.databinding.NpcFragmentBinding
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.npcs.CurrentNpc
 import com.pregnantunicorn.goldentitty.models.npcs.Npc
+import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
+import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -54,7 +56,11 @@ class NpcFragment : Fragment() {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     private fun setupName() {

@@ -1,7 +1,9 @@
 package com.pregnantunicorn.goldentitty.models.excavation
 
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItemType
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItems
+import com.pregnantunicorn.goldentitty.models.world_map.world.LocationName
 
 object CurrentExcavationSite {
 
@@ -15,40 +17,63 @@ object CurrentExcavationSite {
 
     private val excavationSites = arrayOf(
 
-        ExcavationSite("Excavation Site Nr 1")
+        ExcavationSite(
+            "Shamanic Necklace",
+            IconFactory().shamanicNecklace64(),
+            "Excavation Site Nr 1", LocationName.TICKY_TACKA_WEST)
         {
             KeyItems.getKeyItem(KeyItemType.SHAMANIC_NECKLACE).add()
         },
 
-        ExcavationSite("Excavation Site Nr 2")
+        ExcavationSite(
+            "Crystal Of Vision",
+            IconFactory().crystalOfVision64(),
+            "Excavation Site Nr 2", LocationName.TICKY_TACKA_EAST)
         {
             KeyItems.getKeyItem(KeyItemType.CRYSTAL_OF_VISION).add()
         },
 
-        ExcavationSite("Excavation Site Nr 3")
+        ExcavationSite(
+            "Staff Of Eclipse",
+            IconFactory().staffOfEclipse64(),
+            "Excavation Site Nr 3", LocationName.TICKY_TACKA_EAST)
         {
-            KeyItems.getKeyItem(KeyItemType.DIVINE_RING).add()
+            KeyItems.getKeyItem(KeyItemType.STAFF_OF_ECLIPSE).add()
         },
 
-        ExcavationSite("Excavation Site Nr 4")
+        ExcavationSite(
+            "Temple Key",
+            IconFactory().key64(),
+            "Excavation Site Nr 4", LocationName.TICKY_TACKA_EAST)
         {
+            KeyItems.getKeyItem(KeyItemType.TEMPLE_KEY).add()
+        },
+
+        ExcavationSite(
+            "First Floor Key",
+            IconFactory().key64(),
+            "Excavation Site Nr 5", LocationName.TICKY_TACKA_EAST)
+        {
+
             KeyItems.getKeyItem(KeyItemType.FIRST_FLOOR_KEY).add()
         },
 
-        ExcavationSite("Excavation Site Nr 5")
+        ExcavationSite(
+            "Second Floor Key",
+            IconFactory().key64(),
+            "Excavation Site Nr 6", LocationName.TICKY_TACKA_EAST)
         {
+
             KeyItems.getKeyItem(KeyItemType.SECOND_FLOOR_KEY).add()
         },
 
-        ExcavationSite("Excavation Site Nr 6")
+        ExcavationSite(
+            "Third Floor Key",
+            IconFactory().key64(),
+            "Excavation Site Nr 7", LocationName.TICKY_TACKA_EAST)
         {
 
             KeyItems.getKeyItem(KeyItemType.THIRD_FLOOR_KEY).add()
-        },
-
-        ExcavationSite("Excavation Site Nr 7")
-        {
-            KeyItems.getKeyItem(KeyItemType.STAFF_OF_ECLIPSE).add()
         },
     )
 

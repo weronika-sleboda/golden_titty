@@ -1,6 +1,6 @@
 package com.pregnantunicorn.goldentitty.models.npcs
 
-import com.pregnantunicorn.goldentitty.R
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 
 object CurrentNpc {
 
@@ -11,7 +11,7 @@ object CurrentNpc {
 
         Npc(
             "Jin",
-            R.drawable.jin128,
+            IconFactory().jin128(),
             { JinsGreetings().greeting() },
             { JinsGreetings().afterMeal() },
             { JinsGreetings().isFedLine() }
@@ -19,7 +19,7 @@ object CurrentNpc {
 
         Npc(
             "Saphonee",
-            R.drawable.saphonee128,
+            IconFactory().saphonee128(),
             { SaphoneesGreetings().greeting() },
             { SaphoneesGreetings().afterMeal() },
             { SaphoneesGreetings().isFedLine() }
@@ -40,7 +40,7 @@ object CurrentNpc {
 
             Npc(
                 "Jin",
-                R.drawable.jin128,
+                IconFactory().jin128(),
                 { JinsGreetings().greeting() },
                 { JinsGreetings().afterMeal() },
                 { JinsGreetings().isFedLine() }
@@ -48,10 +48,10 @@ object CurrentNpc {
 
             Npc(
                 "Saphonee",
-                R.drawable.saphonee128,
+                IconFactory().saphonee128(),
                 { SaphoneesGreetings().greeting() },
                 { SaphoneesGreetings().afterMeal() },
-                { JinsGreetings().isFedLine() }
+                { SaphoneesGreetings().isFedLine() }
             ),
         )
     }

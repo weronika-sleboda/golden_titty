@@ -14,6 +14,8 @@ import com.pregnantunicorn.goldentitty.databinding.WorkshopFragmentBinding
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
+import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.models.workshop.Blueprint
 import com.pregnantunicorn.goldentitty.models.workshop.Workshop
 import com.pregnantunicorn.goldentitty.views.adapters.WorkshopAdapter
@@ -54,7 +56,11 @@ class WorkshopFragment : Fragment(), WorkshopAdapter.WorkshopListener {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     private fun updatePlayerStatus() {

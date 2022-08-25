@@ -14,7 +14,10 @@ import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.entrances.CurrentEntrance
 import com.pregnantunicorn.goldentitty.models.entrances.Entrance
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
+import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 
@@ -49,7 +52,11 @@ class EntranceFragment : Fragment() {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     private fun setupName() {
@@ -81,7 +88,7 @@ class EntranceFragment : Fragment() {
 
                         CurrentMessage.changeMessage(
                             "Locked",
-                            R.drawable.padlock64,
+                            IconFactory().padlock64(),
                             "The door is locked.You need to have a key."
                         )
 

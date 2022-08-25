@@ -11,7 +11,6 @@ import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.BackpackFragmentBinding
 import com.pregnantunicorn.goldentitty.models.tools.*
 import com.pregnantunicorn.goldentitty.models.food.Food
-import com.pregnantunicorn.goldentitty.models.food.FoodManager
 import com.pregnantunicorn.goldentitty.models.food.Foods
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
@@ -70,7 +69,11 @@ class BackpackFragment : Fragment(),
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     private fun setupFoodTab() {
@@ -149,7 +152,6 @@ class BackpackFragment : Fragment(),
     override fun onClickItem(position: Int) {
 
         keyItems?.get(position)?.equip()
-        CurrentHandState.changeHandState(HandState.KEY_ITEM)
 
         updateFab()
     }

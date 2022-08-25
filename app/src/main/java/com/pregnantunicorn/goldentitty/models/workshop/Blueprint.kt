@@ -1,6 +1,6 @@
 package com.pregnantunicorn.goldentitty.models.workshop
 
-import com.pregnantunicorn.goldentitty.R
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.player.Player
 import com.pregnantunicorn.goldentitty.models.tools.Tool
@@ -38,7 +38,7 @@ class Blueprint(
 
         CurrentMessage.changeMessage(
             "No Resources",
-            R.drawable.fail64,
+            IconFactory().fail64(),
             "You lack resources."
         )
 

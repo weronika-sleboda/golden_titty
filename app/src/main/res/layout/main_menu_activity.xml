@@ -15,7 +15,20 @@
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="start"
+            android:src="@drawable/main_screen_swords"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/main_screen_boomerang"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="end"
+            android:src="@drawable/main_screen_spears"/>
 
         <TextView
             android:layout_width="320dp"
@@ -42,8 +55,16 @@
             android:layout_width="206dp"
             android:layout_height="206dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/sonny256_icon_cd"
             android:src="@drawable/meteor256" />
+
+        <ImageView
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="end"
+            android:src="@drawable/main_screen_shovel"/>
 
     </FrameLayout>
 
