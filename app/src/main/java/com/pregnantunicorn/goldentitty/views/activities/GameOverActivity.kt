@@ -4,7 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pregnantunicorn.goldentitty.databinding.GameOverActivityBinding
-import com.pregnantunicorn.goldentitty.models.death.DeathReason
+import com.pregnantunicorn.goldentitty.models.npcs.CurrentNpc
+import com.pregnantunicorn.goldentitty.models.player.Player
 
 class GameOverActivity : AppCompatActivity() {
 
@@ -22,7 +23,15 @@ class GameOverActivity : AppCompatActivity() {
 
     private fun setupDeathReason() {
 
-        binding.deathReason.text = DeathReason.deathReason()
+        binding.deathReason.text = if(Player.isDead()) {
+
+            "You have died..."
+        }
+
+        else {
+
+            "Your companions have died..."
+        }
     }
     private fun setupMainMenuButton() {
 

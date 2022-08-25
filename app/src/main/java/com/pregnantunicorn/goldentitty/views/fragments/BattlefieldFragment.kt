@@ -15,8 +15,6 @@ import com.pregnantunicorn.goldentitty.databinding.BattlefieldFragmentBinding
 import com.pregnantunicorn.goldentitty.models.tools.*
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
-import com.pregnantunicorn.goldentitty.models.death.DeathReason
-import com.pregnantunicorn.goldentitty.models.death.GameOverCause
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
@@ -187,8 +185,6 @@ class BattlefieldFragment: Fragment() {
                             showMessage()
 
                             if(Player.isDead()) {
-
-                                DeathReason.changeGameOverCause(GameOverCause.METEOR_KILLED)
 
                                 val intent = Intent(context, GameOverActivity::class.java)
                                 startActivity(intent)

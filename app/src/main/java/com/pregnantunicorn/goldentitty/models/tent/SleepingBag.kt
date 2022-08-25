@@ -35,22 +35,17 @@ class SleepingBag {
 
     fun sleep(): Boolean {
 
-        for(npc in CurrentNpc.npcs()) {
-
-            npc.loseHealth()
-
-            if(npc.isDead()) {
-
-                return false
-            }
-        }
-
         CurrentDayCycle.changeDayCycle()
         Player.health().loseAmount(healthCost)
         Player.energy().restore()
         changeAndShowMessage()
 
-        if(Player.isDead()) {
+        for(npc in CurrentNpc.npcs()) {
+
+            npc.loseHealth()
+        }
+
+        if(Player.isDead() || CurrentNpc.jin().isDead() || CurrentNpc.saphonee().isDead()) {
 
             return false
         }
