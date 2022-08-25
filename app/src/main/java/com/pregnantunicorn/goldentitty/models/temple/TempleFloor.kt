@@ -62,6 +62,7 @@ class TempleFloor(
             "The enemy dropped a key item."
         )
 
+        conquered = true
         KeyItems.getKeyItem(reward).add()
     }
 }
