@@ -1,8 +1,10 @@
 package com.pregnantunicorn.goldentitty.models.workshop
 
+import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
-import com.pregnantunicorn.goldentitty.models.player.Player
+import com.pregnantunicorn.goldentitty.models.meteor.Meteor
+import com.pregnantunicorn.goldentitty.models.resources.Resources
 import com.pregnantunicorn.goldentitty.models.tools.Tool
 
 class Blueprint(
@@ -20,11 +22,11 @@ class Blueprint(
 
     fun make(): Boolean {
 
-        if(Player.wood().hasAmount(tool.requiredWood())
-            && Player.iron().hasAmount(tool.requiredIron())) {
+        if(Resources.wood().hasAmount(tool.requiredWood())
+            && Resources.iron().hasAmount(tool.requiredIron())) {
 
-            Player.wood().loseAmount(tool.requiredWood())
-            Player.iron().loseAmount(tool.requiredIron())
+            Resources.wood().loseAmount(tool.requiredWood())
+            Resources.iron().loseAmount(tool.requiredIron())
             tool.addToBackpack()
 
             CurrentMessage.changeMessage(
@@ -38,7 +40,7 @@ class Blueprint(
 
         CurrentMessage.changeMessage(
             "No Resources",
-            IconFactory().fail64(),
+            R.drawable.fail64,
             "You lack resources."
         )
 

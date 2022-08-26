@@ -1,4 +1,4 @@
-package com.pregnantunicorn.goldentitty.models.player
+package com.pregnantunicorn.goldentitty.models.resources
 
 class Resource {
 
@@ -8,7 +8,9 @@ class Resource {
         private const val MAX_VALUE = 999
     }
 
-    private var amount = 0
+    private var amount = MAX_VALUE
+
+    fun amountIsMaxed() = amount == MAX_VALUE
 
     fun amountToString() = "$amount"
 

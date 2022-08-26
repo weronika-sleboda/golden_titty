@@ -95,7 +95,7 @@ class LocationFragment: Fragment(), TileAdapter.TileListener {
 
             CurrentMessage.changeMessage(
                 "Instructions",
-                IconFactory().info64(),
+                R.drawable.info64,
                 "1. To interact with the environment, click on the rectangle tile. All tiles that display icons are clickable." +
                         "\n2. To equip a tool click on the backpack icon and then on the empty hand icon next to the tool. " +
                         "\n3. To empty your hand click on the action button to the right of the bottom bar."

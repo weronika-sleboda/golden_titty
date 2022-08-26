@@ -12,15 +12,17 @@ import com.pregnantunicorn.goldentitty.databinding.BackpackFragmentBinding
 import com.pregnantunicorn.goldentitty.models.tools.*
 import com.pregnantunicorn.goldentitty.models.food.Food
 import com.pregnantunicorn.goldentitty.models.food.Foods
+import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItem
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItemManager
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 import com.pregnantunicorn.goldentitty.views.adapters.ToolsAdapter
 import com.pregnantunicorn.goldentitty.views.adapters.FoodAdapter
 import com.pregnantunicorn.goldentitty.views.adapters.KeyItemAdapter
-import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
+import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -62,7 +64,7 @@ class BackpackFragment : Fragment(),
 
     private fun updateFab() {
 
-        val statusUpdate = requireActivity() as PlayerStatusUpdate
+        val statusUpdate = requireActivity() as WorldActivityUiUpdate
         statusUpdate.updateFab()
     }
 
@@ -156,11 +158,13 @@ class BackpackFragment : Fragment(),
         updateFab()
     }
 
-    private fun updatePlayerStatus() {
+    private fun updateWorldActivityUi() {
 
-        val statusUpdate = requireActivity() as PlayerStatusUpdate
-        statusUpdate.updateHealth()
-        statusUpdate.updateCoconuts()
+        val status = requireActivity() as WorldActivityUiUpdate
+        status.updateEnergy()
+        status.updateHealth()
+        status.updateCoconuts()
+        status.updateFish()
     }
 
     override fun onClickFood(position: Int) {
@@ -171,7 +175,7 @@ class BackpackFragment : Fragment(),
 
                 withContext(Dispatchers.Main) {
 
-                    updatePlayerStatus()
+                    updateWorldActivityUi()
                     updateFood()
                 }
             }

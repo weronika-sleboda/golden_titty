@@ -17,7 +17,7 @@ import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
-import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
+import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -63,11 +63,11 @@ class ConstructionFragment : Fragment() {
         }
     }
 
-    private fun updatePlayerStatus() {
+    private fun updateWorldActivityUi() {
 
-        val status = requireActivity() as PlayerStatusUpdate
-        status.updateWood()
+        val status = requireActivity() as WorldActivityUiUpdate
         status.updateIron()
+        status.updateWood()
     }
 
     private fun setupRequirementInfo() {
@@ -101,7 +101,7 @@ class ConstructionFragment : Fragment() {
 
                     withContext(Dispatchers.Main) {
 
-                        updatePlayerStatus()
+                        updateWorldActivityUi()
                         showMessage()
                         goToWorldMap()
                     }

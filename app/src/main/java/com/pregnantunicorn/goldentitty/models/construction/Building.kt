@@ -1,8 +1,10 @@
 package com.pregnantunicorn.goldentitty.models.construction
 
+import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
-import com.pregnantunicorn.goldentitty.models.player.Player
+import com.pregnantunicorn.goldentitty.models.meteor.Meteor
+import com.pregnantunicorn.goldentitty.models.resources.Resources
 
 class Building(
     val name: String,
@@ -23,17 +25,17 @@ class Building(
 
     fun build(): Boolean {
 
-        if(Player.wood().hasAmount(wood) && Player.iron().hasAmount(iron)) {
+        if(Resources.wood().hasAmount(wood) && Resources.iron().hasAmount(iron)) {
 
-            Player.wood().loseAmount(wood)
-            Player.iron().loseAmount(iron)
+            Resources.wood().loseAmount(wood)
+            Resources.iron().loseAmount(iron)
             buildAlgorithm.invoke()
 
             isBuild = true
 
             CurrentMessage.changeMessage(
                 "$name Built",
-                bigIcon.invoke(),
+                smallIcon.invoke(),
                 "$name has been built."
             )
 
@@ -42,7 +44,7 @@ class Building(
 
         CurrentMessage.changeMessage(
             "No Resources",
-            IconFactory().fail64(),
+            R.drawable.fail64,
             "You lack resources."
         )
 

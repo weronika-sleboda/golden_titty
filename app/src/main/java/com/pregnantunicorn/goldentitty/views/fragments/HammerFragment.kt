@@ -13,13 +13,14 @@ import com.pregnantunicorn.goldentitty.databinding.HammerFragmentBinding
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
-import com.pregnantunicorn.goldentitty.models.player.Player
+import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.resources.Resources
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHammer
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.models.tools.Tool
-import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
+import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 import kotlin.random.Random
@@ -73,14 +74,23 @@ class HammerFragment : Fragment() {
             job = null
             started = false
 
-            Player.iron().addAmount(hammer?.hitAmount()!!)
-            updatePlayerStatus()
+            Resources.iron().addAmount(hammer?.hitAmount()!!)
+            updateWorldActivityUi()
 
             CurrentMessage.changeMessage(
                 "Iron acquired",
-                IconFactory().iron64(),
+                R.drawable.iron64,
                 "You have acquired iron."
             )
+
+            if(Resources.iron().amountIsMaxed()) {
+
+                CurrentMessage.changeMessage(
+                    "Max Value Reached",
+                    R.drawable.iron64,
+                    "Max value has been reached."
+                )
+            }
 
             showMessage()
         }
@@ -102,7 +112,7 @@ class HammerFragment : Fragment() {
 
         CurrentMessage.changeMessage(
             "You Failed",
-            IconFactory().fail64(),
+            R.drawable.fail64,
             "You have failed."
         )
 
@@ -113,7 +123,7 @@ class HammerFragment : Fragment() {
 
         CurrentMessage.changeMessage(
             "Out Of Time",
-            IconFactory().hourglass64(),
+            R.drawable.hourglass64,
             "You run out of time."
         )
 
@@ -136,7 +146,7 @@ class HammerFragment : Fragment() {
 
         binding.controller.liftButton.setOnClickListener {
 
-            if(started) { checkWinningCondition(IconFactory().lift128()) }
+            if(started) { checkWinningCondition(R.drawable.lift128) }
         }
     }
 
@@ -145,7 +155,7 @@ class HammerFragment : Fragment() {
 
         binding.controller.digButton.setOnClickListener {
 
-            if(started) { checkWinningCondition(IconFactory().dig128()) }
+            if(started) { checkWinningCondition(R.drawable.dig128) }
         }
     }
 
@@ -153,7 +163,7 @@ class HammerFragment : Fragment() {
 
         binding.controller.smashButton.setOnClickListener {
 
-            if(started) { checkWinningCondition(IconFactory().smash128()) }
+            if(started) { checkWinningCondition(R.drawable.smash128) }
         }
     }
 
@@ -174,9 +184,9 @@ class HammerFragment : Fragment() {
 
         demandedAction = when(Random.nextInt(3)) {
 
-            0 -> IconFactory().lift128()
-            1 -> IconFactory().smash128()
-            else -> IconFactory().dig128()
+            0 -> R.drawable.lift128
+            1 -> R.drawable.smash128
+            else -> R.drawable.dig128
         }
     }
 
@@ -192,11 +202,11 @@ class HammerFragment : Fragment() {
 
                     val energy = 1
 
-                    if(Player.energy().hasAmount(energy)) {
+                    if(Meteor.energy().hasAmount(energy)) {
 
                         started = true
-                        Player.energy().loseAmount(energy)
-                        updatePlayerStatus()
+                        Meteor.energy().loseAmount(energy)
+                        updateWorldActivityUi()
 
                         job = CoroutineScope(Dispatchers.IO).launch {
 
@@ -219,7 +229,7 @@ class HammerFragment : Fragment() {
 
                         CurrentMessage.changeMessage(
                             "No Energy",
-                            IconFactory().energy64(),
+                            R.drawable.energy64,
                             "You don't have enough energy to perform this action."
                         )
 
@@ -231,7 +241,7 @@ class HammerFragment : Fragment() {
 
                     CurrentMessage.changeMessage(
                         "No Hammer",
-                        IconFactory().info64(),
+                        R.drawable.info64,
                         "Equip a hammer."
                     )
 
@@ -242,9 +252,9 @@ class HammerFragment : Fragment() {
         }
     }
 
-    private fun updatePlayerStatus() {
+    private fun updateWorldActivityUi() {
 
-        val status = requireActivity() as PlayerStatusUpdate
+        val status = requireActivity() as WorldActivityUiUpdate
         status.updateEnergy()
         status.updateIron()
     }
@@ -277,7 +287,7 @@ class HammerFragment : Fragment() {
 
             CurrentMessage.changeMessage(
                 "Instructions",
-                IconFactory().info64(),
+                R.drawable.info64,
                 "1. Press the start button.\n" +
                         "2. Follow the icons on the main screen and press the corresponding button.\n" +
                         "3. If you click on an icon that isn't matching the one on the main screen you fail and have to start over.\n" +

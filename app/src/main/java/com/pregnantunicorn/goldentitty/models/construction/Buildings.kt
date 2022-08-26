@@ -1,22 +1,21 @@
 package com.pregnantunicorn.goldentitty.models.construction
 
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
-import com.pregnantunicorn.goldentitty.models.npcs.CurrentNpc
+import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
 
 object Buildings {
 
     private const val CAMP_FIRE = 0
     private const val WORKSHOP = 1
-    private const val JINS_HUT = 2
-    private const val SAPHONEES_HUT = 3
-    private const val PIER = 4
-    private const val EXCAVATION_SITE_NR1 = 5
-    private const val EXCAVATION_SITE_NR2 = 6
-    private const val EXCAVATION_SITE_NR3 = 7
-    private const val EXCAVATION_SITE_NR4 = 8
-    private const val EXCAVATION_SITE_NR5 = 9
-    private const val EXCAVATION_SITE_NR6 = 10
-    private const val EXCAVATION_SITE_NR7 = 11
+    private const val LADY_SILVIAS_HUT = 2
+    private const val PIER = 3
+    private const val EXCAVATION_SITE_NR1 = 4
+    private const val EXCAVATION_SITE_NR2 = 5
+    private const val EXCAVATION_SITE_NR3 = 6
+    private const val EXCAVATION_SITE_NR4 = 7
+    private const val EXCAVATION_SITE_NR5 = 8
+    private const val EXCAVATION_SITE_NR6 = 9
+    private const val EXCAVATION_SITE_NR7 = 10
 
     private val buildings = arrayOf(
 
@@ -41,24 +40,14 @@ object Buildings {
         ) {},
 
         Building(
-            "Jin's Hut",
-            "Building the hut for Jin will allow you to feed him with fried fish and ask him questions about key items.",
-            { IconFactory().jinsHut128() },
-            { IconFactory().jinsHut64() },
-            BuildingType.JINS_HUT,
+            "Lady Silvia's Hut",
+            "Building the hut for Lady Silvia will allow you to feed her with fried fish and ask her questions about key items.",
+            { IconFactory().saphoneesHut128() },
+            { IconFactory().saphoneesHut64() },
+            BuildingType.LADY_SILVIAS_HUT,
             15,
             10
-        ) { CurrentNpc.jin().moveToHouse() },
-
-        Building(
-            "Saphonee's Hut",
-            "Building the hut for Saphonee will allow you to feed her with fried fish and ask her questions about key items.",
-            { IconFactory().jinsHut128() },
-            { IconFactory().jinsHut64() },
-            BuildingType.SAPHONEES_HUT,
-            15,
-            10
-        ) { CurrentNpc.saphonee().moveToHouse() },
+        ) { LadySilvia.ladySilvia().moveToHouse() },
 
         Building(
             "Pier",
@@ -147,8 +136,7 @@ object Buildings {
 
             BuildingType.WORKSHOP -> buildings[WORKSHOP]
             BuildingType.CAMP_FIRE -> buildings[CAMP_FIRE]
-            BuildingType.JINS_HUT -> buildings[JINS_HUT]
-            BuildingType.SAPHONEES_HUT -> buildings[SAPHONEES_HUT]
+            BuildingType.LADY_SILVIAS_HUT -> buildings[LADY_SILVIAS_HUT]
             BuildingType.PIER -> buildings[PIER]
             BuildingType.EXCAVATION_SITE_NR1 -> buildings[EXCAVATION_SITE_NR1]
             BuildingType.EXCAVATION_SITE_NR2 -> buildings[EXCAVATION_SITE_NR2]

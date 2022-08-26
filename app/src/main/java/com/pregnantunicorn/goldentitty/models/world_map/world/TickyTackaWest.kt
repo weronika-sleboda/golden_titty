@@ -1,11 +1,12 @@
 package com.pregnantunicorn.goldentitty.models.world_map.world
 
+import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.construction.BuildingType
 import com.pregnantunicorn.goldentitty.models.construction.Buildings
 import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.entrances.CurrentEntrance
-import com.pregnantunicorn.goldentitty.models.npcs.CurrentNpc
+import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
 import com.pregnantunicorn.goldentitty.models.world_map.tiles.*
 
 class TickyTackaWest : Location(
@@ -43,29 +44,19 @@ class TickyTackaWest : Location(
                 CurrentEntrance.CAMP_FIRE
             )
 
-            if(!CurrentNpc.jin().hasHouse()) {
+            if(!LadySilvia.ladySilvia().hasHouse()) {
 
-                it[5] = NpcTile(IconFactory().jin64(), CurrentNpc.JIN)
+                it[5] = NpcTile(R.drawable.lady_silvia64)
             }
 
             else { it[5] = EmptyTile { BackgroundFactory().beach() } }
 
-            if(!CurrentNpc.saphonee().hasHouse()) {
-
-                it[6] = NpcTile(IconFactory().saphonee64(), CurrentNpc.SAPHONEE)
-            }
-
-            else { it[6] = EmptyTile { BackgroundFactory().beach() } }
 
             it[8] = ConstructionTile(
-                Buildings.building(BuildingType.JINS_HUT),
-                CurrentEntrance.JINS_HUT
+                Buildings.building(BuildingType.LADY_SILVIAS_HUT),
+                CurrentEntrance.LADY_SILVIAS_HUT
             ) { BackgroundFactory().grass() }
 
-            it[9] = ConstructionTile(
-                Buildings.building(BuildingType.SAPHONEES_HUT),
-                CurrentEntrance.SAPHONEES_HUT
-            ) { BackgroundFactory().grass() }
 
             it[10] = ConstructionTile(
                 Buildings.building(BuildingType.WORKSHOP),

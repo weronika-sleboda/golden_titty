@@ -17,8 +17,8 @@ import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.tent.SleepingBag
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
-import com.pregnantunicorn.goldentitty.views.activities.GameOverActivity
-import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
+import com.pregnantunicorn.goldentitty.views.activities.EventActivity
+import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -72,11 +72,11 @@ class SleepingBagFragment : Fragment() {
         binding.requirement.healthCost.text = sleepingBag?.healthCostToString()
     }
 
-    private fun updatePlayerStatus() {
+    private fun updateWorldActivityUi() {
 
-        val statusUpdate = requireActivity() as PlayerStatusUpdate
-        statusUpdate.updateHealth()
-        statusUpdate.updateEnergy()
+        val status = requireActivity() as WorldActivityUiUpdate
+        status.updateEnergy()
+        status.updateHealth()
     }
 
     private fun setupSleepButton() {
@@ -89,7 +89,7 @@ class SleepingBagFragment : Fragment() {
 
                     withContext(Dispatchers.Main) {
 
-                        updatePlayerStatus()
+                        updateWorldActivityUi()
                         showMessage()
                         goToWorldMap()
                     }
@@ -105,7 +105,7 @@ class SleepingBagFragment : Fragment() {
 
     private fun endTheGame() {
 
-        val intent = Intent(context, GameOverActivity::class.java)
+        val intent = Intent(context, EventActivity::class.java)
         startActivity(intent)
     }
 

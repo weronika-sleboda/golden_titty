@@ -11,11 +11,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.NpcFragmentBinding
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
-import com.pregnantunicorn.goldentitty.models.npcs.CurrentNpc
+import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
 import com.pregnantunicorn.goldentitty.models.npcs.Npc
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
-import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
+import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,7 +25,7 @@ import kotlinx.coroutines.withContext
 class NpcFragment : Fragment() {
 
     private lateinit var binding: NpcFragmentBinding
-    private var npc: Npc? = CurrentNpc.npc()
+    private var npc: Npc? = LadySilvia.ladySilvia()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -84,9 +84,9 @@ class NpcFragment : Fragment() {
         binding.info.healthProgressBar.progress = npc?.health()!!
     }
 
-    private fun updatePlayerStatus() {
+    private fun updateWorldActivityUi() {
 
-        val status = requireActivity() as PlayerStatusUpdate
+        val status = requireActivity() as WorldActivityUiUpdate
         status.updateFish()
     }
 
@@ -102,7 +102,7 @@ class NpcFragment : Fragment() {
 
                         binding.greeting.text = npc?.afterMeal?.invoke()
                         updateHealth()
-                        updatePlayerStatus()
+                        updateWorldActivityUi()
                     }
                 }
 

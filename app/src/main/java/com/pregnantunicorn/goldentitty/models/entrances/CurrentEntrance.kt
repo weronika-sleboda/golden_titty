@@ -7,10 +7,11 @@ import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.excavation.CurrentExcavationSite
 import com.pregnantunicorn.goldentitty.models.excavation.ExcavationNumber
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
+import com.pregnantunicorn.goldentitty.models.information.CurrentInformation
 import com.pregnantunicorn.goldentitty.models.key_items.CurrentKeyItem
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItemType
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
-import com.pregnantunicorn.goldentitty.models.npcs.CurrentNpc
+import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.models.world_map.world.CurrentLocation
@@ -21,25 +22,24 @@ import com.pregnantunicorn.goldentitty.views.fragments.*
 object CurrentEntrance {
 
     const val TENT  = 0
-    const val JINS_HUT = 1
-    const val SAPHONEES_HUT = 2
-    const val CAVE = 3
-    const val WOOD_PALM = 4
-    const val COCONUT_PALM = 5
-    const val PIER = 6
-    const val WORKSHOP = 7
-    const val CAMP_FIRE = 8
-    const val EXCAVATION_SITE_NR1 = 9
-    const val EXCAVATION_SITE_NR2 = 10
-    const val EXCAVATION_SITE_NR3 = 11
-    const val EXCAVATION_SITE_NR4 = 12
-    const val EXCAVATION_SITE_NR5 = 13
-    const val EXCAVATION_SITE_NR6 = 14
-    const val EXCAVATION_SITE_NR7 = 15
-    const val TEMPLE_RUINS = 16
-    const val WESTERN_GATE = 17
-    const val EASTERN_GATE = 18
-    const val CHIDINMAS_STATUE = 19
+    const val LADY_SILVIAS_HUT = 1
+    const val CAVE = 2
+    const val WOOD_PALM = 3
+    const val COCONUT_PALM = 4
+    const val PIER = 5
+    const val WORKSHOP = 6
+    const val CAMP_FIRE = 7
+    const val EXCAVATION_SITE_NR1 = 8
+    const val EXCAVATION_SITE_NR2 = 9
+    const val EXCAVATION_SITE_NR3 = 10
+    const val EXCAVATION_SITE_NR4 = 11
+    const val EXCAVATION_SITE_NR5 = 12
+    const val EXCAVATION_SITE_NR6 = 13
+    const val EXCAVATION_SITE_NR7 = 14
+    const val TEMPLE_RUINS = 15
+    const val WESTERN_GATE = 16
+    const val EASTERN_GATE = 17
+    const val CHIDINMAS_STATUE = 18
 
     private val entrances = arrayOf(
 
@@ -58,31 +58,12 @@ object CurrentEntrance {
         ),
 
         Entrance(
-            "Jin's Hut",
+            "Lady Silvia's Hut",
             { IconFactory().curtains128() },
-            "This is the place where Jin sleeps.",
+            "This is the place where Lady Silvia sleeps.",
             "Go Inside",
             { true },
             {
-
-                CurrentNpc.changeNpc(CurrentNpc.JIN)
-
-                it.supportFragmentManager.commit {
-
-                    replace<NpcFragment>(R.id.world_container)
-                }
-            }
-        ),
-
-        Entrance(
-            "Saphonee's Hut",
-            { IconFactory().curtains128() },
-            "This is the place where Saphonee sleeps.",
-            "Go Inside",
-            { true },
-            {
-
-                CurrentNpc.changeNpc(CurrentNpc.SAPHONEE)
 
                 it.supportFragmentManager.commit {
 
@@ -109,7 +90,7 @@ object CurrentEntrance {
         Entrance(
             "Palm",
             { IconFactory().woodPalm128() },
-            "This is the place where you canacquire wood.",
+            "This is the place where you can acquire wood.",
             "Approach",
             { true },
             {
@@ -186,9 +167,22 @@ object CurrentEntrance {
 
                 CurrentExcavationSite.changeExcavationNumber(ExcavationNumber.NR1)
 
-                it.supportFragmentManager.commit {
+                if(CurrentExcavationSite.excavation().hasBeenExcavated()) {
 
-                    replace<ExcavationFragment>(R.id.world_container)
+                    CurrentInformation.changeInformation(CurrentInformation.EXCAVATION_SITE)
+
+                    it.supportFragmentManager.commit {
+
+                        replace<InformationFragment>(R.id.world_container)
+                    }
+                }
+
+                else {
+
+                    it.supportFragmentManager.commit {
+
+                        replace<ExcavationFragment>(R.id.world_container)
+                    }
                 }
             }
         ),
@@ -203,9 +197,22 @@ object CurrentEntrance {
 
                 CurrentExcavationSite.changeExcavationNumber(ExcavationNumber.NR2)
 
-                it.supportFragmentManager.commit {
+                if(CurrentExcavationSite.excavation().hasBeenExcavated()) {
 
-                    replace<ExcavationFragment>(R.id.world_container)
+                    CurrentInformation.changeInformation(CurrentInformation.EXCAVATION_SITE)
+
+                    it.supportFragmentManager.commit {
+
+                        replace<InformationFragment>(R.id.world_container)
+                    }
+                }
+
+                else {
+
+                    it.supportFragmentManager.commit {
+
+                        replace<ExcavationFragment>(R.id.world_container)
+                    }
                 }
             }
         ),
@@ -220,9 +227,22 @@ object CurrentEntrance {
 
                 CurrentExcavationSite.changeExcavationNumber(ExcavationNumber.NR3)
 
-                it.supportFragmentManager.commit {
+                if(CurrentExcavationSite.excavation().hasBeenExcavated()) {
 
-                    replace<ExcavationFragment>(R.id.world_container)
+                    CurrentInformation.changeInformation(CurrentInformation.EXCAVATION_SITE)
+
+                    it.supportFragmentManager.commit {
+
+                        replace<InformationFragment>(R.id.world_container)
+                    }
+                }
+
+                else {
+
+                    it.supportFragmentManager.commit {
+
+                        replace<ExcavationFragment>(R.id.world_container)
+                    }
                 }
             }
         ),
@@ -237,9 +257,22 @@ object CurrentEntrance {
 
                 CurrentExcavationSite.changeExcavationNumber(ExcavationNumber.NR4)
 
-                it.supportFragmentManager.commit {
+                if(CurrentExcavationSite.excavation().hasBeenExcavated()) {
 
-                    replace<ExcavationFragment>(R.id.world_container)
+                    CurrentInformation.changeInformation(CurrentInformation.EXCAVATION_SITE)
+
+                    it.supportFragmentManager.commit {
+
+                        replace<InformationFragment>(R.id.world_container)
+                    }
+                }
+
+                else {
+
+                    it.supportFragmentManager.commit {
+
+                        replace<ExcavationFragment>(R.id.world_container)
+                    }
                 }
             }
         ),
@@ -254,9 +287,22 @@ object CurrentEntrance {
 
                 CurrentExcavationSite.changeExcavationNumber(ExcavationNumber.NR5)
 
-                it.supportFragmentManager.commit {
+                if(CurrentExcavationSite.excavation().hasBeenExcavated()) {
 
-                    replace<ExcavationFragment>(R.id.world_container)
+                    CurrentInformation.changeInformation(CurrentInformation.EXCAVATION_SITE)
+
+                    it.supportFragmentManager.commit {
+
+                        replace<InformationFragment>(R.id.world_container)
+                    }
+                }
+
+                else {
+
+                    it.supportFragmentManager.commit {
+
+                        replace<ExcavationFragment>(R.id.world_container)
+                    }
                 }
             }
         ),
@@ -271,9 +317,22 @@ object CurrentEntrance {
 
                 CurrentExcavationSite.changeExcavationNumber(ExcavationNumber.NR6)
 
-                it.supportFragmentManager.commit {
+                if(CurrentExcavationSite.excavation().hasBeenExcavated()) {
 
-                    replace<ExcavationFragment>(R.id.world_container)
+                    CurrentInformation.changeInformation(CurrentInformation.EXCAVATION_SITE)
+
+                    it.supportFragmentManager.commit {
+
+                        replace<InformationFragment>(R.id.world_container)
+                    }
+                }
+
+                else {
+
+                    it.supportFragmentManager.commit {
+
+                        replace<ExcavationFragment>(R.id.world_container)
+                    }
                 }
             }
         ),
@@ -288,9 +347,22 @@ object CurrentEntrance {
 
                 CurrentExcavationSite.changeExcavationNumber(ExcavationNumber.NR7)
 
-                it.supportFragmentManager.commit {
+                if(CurrentExcavationSite.excavation().hasBeenExcavated()) {
 
-                    replace<ExcavationFragment>(R.id.world_container)
+                    CurrentInformation.changeInformation(CurrentInformation.EXCAVATION_SITE)
+
+                    it.supportFragmentManager.commit {
+
+                        replace<InformationFragment>(R.id.world_container)
+                    }
+                }
+
+                else {
+
+                    it.supportFragmentManager.commit {
+
+                        replace<ExcavationFragment>(R.id.world_container)
+                    }
                 }
             }
         ),

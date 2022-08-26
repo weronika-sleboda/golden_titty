@@ -13,10 +13,11 @@ import com.pregnantunicorn.goldentitty.databinding.AxeFragmentBinding
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
-import com.pregnantunicorn.goldentitty.models.player.Player
+import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.resources.Resources
 import com.pregnantunicorn.goldentitty.models.tools.*
-import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
+import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 
@@ -66,9 +67,9 @@ class AxeFragment : Fragment() {
         binding.icon.setImageResource(IconFactory().woodPalm128())
     }
 
-    private fun updatePlayerStatus() {
+    private fun updateWorldActivityUi() {
 
-        val status = requireActivity() as PlayerStatusUpdate
+        val status = requireActivity() as WorldActivityUiUpdate
         status.updateEnergy()
         status.updateWood()
     }
@@ -93,7 +94,7 @@ class AxeFragment : Fragment() {
 
                 CurrentMessage.changeMessage(
                     "You failed",
-                    IconFactory().fail64(),
+                    R.drawable.fail64,
                     "You failed."
                 )
 
@@ -109,14 +110,23 @@ class AxeFragment : Fragment() {
 
                 binding.successProgressBar.progress = 0
 
-                Player.wood().addAmount(axe?.hitAmount()!!)
-                updatePlayerStatus()
+                Resources.wood().addAmount(axe?.hitAmount()!!)
+                updateWorldActivityUi()
 
                 CurrentMessage.changeMessage(
                     "Wood Acquired",
-                    IconFactory().wood64(),
+                    R.drawable.wood64,
                     "You have acquired wood."
                 )
+
+                if(Resources.wood().amountIsMaxed()) {
+
+                    CurrentMessage.changeMessage(
+                        "Max Value Reached",
+                        R.drawable.wood64,
+                        "Max value has been reached."
+                    )
+                }
 
                 showMessage()
             }
@@ -139,10 +149,10 @@ class AxeFragment : Fragment() {
 
                     val energy = 1
 
-                    if(Player.energy().hasAmount(energy)) {
+                    if(Meteor.energy().hasAmount(energy)) {
 
-                        Player.energy().loseAmount(energy)
-                        updatePlayerStatus()
+                        Meteor.energy().loseAmount(energy)
+                        updateWorldActivityUi()
 
                         updateCutButtonText(R.string.cut)
 
@@ -231,7 +241,7 @@ class AxeFragment : Fragment() {
 
             CurrentMessage.changeMessage(
                 "Instructions",
-                IconFactory().info64(),
+                R.drawable.info64,
                 "1. Press hide button to see the power meter moving.\n" +
                         "2. Press cut button when you see the power meter being above 45% . The power meter has the max value of 100.\n" +
                         "3. When your cut is successful the success progress bar will move by 20.\n" +

@@ -5,12 +5,11 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
-import com.pregnantunicorn.goldentitty.models.npcs.CurrentNpc
+import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
 import com.pregnantunicorn.goldentitty.views.fragments.NpcFragment
 
 class NpcTile(
     private val icon: Int,
-    private val npcIndex: Int
 ): Tile(true)
 {
     override fun icon() = icon
@@ -18,8 +17,6 @@ class NpcTile(
     override fun background() = BackgroundFactory().beach()
 
     override fun onClick(activity: FragmentActivity) {
-
-        CurrentNpc.changeNpc(npcIndex)
 
         activity.supportFragmentManager.commit {
 

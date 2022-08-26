@@ -1,8 +1,6 @@
 package com.pregnantunicorn.goldentitty.models.npcs
 
-import com.pregnantunicorn.goldentitty.models.player.Player
-
-class JinsGreetings {
+class LadySilviaGreetings {
 
     fun greeting(): String {
 

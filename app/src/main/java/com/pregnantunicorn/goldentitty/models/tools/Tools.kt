@@ -28,7 +28,7 @@ object Tools {
 
         Boomerang(
             "Nomad Boomerang",
-            IconFactory().nomadBoomerang64(),
+            R.drawable.nomad_boomerang64,
             "Hit: 1, Speed: Normal",
             { 200 },
             { 1 },
@@ -40,7 +40,7 @@ object Tools {
 
         Boomerang(
             "Shaman Boomerang",
-            IconFactory().shamanBoomerang64(),
+            R.drawable.shaman_boomerang64,
             "Hit: 4, Speed: Random",
             { 10 + Random.nextLong(400)},
             { 1 },
@@ -52,7 +52,7 @@ object Tools {
 
         Boomerang(
             "Banana Boomerang",
-            IconFactory().bananaBoomerang64(),
+            R.drawable.banana_boomerang64,
             "Hit: 1 - 6, Speed: Fast",
             { 100 },
             { 1 + Random.nextInt(6)},
@@ -64,7 +64,7 @@ object Tools {
 
         Hammer(
             "Caveman Hammer",
-            IconFactory().cavemanHammer64(),
+            R.drawable.caveman_hammer64,
             1,
             0,
             0,
@@ -74,7 +74,7 @@ object Tools {
 
         Hammer(
             "Pilgrim Hammer",
-            IconFactory().pilgrimHammer64(),
+            R.drawable.pilgrim_hammer64,
             3,
             5,
             10,
@@ -84,7 +84,7 @@ object Tools {
 
         Hammer(
             "Knockout Hammer",
-            IconFactory().knockoutHammer64(),
+            R.drawable.knockout_hammer64,
             5,
             5,
             20,
@@ -94,7 +94,7 @@ object Tools {
 
         Axe(
             "Chieftain Axe",
-            IconFactory().chieftainAxe64(),
+            R.drawable.chieftain_axe64,
             1,
             0,
             0,
@@ -104,7 +104,7 @@ object Tools {
 
         Axe(
             "Merchant Axe",
-            IconFactory().merchantAxe64(),
+            R.drawable.merchant_axe64,
             3,
             10,
             5,
@@ -114,7 +114,7 @@ object Tools {
 
         Axe(
             "Dwarf Axe",
-            IconFactory().dwarfAxe64(),
+            R.drawable.dwarf_axe64,
             5,
             10,
             15,
@@ -124,7 +124,7 @@ object Tools {
 
         Spear(
             "Barbarian Spear",
-            IconFactory().barbarianSpear64(),
+            R.drawable.barbarian_spear64,
             "Hit: 1, Speed: Very Slow",
             { 400 },
             { 1 }, 8,
@@ -135,7 +135,7 @@ object Tools {
 
         Spear(
             "Mercenary Spear",
-            IconFactory().mercenarySpear64(),
+            R.drawable.mercenary_spear64,
             "Hit: 3, Speed: Normal",
             { 200 },
             { 3 },
@@ -147,7 +147,7 @@ object Tools {
 
         Spear(
             "King Spear",
-            IconFactory().kingSpear64(),
+            R.drawable.king_spear64,
             "Hit: 5, Speed: Fast",
             { 100 },
             { 5 },

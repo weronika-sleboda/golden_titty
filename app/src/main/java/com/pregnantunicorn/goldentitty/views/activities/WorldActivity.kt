@@ -10,11 +10,12 @@ import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.food.FoodType
 import com.pregnantunicorn.goldentitty.models.food.Foods
-import com.pregnantunicorn.goldentitty.models.player.Player
-import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
+import com.pregnantunicorn.goldentitty.models.meteor.Meteor
+import com.pregnantunicorn.goldentitty.models.resources.Resources
+import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
 import com.pregnantunicorn.goldentitty.views.fragments.*
 
-class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
+class WorldActivity : AppCompatActivity(), WorldActivityUiUpdate {
 
     private lateinit var binding: WorldActivityBinding
 
@@ -111,12 +112,12 @@ class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
 
     override fun updateHealth() {
 
-        binding.player.health.text = Player.health().amountToString()
+        binding.player.health.text = Meteor.health().amountToString()
     }
 
     override fun updateEnergy() {
 
-        binding.player.energy.text = Player.energy().amountToString()
+        binding.player.energy.text = Meteor.energy().amountToString()
     }
 
     override fun updateCoconuts() {
@@ -131,12 +132,12 @@ class WorldActivity : AppCompatActivity(), PlayerStatusUpdate {
 
     override fun updateIron() {
 
-        binding.player.iron.text = Player.iron().amountToString()
+        binding.player.iron.text = Resources.iron().amountToString()
     }
 
     override fun updateWood() {
 
-        binding.player.wood.text = Player.wood().amountToString()
+        binding.player.wood.text = Resources.wood().amountToString()
     }
 
     override fun onBackPressed() {}

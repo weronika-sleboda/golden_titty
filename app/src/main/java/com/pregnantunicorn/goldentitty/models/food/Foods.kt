@@ -1,7 +1,8 @@
 package com.pregnantunicorn.goldentitty.models.food
 
+import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
-import com.pregnantunicorn.goldentitty.models.player.Player
+import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 
 object Foods {
 
@@ -14,39 +15,40 @@ object Foods {
 
         Food(
             "Coconut",
-            IconFactory().coconut64(),
-            "Energy: +1"
-        )
-        {
-            Player.energy().addAmount(1)
-        },
+            R.drawable.coconut64,
+            "Energy: +1",
+            FoodType.COCONUT,
+            { Meteor.energy().amountIsMaxed() },
+            { Meteor.energy().addAmount(1) },
+        ),
+
 
         Food(
             "Coconut Water",
-            IconFactory().coconutWater64(),
-            "Energy: +3"
-        )
-        {
-            Player.energy().addAmount(3)
-        },
+            R.drawable.coconut_water64,
+            "Energy: +3",
+            FoodType.COCONUT_WATER,
+            { Meteor.energy().amountIsMaxed() },
+            { Meteor.energy().addAmount(3) },
+        ),
 
         Food(
             "Fish",
-            IconFactory().fish64(),
-            "Health: +1"
-        )
-        {
-            Player.health().addAmount(1)
-        },
+            R.drawable.fish64,
+            "Health: +1",
+            FoodType.FISH,
+            { Meteor.health().amountIsMaxed() },
+            { Meteor.health().addAmount(1) },
+        ),
 
         Food(
             "Fried Fish",
-            IconFactory().friedFish64(),
-            "Health: +3"
+            R.drawable.fried_fish64,
+            "Health: +3",
+            FoodType.FRIED_FISH,
+            { Meteor.health().amountIsMaxed() },
+            { Meteor.health().addAmount(3) },
         )
-        {
-            Player.health().addAmount(3)
-        },
     )
 
     fun foods() = foods
@@ -89,38 +91,39 @@ object Foods {
             Food(
                 "Coconut",
                 IconFactory().coconut64(),
-                "Energy: +1"
-            )
-            {
-                Player.energy().addAmount(1)
-            },
+                "Energy: +1",
+                FoodType.COCONUT,
+                { Meteor.energy().amountIsMaxed() },
+                { Meteor.energy().addAmount(1) },
+            ),
+
 
             Food(
                 "Coconut Water",
                 IconFactory().coconutWater64(),
-                "Energy: +3"
-            )
-            {
-                Player.energy().addAmount(3)
-            },
+                "Energy: +3",
+                FoodType.COCONUT_WATER,
+                { Meteor.energy().amountIsMaxed() },
+                { Meteor.energy().addAmount(3) },
+            ),
 
             Food(
                 "Fish",
                 IconFactory().fish64(),
-                "Health: +1"
-            )
-            {
-                Player.health().addAmount(1)
-            },
+                "Health: +1",
+                FoodType.FISH,
+                { Meteor.health().amountIsMaxed() },
+                { Meteor.health().addAmount(1) },
+            ),
 
             Food(
                 "Fried Fish",
                 IconFactory().friedFish64(),
-                "Health: +3"
+                "Health: +3",
+                FoodType.FRIED_FISH,
+                { Meteor.health().amountIsMaxed() },
+                { Meteor.health().addAmount(3) },
             )
-            {
-                Player.health().addAmount(3)
-            },
         )
     }
 }

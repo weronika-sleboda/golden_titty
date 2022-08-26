@@ -49,7 +49,7 @@ class SettingsFragment : Fragment() {
 
         binding.mainMenuButton.setOnClickListener {
 
-            showYesOrNoDialogFragment("Main menu", IconFactory().questionMark64(),
+            showYesOrNoDialogFragment("Main menu", R.drawable.question_mark64,
                 "Are you sure you want to exit to main menu? All unsaved progress will be lost."
             ) { goToMainMenu() }
         }
@@ -59,7 +59,7 @@ class SettingsFragment : Fragment() {
 
         binding.exitButton.setOnClickListener {
 
-            showYesOrNoDialogFragment("Exit game", IconFactory().questionMark64(),
+            showYesOrNoDialogFragment("Exit game", R.drawable.question_mark64,
                 "Are you sure you want to exit the game? All unsaved progress will be lost."
             ) { exitGame()}
 

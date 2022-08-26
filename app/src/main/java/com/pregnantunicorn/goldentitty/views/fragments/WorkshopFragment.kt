@@ -19,7 +19,7 @@ import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.models.workshop.Blueprint
 import com.pregnantunicorn.goldentitty.models.workshop.Workshop
 import com.pregnantunicorn.goldentitty.views.adapters.WorkshopAdapter
-import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
+import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -63,9 +63,9 @@ class WorkshopFragment : Fragment(), WorkshopAdapter.WorkshopListener {
         }
     }
 
-    private fun updatePlayerStatus() {
+    private fun updateWorldActivityUi() {
 
-        val status = requireActivity() as PlayerStatusUpdate
+        val status = requireActivity() as WorldActivityUiUpdate
         status.updateIron()
         status.updateWood()
     }
@@ -81,7 +81,7 @@ class WorkshopFragment : Fragment(), WorkshopAdapter.WorkshopListener {
                 withContext(Dispatchers.Main) {
 
                     showMessage()
-                    updatePlayerStatus()
+                    updateWorldActivityUi()
                     updateShopItems()
                 }
             }

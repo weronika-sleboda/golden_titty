@@ -1,5 +1,6 @@
 package com.pregnantunicorn.goldentitty.models.tools
 
+import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.food.FoodType
 import com.pregnantunicorn.goldentitty.models.food.Foods
 import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
@@ -35,9 +36,18 @@ class FishingSpot {
 
             CurrentMessage.changeMessage(
                 "Target Hit!",
-                IconFactory().fish64(),
+                R.drawable.fish64,
                 "Fish has been acquired."
             )
+
+            if(Foods.food(FoodType.FISH).amountIsMaxed()) {
+
+                CurrentMessage.changeMessage(
+                    "Max Value Reached",
+                    R.drawable.fish64,
+                    "Max value has been reached."
+                )
+            }
 
             return true
         }
@@ -45,8 +55,8 @@ class FishingSpot {
         return false
     }
 
-    private val targetIcon = IconFactory().fish64()
-    private val hitIcon = IconFactory().target64()
+    private val targetIcon = R.drawable.fish64
+    private val hitIcon = R.drawable.target64
 
     fun newRange(): Array<ToolTile> {
 

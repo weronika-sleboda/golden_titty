@@ -1,12 +1,13 @@
 package com.pregnantunicorn.goldentitty.models.tools
 
+import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 
 class Shovel : Tool {
 
     private var owns = false
 
-    override fun icon() = IconFactory().shovel64()
+    override fun icon() = R.drawable.shovel64
 
     override fun name() = "Shovel"
 

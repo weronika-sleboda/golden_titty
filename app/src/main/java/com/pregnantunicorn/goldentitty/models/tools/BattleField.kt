@@ -1,9 +1,10 @@
 package com.pregnantunicorn.goldentitty.models.tools
 
+import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
-import com.pregnantunicorn.goldentitty.models.player.Player
+import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 import kotlin.random.Random
 
 class BattleField {
@@ -40,16 +41,16 @@ class BattleField {
 
         CurrentMessage.changeMessage(
             "Damage",
-            IconFactory().health64(),
+            R.drawable.health64,
             "You have been hit by the enemy."
         )
 
-        Player.health().loseAmount(enemyAttack)
+        Meteor.health().loseAmount(enemyAttack)
 
         return false
     }
 
-    private var targetIcon = IconFactory().target64()
+    private var targetIcon = R.drawable.target64
 
     fun newRange(enemyIcon: Int): Array<ToolTile> {
 

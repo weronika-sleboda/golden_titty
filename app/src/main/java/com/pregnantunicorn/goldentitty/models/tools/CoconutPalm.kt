@@ -1,9 +1,11 @@
 package com.pregnantunicorn.goldentitty.models.tools
 
+import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.food.FoodType
 import com.pregnantunicorn.goldentitty.models.food.Foods
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.resources.Resources
 import kotlin.random.Random
 
 class CoconutPalm {
@@ -38,9 +40,18 @@ class CoconutPalm {
 
             CurrentMessage.changeMessage(
                 "Target Hit!",
-                IconFactory().coconut64(),
+                R.drawable.coconut64,
                 "Coconut has been acquired."
             )
+
+            if(Foods.food(FoodType.COCONUT).amountIsMaxed()) {
+
+                CurrentMessage.changeMessage(
+                    "Max Value Reached",
+                    R.drawable.coconut64,
+                    "Max value has been reached."
+                )
+            }
 
             return true
         }
@@ -48,7 +59,7 @@ class CoconutPalm {
         return false
     }
 
-    private val targetIcon = IconFactory().coconut64()
+    private val targetIcon = R.drawable.coconut64
 
     fun newRange(boomerangIcon: Int): Array<ToolTile> {
 

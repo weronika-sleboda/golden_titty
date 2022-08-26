@@ -4,8 +4,7 @@ enum class BuildingType {
 
     CAMP_FIRE,
     WORKSHOP,
-    JINS_HUT,
-    SAPHONEES_HUT,
+    LADY_SILVIAS_HUT,
     PIER,
     EXCAVATION_SITE_NR1,
     EXCAVATION_SITE_NR2,

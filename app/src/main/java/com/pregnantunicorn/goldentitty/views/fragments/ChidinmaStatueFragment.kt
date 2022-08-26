@@ -128,7 +128,7 @@ class ChidinmaStatueFragment : Fragment() {
 
                 CurrentMessage.changeMessage(
                     "Meteor",
-                    IconFactory().meteor64(),
+                    R.drawable.meteor64,
                     "Hmmm... Nothing happened..."
                 )
 
@@ -141,7 +141,7 @@ class ChidinmaStatueFragment : Fragment() {
 
                     CurrentMessage.changeMessage(
                         "Meteor",
-                        IconFactory().meteor64(),
+                        R.drawable.meteor64,
                         "What's that? A secret gate?"
                     )
 

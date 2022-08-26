@@ -17,11 +17,11 @@ import com.pregnantunicorn.goldentitty.models.excavation.CurrentExcavationSite
 import com.pregnantunicorn.goldentitty.models.excavation.ExcavationSite
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
-import com.pregnantunicorn.goldentitty.models.player.Player
+import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.views.adapters.ExcavationTileAdapter
-import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
+import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -75,22 +75,21 @@ class ExcavationFragment: Fragment(), ExcavationTileAdapter.TileListener {
         binding.excavationRecycler.layoutManager = layoutManager
     }
 
-    private fun updatePlayerStatus() {
+    private fun updateWorldActivityUi() {
 
-        val status = requireActivity() as PlayerStatusUpdate
+        val status = requireActivity() as WorldActivityUiUpdate
         status.updateEnergy()
     }
-
     override fun onClickTile(position: Int) {
 
         if(CurrentHandState.handState() == HandState.SHOVEL) {
 
             val energy = 1
 
-            if(Player.energy().hasAmount(energy)) {
+            if(Meteor.energy().hasAmount(energy)) {
 
-                Player.energy().loseAmount(energy)
-                updatePlayerStatus()
+                Meteor.energy().loseAmount(energy)
+                updateWorldActivityUi()
 
                 excavationSite?.excavation()?.get(position)?.onClick()
                 excavationSite = CurrentExcavationSite.excavation()
@@ -117,7 +116,7 @@ class ExcavationFragment: Fragment(), ExcavationTileAdapter.TileListener {
 
                 CurrentMessage.changeMessage(
                     "No Energy",
-                    IconFactory().energy64(),
+                    R.drawable.energy64,
                     "You don't have enough energy to perform this action."
                 )
 
@@ -129,7 +128,7 @@ class ExcavationFragment: Fragment(), ExcavationTileAdapter.TileListener {
 
             CurrentMessage.changeMessage(
                 "No Shovel",
-                IconFactory().info64(),
+                R.drawable.shovel64,
                 "Equip a shovel."
             )
 
@@ -161,7 +160,7 @@ class ExcavationFragment: Fragment(), ExcavationTileAdapter.TileListener {
 
         activity?.supportFragmentManager?.commit {
 
-            replace<EntranceFragment>(R.id.world_container)
+            replace<LocationFragment>(R.id.world_container)
         }
     }
 

@@ -1,6 +1,6 @@
 package com.pregnantunicorn.goldentitty.views.callbacks
 
-interface PlayerStatusUpdate {
+interface WorldActivityUiUpdate {
 
     fun updateHealth()
     fun updateEnergy()

@@ -1,5 +1,6 @@
 package com.pregnantunicorn.goldentitty.models.key_items
 
+import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 
 object KeyItems {
@@ -18,61 +19,61 @@ object KeyItems {
     private var keyItems = arrayOf(
 
         KeyItem(
-            IconFactory().shamanicNecklace64(),
+            R.drawable.shamanic_necklace64,
             "Shamanic Necklace",
             KeyItemType.SHAMANIC_NECKLACE
         ),
 
         KeyItem(
-            IconFactory().crystalOfVision64(),
+            R.drawable.crystal_of_vision,
             "Crystal Of Vision",
             KeyItemType.CRYSTAL_OF_VISION
         ),
 
         KeyItem(
-            IconFactory().staffOfEclipse64(),
+            R.drawable.staff_of_eclipse,
             "Staff Of Eclipse",
             KeyItemType.STAFF_OF_ECLIPSE
         ),
 
         KeyItem(
-            IconFactory().key64(),
+            R.drawable.key64,
             "Temple Key",
             KeyItemType.TEMPLE_KEY
         ),
 
         KeyItem(
-            IconFactory().key64(),
+            R.drawable.key64,
             "First Floor Key",
             KeyItemType.FIRST_FLOOR_KEY
         ),
 
         KeyItem(
-            IconFactory().key64(),
+            R.drawable.key64,
             "Second Floor Key",
             KeyItemType.SECOND_FLOOR_KEY
         ),
 
         KeyItem(
-            IconFactory().key64(),
+            R.drawable.key64,
             "Third Floor Key",
             KeyItemType.THIRD_FLOOR_KEY
         ),
 
         KeyItem(
-            IconFactory().emerald64(),
+            R.drawable.emerald64,
             "Emerald",
             KeyItemType.EMERALD
         ),
 
         KeyItem(
-            IconFactory().ruby64(),
+            R.drawable.ruby64,
             "Ruby",
             KeyItemType.RUBY
         ),
 
         KeyItem(
-            IconFactory().sapphire64(),
+            R.drawable.sapphire64,
             "Sapphire",
             KeyItemType.SAPPHIRE
         ),

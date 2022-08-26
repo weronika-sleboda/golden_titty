@@ -88,7 +88,7 @@ class EntranceFragment : Fragment() {
 
                         CurrentMessage.changeMessage(
                             "Locked",
-                            IconFactory().padlock64(),
+                            R.drawable.padlock64,
                             "The door is locked.You need to have a key."
                         )
 

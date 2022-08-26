@@ -1,12 +1,12 @@
 package com.pregnantunicorn.goldentitty.models.tools
 
-import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
+import com.pregnantunicorn.goldentitty.R
 
 class Knife : Tool {
 
     private var owns = false
 
-    override fun icon() = IconFactory().knife64()
+    override fun icon() = R.drawable.knife64
 
     override fun name() = "Knife"
 

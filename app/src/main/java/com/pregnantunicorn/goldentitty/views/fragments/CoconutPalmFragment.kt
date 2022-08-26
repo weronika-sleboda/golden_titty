@@ -17,10 +17,10 @@ import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
-import com.pregnantunicorn.goldentitty.models.player.Player
+import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.views.adapters.ToolTileAdapter
-import com.pregnantunicorn.goldentitty.views.callbacks.PlayerStatusUpdate
+import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 
@@ -70,9 +70,9 @@ class CoconutPalmFragment: Fragment() {
         binding.supplierTileRecycler.layoutManager = layoutManager
     }
 
-    private fun updatePlayerStatus() {
+    private fun updateWorldActivityUi() {
 
-        val status = requireActivity() as PlayerStatusUpdate
+        val status = requireActivity() as WorldActivityUiUpdate
         status.updateEnergy()
         status.updateCoconuts()
     }
@@ -89,11 +89,11 @@ class CoconutPalmFragment: Fragment() {
 
                     val energy = 1
 
-                    if(Player.energy().hasAmount(energy)) {
+                    if(Meteor.energy().hasAmount(energy)) {
 
                         fab.setImageResource(IconFactory().emptyHand64())
-                        Player.energy().loseAmount(energy)
-                        updatePlayerStatus()
+                        Meteor.energy().loseAmount(energy)
+                        updateWorldActivityUi()
 
                         job = CoroutineScope(Dispatchers.IO).launch {
 
@@ -115,7 +115,7 @@ class CoconutPalmFragment: Fragment() {
 
                         CurrentMessage.changeMessage(
                             "No Energy",
-                            IconFactory().energy64(),
+                            R.drawable.energy64,
                             "You don't have enough energy to perform this action."
                         )
 
@@ -141,7 +141,7 @@ class CoconutPalmFragment: Fragment() {
 
                             withContext(Dispatchers.Main) {
 
-                                updatePlayerStatus()
+                                updateWorldActivityUi()
                                 showMessage()
                             }
                         }
@@ -153,7 +153,7 @@ class CoconutPalmFragment: Fragment() {
 
                 CurrentMessage.changeMessage(
                     "No Boomerang",
-                    IconFactory().info64(),
+                    R.drawable.info64,
                     "Equip a boomerang."
                 )
 
@@ -168,7 +168,7 @@ class CoconutPalmFragment: Fragment() {
 
             CurrentMessage.changeMessage(
                 "Instructions",
-                IconFactory().info64(),
+                R.drawable.info64,
                 "1. Grab a boomerang from your backpack.\n" +
                         "2. Click on the boomerang icon at the bottom app bar in order to throw it.\n" +
                         "3. When the boomerang meets the target, click on the hand icon to bring back the boomerang.\n" +

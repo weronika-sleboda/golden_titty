@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pregnantunicorn.goldentitty.databinding.EventActivityBinding
+import com.pregnantunicorn.goldentitty.models.meteor.Meteor
+import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
 import com.pregnantunicorn.goldentitty.models.story_line.EventFactory
 import com.pregnantunicorn.goldentitty.models.story_line.events.EndingEvent
 
@@ -87,6 +89,13 @@ class EventActivity : AppCompatActivity() {
     private fun setupSkipButton() {
 
         binding.skipButton.setOnClickListener {
+
+            if(EndingEvent.event.hasAlreadyHappened() ||
+                Meteor.isDead() ||
+                LadySilvia.ladySilvia().isDead()) {
+
+                exitToMainMenu()
+            }
 
             val intent = Intent(baseContext, WorldActivity::class.java)
             startActivity(intent)
