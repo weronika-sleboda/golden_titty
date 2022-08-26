@@ -9,7 +9,7 @@ class BodyCondition {
     }
 
 
-    private var amount = 999
+    private var amount = MAX_VALUE
 
     fun amountToString() = "$amount/$MAX_VALUE"
 

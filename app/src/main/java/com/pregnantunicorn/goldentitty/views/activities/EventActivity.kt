@@ -59,7 +59,9 @@ class EventActivity : AppCompatActivity() {
             updateIcon()
             updateButtonText()
 
-            if(EndingEvent.event.hasAlreadyHappened()) {
+            if(EndingEvent.event.hasAlreadyHappened() ||
+                Meteor.isDead() ||
+                LadySilvia.ladySilvia().isDead()) {
 
                 exitToMainMenu()
             }
@@ -97,8 +99,11 @@ class EventActivity : AppCompatActivity() {
                 exitToMainMenu()
             }
 
-            val intent = Intent(baseContext, WorldActivity::class.java)
-            startActivity(intent)
+            else {
+
+                val intent = Intent(baseContext, WorldActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 

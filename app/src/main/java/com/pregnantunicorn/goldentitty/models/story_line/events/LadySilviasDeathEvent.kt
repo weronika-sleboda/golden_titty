@@ -19,7 +19,7 @@ object LadySilviasDeathEvent {
 
         Act(
             "Game Over",
-            R.drawable.skull256,
+            R.drawable.lady_silvia256,
             "Of course I am. I'm an undead skeleton, but it doesn't change the fact that I died my thousandth death, which was actually painful. I'm firing you!",
             "[Exit to main menu]"
         ),
