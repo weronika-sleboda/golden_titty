@@ -2,9 +2,8 @@ package com.pregnantunicorn.goldentitty.models.story_line.events
 
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.story_line.Act
-import com.pregnantunicorn.goldentitty.models.story_line.LongEvent
 import com.pregnantunicorn.goldentitty.models.story_line.MiniEvent
-import com.pregnantunicorn.goldentitty.models.story_line.ShortEvent
+import com.pregnantunicorn.goldentitty.models.world_map.world.LocationName
 
 object LadySilviasDeathEvent {
 

@@ -8,7 +8,6 @@ class BodyCondition {
         private const val MAX_VALUE = 10
     }
 
-
     private var amount = MAX_VALUE
 
     fun amountToString() = "$amount/$MAX_VALUE"

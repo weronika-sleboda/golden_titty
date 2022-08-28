@@ -59,13 +59,6 @@
             android:contentDescription="@string/sonny256_icon_cd"
             android:src="@drawable/meteor256" />
 
-        <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:layout_marginTop="100dp"
-            android:layout_gravity="end"
-            android:src="@drawable/main_screen_shovel"/>
-
     </FrameLayout>
 
     <Button

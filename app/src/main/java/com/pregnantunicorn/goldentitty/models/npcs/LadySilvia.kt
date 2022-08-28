@@ -9,7 +9,8 @@ object LadySilvia {
         R.drawable.lady_silvia128,
         { LadySilviaGreetings().greeting() },
         { LadySilviaGreetings().afterMeal() },
-        { LadySilviaGreetings().isFedLine() }
+        { LadySilviaGreetings().isFedLine() },
+        { LadySilviaGreetings().advice() }
     )
 
     fun ladySilvia() = ladySilvia
@@ -22,7 +23,8 @@ object LadySilvia {
             R.drawable.lady_silvia128,
             { LadySilviaGreetings().greeting() },
             { LadySilviaGreetings().afterMeal() },
-            { LadySilviaGreetings().isFedLine() }
+            { LadySilviaGreetings().isFedLine() },
+            { LadySilviaGreetings().advice() }
         )
     }
 }

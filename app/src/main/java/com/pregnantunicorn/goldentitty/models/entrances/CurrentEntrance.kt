@@ -11,7 +11,6 @@ import com.pregnantunicorn.goldentitty.models.information.CurrentInformation
 import com.pregnantunicorn.goldentitty.models.key_items.CurrentKeyItem
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItemType
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
-import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.models.world_map.world.CurrentLocation

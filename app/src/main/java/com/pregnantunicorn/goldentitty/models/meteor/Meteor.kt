@@ -1,7 +1,5 @@
 package com.pregnantunicorn.goldentitty.models.meteor
 
-import com.pregnantunicorn.goldentitty.models.resources.Resource
-
 object Meteor {
 
     private var health = BodyCondition()

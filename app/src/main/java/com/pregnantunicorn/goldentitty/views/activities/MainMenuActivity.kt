@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.pregnantunicorn.goldentitty.databinding.MainMenuActivityBinding
-import com.pregnantunicorn.goldentitty.models.story_line.EventFactory
+import com.pregnantunicorn.goldentitty.models.story_line.CurrentEvent
 import com.pregnantunicorn.goldentitty.models.story_line.EventTitle
 
 class MainMenuActivity : AppCompatActivity() {
@@ -28,7 +28,7 @@ class MainMenuActivity : AppCompatActivity() {
 
         binding.playButton.setOnClickListener {
 
-            EventFactory.changeEvent(EventTitle.OPENING)
+            CurrentEvent.changeEvent(EventTitle.OPENING)
 
             val intent = Intent(baseContext, EventActivity::class.java)
             startActivity(intent)

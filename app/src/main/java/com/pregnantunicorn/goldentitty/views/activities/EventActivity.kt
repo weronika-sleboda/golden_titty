@@ -6,13 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.pregnantunicorn.goldentitty.databinding.EventActivityBinding
 import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
-import com.pregnantunicorn.goldentitty.models.story_line.EventFactory
+import com.pregnantunicorn.goldentitty.models.story_line.CurrentEvent
 import com.pregnantunicorn.goldentitty.models.story_line.events.EndingEvent
 
 class EventActivity : AppCompatActivity() {
 
     private lateinit var binding: EventActivityBinding
-    private val event = EventFactory.currentEvent()
+    private val event = CurrentEvent.currentEvent()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -60,8 +60,8 @@ class EventActivity : AppCompatActivity() {
             updateButtonText()
 
             if(EndingEvent.event.hasAlreadyHappened() ||
-                Meteor.isDead() ||
-                LadySilvia.ladySilvia().isDead()) {
+                event.hasAlreadyHappened() && Meteor.isDead() ||
+                event.hasAlreadyHappened() && LadySilvia.ladySilvia().isDead()) {
 
                 exitToMainMenu()
             }
@@ -92,6 +92,8 @@ class EventActivity : AppCompatActivity() {
 
         binding.skipButton.setOnClickListener {
 
+            event.completeEvent()
+
             if(EndingEvent.event.hasAlreadyHappened() ||
                 Meteor.isDead() ||
                 LadySilvia.ladySilvia().isDead()) {
@@ -101,8 +103,7 @@ class EventActivity : AppCompatActivity() {
 
             else {
 
-                val intent = Intent(baseContext, WorldActivity::class.java)
-                startActivity(intent)
+                goToWorldMap()
             }
         }
     }

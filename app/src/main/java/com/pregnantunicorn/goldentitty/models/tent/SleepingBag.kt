@@ -7,7 +7,7 @@ import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
-import com.pregnantunicorn.goldentitty.models.story_line.EventFactory
+import com.pregnantunicorn.goldentitty.models.story_line.CurrentEvent
 import com.pregnantunicorn.goldentitty.models.story_line.EventTitle
 
 class SleepingBag {
@@ -47,19 +47,19 @@ class SleepingBag {
 
         if(Meteor.isDead() && LadySilvia.ladySilvia().isDead()) {
 
-            EventFactory.changeEvent(EventTitle.TEAMS_DEATH)
+            CurrentEvent.changeEvent(EventTitle.TEAMS_DEATH)
             return false
         }
 
         else if(Meteor.isDead()) {
 
-            EventFactory.changeEvent(EventTitle.METEORS_DEATH)
+            CurrentEvent.changeEvent(EventTitle.METEORS_DEATH)
             return false
         }
 
         else if(LadySilvia.ladySilvia().isDead()) {
 
-            EventFactory.changeEvent(EventTitle.LADY_SILVIAS_DEATH)
+            CurrentEvent.changeEvent(EventTitle.LADY_SILVIAS_DEATH)
             return false
         }
 

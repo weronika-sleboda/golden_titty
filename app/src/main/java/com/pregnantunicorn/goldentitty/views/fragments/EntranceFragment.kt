@@ -1,5 +1,6 @@
 package com.pregnantunicorn.goldentitty.views.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,10 +15,11 @@ import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.entrances.CurrentEntrance
 import com.pregnantunicorn.goldentitty.models.entrances.Entrance
-import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.story_line.CurrentEvent
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
+import com.pregnantunicorn.goldentitty.views.activities.EventActivity
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.*
 
@@ -97,6 +99,12 @@ class EntranceFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun goToEventActivity() {
+
+        val intent = Intent(context, EventActivity::class.java)
+        startActivity(intent)
     }
 
     private fun showMessage() {

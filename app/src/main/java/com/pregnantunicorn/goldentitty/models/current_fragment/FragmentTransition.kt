@@ -8,6 +8,14 @@ import com.pregnantunicorn.goldentitty.views.fragments.*
 
 class FragmentTransition {
 
+    fun npcFragment(activity: FragmentActivity) {
+
+        activity.supportFragmentManager.commit {
+
+            replace<NpcFragment>(R.id.world_container)
+        }
+    }
+
     fun informationFragment(activity: FragmentActivity) {
 
         activity.supportFragmentManager.commit {

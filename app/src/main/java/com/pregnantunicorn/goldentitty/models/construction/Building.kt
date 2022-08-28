@@ -1,10 +1,11 @@
 package com.pregnantunicorn.goldentitty.models.construction
 
 import com.pregnantunicorn.goldentitty.R
-import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
-import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 import com.pregnantunicorn.goldentitty.models.resources.Resources
+import com.pregnantunicorn.goldentitty.models.story_line.Event
+import com.pregnantunicorn.goldentitty.models.story_line.EventTitle
+import com.pregnantunicorn.goldentitty.models.world_map.world.LocationName
 
 class Building(
     val name: String,
@@ -14,7 +15,10 @@ class Building(
     val buildingType: BuildingType,
     private val wood: Int,
     private val iron: Int,
-    private val buildAlgorithm: () -> Unit
+    val eventTitle: EventTitle,
+    val event: Event,
+    val locationName: LocationName,
+    private val buildAlgorithm: () -> Unit,
 )
 {
     private var isBuild = false

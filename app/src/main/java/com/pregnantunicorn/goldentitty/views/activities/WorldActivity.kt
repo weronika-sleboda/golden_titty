@@ -48,10 +48,7 @@ class WorldActivity : AppCompatActivity(), WorldActivityUiUpdate {
 
     private fun goToWorldMap() {
 
-        supportFragmentManager.commit {
-
-            replace<LocationFragment>(R.id.world_container)
-        }
+        CurrentFragment.executeFragment(this)
     }
 
     private fun setupWorldButton() {

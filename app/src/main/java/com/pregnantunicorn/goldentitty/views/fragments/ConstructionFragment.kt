@@ -1,5 +1,6 @@
 package com.pregnantunicorn.goldentitty.views.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,8 +16,11 @@ import com.pregnantunicorn.goldentitty.models.construction.CurrentBuilding
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.story_line.CurrentEvent
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
+import com.pregnantunicorn.goldentitty.models.world_map.world.CurrentLocation
+import com.pregnantunicorn.goldentitty.views.activities.EventActivity
 import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -99,11 +103,28 @@ class ConstructionFragment : Fragment() {
 
                 if(building?.build()!!) {
 
-                    withContext(Dispatchers.Main) {
+                    if(!building!!.event.hasAlreadyHappened()) {
 
-                        updateWorldActivityUi()
-                        showMessage()
-                        goToWorldMap()
+                        CurrentEvent.changeEvent(building!!.event)
+                        CurrentEvent.changeEvent(building!!.eventTitle)
+                        CurrentLocation.changeLocation(building!!.locationName)
+                        CurrentFragment.changeFragment(FragmentType.LOCATION_FRAGMENT)
+
+                        withContext(Dispatchers.Main) {
+
+                            val intent = Intent(context, EventActivity::class.java)
+                            startActivity(intent)
+                        }
+                    }
+
+                    else {
+
+                        withContext(Dispatchers.Main) {
+
+                            updateWorldActivityUi()
+                            showMessage()
+                            goToWorldMap()
+                        }
                     }
                 }
 
@@ -116,6 +137,8 @@ class ConstructionFragment : Fragment() {
     }
 
     private fun goToWorldMap() {
+
+        CurrentLocation.changeLocation(building!!.locationName)
 
         activity?.supportFragmentManager?.commit {
 

@@ -16,10 +16,10 @@ object Foods {
         Food(
             "Coconut",
             R.drawable.coconut64,
-            "Energy: +1",
+            "Health: +1",
             FoodType.COCONUT,
-            { Meteor.energy().amountIsMaxed() },
-            { Meteor.energy().addAmount(1) },
+            { Meteor.health().amountIsMaxed() },
+            { Meteor.health().addAmount(1) },
         ),
 
 
@@ -35,10 +35,10 @@ object Foods {
         Food(
             "Fish",
             R.drawable.fish64,
-            "Health: +1",
+            "Health: +2",
             FoodType.FISH,
             { Meteor.health().amountIsMaxed() },
-            { Meteor.health().addAmount(1) },
+            { Meteor.health().addAmount(2) },
         ),
 
         Food(

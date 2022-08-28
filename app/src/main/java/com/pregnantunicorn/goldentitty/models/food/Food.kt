@@ -16,7 +16,7 @@ class Food(
 {
     private val maxAmount = 999
     private val minAmount = 0
-    private var amount = maxAmount
+    private var amount = 0
 
     fun amountToString() = "$amount"
     fun backpackAmount() = "Amount: $amount"
@@ -72,7 +72,7 @@ class Food(
 
                 CurrentMessage.changeMessage(
                     "Full Energy",
-                    R.drawable.health64,
+                    R.drawable.energy64,
                     "Your energy is already full."
                 )
             }

@@ -163,13 +163,13 @@ object Tools {
         Sword(
             "Bandit Sword",
             IconFactory().banditSword64(),
-            "Power: 1, Speed: Very Slow",
-            { 400 },
+            "Power: 1, Speed: Slow",
+            { 300 },
             { 1 },
             5,
             15,
             BANDIT_SWORD,
-            true,
+            false,
         ),
 
         Sword(
@@ -181,7 +181,7 @@ object Tools {
             8,
             20,
             WARRIOR_SWORD,
-            true,
+            false,
         ),
 
         Sword(
@@ -193,7 +193,7 @@ object Tools {
             12,
             30,
             ASSASSIN_SWORD,
-            true,
+            false,
         ),
     )
 
@@ -205,7 +205,7 @@ object Tools {
 
             Boomerang(
                 "Nomad Boomerang",
-                IconFactory().nomadBoomerang64(),
+                R.drawable.nomad_boomerang64,
                 "Hit: 1, Speed: Normal",
                 { 200 },
                 { 1 },
@@ -217,7 +217,7 @@ object Tools {
 
             Boomerang(
                 "Shaman Boomerang",
-                IconFactory().shamanBoomerang64(),
+                R.drawable.shaman_boomerang64,
                 "Hit: 4, Speed: Random",
                 { 10 + Random.nextLong(400)},
                 { 1 },
@@ -229,7 +229,7 @@ object Tools {
 
             Boomerang(
                 "Banana Boomerang",
-                IconFactory().bananaBoomerang64(),
+                R.drawable.banana_boomerang64,
                 "Hit: 1 - 6, Speed: Fast",
                 { 100 },
                 { 1 + Random.nextInt(6)},
@@ -241,7 +241,7 @@ object Tools {
 
             Hammer(
                 "Caveman Hammer",
-                IconFactory().cavemanHammer64(),
+                R.drawable.caveman_hammer64,
                 1,
                 0,
                 0,
@@ -251,7 +251,7 @@ object Tools {
 
             Hammer(
                 "Pilgrim Hammer",
-                IconFactory().pilgrimHammer64(),
+                R.drawable.pilgrim_hammer64,
                 3,
                 5,
                 10,
@@ -261,7 +261,7 @@ object Tools {
 
             Hammer(
                 "Knockout Hammer",
-                IconFactory().knockoutHammer64(),
+                R.drawable.knockout_hammer64,
                 5,
                 5,
                 20,
@@ -271,7 +271,7 @@ object Tools {
 
             Axe(
                 "Chieftain Axe",
-                IconFactory().chieftainAxe64(),
+                R.drawable.chieftain_axe64,
                 1,
                 0,
                 0,
@@ -281,7 +281,7 @@ object Tools {
 
             Axe(
                 "Merchant Axe",
-                IconFactory().merchantAxe64(),
+                R.drawable.merchant_axe64,
                 3,
                 10,
                 5,
@@ -291,7 +291,7 @@ object Tools {
 
             Axe(
                 "Dwarf Axe",
-                IconFactory().dwarfAxe64(),
+                R.drawable.dwarf_axe64,
                 5,
                 10,
                 15,
@@ -301,7 +301,7 @@ object Tools {
 
             Spear(
                 "Barbarian Spear",
-                IconFactory().barbarianSpear64(),
+                R.drawable.barbarian_spear64,
                 "Hit: 1, Speed: Very Slow",
                 { 400 },
                 { 1 }, 8,
@@ -312,7 +312,7 @@ object Tools {
 
             Spear(
                 "Mercenary Spear",
-                IconFactory().mercenarySpear64(),
+                R.drawable.mercenary_spear64,
                 "Hit: 3, Speed: Normal",
                 { 200 },
                 { 3 },
@@ -324,7 +324,7 @@ object Tools {
 
             Spear(
                 "King Spear",
-                IconFactory().kingSpear64(),
+                R.drawable.king_spear64,
                 "Hit: 5, Speed: Fast",
                 { 100 },
                 { 5 },
@@ -339,9 +339,9 @@ object Tools {
 
             Sword(
                 "Bandit Sword",
-                R.drawable.bandit_sword64,
-                "Power: 1, Speed: Very Slow",
-                { 400 },
+                IconFactory().banditSword64(),
+                "Power: 1, Speed: Slow",
+                { 300 },
                 { 1 },
                 5,
                 15,
@@ -351,7 +351,7 @@ object Tools {
 
             Sword(
                 "Warrior Sword",
-                R.drawable.warrior_sword64,
+                IconFactory().warriorSword64(),
                 "Power: 3, Speed: Normal",
                 { 200 },
                 { 3 },
@@ -363,7 +363,7 @@ object Tools {
 
             Sword(
                 "Assassin Sword",
-                R.drawable.assassin_sword64,
+                IconFactory().assassinSword64(),
                 "Power: 5, Speed: Fast",
                 { 100 },
                 { 5 },
@@ -373,6 +373,7 @@ object Tools {
                 false,
             ),
         )
+
     }
 
     fun ownedTools(): BooleanArray {

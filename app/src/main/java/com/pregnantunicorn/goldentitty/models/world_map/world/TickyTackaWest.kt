@@ -68,11 +68,7 @@ class TickyTackaWest : Location(
                 CurrentEntrance.EXCAVATION_SITE_NR1
             ) { BackgroundFactory().beach() }
 
-            it[11] = EntranceTile(
-                CurrentEntrance.WESTERN_GATE,
-                { IconFactory().secretGate64() },
-                {BackgroundFactory().grass() }
-            )
+            it[11] = WesternGateTile()
 
             it[12] = EmptyTile { BackgroundFactory().water() }
 

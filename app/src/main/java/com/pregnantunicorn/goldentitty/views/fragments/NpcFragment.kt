@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.NpcFragmentBinding
+import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
+import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
 import com.pregnantunicorn.goldentitty.models.npcs.Npc
@@ -35,6 +38,11 @@ class NpcFragment : Fragment() {
 
         binding = NpcFragmentBinding.inflate(inflater, container, false)
 
+        CoroutineScope(Dispatchers.IO).launch {
+
+            CurrentFragment.changeFragment(FragmentType.NPC_FRAGMENT)
+        }
+
         setupName()
         setupIcon()
         updateHealth()
@@ -44,8 +52,18 @@ class NpcFragment : Fragment() {
         setupFeedButton()
         setupLeaveButton()
         setupFab()
+        hideAskButton()
+        setupAskButton()
 
         return binding.root
+    }
+
+    private fun hideAskButton() {
+
+        if(!LadySilvia.ladySilvia().hasHouse()) {
+
+            binding.askButton.isVisible = false
+        }
     }
 
     private fun setupRequiredFoodIcon() {
@@ -129,6 +147,29 @@ class NpcFragment : Fragment() {
 
         InfoDialogFragment(CurrentMessage.message())
             .show(parentFragmentManager, InfoDialogFragment.INFO_TAG)
+    }
+
+    private fun setupAskButton() {
+
+        binding.askButton.setOnClickListener {
+
+            if(CurrentHandState.handState() == HandState.KEY_ITEM) {
+
+                binding.greeting.text = LadySilvia.ladySilvia().advice.invoke()
+            }
+
+            else {
+
+                CurrentMessage.changeMessage(
+                    "No Key Item",
+                    R.drawable.info64,
+                    "Equip a key item and click on the ask button. " +
+                            "Lady Silvia will then tell you something about the item that you hold."
+                )
+
+                showMessage()
+            }
+        }
     }
 
     override fun onDestroy() {

@@ -58,11 +58,7 @@ class TickyTackaEast: Location(
                 CurrentDayCycle.dayCycle() == DayCycle.NIGHT &&
                 CurrentKeyItem.keyItemType() == KeyItemType.STAFF_OF_ECLIPSE) {
 
-                it[10] = EntranceTile(
-                    CurrentEntrance.TEMPLE_RUINS,
-                    { IconFactory().templeRuins64() },
-                    {BackgroundFactory().beach() }
-                )
+                it[10] = TempleTile()
             }
 
             else {
@@ -73,11 +69,7 @@ class TickyTackaEast: Location(
             if(CurrentHandState.handState() == HandState.KEY_ITEM &&
                 CurrentKeyItem.keyItemType() == KeyItemType.CRYSTAL_OF_VISION) {
 
-                it[11] = EntranceTile(
-                    CurrentEntrance.CHIDINMAS_STATUE,
-                    { IconFactory().chidinmaStatue64() },
-                    {BackgroundFactory().beach() }
-                )
+                it[11] = StatueTile()
             }
 
             else {

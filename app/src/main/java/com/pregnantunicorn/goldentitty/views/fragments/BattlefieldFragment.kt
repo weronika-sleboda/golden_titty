@@ -19,8 +19,7 @@ import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
-import com.pregnantunicorn.goldentitty.models.story_line.EventFactory
-import com.pregnantunicorn.goldentitty.models.story_line.EventTitle
+import com.pregnantunicorn.goldentitty.models.story_line.CurrentEvent
 import com.pregnantunicorn.goldentitty.models.temple.CurrentEnemy
 import com.pregnantunicorn.goldentitty.models.temple.Enemy
 import com.pregnantunicorn.goldentitty.models.temple.TempleFloors
@@ -94,7 +93,7 @@ class BattlefieldFragment: Fragment() {
 
         val status = requireActivity() as WorldActivityUiUpdate
         status.updateEnergy()
-        status.updateWood()
+        status.updateHealth()
     }
 
     private fun setupFab() {
@@ -171,26 +170,36 @@ class BattlefieldFragment: Fragment() {
                             if(enemy?.health() == 0) {
 
                                 TempleFloors.templeFloor().beat()
-                                showMessage()
 
-                                activity?.supportFragmentManager?.commit {
+                                CurrentEvent.changeEvent(TempleFloors.templeFloor().eventEnding)
+                                CurrentEvent.changeEvent(TempleFloors.templeFloor().eventEndingTitle)
 
-                                    replace<LocationFragment>(R.id.world_container)
+                                withContext(Dispatchers.Main) {
+
+                                    showMessage()
+
+                                    CurrentFragment.changeFragment(FragmentType.TEMPLE_FRAGMENT)
+
+                                    val intent = Intent(context, EventActivity::class.java)
+                                    startActivity(intent)
                                 }
                             }
                         }
 
                         else {
 
-                            updateWorldActivityUi()
-                            showMessage()
+                            withContext(Dispatchers.Main) {
 
-                            if(Meteor.isDead()) {
+                                updateWorldActivityUi()
+                                showMessage()
 
-                                EventFactory.changeEvent(EventTitle.METEORS_DEATH)
+                                if(Meteor.isDead()) {
 
-                                val intent = Intent(context, EventActivity::class.java)
-                                startActivity(intent)
+                                    CurrentEvent.changeEvent(TempleFloors.templeFloor().eventDeath)
+
+                                    val intent = Intent(context, EventActivity::class.java)
+                                    startActivity(intent)
+                                }
                             }
                         }
                     }

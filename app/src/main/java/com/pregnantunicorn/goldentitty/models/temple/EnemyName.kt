@@ -2,7 +2,7 @@ package com.pregnantunicorn.goldentitty.models.temple
 
 enum class EnemyName {
 
-    PASHA,
+    DONUT_THE_DRAGON,
     SENTINO,
-    DARK_RIDER
+    VLADIMIR
 }

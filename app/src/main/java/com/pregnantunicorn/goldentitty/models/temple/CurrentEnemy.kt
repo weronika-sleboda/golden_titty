@@ -5,19 +5,19 @@ import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 
 object CurrentEnemy {
 
-    private fun pasha() = Enemy(R.drawable.pasha64, "Pasha", 10, 1)
-    private fun sentino() = Enemy(R.drawable.sentino64, "Sentino", 20, 2)
-    private fun darkRider() = Enemy(R.drawable.dark_rider64, "Dark Rider", 30, 3)
+    private val donutTheDragon = Enemy(R.drawable.donut_the_dragon, "Donut The Dragon", 10, 1)
+    private val sentino = Enemy(R.drawable.sentino64, "Sentino", 15, 2)
+    private val vladimir = Enemy(R.drawable.vladimir64, "Vladimir", 20, 3)
 
-    private var enemyName = EnemyName.PASHA
+    private var enemyName = EnemyName.DONUT_THE_DRAGON
 
     fun enemy(): Enemy {
 
         return when(enemyName) {
 
-            EnemyName.PASHA -> pasha()
-            EnemyName.SENTINO -> sentino()
-            EnemyName.DARK_RIDER -> darkRider()
+            EnemyName.DONUT_THE_DRAGON-> donutTheDragon
+            EnemyName.SENTINO -> sentino
+            EnemyName.VLADIMIR-> vladimir
         }
     }
 

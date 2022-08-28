@@ -1,5 +1,7 @@
 package com.pregnantunicorn.goldentitty.models.story_line
 
+import com.pregnantunicorn.goldentitty.models.world_map.world.LocationName
+
 class LongEvent(
     private val firstLine: Act,
     private val secondLine: Act,
@@ -7,10 +9,6 @@ class LongEvent(
     private val fourthLine: Act,
     private val fifthLine: Act,
     private val sixthLine: Act,
-    private val seventhLine: Act,
-    private val eightLine: Act,
-    private val ninthLine: Act
-
 ): Event()
 {
 
@@ -23,10 +21,10 @@ class LongEvent(
 
     override fun eventLine(): Act {
 
-        if(counter == 10) {
+        if(counter == 7) {
 
             completeEvent()
-            counter = 10
+            counter = 7
         }
 
         return when(counter) {
@@ -36,10 +34,8 @@ class LongEvent(
             3 -> thirdLine
             4 -> fourthLine
             5 -> fifthLine
-            6 -> sixthLine
-            7 -> seventhLine
-            8 -> eightLine
-            else -> { ninthLine }
+            else -> { sixthLine }
         }
     }
+
 }

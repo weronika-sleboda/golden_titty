@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.pregnantunicorn.goldentitty.databinding.GoldenTittyFragmentBinding
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
-import com.pregnantunicorn.goldentitty.models.story_line.EventFactory
+import com.pregnantunicorn.goldentitty.models.story_line.CurrentEvent
 import com.pregnantunicorn.goldentitty.models.story_line.EventTitle
 import com.pregnantunicorn.goldentitty.views.activities.EventActivity
 import kotlinx.coroutines.CoroutineScope
@@ -42,7 +42,7 @@ class GoldenTittyFragment : Fragment() {
 
         binding.takeButton.setOnClickListener {
 
-            EventFactory.changeEvent(EventTitle.ENDING)
+            CurrentEvent.changeEvent(EventTitle.ENDING)
 
             val intent = Intent(context, EventActivity::class.java)
             startActivity(intent)

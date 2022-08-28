@@ -8,7 +8,7 @@ class Resource {
         private const val MAX_VALUE = 999
     }
 
-    private var amount = MAX_VALUE
+    private var amount = 0
 
     fun amountIsMaxed() = amount == MAX_VALUE
 

@@ -1,8 +1,9 @@
 package com.pregnantunicorn.goldentitty.models.temple
 
 import com.pregnantunicorn.goldentitty.R
-import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItemType
+import com.pregnantunicorn.goldentitty.models.story_line.EventTitle
+import com.pregnantunicorn.goldentitty.models.story_line.events.*
 
 object TempleFloors {
 
@@ -18,8 +19,13 @@ object TempleFloors {
             KeyItemType.EMERALD,
             R.drawable.emerald64,
         "Emerald",
-            EnemyName.PASHA,
-            TempleFloorNumber.NR1
+            EnemyName.DONUT_THE_DRAGON,
+            TempleFloorNumber.NR1,
+            FirstFloorOpeningEvent.event,
+            FirstFloorDeathEvent.event,
+            FirstFloorEndingEvent.event,
+            EventTitle.FIRST_FLOOR_OPENING_EVENT,
+            EventTitle.FIRST_FLOOR_ENDING_EVENT
         ),
 
         TempleFloor(
@@ -29,7 +35,12 @@ object TempleFloors {
             R.drawable.sapphire64,
             "Sapphire",
             EnemyName.SENTINO,
-            TempleFloorNumber.NR2
+            TempleFloorNumber.NR2,
+            SecondFloorOpeningEvent.event,
+            SecondFloorDeathEvent.event,
+            SecondFloorEndingEvent.event,
+            EventTitle.SECOND_FLOOR_OPENING_EVENT,
+            EventTitle.SECOND_FLOOR_ENDING_EVENT
         ),
 
         TempleFloor(
@@ -38,8 +49,13 @@ object TempleFloors {
             KeyItemType.RUBY,
             R.drawable.ruby64,
             "Ruby",
-            EnemyName.DARK_RIDER,
-            TempleFloorNumber.NR3
+            EnemyName.VLADIMIR,
+            TempleFloorNumber.NR3,
+            ThirdFloorOpeningEvent.event,
+            ThirdFloorDeathEvent.event,
+            ThirdFloorEndingEvent.event,
+            EventTitle.THIRD_FLOOR_OPENING_EVENT,
+            EventTitle.THIRD_FLOOR_ENDING_EVENT
         ),
     )
 

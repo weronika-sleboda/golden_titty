@@ -1,5 +1,6 @@
 package com.pregnantunicorn.goldentitty.views.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +14,12 @@ import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.TempleFloorFragmentBinding
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
+import com.pregnantunicorn.goldentitty.models.entrances.CurrentEntrance
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.story_line.CurrentEvent
 import com.pregnantunicorn.goldentitty.models.temple.TempleFloor
 import com.pregnantunicorn.goldentitty.models.temple.TempleFloors
+import com.pregnantunicorn.goldentitty.views.activities.EventActivity
 import com.pregnantunicorn.goldentitty.views.adapters.TempleFloorAdapter
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
@@ -70,9 +74,24 @@ class TempleFragment : Fragment(), TempleFloorAdapter.TempleFloorListener {
 
             else {
 
-                activity?.supportFragmentManager?.commit {
 
-                    replace<BattlefieldFragment>(R.id.world_container)
+                if(!templeFloors!![position].eventOpening.hasAlreadyHappened()){
+
+                    CurrentEvent.changeEvent(templeFloors!![position].eventOpening)
+                    CurrentEvent.changeEvent(templeFloors!![position].eventOpeningTitle)
+
+                    val intent = Intent(context, EventActivity::class.java)
+                    startActivity(intent)
+
+                    CurrentFragment.changeFragment(FragmentType.BATTLEFIELD_FRAGMENT)
+                }
+
+                else {
+
+                    activity?.supportFragmentManager?.commit {
+
+                        replace<BattlefieldFragment>(R.id.world_container)
+                    }
                 }
             }
         }

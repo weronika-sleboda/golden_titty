@@ -292,7 +292,7 @@ class HammerFragment : Fragment() {
                         "2. Follow the icons on the main screen and press the corresponding button.\n" +
                         "3. If you click on an icon that isn't matching the one on the main screen you fail and have to start over.\n" +
                         "4. Watch the hourglass on the left above the main screen. If you run out of time you fail.\n" +
-                        "5. When the success progress bar reaches its maximum, you will enter the building."
+                        "5. When the success progress bar reaches its maximum, you will acquire iron."
             )
 
             showMessage()

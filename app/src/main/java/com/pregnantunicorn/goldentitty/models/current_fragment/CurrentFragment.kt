@@ -32,6 +32,7 @@ object CurrentFragment {
             FragmentType.CHIDINMA_STATUE_FRAGMENT -> FragmentTransition().chidinmaStatueFragment(activity)
             FragmentType.GOLDEN_TITTY_FRAGMENT -> FragmentTransition().goldenTittyFragment(activity)
             FragmentType.INFORMATION_FRAGMENT -> FragmentTransition().informationFragment(activity)
+            FragmentType.NPC_FRAGMENT -> FragmentTransition().npcFragment(activity)
         }
     }
 }

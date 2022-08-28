@@ -11,6 +11,7 @@ class Npc(
     val greeting: () -> String,
     val afterMeal: () -> String,
     val isFedLine:() -> String,
+    val advice: () -> String
 )
 {
 
@@ -30,7 +31,7 @@ class Npc(
 
         return if(!hasHouse) {
 
-            R.drawable.fish32
+            R.drawable.coconut32
         }
 
         else { R.drawable.fried_fish32 }
@@ -89,16 +90,16 @@ class Npc(
 
             if(!hasHouse) {
 
-                if(Foods.food(FoodType.FISH).hasAmount(amount)) {
+                if(Foods.food(FoodType.COCONUT).hasAmount(amount)) {
 
-                    Foods.food(FoodType.FISH).removeAmount(amount)
+                    Foods.food(FoodType.COCONUT).removeAmount(amount)
                     addHealth(1)
                     return true
                 }
 
                 CurrentMessage.changeMessage(
-                    "No Fish",
-                    R.drawable.fish64,
+                    "No Coconut",
+                    R.drawable.coconut64,
                     "You don't have any of these."
                 )
 
@@ -108,5 +109,4 @@ class Npc(
 
         return false
     }
-
 }

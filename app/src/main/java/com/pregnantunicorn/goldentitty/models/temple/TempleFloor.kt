@@ -5,6 +5,8 @@ import com.pregnantunicorn.goldentitty.models.key_items.CurrentKeyItem
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItemType
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItems
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.story_line.Event
+import com.pregnantunicorn.goldentitty.models.story_line.EventTitle
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
 
@@ -15,7 +17,12 @@ class TempleFloor(
     private val rewardIcon: Int,
     private val rewardName: String,
     private val enemyName: EnemyName,
-    private val templeFloorNumber: TempleFloorNumber
+    private val templeFloorNumber: TempleFloorNumber,
+    val eventOpening: Event,
+    val eventDeath: Event,
+    val eventEnding: Event,
+    val eventOpeningTitle: EventTitle,
+    val eventEndingTitle: EventTitle
 )
 {
 
