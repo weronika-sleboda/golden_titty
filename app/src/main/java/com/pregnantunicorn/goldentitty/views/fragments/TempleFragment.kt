@@ -19,6 +19,8 @@ import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.story_line.CurrentEvent
 import com.pregnantunicorn.goldentitty.models.temple.TempleFloor
 import com.pregnantunicorn.goldentitty.models.temple.TempleFloors
+import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
+import com.pregnantunicorn.goldentitty.models.tools.HandState
 import com.pregnantunicorn.goldentitty.views.activities.EventActivity
 import com.pregnantunicorn.goldentitty.views.adapters.TempleFloorAdapter
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
@@ -57,7 +59,11 @@ class TempleFragment : Fragment(), TempleFloorAdapter.TempleFloorListener {
     private fun setupFab() {
 
         val fab = requireActivity().findViewById<FloatingActionButton>(R.id.item_holder)
-        fab?.setOnClickListener {}
+        fab?.setOnClickListener {
+
+            CurrentHandState.changeHandState(HandState.EMPTY)
+            fab.setImageResource(CurrentHandState.fabIcon())
+        }
     }
 
     override fun onClickTempleFloor(position: Int) {
