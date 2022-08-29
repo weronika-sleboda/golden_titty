@@ -30,7 +30,7 @@ class EventActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.IO).launch {
 
-            Soundtrack.changeSoundtrack(SoundtrackName.OPENING_THEME)
+            Soundtrack.changeSoundtrack(SoundtrackName.EVENT_THEME)
             Soundtrack.playMusic(this@EventActivity)
         }
 

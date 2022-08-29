@@ -63,7 +63,7 @@ object Soundtrack {
 
         if(openingTheme == null) {
 
-            openingTheme = MediaPlayer.create(context, R.raw.golden_titty_story_theme)
+            openingTheme = MediaPlayer.create(context, R.raw.golden_titty_main_theme)
             openingTheme?.isLooping = true
             openingTheme?.start()
         }
@@ -101,7 +101,7 @@ object Soundtrack {
 
         if(eventTheme == null) {
 
-            eventTheme = MediaPlayer.create(context, R.raw.opening_theme)
+            eventTheme = MediaPlayer.create(context, R.raw.golden_titty_event_theme)
             eventTheme?.isLooping = true
             eventTheme?.start()
         }
