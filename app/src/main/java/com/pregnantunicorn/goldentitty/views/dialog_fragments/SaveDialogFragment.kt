@@ -43,7 +43,7 @@ class SaveDialogFragment : DialogFragment() {
                     binding.saveProgressBar.progress = counter
                 }
 
-                delay(30)
+                delay(10)
             }
 
             if(counter == 100) {

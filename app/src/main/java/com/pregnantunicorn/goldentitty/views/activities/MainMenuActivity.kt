@@ -85,7 +85,7 @@ class MainMenuActivity : AppCompatActivity() {
                 Tutorial.noNeedForTutorial()
 
                 val sharedPreferences = "shared_preferences"
-                GameFile().fileExists(getSharedPreferences(sharedPreferences, MODE_PRIVATE))
+                GameFile().load(getSharedPreferences(sharedPreferences, MODE_PRIVATE))
 
                 withContext(Dispatchers.Main) {
 
