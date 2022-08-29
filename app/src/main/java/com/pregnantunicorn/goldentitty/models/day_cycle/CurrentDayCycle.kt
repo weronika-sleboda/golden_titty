@@ -14,4 +14,14 @@ object CurrentDayCycle {
             DayCycle.NIGHT -> DayCycle.MORNING
         }
     }
+
+    fun reset() {
+
+        dayCycle = DayCycle.MORNING
+    }
+
+    fun load(dayCycle: DayCycle) {
+
+        this.dayCycle = dayCycle
+    }
 }

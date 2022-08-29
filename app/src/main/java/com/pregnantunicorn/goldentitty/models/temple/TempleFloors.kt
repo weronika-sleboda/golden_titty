@@ -76,4 +76,26 @@ object TempleFloors {
 
         templeFloorNumber = floorNumber
     }
+
+    fun conqueredBooleans(): BooleanArray {
+
+        val conqueredBooleans = BooleanArray(floors.size)
+
+        for(index in floors.indices) {
+
+            conqueredBooleans[index] = floors[index].conquered()
+        }
+
+        return conqueredBooleans
+    }
+
+    fun load(conqueredBooleans: BooleanArray, templeFloorNumber: TempleFloorNumber) {
+
+        for(index in floors.indices) {
+
+            floors[index].load(conqueredBooleans[index])
+        }
+
+        this.templeFloorNumber = templeFloorNumber
+    }
 }

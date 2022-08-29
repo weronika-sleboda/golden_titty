@@ -4,6 +4,7 @@ import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.food.FoodType
 import com.pregnantunicorn.goldentitty.models.food.Foods
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import kotlin.math.max
 
 class Npc(
     val name: String,
@@ -108,5 +109,17 @@ class Npc(
         }
 
         return false
+    }
+
+    fun reset() {
+
+        health = maxHealth
+        hasHouse = false
+    }
+
+    fun load(health: Int, hasHouse: Boolean) {
+
+        this.health = health
+        this.hasHouse = hasHouse
     }
 }

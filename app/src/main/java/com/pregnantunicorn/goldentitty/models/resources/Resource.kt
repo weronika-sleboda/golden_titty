@@ -9,6 +9,7 @@ class Resource {
     }
 
     private var amount = 0
+    fun amount() = amount
 
     fun amountIsMaxed() = amount == MAX_VALUE
 
@@ -39,6 +40,11 @@ class Resource {
     fun reset() {
 
         amount = 0
+    }
+
+    fun load(amount: Int) {
+
+        this.amount = amount
     }
 
 }

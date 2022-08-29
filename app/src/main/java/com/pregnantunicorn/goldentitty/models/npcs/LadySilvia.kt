@@ -14,17 +14,4 @@ object LadySilvia {
     )
 
     fun ladySilvia() = ladySilvia
-
-
-    fun reset() {
-
-        ladySilvia = Npc(
-            "Lady Silvia",
-            R.drawable.lady_silvia128,
-            { LadySilviaGreetings().greeting() },
-            { LadySilviaGreetings().afterMeal() },
-            { LadySilviaGreetings().isFedLine() },
-            { LadySilviaGreetings().advice() }
-        )
-    }
 }

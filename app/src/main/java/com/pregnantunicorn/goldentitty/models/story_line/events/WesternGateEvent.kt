@@ -20,7 +20,7 @@ object WesternGateEvent {
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "That gate leads to the Eastern Ticky Tacka. [She tries to pass through the gate] Seven Nipples damn it! That flea bearer have enchanted it. We have to find away to nullify the spell.",
+            "That gate leads to the Eastern Ticky Tacka. [She tries to pass through the gate] Seven Nipples damn it! That flea bearer have enchanted it. We have to find a way to nullify the spell.",
             "[Nod]"
         ),
     )

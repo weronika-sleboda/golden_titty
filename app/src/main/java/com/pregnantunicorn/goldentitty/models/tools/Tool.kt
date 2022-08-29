@@ -8,7 +8,8 @@ interface Tool {
     fun info(): String
     fun equip()
     fun owns(): Boolean
-    fun setOwns(owns: Boolean)
+    fun load(owns: Boolean)
+    fun reset()
     fun addToBackpack()
 
     fun requiredWood(): Int

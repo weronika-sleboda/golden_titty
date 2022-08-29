@@ -18,4 +18,15 @@ object CurrentLocation {
         location = locationName
     }
 
+    fun locationName() = location
+
+    fun reset() {
+
+        location = LocationName.TICKY_TACKA_WEST
+    }
+
+    fun load(locationName: LocationName) {
+
+        location = locationName
+    }
 }

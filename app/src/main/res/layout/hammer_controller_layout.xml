@@ -41,7 +41,7 @@
         android:layout_gravity="center"/>
 
     <ImageView
-        android:contentDescription="@string/climb_icon_cd"
+        android:contentDescription="@string/start_icon_cd"
         android:id="@+id/action_button"
         android:layout_width="54dp"
         android:layout_height="54dp"

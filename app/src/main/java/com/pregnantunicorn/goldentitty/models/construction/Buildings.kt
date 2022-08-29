@@ -184,4 +184,32 @@ object Buildings {
             BuildingType.EXCAVATION_SITE_NR7 -> buildings[EXCAVATION_SITE_NR7]
         }
     }
+
+    fun reset() {
+
+        for(building in buildings) {
+
+            building.reset()
+        }
+    }
+
+    fun buildingsBuilt(): BooleanArray {
+
+        val buildingsBuilt = BooleanArray(buildings.size)
+
+        for(index in buildings.indices) {
+
+            buildingsBuilt[index] = buildings[index].isBuild()
+        }
+
+        return buildingsBuilt
+    }
+
+    fun load(buildingsBuilt: BooleanArray) {
+
+        for(index in buildings.indices) {
+
+            buildings[index].setIsBuild(buildingsBuilt[index])
+        }
+    }
 }

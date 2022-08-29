@@ -13,18 +13,21 @@
 
 
         <ImageView
+            android:contentDescription="@string/swords_icon_cd"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="start"
             android:src="@drawable/main_screen_swords"/>
 
         <ImageView
+            android:contentDescription="@string/boomerang_icon_cd"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
             android:src="@drawable/main_screen_boomerang"/>
 
         <ImageView
+            android:contentDescription="@string/spears_icon_cd"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="end"

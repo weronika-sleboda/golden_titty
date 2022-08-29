@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/npc_name"
+            android:layout_width="340dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start|center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/super_light_mystery"
+            android:textSize="18sp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="@string/credits"
+            android:background="@drawable/dark_one_corner_rectangle_background"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/extreme_dark_shape_background"
+            android:columnCount="2">
+
+            <ImageView
+                android:contentDescription="@string/golden_titty_icon_cd"
+                android:layout_width="235dp"
+                android:layout_height="235dp"
+                android:layout_gravity="center"
+                android:src="@drawable/golden_titty256"
+                android:padding="5dp"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/npc_line"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/light_mystery"
+            android:textSize="18sp"
+            android:padding="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/middle_dark_shape_background"
+            android:text="@string/credits_info"
+            android:fontFamily="@font/raleway_medium"/>
+
+        <Button
+            android:id="@+id/exit_button"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:backgroundTint="@null"
+            android:fontFamily="@font/raleway_medium"
+            android:textColor="@color/light_mystery"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="@string/exit"
+            android:background="@drawable/dark_rectangle_gradient_button_background"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@color/super_dark_mystery">
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

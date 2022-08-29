@@ -14,4 +14,9 @@ object CurrentKeyItem {
 
         keyItem = keyItemType
     }
+
+    fun load(keyItemType: KeyItemType) {
+
+        keyItem = keyItemType
+    }
 }

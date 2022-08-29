@@ -7,6 +7,7 @@
     android:background="@drawable/dark_rectangle_gradient_button_background">
 
     <ImageView
+        android:contentDescription="@string/emerald_icon_cd"
         android:id="@+id/emerald"
         android:layout_width="74dp"
         android:layout_height="74dp"
@@ -16,6 +17,7 @@
         android:background="@drawable/extreme_dark_oval_background"/>
 
     <ImageView
+        android:contentDescription="@string/sapphire_icon_cd"
         android:id="@+id/sapphire"
         android:layout_width="74dp"
         android:layout_height="74dp"
@@ -25,6 +27,7 @@
         android:background="@drawable/extreme_dark_oval_background"/>
 
     <ImageView
+        android:contentDescription="@string/ruby_icon_cd"
         android:id="@+id/ruby"
         android:layout_width="74dp"
         android:layout_height="74dp"

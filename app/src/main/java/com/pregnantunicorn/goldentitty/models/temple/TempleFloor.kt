@@ -74,4 +74,14 @@ class TempleFloor(
         conquered = true
         KeyItems.getKeyItem(reward).add()
     }
+
+    fun reset() {
+
+        conquered = false
+    }
+
+    fun load(conquered: Boolean) {
+
+        this.conquered = conquered
+    }
 }

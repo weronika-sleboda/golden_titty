@@ -54,6 +54,7 @@
             android:src="@drawable/backpack64"/>
 
         <ImageView
+            android:contentDescription="@string/settings_icon_cd"
             android:id="@+id/settings_button"
             android:padding="5dp"
             android:layout_width="65dp"

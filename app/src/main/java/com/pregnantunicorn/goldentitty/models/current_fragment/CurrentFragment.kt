@@ -35,4 +35,16 @@ object CurrentFragment {
             FragmentType.NPC_FRAGMENT -> FragmentTransition().npcFragment(activity)
         }
     }
+
+    fun currentFragment() = fragment
+
+    fun reset() {
+
+        fragment = FragmentType.LOCATION_FRAGMENT
+    }
+
+    fun load(fragmentType: FragmentType) {
+
+        fragment = fragmentType
+    }
 }

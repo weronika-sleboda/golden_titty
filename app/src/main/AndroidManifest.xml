@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.pregnantunicorn.goldentitty">
 
     <application
@@ -13,21 +14,20 @@
         <activity
             android:name="com.pregnantunicorn.goldentitty.views.activities.WorldActivity"
             android:screenOrientation="portrait"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"
+            tools:ignore="LockedOrientationActivity" />
 
         <activity
             android:name="com.pregnantunicorn.goldentitty.views.activities.EventActivity"
             android:screenOrientation="portrait"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"
+            tools:ignore="LockedOrientationActivity" />
 
         <activity
             android:name="com.pregnantunicorn.goldentitty.views.activities.MainMenuActivity"
             android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            tools:ignore="LockedOrientationActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,6 +36,12 @@
             </intent-filter>
 
         </activity>
+
+        <activity
+            android:name="com.pregnantunicorn.goldentitty.views.activities.CreditsActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            tools:ignore="LockedOrientationActivity" />
 
     </application>
 

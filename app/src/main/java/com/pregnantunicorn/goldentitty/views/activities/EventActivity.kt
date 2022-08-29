@@ -4,10 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pregnantunicorn.goldentitty.databinding.EventActivityBinding
+import com.pregnantunicorn.goldentitty.models.day_cycle.CurrentDayCycle
+import com.pregnantunicorn.goldentitty.models.day_cycle.DayCycle
 import com.pregnantunicorn.goldentitty.models.meteor.Meteor
+import com.pregnantunicorn.goldentitty.models.music.Soundtrack
+import com.pregnantunicorn.goldentitty.models.music.SoundtrackName
 import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
 import com.pregnantunicorn.goldentitty.models.story_line.CurrentEvent
 import com.pregnantunicorn.goldentitty.models.story_line.events.EndingEvent
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class EventActivity : AppCompatActivity() {
 
@@ -20,6 +27,12 @@ class EventActivity : AppCompatActivity() {
 
         binding = EventActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        CoroutineScope(Dispatchers.IO).launch {
+
+            Soundtrack.changeSoundtrack(SoundtrackName.OPENING_THEME)
+            Soundtrack.playMusic(this@EventActivity)
+        }
 
         updateIcon()
         updateLine()

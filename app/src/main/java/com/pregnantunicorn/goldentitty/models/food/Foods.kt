@@ -64,11 +64,11 @@ object Foods {
         }
     }
 
-    fun setFood(foods: IntArray) {
+    fun load(foods: IntArray) {
 
         for(index in this.foods.indices) {
 
-            this.foods[index].setAmount(foods[index])
+            this.foods[index].load(foods[index])
         }
     }
 
@@ -86,44 +86,9 @@ object Foods {
 
     fun reset() {
 
-        foods = arrayOf(
+        for(food in foods) {
 
-            Food(
-                "Coconut",
-                IconFactory().coconut64(),
-                "Energy: +1",
-                FoodType.COCONUT,
-                { Meteor.energy().amountIsMaxed() },
-                { Meteor.energy().addAmount(1) },
-            ),
-
-
-            Food(
-                "Coconut Water",
-                IconFactory().coconutWater64(),
-                "Energy: +3",
-                FoodType.COCONUT_WATER,
-                { Meteor.energy().amountIsMaxed() },
-                { Meteor.energy().addAmount(3) },
-            ),
-
-            Food(
-                "Fish",
-                IconFactory().fish64(),
-                "Health: +1",
-                FoodType.FISH,
-                { Meteor.health().amountIsMaxed() },
-                { Meteor.health().addAmount(1) },
-            ),
-
-            Food(
-                "Fried Fish",
-                IconFactory().friedFish64(),
-                "Health: +3",
-                FoodType.FRIED_FISH,
-                { Meteor.health().amountIsMaxed() },
-                { Meteor.health().addAmount(3) },
-            )
-        )
+            food.reset()
+        }
     }
 }

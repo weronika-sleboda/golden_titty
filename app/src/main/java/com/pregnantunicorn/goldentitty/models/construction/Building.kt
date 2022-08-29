@@ -54,4 +54,14 @@ class Building(
 
         return false
     }
+
+    fun reset() {
+
+        isBuild = false
+    }
+
+    fun setIsBuild(isBuild: Boolean) {
+
+        this.isBuild  = isBuild
+    }
 }

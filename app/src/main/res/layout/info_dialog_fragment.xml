@@ -34,7 +34,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_gravity="center"
-            android:contentDescription="dialog_icon_cd"
+            android:contentDescription="@string/dialog_icon_cd"
             android:background="@drawable/dark_oval_background"
             android:padding="10dp"/>
 

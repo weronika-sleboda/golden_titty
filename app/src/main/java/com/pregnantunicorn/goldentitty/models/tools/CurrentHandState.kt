@@ -36,4 +36,14 @@ object CurrentHandState {
             else -> { CurrentKeyItem.keyItem().icon }
         }
     }
+
+    fun load(currentHandState: HandState) {
+
+        this.handState = handState
+    }
+
+    fun reset() {
+
+        handState = HandState.EMPTY
+    }
 }

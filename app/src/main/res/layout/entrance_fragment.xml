@@ -25,7 +25,7 @@
 
         <ImageView
             android:id="@+id/icon"
-            android:contentDescription="@string/bed_icon_cd"
+            android:contentDescription="@string/entrance_icon_cd"
             android:layout_column="0"
             android:layout_row="0"
             android:layout_width="138dp"
@@ -75,7 +75,6 @@
         android:textColor="@color/light_mystery"
         android:textSize="18sp"
         android:gravity="center"
-        android:text="@string/enter"
         android:background="@drawable/dark_rectangle_gradient_button_background"/>
 
     <Button

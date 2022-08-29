@@ -14,16 +14,16 @@ object Meteor {
 
     fun reset() {
 
-        health = BodyCondition()
-        energy = BodyCondition()
+        health.reset()
+        energy.reset()
     }
 
-    fun setStatus(
-        health: BodyCondition,
-        energy: BodyCondition,
+    fun loadStatus(
+        health: Int,
+        energy: Int,
     )
     {
-        this.health = health
-        this.energy = energy
+        this.health.load(health)
+        this.energy.load(energy)
     }
 }

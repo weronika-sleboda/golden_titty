@@ -40,8 +40,13 @@ class Boomerang(
 
     override fun hitAmount() = hitAmount.invoke()
 
-    override fun setOwns(owns: Boolean) {
+    override fun load(owns: Boolean) {
 
         this.owns = owns
+    }
+
+    override fun reset() {
+
+        this.owns = false
     }
 }

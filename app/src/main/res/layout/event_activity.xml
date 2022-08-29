@@ -34,7 +34,7 @@
 
             <ImageView
                 android:id="@+id/npc_icon"
-                android:contentDescription="@string/bed_icon_cd"
+                android:contentDescription="@string/event_icon_cd"
                 android:layout_width="235dp"
                 android:layout_height="235dp"
                 android:layout_gravity="center"

@@ -32,8 +32,13 @@ class Shovel : Tool {
 
     override fun hitAmount() = 1
 
-    override fun setOwns(owns: Boolean) {
+    override fun load(owns: Boolean) {
 
         this.owns = owns
+    }
+
+    override fun reset() {
+
+        this.owns = false
     }
 }

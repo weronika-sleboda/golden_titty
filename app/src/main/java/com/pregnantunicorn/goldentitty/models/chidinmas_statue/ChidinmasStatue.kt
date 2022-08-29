@@ -29,4 +29,23 @@ class ChidinmasStatue {
     }
 
     fun puzzleIsSolved() = emeraldInserted && rubyInserted && sapphireInserted
+
+
+    fun reset() {
+
+        emeraldInserted = false
+        rubyInserted = false
+        sapphireInserted = false
+    }
+
+    fun load(
+        emeraldInserted: Boolean,
+        rubyInserted: Boolean,
+        sapphireInserted: Boolean)
+    {
+
+        ChidinmasStatue.emeraldInserted = emeraldInserted
+        ChidinmasStatue.rubyInserted = rubyInserted
+        ChidinmasStatue.sapphireInserted = sapphireInserted
+    }
 }

@@ -9,6 +9,7 @@ class BodyCondition {
     }
 
     private var amount = MAX_VALUE
+    fun amount() = amount
 
     fun amountToString() = "$amount/$MAX_VALUE"
 
@@ -45,5 +46,10 @@ class BodyCondition {
     fun reset() {
 
         amount = MAX_VALUE
+    }
+
+    fun load(amount: Int) {
+
+        this.amount = amount
     }
 }

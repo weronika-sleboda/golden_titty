@@ -54,7 +54,18 @@ class Food(
             return true
         }
 
-        if(foodType == FoodType.FISH || foodType == FoodType.FRIED_FISH) {
+        else if(this.amount == 0) {
+
+            CurrentMessage.changeMessage(
+                "No $name",
+                icon,
+                "You don't have any of these"
+            )
+
+            return false
+        }
+
+        else if(foodType == FoodType.FISH || foodType == FoodType.FRIED_FISH || foodType == FoodType.COCONUT) {
 
             if(Meteor.health().amountIsMaxed()) {
 
@@ -63,10 +74,12 @@ class Food(
                     R.drawable.health64,
                     "Your health is already full."
                 )
+
+                return false
             }
         }
 
-        else if(foodType == FoodType.COCONUT || foodType == FoodType.COCONUT_WATER) {
+        else if(foodType == FoodType.COCONUT_WATER) {
 
             if(Meteor.energy().amountIsMaxed()) {
 
@@ -75,27 +88,20 @@ class Food(
                     R.drawable.energy64,
                     "Your energy is already full."
                 )
+
+                return false
             }
-        }
-
-        else {
-
-            CurrentMessage.changeMessage(
-                "No $name",
-                icon,
-                "You don't have any of these"
-            )
         }
 
         return false
     }
 
-    fun resetAmount() {
+    fun reset() {
 
         amount = 0
     }
 
-    fun setAmount(amount: Int) {
+    fun load(amount: Int) {
 
         this.amount = amount
     }

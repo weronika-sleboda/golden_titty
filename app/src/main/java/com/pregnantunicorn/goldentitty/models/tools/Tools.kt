@@ -199,6 +199,27 @@ object Tools {
 
     fun tools() = tools
 
+    fun ownedTools(): BooleanArray {
+
+        val tools = BooleanArray(tools.size)
+
+        for(index in this.tools.indices) {
+
+            tools[index] = this.tools[index].owns()
+        }
+
+        return tools
+    }
+
+
+    fun load(tools: BooleanArray) {
+
+        for(index in this.tools.indices) {
+
+            this.tools[index].load(tools[index])
+        }
+    }
+
     fun reset() {
 
         tools = arrayOf(
@@ -373,27 +394,5 @@ object Tools {
                 false,
             ),
         )
-
-    }
-
-    fun ownedTools(): BooleanArray {
-
-        val tools = BooleanArray(tools.size)
-
-        for(index in this.tools.indices) {
-
-            tools[index] = this.tools[index].owns()
-        }
-
-        return tools
-    }
-
-
-    fun setTools(tools: BooleanArray) {
-
-        for(index in this.tools.indices) {
-
-            this.tools[index].setOwns(tools[index])
-        }
     }
 }

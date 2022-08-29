@@ -1,5 +1,7 @@
 package com.pregnantunicorn.goldentitty.models.temple
 
+import kotlin.math.max
+
 class Enemy(
     val icon: Int,
     val name: String,
@@ -19,5 +21,15 @@ class Enemy(
 
             health = 0
         }
+    }
+
+    fun reset() {
+
+        health = maxHealth
+    }
+
+    fun load(health: Int) {
+
+        this.health = health
     }
 }

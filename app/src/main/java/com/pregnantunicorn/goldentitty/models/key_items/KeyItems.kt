@@ -97,4 +97,32 @@ object KeyItems {
             KeyItemType.STAFF_OF_ECLIPSE -> keyItems[STAFF_OF_ECLIPSE]
         }
     }
+
+    fun keyItemsOwns(): BooleanArray {
+
+        val keyItemsOwns = BooleanArray(keyItems.size)
+
+        for(index in keyItems.indices) {
+
+            keyItemsOwns[index] = keyItems[index].owns()
+        }
+
+        return  keyItemsOwns
+    }
+
+    fun load(keyItemsOwns: BooleanArray) {
+
+        for(index in keyItems.indices) {
+
+            keyItems[index].load(keyItemsOwns[index])
+        }
+    }
+
+    fun reset() {
+
+        for(keyItem in keyItems) {
+
+            keyItem.reset()
+        }
+    }
 }

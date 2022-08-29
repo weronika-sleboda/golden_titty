@@ -8,12 +8,23 @@ import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.WorldActivityBinding
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
+import com.pregnantunicorn.goldentitty.models.day_cycle.CurrentDayCycle
+import com.pregnantunicorn.goldentitty.models.day_cycle.DayCycle
 import com.pregnantunicorn.goldentitty.models.food.FoodType
 import com.pregnantunicorn.goldentitty.models.food.Foods
+import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.meteor.Meteor
+import com.pregnantunicorn.goldentitty.models.music.Soundtrack
+import com.pregnantunicorn.goldentitty.models.music.SoundtrackName
 import com.pregnantunicorn.goldentitty.models.resources.Resources
+import com.pregnantunicorn.goldentitty.models.tutorial.Tutorial
 import com.pregnantunicorn.goldentitty.views.callbacks.WorldActivityUiUpdate
+import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import com.pregnantunicorn.goldentitty.views.fragments.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class WorldActivity : AppCompatActivity(), WorldActivityUiUpdate {
 
@@ -39,6 +50,42 @@ class WorldActivity : AppCompatActivity(), WorldActivityUiUpdate {
         setupBackpackButton()
         setupSettingsButton()
         goToWorldMap()
+
+        if(Tutorial.needed()) {
+
+            CoroutineScope(Dispatchers.IO).launch {
+
+                CurrentMessage.changeMessage(
+                    "Info",
+                    R.drawable.info64,
+                    "If you need instructions on how to play various parts of the game, look always for an i-icon below your status."
+                )
+
+                withContext(Dispatchers.Main) {
+
+                    showMessage()
+                }
+            }
+        }
+
+        CoroutineScope(Dispatchers.IO).launch {
+
+            when(CurrentDayCycle.dayCycle()) {
+
+                DayCycle.MORNING -> Soundtrack.changeSoundtrack(SoundtrackName.MORNING_THEME)
+                DayCycle.SUNSET -> Soundtrack.changeSoundtrack(SoundtrackName.SUNSET_THEME)
+                DayCycle.NIGHT -> Soundtrack.changeSoundtrack(SoundtrackName.NIGHT_THEME)
+            }
+
+            Soundtrack.playMusic(this@WorldActivity)
+
+        }
+    }
+
+    private fun showMessage() {
+
+        InfoDialogFragment(CurrentMessage.message())
+            .show(supportFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 
     override fun updateFab() {

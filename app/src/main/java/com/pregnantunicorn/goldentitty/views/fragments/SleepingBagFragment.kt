@@ -13,7 +13,11 @@ import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.SleepingBagFragmentBinding
 import com.pregnantunicorn.goldentitty.models.current_fragment.CurrentFragment
 import com.pregnantunicorn.goldentitty.models.current_fragment.FragmentType
+import com.pregnantunicorn.goldentitty.models.day_cycle.CurrentDayCycle
+import com.pregnantunicorn.goldentitty.models.day_cycle.DayCycle
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.music.Soundtrack
+import com.pregnantunicorn.goldentitty.models.music.SoundtrackName
 import com.pregnantunicorn.goldentitty.models.tent.SleepingBag
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
@@ -86,6 +90,18 @@ class SleepingBagFragment : Fragment() {
             CoroutineScope(Dispatchers.IO).launch {
 
                 if(sleepingBag?.sleep() == true) {
+
+                    CoroutineScope(Dispatchers.IO).launch {
+
+                        when(CurrentDayCycle.dayCycle()) {
+
+                            DayCycle.MORNING -> Soundtrack.changeSoundtrack(SoundtrackName.MORNING_THEME)
+                            DayCycle.SUNSET -> Soundtrack.changeSoundtrack(SoundtrackName.SUNSET_THEME)
+                            DayCycle.NIGHT -> Soundtrack.changeSoundtrack(SoundtrackName.NIGHT_THEME)
+                        }
+
+                        Soundtrack.playMusic(requireContext())
+                    }
 
                     withContext(Dispatchers.Main) {
 

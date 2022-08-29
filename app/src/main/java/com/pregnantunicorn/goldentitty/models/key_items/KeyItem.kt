@@ -29,4 +29,14 @@ class KeyItem(
         CurrentHandState.changeHandState(HandState.KEY_ITEM)
         CurrentKeyItem.changeKeyItem(keyItemType)
     }
+
+    fun reset() {
+
+        owns = false
+    }
+
+    fun load(owns: Boolean) {
+
+        this.owns = owns
+    }
 }

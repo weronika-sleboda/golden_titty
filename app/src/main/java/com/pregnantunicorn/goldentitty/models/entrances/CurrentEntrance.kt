@@ -467,9 +467,18 @@ object CurrentEntrance {
     }
 
     private var entrance = entrances[TENT]
+    private var entranceIndex = 0
+
     fun entrance() = entrance
+    fun entranceIndex() = entranceIndex
 
     fun changeEntrance(entranceIndex: Int) {
+
+        this.entranceIndex = entranceIndex
+        entrance = entrances[entranceIndex]
+    }
+
+    fun loadCurrentEntrance(entranceIndex: Int) {
 
         entrance = entrances[entranceIndex]
     }

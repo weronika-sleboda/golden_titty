@@ -45,4 +45,15 @@ object CurrentEvent {
 
         this.event = event
     }
+
+    fun reset() {
+
+        event = OpeningEvent.event
+        eventTitle = EventTitle.OPENING
+    }
+
+    fun load(eventTitle: EventTitle) {
+
+        changeEvent(eventTitle)
+    }
 }

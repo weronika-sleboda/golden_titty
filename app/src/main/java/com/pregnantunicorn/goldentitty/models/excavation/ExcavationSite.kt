@@ -14,10 +14,10 @@ class ExcavationSite(
 {
 
     private val range = 24
-    private val excavation = Array(range) { ExcavationTile() }
+    private var excavation = Array(range) { ExcavationTile() }
     fun excavation() = excavation
 
-    private val keyPosition = Random.nextInt(range)
+    private var keyPosition = Random.nextInt(range)
     fun keyPosition() = keyPosition
 
     private var hasBeenExcavated = false
@@ -32,4 +32,24 @@ class ExcavationSite(
 
         CurrentLocation.changeLocation(exitToLocation)
     }
+
+    fun reset() {
+
+        hasBeenExcavated = false
+        keyPosition = Random.nextInt(range)
+        excavation = Array(range) { ExcavationTile() }
+    }
+
+    fun load(
+        hasBeenExcavated: Boolean,
+        keyPosition: Int,
+        excavation: Array<ExcavationTile>
+    )
+    {
+
+        this.hasBeenExcavated = hasBeenExcavated
+        this.keyPosition = keyPosition
+        this.excavation = excavation
+    }
+
 }

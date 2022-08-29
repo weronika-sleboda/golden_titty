@@ -1,5 +1,6 @@
 package com.pregnantunicorn.goldentitty.views.fragments
 
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +11,20 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.goldentitty.views.activities.MainMenuActivity
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.SettingsFragmentBinding
+import com.pregnantunicorn.goldentitty.models.file_manager.GameFile
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
+import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
+import com.pregnantunicorn.goldentitty.models.music.MusicSettings
+import com.pregnantunicorn.goldentitty.models.music.Soundtrack
 import com.pregnantunicorn.goldentitty.models.tools.CurrentHandState
 import com.pregnantunicorn.goldentitty.models.tools.HandState
+import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
+import com.pregnantunicorn.goldentitty.views.dialog_fragments.SaveDialogFragment
 import com.pregnantunicorn.goldentitty.views.dialog_fragments.YesOrNoDialogFragment
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlin.system.exitProcess
 
 class SettingsFragment : Fragment() {
@@ -28,11 +39,46 @@ class SettingsFragment : Fragment() {
 
         binding = SettingsFragmentBinding.inflate(inflater, container, false)
 
+        updateRadioButtons()
+        setupOnButton()
+        setupOffButton()
         setupMainMenuButton()
         setupExitGameButton()
+        setupSaveButton()
         setupFab()
 
         return binding.root
+    }
+
+    private fun updateRadioButtons() {
+
+        binding.onButton.isChecked = MusicSettings.onButton()
+        binding.offButton.isChecked = MusicSettings.offButton()
+    }
+
+    private fun setupOnButton() {
+
+        binding.onButton.setOnClickListener {
+
+            Soundtrack.stopMusic()
+            MusicSettings.checkOnButton()
+            updateRadioButtons()
+
+            CoroutineScope(Dispatchers.IO).launch {
+
+                Soundtrack.play()
+            }
+        }
+    }
+
+    private fun setupOffButton() {
+
+        binding.offButton.setOnClickListener {
+
+            MusicSettings.checkOffButton()
+            updateRadioButtons()
+            Soundtrack.stopMusic()
+        }
     }
 
     private fun setupFab() {
@@ -66,6 +112,24 @@ class SettingsFragment : Fragment() {
         }
     }
 
+    private fun setupSaveButton() {
+
+        binding.saveButton.setOnClickListener {
+
+            CoroutineScope(Dispatchers.IO).launch {
+
+                val sharedPreferences = "shared_preferences"
+
+                GameFile().save(requireActivity().getSharedPreferences(sharedPreferences, MODE_PRIVATE))
+
+                withContext(Dispatchers.Main) {
+
+                    showSaveMessage()
+                }
+            }
+        }
+    }
+
     private fun goToMainMenu() {
 
         val intent = Intent(context, MainMenuActivity::class.java)
@@ -76,6 +140,12 @@ class SettingsFragment : Fragment() {
 
         activity?.finishAffinity()
         exitProcess(0)
+    }
+
+    private fun showSaveMessage() {
+
+        SaveDialogFragment()
+            .show(parentFragmentManager, SaveDialogFragment.SAVE_TAG)
     }
 
     private fun showYesOrNoDialogFragment(

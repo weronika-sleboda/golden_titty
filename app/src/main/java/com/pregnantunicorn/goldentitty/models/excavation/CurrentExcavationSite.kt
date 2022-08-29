@@ -1,5 +1,6 @@
 package com.pregnantunicorn.goldentitty.models.excavation
 
+import androidx.constraintlayout.motion.widget.KeyPosition
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItemType
 import com.pregnantunicorn.goldentitty.models.key_items.KeyItems
@@ -78,6 +79,7 @@ object CurrentExcavationSite {
     )
 
     private var excavationNumber = ExcavationNumber.NR1
+    fun excavationNumber() = excavationNumber
 
     fun excavation(): ExcavationSite {
 
@@ -98,5 +100,67 @@ object CurrentExcavationSite {
         this.excavationNumber = excavationNumber
     }
 
+    fun excavationAreas() : Array<Array<ExcavationTile>> {
 
+        val excavations = Array(excavationSites.size) { arrayOf(ExcavationTile())}
+
+        for(index in excavationSites.indices) {
+
+            excavations[index] = excavationSites[index].excavation()
+        }
+
+        return excavations
+    }
+
+    fun excavatedSites(): BooleanArray {
+
+        val excavatedSites = BooleanArray(excavationSites.size)
+
+        for(index in excavationSites.indices) {
+
+            excavatedSites[index] = excavationSites[index].hasBeenExcavated()
+        }
+
+        return excavatedSites
+    }
+
+    fun keyPositions(): IntArray {
+
+        val keyPositions = IntArray(excavationSites.size)
+
+        for(index in excavationSites.indices) {
+
+            keyPositions[index] = excavationSites[index].keyPosition()
+        }
+
+        return keyPositions
+    }
+
+    fun load(
+        excavationAreas: Array<Array<ExcavationTile>>,
+        keyPositions: IntArray,
+        excavationSites: BooleanArray,
+        currentExcavationNr: ExcavationNumber
+    )
+    {
+
+        for(index in this.excavationSites.indices) {
+
+            this.excavationSites[index].load(
+                excavationSites[index],
+                keyPositions[index],
+                excavationAreas[index]
+            )
+        }
+
+        excavationNumber = currentExcavationNr
+    }
+
+    fun reset() {
+
+        for(excavation in excavationSites) {
+
+            excavation.reset()
+        }
+    }
 }

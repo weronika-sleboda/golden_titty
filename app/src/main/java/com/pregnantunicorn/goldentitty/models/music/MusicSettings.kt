@@ -1,5 +1,7 @@
 package com.pregnantunicorn.goldentitty.models.music
 
+import android.media.MediaPlayer
+
 object MusicSettings {
 
     private var onButton = true
