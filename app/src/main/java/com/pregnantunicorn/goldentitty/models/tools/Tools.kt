@@ -391,8 +391,8 @@ object Tools {
                 4,
                 15,
                 ASSASSIN_SWORD,
-                true
-            )
+                false,
+            ),
         )
     }
 }
