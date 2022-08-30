@@ -3,6 +3,7 @@ package com.pregnantunicorn.goldentitty.models.file_manager
 import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.pregnantunicorn.goldentitty.models.music.MusicSettings
+import com.pregnantunicorn.goldentitty.models.tools.CurrentAxe
 import com.pregnantunicorn.goldentitty.models.tutorial.Tutorial
 
 class GameFile {
@@ -68,6 +69,7 @@ class GameFile {
         ChidinmaStatueFile().reset()
         CurrentDayCycleFile().reset()
         CurrentFragmentFile().reset()
+        ToolsFile().reset()
         CurrentHandStateFile().reset()
         ExcavationsFile().reset()
         FoodFile().reset()
@@ -78,6 +80,5 @@ class GameFile {
         ResourcesFile().reset()
         StoryLineFile().reset()
         TempleFile().reset()
-        ToolsFile().reset()
     }
 }

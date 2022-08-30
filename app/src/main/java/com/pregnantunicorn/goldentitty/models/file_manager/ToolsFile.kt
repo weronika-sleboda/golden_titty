@@ -2,10 +2,6 @@ package com.pregnantunicorn.goldentitty.models.file_manager
 
 import android.content.SharedPreferences
 import com.google.gson.Gson
-import com.pregnantunicorn.goldentitty.models.temple.CurrentEnemy
-import com.pregnantunicorn.goldentitty.models.temple.EnemyName
-import com.pregnantunicorn.goldentitty.models.temple.TempleFloorNumber
-import com.pregnantunicorn.goldentitty.models.temple.TempleFloors
 import com.pregnantunicorn.goldentitty.models.tools.*
 
 class ToolsFile {

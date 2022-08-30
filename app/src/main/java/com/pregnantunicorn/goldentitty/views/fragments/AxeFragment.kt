@@ -104,7 +104,7 @@ class AxeFragment : Fragment() {
 
         else {
 
-            binding.successProgressBar.progress += 40
+            binding.successProgressBar.progress += 60
 
             if (binding.successProgressBar.progress == 120) {
 

@@ -39,7 +39,7 @@ object CurrentHandState {
 
     fun load(currentHandState: HandState) {
 
-        this.handState = handState
+        this.handState = currentHandState
     }
 
     fun reset() {
