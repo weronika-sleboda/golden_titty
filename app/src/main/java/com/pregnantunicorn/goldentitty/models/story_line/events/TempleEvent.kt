@@ -22,7 +22,7 @@ object TempleEvent {
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "Excellent, my dear! This is the Temple Of End Times Twerk of Latter Day Apocalypse Booty Rapture and Holy Nipple Revival. Or at least it was, until the despicable atitteists destroyed it.",
+            "Excellent, my dear! This is the Temple Of End Times Twerk of Latter Day Apocalypse Booty Rapture and Holy Nipple Revival. Or at least it was, until the atitteists destroyed it.",
             "[Follow her]"
         ),
 

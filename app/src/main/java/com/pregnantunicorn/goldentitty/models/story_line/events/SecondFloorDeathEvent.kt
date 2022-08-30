@@ -13,14 +13,14 @@ object SecondFloorDeathEvent {
         Act(
             "Sentino",
             R.drawable.sentino256,
-            "Agh... It will maybe sound... a little bit... gh... tactless... But do you have... arr... any... painkillers?",
+            "Agh... It maybe will sound... a little bit... gh... tactless... But do you have... arr... any... healing herbs?",
             "[...]"
         ),
 
         Act(
             "Game Over",
             R.drawable.skull256,
-            "Lady Silvia: Sure. Take those [She gives him her painkillers] I know exactly how you feel. I'm on my imaginary period each month for thousand years already.",
+            "You have been killed by a food poisoned guy. You are a loser.",
             "[Exit to main menu]"
         ),
 
