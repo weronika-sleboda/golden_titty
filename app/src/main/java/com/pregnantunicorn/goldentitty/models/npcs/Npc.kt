@@ -71,24 +71,6 @@ class Npc(
 
             val amount = 1
 
-            if(hasHouse) {
-
-                if(Foods.food(FoodType.FRIED_FISH).hasAmount(amount)) {
-
-                    Foods.food(FoodType.FRIED_FISH).removeAmount(amount)
-                    addHealth(3)
-                    return true
-                }
-
-                CurrentMessage.changeMessage(
-                    "No Fried Fish",
-                    R.drawable.fried_fish64,
-                    "You don't have any of these."
-                )
-
-                return false
-            }
-
             if(!hasHouse) {
 
                 if(Foods.food(FoodType.COCONUT).hasAmount(amount)) {

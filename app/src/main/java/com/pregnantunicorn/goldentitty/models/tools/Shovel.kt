@@ -27,7 +27,7 @@ class Shovel : Tool {
         owns = true
     }
 
-    override fun requiredWood(): Int = 10
+    override fun requiredWood(): Int = 6
     override fun requiredIron(): Int = 10
 
     override fun hitAmount() = 1

@@ -60,6 +60,7 @@ class LadySilviaGreetings {
 
             else -> {
 
+                counter = 0
                 "Yeah, finally time for a meal."
             }
         }
@@ -80,6 +81,4 @@ class LadySilviaGreetings {
             }
         }
     }
-
-
 }

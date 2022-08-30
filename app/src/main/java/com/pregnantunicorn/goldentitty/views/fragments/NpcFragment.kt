@@ -52,10 +52,28 @@ class NpcFragment : Fragment() {
         setupFeedButton()
         setupLeaveButton()
         setupFab()
+        hideFeedButton()
         hideAskButton()
+        hideHealthBar()
         setupAskButton()
 
         return binding.root
+    }
+
+    private fun hideHealthBar() {
+
+        if(LadySilvia.ladySilvia().hasHouse()) {
+
+            binding.info.npcStatus.isVisible = false
+        }
+    }
+
+    private fun hideFeedButton() {
+
+        if(LadySilvia.ladySilvia().hasHouse()) {
+
+            binding.feedButton.isVisible = false
+        }
     }
 
     private fun hideAskButton() {
@@ -105,7 +123,7 @@ class NpcFragment : Fragment() {
     private fun updateWorldActivityUi() {
 
         val status = requireActivity() as WorldActivityUiUpdate
-        status.updateFish()
+        status.updateCoconuts()
     }
 
     private fun setupFeedButton() {

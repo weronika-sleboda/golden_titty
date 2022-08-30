@@ -39,7 +39,11 @@ class SleepingBag {
     fun sleep(): Boolean {
 
         Meteor.health().loseAmount(healthCost)
-        LadySilvia.ladySilvia().loseHealth()
+
+        if(!LadySilvia.ladySilvia().hasHouse()) {
+
+            LadySilvia.ladySilvia().loseHealth()
+        }
 
         CurrentDayCycle.changeDayCycle()
         Meteor.energy().restore()

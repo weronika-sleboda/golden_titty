@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp"
+    android:id="@+id/npc_status"
     android:background="@drawable/extreme_dark_rectangle_background"
     android:layout_column="5">
 
