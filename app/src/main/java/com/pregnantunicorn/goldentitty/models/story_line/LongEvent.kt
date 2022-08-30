@@ -1,8 +1,7 @@
 package com.pregnantunicorn.goldentitty.models.story_line
 
-import com.pregnantunicorn.goldentitty.models.world_map.world.LocationName
-
 class LongEvent(
+    private val eventTitle: EventTitle,
     private val firstLine: Act,
     private val secondLine: Act,
     private val thirdLine: Act,
@@ -13,6 +12,11 @@ class LongEvent(
 {
 
     private var counter = 1
+
+    override fun eventTitle(): EventTitle {
+
+        return eventTitle
+    }
 
     override fun proceed() {
 

@@ -93,5 +93,6 @@ class TempleFile {
     fun reset() {
 
         CurrentEnemy.reset()
+        TempleFloors.reset()
     }
 }

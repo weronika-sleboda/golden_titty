@@ -4,14 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pregnantunicorn.goldentitty.databinding.EventActivityBinding
-import com.pregnantunicorn.goldentitty.models.day_cycle.CurrentDayCycle
-import com.pregnantunicorn.goldentitty.models.day_cycle.DayCycle
+import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.meteor.Meteor
 import com.pregnantunicorn.goldentitty.models.music.Soundtrack
 import com.pregnantunicorn.goldentitty.models.music.SoundtrackName
 import com.pregnantunicorn.goldentitty.models.npcs.LadySilvia
 import com.pregnantunicorn.goldentitty.models.story_line.CurrentEvent
+import com.pregnantunicorn.goldentitty.models.story_line.EventTitle
 import com.pregnantunicorn.goldentitty.models.story_line.events.EndingEvent
+import com.pregnantunicorn.goldentitty.models.temple.TempleFloor
+import com.pregnantunicorn.goldentitty.models.temple.TempleFloors
+import com.pregnantunicorn.goldentitty.views.dialog_fragments.InfoDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -27,6 +30,17 @@ class EventActivity : AppCompatActivity() {
 
         binding = EventActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if(event.eventTitle() == EventTitle.FIRST_FLOOR_ENDING_EVENT ||
+            event.eventTitle() == EventTitle.SECOND_FLOOR_ENDING_EVENT ||
+            event.eventTitle() == EventTitle.THIRD_FLOOR_ENDING_EVENT
+        )
+        {
+            if(!event.hasAlreadyHappened()) {
+
+                showMessage()
+            }
+        }
 
         CoroutineScope(Dispatchers.IO).launch {
 
@@ -119,6 +133,12 @@ class EventActivity : AppCompatActivity() {
                 goToWorldMap()
             }
         }
+    }
+
+    private fun showMessage() {
+
+        InfoDialogFragment(CurrentMessage.message())
+            .show(supportFragmentManager, InfoDialogFragment.INFO_TAG)
     }
 
     override fun onBackPressed() {}

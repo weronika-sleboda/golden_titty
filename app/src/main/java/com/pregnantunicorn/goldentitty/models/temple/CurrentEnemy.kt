@@ -5,9 +5,9 @@ import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 
 object CurrentEnemy {
 
-    private val donutTheDragon = Enemy(R.drawable.donut_the_dragon, "Donut The Dragon", 10, 1)
-    private val sentino = Enemy(R.drawable.sentino64, "Sentino", 15, 2)
-    private val vladimir = Enemy(R.drawable.vladimir64, "Vladimir", 20, 3)
+    private val donutTheDragon = Enemy(R.drawable.donut_the_dragon, "Donut The Dragon", 5, 1)
+    private val sentino = Enemy(R.drawable.sentino64, "Sentino", 10, 2)
+    private val vladimir = Enemy(R.drawable.vladimir64, "Vladimir", 15, 3)
 
     fun donut() = donutTheDragon
     fun sentino() = sentino

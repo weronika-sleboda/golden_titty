@@ -3,12 +3,15 @@ package com.pregnantunicorn.goldentitty.models.story_line.events
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.story_line.Act
+import com.pregnantunicorn.goldentitty.models.story_line.EventTitle
 import com.pregnantunicorn.goldentitty.models.story_line.MiniEvent
 import com.pregnantunicorn.goldentitty.models.world_map.world.LocationName
 
 object PierEvent {
 
     val event = MiniEvent(
+
+        EventTitle.PIER_EVENT,
 
         Act(
             "Pier",

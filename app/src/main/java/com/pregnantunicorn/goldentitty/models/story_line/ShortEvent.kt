@@ -1,6 +1,7 @@
 package com.pregnantunicorn.goldentitty.models.story_line
 
 class ShortEvent(
+    private val eventTitle: EventTitle,
     private val firstLine: Act,
     private val secondLine: Act,
     private val thirdLine: Act,
@@ -9,6 +10,11 @@ class ShortEvent(
 ): Event()
 {
     private var counter = 1
+
+    override fun eventTitle(): EventTitle {
+
+        return eventTitle
+    }
 
     override fun proceed() {
 

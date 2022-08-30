@@ -176,8 +176,6 @@ class BattlefieldFragment: Fragment() {
 
                                 withContext(Dispatchers.Main) {
 
-                                    showMessage()
-
                                     CurrentFragment.changeFragment(FragmentType.TEMPLE_FRAGMENT)
 
                                     val intent = Intent(context, EventActivity::class.java)

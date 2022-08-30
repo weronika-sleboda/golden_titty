@@ -44,7 +44,7 @@ object TempleFloors {
         ),
 
         TempleFloor(
-            "Second Floor",
+            "Third Floor",
             KeyItemType.THIRD_FLOOR_KEY,
             KeyItemType.RUBY,
             R.drawable.ruby64,
@@ -97,5 +97,13 @@ object TempleFloors {
         }
 
         this.templeFloorNumber = templeFloorNumber
+    }
+
+    fun reset() {
+
+        for(templeFloor in floors) {
+
+            templeFloor.reset()
+        }
     }
 }

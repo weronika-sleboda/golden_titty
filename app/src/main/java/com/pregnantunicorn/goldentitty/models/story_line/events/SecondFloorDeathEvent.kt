@@ -1,15 +1,14 @@
 package com.pregnantunicorn.goldentitty.models.story_line.events
 
 import com.pregnantunicorn.goldentitty.R
-import com.pregnantunicorn.goldentitty.models.story_line.Act
-import com.pregnantunicorn.goldentitty.models.story_line.LongEvent
-import com.pregnantunicorn.goldentitty.models.story_line.MiniEvent
-import com.pregnantunicorn.goldentitty.models.story_line.SuperLongEvent
+import com.pregnantunicorn.goldentitty.models.story_line.*
 import com.pregnantunicorn.goldentitty.models.world_map.world.LocationName
 
 object SecondFloorDeathEvent {
 
     val event = MiniEvent(
+
+        EventTitle.SECOND_FLOOR_DEATH_EVENT,
 
         Act(
             "Sentino",

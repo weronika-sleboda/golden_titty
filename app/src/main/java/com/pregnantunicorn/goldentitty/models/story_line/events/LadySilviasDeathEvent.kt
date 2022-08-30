@@ -2,12 +2,15 @@ package com.pregnantunicorn.goldentitty.models.story_line.events
 
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.story_line.Act
+import com.pregnantunicorn.goldentitty.models.story_line.EventTitle
 import com.pregnantunicorn.goldentitty.models.story_line.MiniEvent
 import com.pregnantunicorn.goldentitty.models.world_map.world.LocationName
 
 object LadySilviasDeathEvent {
 
     val event = MiniEvent(
+
+        EventTitle.LADY_SILVIAS_DEATH,
 
         Act(
             "Game Over",

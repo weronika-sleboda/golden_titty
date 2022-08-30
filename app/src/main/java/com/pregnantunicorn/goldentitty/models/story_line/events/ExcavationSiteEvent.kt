@@ -4,11 +4,14 @@ import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.models.construction.CurrentBuilding
 import com.pregnantunicorn.goldentitty.models.graphics.IconFactory
 import com.pregnantunicorn.goldentitty.models.story_line.Act
+import com.pregnantunicorn.goldentitty.models.story_line.EventTitle
 import com.pregnantunicorn.goldentitty.models.story_line.MiniEvent
 
 object ExcavationSiteEvent {
 
     val event = MiniEvent(
+
+        EventTitle.EXCAVATION_SITE_EVENT,
 
         Act(
             "Excavation Site",
