@@ -13,4 +13,9 @@ abstract class Event {
     abstract fun eventTitle(): EventTitle
     abstract fun proceed()
     abstract fun eventLine(): Act
+
+    fun reset() {
+
+        hasAlreadyHappened = false
+    }
 }

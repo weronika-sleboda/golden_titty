@@ -3,6 +3,7 @@ package com.pregnantunicorn.goldentitty.models.file_manager
 import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.pregnantunicorn.goldentitty.models.music.MusicSettings
+import com.pregnantunicorn.goldentitty.models.story_line.events.*
 import com.pregnantunicorn.goldentitty.models.tools.CurrentAxe
 import com.pregnantunicorn.goldentitty.models.tutorial.Tutorial
 
@@ -80,5 +81,27 @@ class GameFile {
         ResourcesFile().reset()
         StoryLineFile().reset()
         TempleFile().reset()
+
+        OpeningEvent.event.reset()
+        EndingEvent.event.reset()
+        CampFireEvent.event.reset()
+        ExcavationSiteEvent.event.reset()
+        FirstFloorEndingEvent.event.reset()
+        FirstFloorOpeningEvent.event.reset()
+        FirstFloorDeathEvent.event.reset()
+        SecondFloorEndingEvent.event.reset()
+        SecondFloorOpeningEvent.event.reset()
+        SecondFloorDeathEvent.event.reset()
+        ThirdFloorEndingEvent.event.reset()
+        ThirdFloorOpeningEvent.event.reset()
+        ThirdFloorDeathEvent.event.reset()
+        PierEvent.event.reset()
+        TeamsDeathEvent.event.reset()
+        WesternGateEvent.event.reset()
+        WorkshopEvent.event.reset()
+        TempleEvent.event.reset()
+        StatueEvent.event.reset()
+        LadySilviasHutEvent.event.reset()
+        LadySilviasDeathEvent.event.reset()
     }
 }

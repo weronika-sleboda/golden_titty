@@ -1,14 +1,14 @@
 package com.pregnantunicorn.goldentitty.models.excavation
 
-import com.pregnantunicorn.goldentitty.models.graphics.BackgroundFactory
+import com.pregnantunicorn.goldentitty.R
 
 class ExcavationTile {
 
-    private var background = BackgroundFactory().beach()
+    private var background = R.drawable.beach_morning
 
     private fun changeBackground() {
 
-        background = BackgroundFactory().soil()
+        background = R.drawable.soil_morning
 
     }
 
