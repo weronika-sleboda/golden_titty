@@ -32,7 +32,6 @@
         app:layout_anchorGravity="bottom"
         app:fabCradleMargin="5dp"
         app:fabAlignmentMode="end"
-        app:hideOnScroll="true"
         app:backgroundTint="@color/mystery">
 
         <ImageView

@@ -2,6 +2,7 @@ package com.pregnantunicorn.goldentitty.views.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.pregnantunicorn.goldentitty.R
