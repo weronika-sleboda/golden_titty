@@ -66,6 +66,8 @@ class WorldActivity : AppCompatActivity(), WorldActivityUiUpdate {
 
                     showMessage()
                 }
+
+                Tutorial.noNeedForTutorial()
             }
         }
 
