@@ -162,7 +162,7 @@ class AxeFragment : Fragment() {
 
                                 updateNoise()
 
-                                delay(10)
+                                delay(30)
 
                                 withContext(Dispatchers.Main) {
 

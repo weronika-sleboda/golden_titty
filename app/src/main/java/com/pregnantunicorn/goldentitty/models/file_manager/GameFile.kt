@@ -33,6 +33,7 @@ class GameFile {
         StoryLineFile().save(sharedPreferences)
         TempleFile().save(sharedPreferences)
         ToolsFile().save(sharedPreferences)
+        EventFile().save(sharedPreferences)
 
         val gson = Gson()
         val json = gson.toJson(isSaved)
@@ -60,6 +61,7 @@ class GameFile {
         StoryLineFile().load(sharedPreferences)
         TempleFile().load(sharedPreferences)
         ToolsFile().load(sharedPreferences)
+        EventFile().load(sharedPreferences)
     }
 
     fun reset() {
@@ -81,27 +83,5 @@ class GameFile {
         ResourcesFile().reset()
         StoryLineFile().reset()
         TempleFile().reset()
-
-        OpeningEvent.event.reset()
-        EndingEvent.event.reset()
-        CampFireEvent.event.reset()
-        ExcavationSiteEvent.event.reset()
-        FirstFloorEndingEvent.event.reset()
-        FirstFloorOpeningEvent.event.reset()
-        FirstFloorDeathEvent.event.reset()
-        SecondFloorEndingEvent.event.reset()
-        SecondFloorOpeningEvent.event.reset()
-        SecondFloorDeathEvent.event.reset()
-        ThirdFloorEndingEvent.event.reset()
-        ThirdFloorOpeningEvent.event.reset()
-        ThirdFloorDeathEvent.event.reset()
-        PierEvent.event.reset()
-        TeamsDeathEvent.event.reset()
-        WesternGateEvent.event.reset()
-        WorkshopEvent.event.reset()
-        TempleEvent.event.reset()
-        StatueEvent.event.reset()
-        LadySilviasHutEvent.event.reset()
-        LadySilviasDeathEvent.event.reset()
     }
 }
