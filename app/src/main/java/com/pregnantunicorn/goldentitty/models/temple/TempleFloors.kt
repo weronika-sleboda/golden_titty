@@ -49,7 +49,7 @@ object TempleFloors {
             KeyItemType.RUBY,
             R.drawable.ruby64,
             "Ruby",
-            EnemyName.VLADIMIR,
+            EnemyName.DARK_RIDER,
             TempleFloorNumber.NR3,
             ThirdFloorOpeningEvent.event,
             ThirdFloorDeathEvent.event,

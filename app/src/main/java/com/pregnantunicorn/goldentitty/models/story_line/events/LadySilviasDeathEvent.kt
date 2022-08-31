@@ -15,7 +15,7 @@ object LadySilviasDeathEvent {
         Act(
             "Game Over",
             R.drawable.lady_silvia256,
-            "How could you starve me to death?! Not that I have a stomach, but I at least would like to imagine I'm eating those fish you give me.",
+            "How could you starve me to death?! Not that I have a stomach, but I at least would like to imagine I'm eating those coconuts you give me.",
             "But you're still alive"
         ),
 

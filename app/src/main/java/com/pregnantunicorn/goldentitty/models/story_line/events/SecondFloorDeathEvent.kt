@@ -20,7 +20,7 @@ object SecondFloorDeathEvent {
         Act(
             "Game Over",
             R.drawable.skull256,
-            "You have been killed by a food poisoned guy. You are a loser.",
+            "Lady Silvia: Killed by a food poisoned guy? I can't believe it... I should have hired Mr Headcracker instead.",
             "[Exit to main menu]"
         ),
 

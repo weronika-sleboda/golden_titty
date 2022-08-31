@@ -22,22 +22,22 @@ object TempleEvent {
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "Excellent, my dear! This is the Temple Of End Times Twerk of Latter Day Apocalypse Booty Rapture and Holy Nipple Revival. Or at least it was, until the atitteists destroyed it.",
+            "Excellent, my dear! This is the Temple of Chidinma. During the war of the Matriarchs it have been destroyed and now it's only ruins, but still... ",
             "[Follow her]"
         ),
 
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "[She tries to open the main door] Seven Nipples damn it! The door is locked. ",
+            "[She tries to open the main door] Crap! The door is locked. I bet the Golden Titty is hidden somewhere behind these walls.",
             "What now?"
         ),
 
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "The flea bearer is hiding inside. We need to keep excavating the island until we find the key to the main entrance.",
-            "[Leave]"
+            "We need to keep excavating the island until we find the key to the main entrance.",
+            "[Nod]"
         ),
     )
 }

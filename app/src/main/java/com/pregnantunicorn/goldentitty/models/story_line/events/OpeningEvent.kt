@@ -13,63 +13,63 @@ object OpeningEvent {
         EventTitle.OPENING,
 
         Act(
-            "Holy Toilet Paper Scroll (Verse 1)",
-            R.drawable.holy_toilet_paper_scroll,
-            "Titties, ass, legs. Tra la la la la. Cindy + Vladek = Love. [There is a paw print in the end of the sentence. It looks like a dog accidentally stamped on the scroll.]",
-            "[Keep reading]"
+            "Golden Titty",
+            R.drawable.golden_titty256,
+            "The legend says that whoever sucked on the nipples of the Goddess Chidinma, became forever young. ",
+            "Tell me more"
         ),
 
         Act(
-            "Holy Toilet Paper Scroll (Verse 2)",
-            R.drawable.holy_toilet_paper_scroll,
-            "Sexy nymphs summoning spell: 700 72 720. Garry was here. Throw yourself from the mountain top and you will fly like a bird. Eating poo poo makes you stronger.",
-            "[Keep reading]"
+            "Golden Titty",
+            R.drawable.golden_titty256,
+            "Unfortunately, the Goddess Chidinma herself couldn't suck on her own magical titty, because she was a flat chest.",
+            "And?"
         ),
 
         Act(
-            "Holy Toilet Paper Scroll (Verse 3)",
-            R.drawable.holy_toilet_paper_scroll,
-            "This is the wisdom of the Holy Toilet Paper Scroll. The Golden Titty will shoot an arrow from its nipple into the eyeballs of the unbelievers who reject this divine revelation.",
-            "I don't understand"
+            "Golden Titty",
+            R.drawable.golden_titty256,
+            "Therefore... In fear that one day she might die, the Goddess made an enchanted replica of her own titty - the famous Golden Titty emblem. ",
+            "Get to the point"
         ),
 
         Act(
-            "Lady Silvia",
-            R.drawable.lady_silvia256,
-            "Not me either, but the Pussycat Prophet claims he received that scroll from the Golden Titty itself.",
-            "Does he?"
+            "Golden Titty",
+            R.drawable.golden_titty256,
+            "The long story short. The replica didn't have the same power as the original titty, and had to be sucked on everyday.",
+            "Who cares?"
         ),
 
         Act(
-            "Lady Silvia",
-            R.drawable.lady_silvia256,
-            "He said, I quote: The heavenly vagina opened itself and spat out the holy scroll in front of me while the Golden Titty was proclaiming: I am one. There are no other titties besides me.",
-            "I don't need the details"
-        ),
-
-        Act(
-            "Lady Silvia",
-            R.drawable.lady_silvia256,
-            "Actually, you do. This heavenly vagina thing ordered that douchebag to steal the Golden Titty from the Seven Nipples Temple, which he did.",
-            "And you want it back?"
+            "Golden Titty",
+            R.drawable.golden_titty256,
+            "I do, because after the Goddess Chidinma chocked to death while eating cellophane noodles at her palace, soon after the titty was abducted.",
+            "Chocked? That's horrible"
         ),
 
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "Exactly. If the Golden Titty doesn't return to the Seven Nipples Temple, I will be forced out of the religion business. ",
-            "Don't worry. I'll find it."
+            "I know, but what's more horrible is that I'm old and ugly and I don't have that magical titty, to make me young and sexy again.",
+            "You want me to find it?"
         ),
 
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "I will accompany you to Ticky Tacka Island, when that titty molester is hiding. You will need my help. He uses all kind of magic in order to stay invisible to the outsiders.",
-            "Let's go"
+            "Exactly. The abduction was carried out by the most loyal followers of the goddess, who had afterwards hidden the Golden Titty somewhere on the Ticky Tacka Island.",
+            "You want me to go there?"
         ),
 
         Act(
-            "6 Day Cycles later",
+            "Lady Silvia",
+            R.drawable.lady_silvia256,
+            "Yes, but not alone. We will go there together. The followers of Chidinma have enchanted the island and you will need my guidance. I will pay you 100 000 gold coins.",
+            "I'm in. Let's go."
+        ),
+
+        Act(
+            "6 Day Cycles Later",
             R.drawable.ticky_tacka_island256,
             "As you are sailing through the sea, the horizon is gradually revealing the Ticky Tacka Island. Somewhere on this deserted island the Golden Titty is hidden.",
             "Go ashore"

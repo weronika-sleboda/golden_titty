@@ -23,21 +23,21 @@ object StatueEvent {
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "That's strange... What is the Statue of Goddess Chidinma doing here? She was worshipped in the ancient times, way before the birth of polytitteism.",
+            "Marvelous! We found the statue of Chidinma!",
+            "What does it do?"
+        ),
+
+        Act(
+            "Lady Silvia",
+            R.drawable.lady_silvia256,
+            "[She examines the statue] I have no clue... Wait, there is something interesting here. Take a look.",
             "[Approach the statue]"
         ),
 
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "[She examines the statue] One day the believers realized though, that the most interesting thing about the goddess are her juicy boobs and the cult evolved into the titty worship.",
-            "Interesting"
-        ),
-
-        Act(
-            "Lady Silvia",
-            R.drawable.lady_silvia256,
-            "Indeed. Hmmm... There are three slots built into the statue. The logic tells me that something has to be inserted into these slots in order for something to happen.",
+            "There are three slots built into the statue. The logic tells me that something has to be inserted into these slots in order for something to happen.",
             "Logical conclusion"
         ),
     )

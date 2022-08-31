@@ -22,7 +22,7 @@ object MeteorsDeathEvent {
         Act(
             "Game Over",
             R.drawable.skull256,
-            "Lady Silvia: Meteor? There is something different about you... Let me guess... A new haircut? ",
+            "Lady Silvia: Meteor? Are you feeling unwell?",
             "[Exit to main menu]"
         ),
     )

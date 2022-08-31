@@ -13,31 +13,31 @@ object ThirdFloorOpeningEvent {
         EventTitle.THIRD_FLOOR_OPENING_EVENT,
 
         Act(
-            "Pussycat Prophet",
-            R.drawable.pussycat_prophet256,
-            "Did you come back to repent and accept the Golden Titty as your lord an savior?",
-            "[Watch]"
+            "Dark Rider",
+            R.drawable.dark_rider256,
+            "Who is storming my chamber?!",
+            "Um... It's us"
         ),
 
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "Are you out of your mind?! I want my titty back!",
-            "[Keep watching]"
+            "No... Just not another freak...",
+            "[Sigh]"
         ),
 
         Act(
-            "Pussycat Prophet",
-            R.drawable.pussycat_prophet256,
-            "I see... You still resist the revelation of the heavenly vagina. Vladimir! Get those despicable atitteists out of here!",
-            "[Watch]"
+            "Dark Rider",
+            R.drawable.dark_rider256,
+            "Who us?! Look what you have done! See?! I was making my makeup and my hand shook because of you. Now I have to start over.",
+            "We're sorry"
         ),
 
         Act(
-            "Vladimir",
-            R.drawable.vladimir256,
-            "[He is polishing his sword] Will you leave the temple ruins by yourselves or do you need me to help you?",
-            "[Fight him]"
+            "Dark Rider",
+            R.drawable.dark_rider256,
+            "I don't care... The damage is already done. I have a date in a hour and I look like a clown. Now, get out! [He attacks you]",
+            "[Fight back]"
         ),
     )
 }
