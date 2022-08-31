@@ -114,6 +114,6 @@
     <string name="event_icon_cd" />
     <string name="entrance_icon_cd" />
     <string name="camp_fire">Camp Fire</string>
-    <string name="saving_file">Saving file...</string>
+    <string name="saving_file">Saving file…</string>
     <string name="saving_file_title">Saving File</string>
 </resources>
