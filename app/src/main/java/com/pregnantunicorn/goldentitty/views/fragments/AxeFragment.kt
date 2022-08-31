@@ -59,7 +59,7 @@ class AxeFragment : Fragment() {
 
     private fun defineMaxProgress() {
 
-        binding.successProgressBar.max = 120
+        binding.successProgressBar.max = 100
     }
 
     private fun setupIcon() {
@@ -86,7 +86,7 @@ class AxeFragment : Fragment() {
 
     private fun checkWinningCondition() {
 
-        if(binding.axeProgressBar.progress <= 45) {
+        if(binding.axeProgressBar.progress <= 50) {
 
             binding.successProgressBar.progress = 0
 
@@ -104,9 +104,9 @@ class AxeFragment : Fragment() {
 
         else {
 
-            binding.successProgressBar.progress += 40
+            binding.successProgressBar.progress += 50
 
-            if (binding.successProgressBar.progress == 120) {
+            if (binding.successProgressBar.progress == 100) {
 
                 binding.successProgressBar.progress = 0
 
@@ -243,8 +243,8 @@ class AxeFragment : Fragment() {
                 "Instructions",
                 R.drawable.info64,
                 "1. Press hide button to see the power meter moving.\n" +
-                        "2. Press cut button when you see the power meter being above 45% . The power meter has the max value of 100.\n" +
-                        "3. When your cut is successful the success progress bar will move by 20.\n" +
+                        "2. Press cut button when you see the power meter being above 50% . The power meter has the max value of 100.\n" +
+                        "3. When your cut is successful the success progress bar will move by 50.\n" +
                         "4. Cut until the success progress bar reaches its maximum value."
             )
 
