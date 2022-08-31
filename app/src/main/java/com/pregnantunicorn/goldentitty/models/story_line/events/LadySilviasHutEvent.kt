@@ -23,7 +23,7 @@ object LadySilviasHutEvent {
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "Thanks Seven Nipples! I'm tired of sharing that tent with you and cleaning after you. I ain't yo' mama!",
+            "What took you so long?! I'm tired of sharing that tent with you and cleaning after you. I ain't yo' mama!",
             "Anyway, it's done!"
         ),
     )

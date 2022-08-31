@@ -10,9 +10,9 @@ class IconFactory {
 
         return when(CurrentDayCycle.dayCycle()) {
 
-            DayCycle.MORNING -> { R.drawable.chidinmas_statue256_morning }
-            DayCycle.SUNSET -> { R.drawable.chidinmas_statue256_sunset }
-            DayCycle.NIGHT -> { R.drawable.chidinmas_statue256_night }
+            DayCycle.MORNING -> { R.drawable.statue_of_chidinma256_morning }
+            DayCycle.SUNSET -> { R.drawable.statue_of_chidinma256_sunset }
+            DayCycle.NIGHT -> { R.drawable.statue_of_chidinma256_night }
         }
     }
 
@@ -20,9 +20,9 @@ class IconFactory {
 
         return when(CurrentDayCycle.dayCycle()) {
 
-            DayCycle.MORNING -> { R.drawable.chidinmas_statue64_morning }
-            DayCycle.SUNSET -> { R.drawable.chidinmas_statue64_sunset }
-            DayCycle.NIGHT -> { R.drawable.chidinma_statue64_night }
+            DayCycle.MORNING -> { R.drawable.statue_of_chidinma64_morning }
+            DayCycle.SUNSET -> { R.drawable.statue_of_chidinma64_sunset }
+            DayCycle.NIGHT -> { R.drawable.statue_of_chidinma64_night }
         }
     }
 
@@ -31,9 +31,9 @@ class IconFactory {
 
         return when(CurrentDayCycle.dayCycle()) {
 
-            DayCycle.MORNING -> { R.drawable.chidinmas_statue128_morning }
-            DayCycle.SUNSET -> { R.drawable.chidinmas_statue128_sunset }
-            DayCycle.NIGHT -> { R.drawable.chidinmas_statue128_night }
+            DayCycle.MORNING -> { R.drawable.statue_of_chidinma128_morning }
+            DayCycle.SUNSET -> { R.drawable.statue_of_chidinma128_sunset }
+            DayCycle.NIGHT -> { R.drawable.statue_of_chidinma128_night }
         }
     }
 
@@ -292,27 +292,6 @@ class IconFactory {
     fun chieftainAxe64() = R.drawable.chieftain_axe64
     fun merchantAxe64() = R.drawable.merchant_axe64
     fun dwarfAxe64() = R.drawable.dwarf_axe64
-
-    //*** NPCS
-
-    fun jin64() = R.drawable.vladimir64
-    fun jin128() = R.drawable.vladimir128
-    fun jin256() = R.drawable.vladimir256
-    fun saphonee64() = R.drawable.saphonee64
-    fun saphonee128() = R.drawable.saphonee128
-    fun saphonee256() = R.drawable.saphonee256
-    fun meteor64() = R.drawable.meteor64
-    fun meteor128() = R.drawable.meteor128
-    fun meteor256() = R.drawable.meteor256
-    fun pasha64() = R.drawable.pasha64
-    fun pasha128() = R.drawable.pasha128
-    fun pasha256() = R.drawable.pasha256
-    fun sentino64() = R.drawable.sentino64
-    fun sentino128() = R.drawable.sentino128
-    fun sentino256() = R.drawable.sentino256
-    fun darkRider64() = R.drawable.dark_rider64
-    fun darkRider128() = R.drawable.dark_rider128
-    fun darkRider256() = R.drawable.dark_rider256
 
     fun constructionSite64() = R.drawable.construction_site64
 

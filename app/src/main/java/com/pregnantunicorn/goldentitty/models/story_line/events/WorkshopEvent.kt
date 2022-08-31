@@ -23,8 +23,8 @@ object WorkshopEvent {
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "Nice work! Now we can start making tools. We need something to stab that titty molester with.",
-            "[Nod]"
+            "Such a big and beautiful house just for a bunch of tools?! I can't believe it... ",
+            "Anyway, it's done"
         ),
     )
 }

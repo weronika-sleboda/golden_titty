@@ -15,36 +15,36 @@ object EndingEvent {
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "Finally! The Golden Titty can now return to the holy temple. Seven Nipples bless you, Meteor! As promised, here's your reward: 10000 gold coins.",
+            "Finally! The Golden Titty is mine. As promised, here's your reward: 10000 gold coins. Now, let me try this thing out.",
             "Yeah, I'm rich!"
+        ),
+
+        Act(
+            "Lady Silvia",
+            R.drawable.young_lady_silvia256,
+            "[She sucks on the Golden Titty and suddenly turns into that hot young female] Yes, I'm sexy again! ",
+            "Drop your jaw"
         ),
 
         Act(
             "Aaliyah",
             R.drawable.aaliyah256,
-            "I can't believe it! Who is she?!",
+            "[Out from nowhere another female is storming the building] What???!! I can't believe it!!! How could you, Meteor?! [She slams you in the cheek].",
             "Aaliyah?!"
         ),
 
         Act(
             "Aaliyah",
             R.drawable.aaliyah256,
-            "What is it? did I interrupt the vacations with your lover?!",
-            "What are you doing here?!"
-        ),
-
-        Act(
-            "Aaliyah",
-            R.drawable.aaliyah256,
-            "[She attacks Lady Silvia and pulls her clothes] What makes that hag better than me? Answer me! [She cries]",
+            "What is it?! Did I interrupt your honeymoon?! [She attacks Lady Silvia and pulls her hair] What makes that hag better than me?! Answer me! [She cries]",
             "She's not my lover!"
         ),
 
         Act(
             "Lady Silvia",
-            R.drawable.lady_silvia256,
-            "Excuse me?! I'm not a hag [ She pushes Aaliyah] And stop touching the holy titty, you will damage it! Meteor, who is she?",
-            "She's my girlfriend"
+            R.drawable.young_lady_silvia256,
+            "Excuse me?! I'm not a hag! [She pushes Aaliyah] And stop molesting the Golden Titty! You will damage it! Meteor, who is she?",
+            "She's my crazy ex"
         ),
 
         Act(
@@ -56,7 +56,7 @@ object EndingEvent {
 
         Act(
             "Lady Silvia",
-            R.drawable.lady_silvia256,
+            R.drawable.young_lady_silvia256,
             "A courtesan?! How dare you?! [She pulls Aaliyah's hair]",
             "Stop this!"
         ),
@@ -64,7 +64,7 @@ object EndingEvent {
         Act(
             "Aaliyah",
             R.drawable.aaliyah256,
-            "You built the whole island for her! I have seen everything. A workshop, a cozy campfire, a pier... Meteor, what the crap?!",
+            "You built the whole island for her!!! I have seen everything! A workshop, a cozy campfire, a pier... Meteor, what the crap?!",
             "You're crazy!"
         ),
 
@@ -72,7 +72,7 @@ object EndingEvent {
             "The End",
             R.drawable.fight256,
             "Well... It looks like they will fight for a while...",
-            "Holy Titty damned it!"
+            "[Sneak out of there]"
         ),
     )
 }

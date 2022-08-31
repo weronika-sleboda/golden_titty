@@ -104,7 +104,7 @@ class AxeFragment : Fragment() {
 
         else {
 
-            binding.successProgressBar.progress += 60
+            binding.successProgressBar.progress += 40
 
             if (binding.successProgressBar.progress == 120) {
 
@@ -162,7 +162,7 @@ class AxeFragment : Fragment() {
 
                                 updateNoise()
 
-                                delay(30)
+                                delay(20)
 
                                 withContext(Dispatchers.Main) {
 

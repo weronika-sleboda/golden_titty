@@ -15,15 +15,15 @@ object ThirdFloorDeathEvent {
 
         Act(
             "Game Over",
-            R.drawable.pussycat_prophet256,
-            "[He speaks to Vladimir] Move that dead adventurer to the first floor and feed Donut. Unfortunately, the skeleton hag cannot be killed.",
+            R.drawable.dark_rider256,
+            "Talk to my hand [He is holding the hand with his palm towards Lady Silvia] I'm too fabulous for this drama!",
             "[...]"
         ),
 
         Act(
             "Game Over",
             R.drawable.skull256,
-            "Vladimir wiped the floor with you.",
+            "Dark Rider wiped the floor with you.",
             "[Exit to main menu]"
         ),
     )

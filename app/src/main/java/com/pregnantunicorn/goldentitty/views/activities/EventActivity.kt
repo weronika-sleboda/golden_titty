@@ -3,6 +3,7 @@ package com.pregnantunicorn.goldentitty.views.activities
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.EventActivityBinding
 import com.pregnantunicorn.goldentitty.models.message.CurrentMessage
 import com.pregnantunicorn.goldentitty.models.meteor.Meteor

@@ -16,7 +16,7 @@ class TempleFile {
         private const val CURRENT_ENEMY = "current_enemy"
         private const val DONUT_HEALTH = "donut_health"
         private const val SENTINO_HEALTH = "sentino_health"
-        private const val VLADIMIR_HEALTH = "vladimir_health"
+        private const val DARK_RIDER_HEALTH = "dark_rider_health"
     }
 
     fun save(sharedPreferences: SharedPreferences) {
@@ -27,7 +27,7 @@ class TempleFile {
         val currentEnemy = gson.toJson(CurrentEnemy.enemyName())
         val donutHealth = gson.toJson(CurrentEnemy.donut().health())
         val sentinoHealth = gson.toJson(CurrentEnemy.sentino().health())
-        val vladimirHealth = gson.toJson(CurrentEnemy.vladimir().health())
+        val darkRiderHealth = gson.toJson(CurrentEnemy.darkRider().health())
 
         val conqueredFloorsStorage = sharedPreferences.edit().putString(
             CONQUERED_FLOORS, conqueredFloors
@@ -49,8 +49,8 @@ class TempleFile {
             SENTINO_HEALTH, sentinoHealth
         )
 
-        val vladimirStorage = sharedPreferences.edit().putString(
-            VLADIMIR_HEALTH, vladimirHealth
+        val darkRiderStorage = sharedPreferences.edit().putString(
+            DARK_RIDER_HEALTH, darkRiderHealth
         )
 
         conqueredFloorsStorage.apply()
@@ -58,7 +58,7 @@ class TempleFile {
         currentEnemyStorage.apply()
         donutStorage.apply()
         sentinoStorage.apply()
-        vladimirStorage.apply()
+        darkRiderStorage.apply()
     }
 
     fun load(sharedPreferences: SharedPreferences) {
@@ -70,7 +70,7 @@ class TempleFile {
         val currentEnemy = sharedPreferences.getString(CURRENT_ENEMY, null)
         val donutHealth = sharedPreferences.getString(DONUT_HEALTH, null)
         val sentinoHealth = sharedPreferences.getString(SENTINO_HEALTH, null)
-        val vladimirHealth = sharedPreferences.getString(VLADIMIR_HEALTH, null)
+        val darkRiderHealth = sharedPreferences.getString(DARK_RIDER_HEALTH, null)
 
         val conqueredFloorsType = BooleanArray::class.java
         val currentFloorType = TempleFloorNumber::class.java
@@ -86,7 +86,7 @@ class TempleFile {
             gson.fromJson(currentEnemy, currentEnemyType),
             gson.fromJson(donutHealth, healthType),
             gson.fromJson(sentinoHealth, healthType),
-            gson.fromJson(vladimirHealth, healthType)
+            gson.fromJson(darkRiderHealth, healthType)
         )
     }
 

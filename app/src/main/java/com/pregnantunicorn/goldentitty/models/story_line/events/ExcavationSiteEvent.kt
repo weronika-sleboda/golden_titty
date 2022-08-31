@@ -23,7 +23,7 @@ object ExcavationSiteEvent {
         Act(
             "Lady Silvia",
             R.drawable.lady_silvia256,
-            "Now we can start digging for the key items, hoping that the Pussycat Prophet didn't poop into this sand.",
+            "Now we can start digging for the key items, hoping that no pumas had pooped into this sand.",
             "[Nod]"
         ),
     )

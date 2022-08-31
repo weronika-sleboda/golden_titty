@@ -4,5 +4,5 @@ enum class EnemyName {
 
     DONUT_THE_DRAGON,
     SENTINO,
-    VLADIMIR
+    DARK_RIDER
 }

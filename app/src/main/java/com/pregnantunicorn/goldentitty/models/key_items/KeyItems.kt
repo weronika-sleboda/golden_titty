@@ -37,25 +37,25 @@ object KeyItems {
         ),
 
         KeyItem(
-            R.drawable.key64,
+            R.drawable.main_entrance_key,
             "Temple Key",
             KeyItemType.TEMPLE_KEY
         ),
 
         KeyItem(
-            R.drawable.key64,
+            R.drawable.first_floor_key,
             "First Floor Key",
             KeyItemType.FIRST_FLOOR_KEY
         ),
 
         KeyItem(
-            R.drawable.key64,
+            R.drawable.second_floor_key,
             "Second Floor Key",
             KeyItemType.SECOND_FLOOR_KEY
         ),
 
         KeyItem(
-            R.drawable.key64,
+            R.drawable.third_floor_key,
             "Third Floor Key",
             KeyItemType.THIRD_FLOOR_KEY
         ),
