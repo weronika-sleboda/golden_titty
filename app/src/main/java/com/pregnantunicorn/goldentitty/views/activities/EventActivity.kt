@@ -122,7 +122,7 @@ class EventActivity : AppCompatActivity() {
 
             event.completeEvent()
 
-            if(EndingEvent.event.hasAlreadyHappened() ||
+            if(event.eventTitle() == EventTitle.ENDING && event.hasAlreadyHappened() ||
                 Meteor.isDead() ||
                 LadySilvia.ladySilvia().isDead()) {
 
