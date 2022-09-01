@@ -8,6 +8,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pregnantunicorn.goldentitty.R
 import com.pregnantunicorn.goldentitty.databinding.ChidinmaStatueFragmentBinding
@@ -148,16 +149,6 @@ class ChidinmaStatueFragment : Fragment() {
                         R.drawable.meteor64,
                         "What's that? A secret gate?"
                     )
-
-                    delay(1500)
-
-                    withContext(Dispatchers.Main) {
-
-                        binding.insertButton.isVisible = false
-                        binding.leaveButton.isVisible = false
-
-                        showMessage()
-                    }
 
                     withContext(Dispatchers.Main) {
 
